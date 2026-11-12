@@ -1,0 +1,183 @@
+{
+  "id": "patching-and-change-management",
+  "title": "Patching & Change Management",
+  "description": "How to find and deploy patches proactively, and the change management process that controls every change from request to validation and baseline update.",
+  "domain": 7,
+  "order": 4,
+  "source": "https://destcert.com/resources/patching-change-management-mindmap-cissp-domain-7/",
+  "layout": "stacked",
+  "nodes": [
+    {
+      "id": "patching",
+      "title": "Patching",
+      "description": "Patch management is a proactive process to create a consistently configured environment that is secure against known vulnerabilities.\nEvery system that needs a patch should be patched in a timely manner.\nImportant limitation: you can only patch known vulnerabilities. You cannot patch for zero days.\nThe patch management cycle:\n1. Monitor for new vulnerabilities and patch releases.\n2. Acquire (or create) and evaluate patches.\n3. Prioritize and schedule the installation.\n4. Test and certify.\n5. Deploy.\n6. Verify.\n7. Document.\n8. Update baselines.",
+      "children": [
+        {
+          "id": "determine-if-patch-is-available",
+          "title": "Determine if Patch is available",
+          "description": "The first step: proactively find out whether a patch is available.\nMost software and systems do not update automatically or announce new patches, so the organization needs its own processes to find them.\nWays to find a need to patch: threat intelligence, vendor notifications and different types of scanning.",
+          "children": [
+            {
+              "id": "threat-intelligence",
+              "title": "Threat Intelligence",
+              "description": "Gathering information about new threats and threat actors that could harm the environment.\nIt shows when a patch is needed by identifying vulnerabilities that newly identified threats could exploit.",
+              "children": []
+            },
+            {
+              "id": "vendor-notification",
+              "title": "Vendor Notification",
+              "description": "The vendor tells you a patch is available.\nEasy for systems with built-in notifications, such as Windows and iOS devices.\nMany software products and systems have no built-in notifications. The organization must subscribe to the vendor's mailing list, RSS feed or Twitter account and monitor it for relevant new patches.",
+              "children": []
+            },
+            {
+              "id": "pro-actively-checking",
+              "title": "Pro-actively checking",
+              "description": "Scan systems to check that they comply with baselines: that every required patch was installed in a timely manner.\nPart of keeping a consistently configured environment.\nThere are three ways to check: agent, agentless and passive.",
+              "children": [
+                {
+                  "id": "agent",
+                  "title": "Agent",
+                  "description": "A small piece of software installed on the system. It monitors the system and reports its current patch level.",
+                  "children": []
+                },
+                {
+                  "id": "agentless",
+                  "title": "Agentless",
+                  "description": "No software is installed on the target system.\nA scanning tool connects to each system and queries its current patch level.\nScans can run periodically to verify compliance with baselines.",
+                  "children": []
+                },
+                {
+                  "id": "passive",
+                  "title": "Passive",
+                  "description": "No agent and no querying: carefully inspect the network packets the system sends.\nThis is fingerprinting (see the Domain 6 vulnerability assessment mind map). Different versions of a system build packets in slightly different ways, so the packets reveal the exact version and patch level.\nUsed when the systems are not directly in your control, for example systems a vendor manages for you, to verify that the vendor patches them in a timely manner.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "implement-through-change-management",
+          "title": "Implement through Change Management",
+          "description": "Once a need to patch is identified, the patch is prioritized, scheduled, deployed, verified and documented through the change management process.\nChange management is covered in the second part of this mind map.",
+          "highlight": "exam-key",
+          "children": [
+            {
+              "id": "timing",
+              "title": "Timing",
+              "description": "One of the most important things: patches must be installed in a timely manner.\nIf a new vulnerability is being actively exploited, the patch may need to be deployed extremely fast and treated as an emergency change.",
+              "children": []
+            },
+            {
+              "id": "deploy",
+              "title": "Deploy",
+              "description": "Installing the patches.\nAlways try to minimize the impact on the organization. That is why patching is often done in the middle of the night and coordinated with operations.\nTwo main methods: automated and manual.",
+              "children": [
+                {
+                  "id": "automated",
+                  "title": "Automated",
+                  "description": "Software installs the patches. Example: the Auto Update feature built into Windows.\nA good way to deploy patches quickly across a large number of systems.\nUsually not a good idea for high-value, mission-critical servers, because patches often break existing functionality.",
+                  "children": []
+                },
+                {
+                  "id": "manual",
+                  "title": "Manual",
+                  "description": "Used for high-value systems.\nA system administrator installs the patch by hand and verifies that it fixed what it needed to fix, or added the new functionality.\nRegression testing then verifies that no existing functionality was broken.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "change-management",
+      "title": "Change Management",
+      "description": "The process that makes sure the costs and benefits of changes are analyzed, and that changes are made in a controlled way to reduce risk.\nThe steps, in order:\n1. Change request\n2. Assess impact\n3. Approval\n4. Build & test\n5. Notification\n6. Implement\n7. Validation\n8. Version & baseline\nGood documentation is needed through every step of the process.",
+      "children": [
+        {
+          "id": "change-request",
+          "title": "Change Request",
+          "description": "The change management process starts with a change request.\nRequests can come from almost anywhere. Examples: a system owner who wants new functionality, a customer who finds a bug, the root cause analysis of an incident, or threat intelligence showing that a system needs a patch.",
+          "children": []
+        },
+        {
+          "id": "assess-impact",
+          "title": "Assess Impact",
+          "description": "Every change request needs an impact assessment: how big a deal is the change? What will it cost, how much effort will it take, and how bad would it be for the organization if it goes wrong?\nThe impact assessment drives the rest of the process: what approvals are needed, how much testing and validation, and who must be notified.\nExample: a major change that costs millions probably needs approval from many senior stakeholders. A very minor change may only need auto-approval.",
+          "children": [
+            {
+              "id": "emergency-change-vs-standard-process",
+              "title": "Emergency Change vs. Standard process",
+              "description": "Changes differ a lot:\n- A minor change: little effort and zero impact on customers.\n- A massive change: hundreds of hours of development, millions of dollars, and significant impact on many stakeholders across the organization and on customers.\n- A high-priority patch: treated as an emergency change and deployed as fast as possible.\nThe change management process must be flexible enough to handle all of these.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "approval",
+          "title": "Approval",
+          "description": "The approval process should also be flexible.\nMinor changes may be auto-approved. At the other end, some changes need several levels of approval from stakeholders across the organization, with everything signed in triplicate.\nApprovals are not only needed just before the change is made. They may be needed at several steps of the process.",
+          "children": [
+            {
+              "id": "based-on-impact-severity",
+              "title": "Based on impact, severity, etc.",
+              "description": "What decides the approval requirements:\n- the impact of the change on the different stakeholders\n- the effort needed to implement the change\n- whether it is an emergency change",
+              "children": []
+            },
+            {
+              "id": "ccb-cab-ecab",
+              "title": "CCB, CAB, ECAB",
+              "description": "Groups of subject matter experts from across the organization who approve changes.\n- CCB (Change Control Board): approves changes within specific projects.\n- CAB (Change Advisory Board): approves changes related to the entire service lifecycle.\n- ECAB (Emergency Change Advisory Board): approves emergency changes.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "build-and-test",
+          "title": "Build & Test",
+          "description": "Changes must be built and tested before they are deployed into production.\nExamples of changes: new software, patches, a new camera system, a new front gate.",
+          "children": []
+        },
+        {
+          "id": "notification",
+          "title": "Notification",
+          "description": "Tell the relevant stakeholders about the change.\nIt appears in the middle of the process, but notifications happen throughout: before, possibly during, and after the change.\nRelevant stakeholders are anyone the change affects: system owners, management, administrators, customers, maybe even regulators.",
+          "children": []
+        },
+        {
+          "id": "implement",
+          "title": "Implement",
+          "description": "The step where the change is actually made.",
+          "children": []
+        },
+        {
+          "id": "validation",
+          "title": "Validation",
+          "description": "After the change is implemented, validate it with testing.",
+          "children": [
+            {
+              "id": "test-new-functionality",
+              "title": "Test New Functionality",
+              "description": "Check that the new functionality the change was meant to provide works correctly.",
+              "children": []
+            },
+            {
+              "id": "regression-testing",
+              "title": "Regression Testing",
+              "description": "Checks specifically that the change did not break existing functionality.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "version-and-baseline",
+          "title": "Version & Baseline",
+          "description": "After the change is made, check what needs to be updated.\nExamples: master images, configuration baselines, disaster recovery plans.",
+          "children": []
+        }
+      ]
+    }
+  ]
+}

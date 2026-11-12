@@ -1,0 +1,348 @@
+{
+  "id": "security-assessment-and-testing-overview",
+  "title": "Security Assessment and Testing",
+  "description": "Making sure security controls are defined, tested and operating effectively: testing levels and techniques, testers and auditors, SOC reports and metrics.",
+  "domain": 6,
+  "order": 1,
+  "source": "https://destcert.com/resources/security-assessment-and-testing-overview-mindmap-cissp-domain-6/",
+  "nodes": [
+    {
+      "id": "validation",
+      "title": "Validation",
+      "description": "Gather the business requirements to understand what the business truly needs, and validate them with the relevant stakeholders.\nAsks: are we building the right product?\nYou cannot do any of the testing in this map until you understand what the business needs.\nSecurity should be involved in testing right from the start and throughout the system life cycle: gathering and validating requirements, defining controls, developing applications and systems, ongoing operation, and retirement and disposal of systems and data.\nExam hint: if asked when security should become involved in testing, pick the earliest possible answer.",
+      "children": []
+    },
+    {
+      "id": "verification",
+      "title": "Verification",
+      "description": "All the testing done once you start building the product.\nVerifies that controls are properly designed and built into the system.\nAsks: are we building the product right?",
+      "children": []
+    },
+    {
+      "id": "rigour",
+      "title": "Rigour",
+      "description": "How much effort to invest in testing, from very little to a lot.\nThe value of the system to the organization drives it. The more valuable the system, the more testing you do, to be confident it supports the business in reaching its goals and objectives.",
+      "children": []
+    },
+    {
+      "id": "testing-a-system",
+      "title": "Testing a System",
+      "description": "Software is complex and often built by teams, so development is split into units.\nTesting moves from single units, to the interfaces between them, to groups of units, to the whole system.",
+      "children": [
+        {
+          "id": "unit",
+          "title": "Unit",
+          "description": "Test each unit of software on its own, as it is developed.\nExample (very simplified): an operating system has separate units for keyboard input, mouse input and video output. Each unit is tested separately.",
+          "children": []
+        },
+        {
+          "id": "interface",
+          "title": "Interface",
+          "description": "Units communicate with each other through standardized interfaces.\nInterface testing verifies that communication between two or more units works correctly.",
+          "children": []
+        },
+        {
+          "id": "integration",
+          "title": "Integration",
+          "description": "Once a few units are complete, test groups of units together to make sure they work well with each other.",
+          "children": []
+        },
+        {
+          "id": "system",
+          "title": "System",
+          "description": "Once all units are complete and integration testing is done, test the whole system.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "testing-techniques",
+      "title": "Testing Techniques",
+      "description": "Techniques for performing tests.\nThey are not mutually exclusive: mix and match them to perform different types of tests.",
+      "children": [
+        {
+          "id": "methods-and-tools",
+          "title": "Methods & Tools",
+          "description": "The two main methods to perform testing.",
+          "children": [
+            {
+              "id": "manual",
+              "title": "Manual",
+              "description": "Hands on keyboard: a person manually reads code, or performs actions on a running program.",
+              "children": []
+            },
+            {
+              "id": "automated",
+              "title": "Automated",
+              "description": "Automated tools: software that tests other software.\nExamples: code scanning tools, vulnerability scanners.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "runtime",
+          "title": "Runtime",
+          "description": "Whether the code is running or not during the test.",
+          "children": [
+            {
+              "id": "static",
+              "title": "Static",
+              "description": "Testing a system that is not running, by looking at the code.",
+              "children": []
+            },
+            {
+              "id": "dynamic",
+              "title": "Dynamic",
+              "description": "Testing a system while the software is running.",
+              "children": []
+            },
+            {
+              "id": "fuzz",
+              "title": "Fuzz",
+              "description": "A form of dynamic testing.\nProgrammers are logical people: they expect logical input and produce logical output. Throw chaos at the system, massive amounts of random data, to find unexpected errors and vulnerabilities in the code.\nKnow the two types of fuzzers.",
+              "children": [
+                {
+                  "id": "mutation",
+                  "title": "Mutation",
+                  "description": "Often called dumb fuzzers.\nThey have no understanding of the input data or its structure. They randomly mutate existing input data to a system.",
+                  "children": []
+                },
+                {
+                  "id": "generation",
+                  "title": "Generation",
+                  "description": "Often called intelligent fuzzers.\nThey have a basic understanding of the type and structure of input the system expects, so they can generate new chaotic input.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "access-to-code",
+          "title": "Access to Code",
+          "description": "Whether the tester has access to the source code, or only to the running system.",
+          "children": [
+            {
+              "id": "white",
+              "title": "White",
+              "description": "White-box: you have access to the source code for your testing.",
+              "children": []
+            },
+            {
+              "id": "black",
+              "title": "Black",
+              "description": "Black-box: you cannot see the source code. You test the running application, and its internal workings are a black box to you.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "techniques",
+          "title": "Techniques",
+          "description": "A few of the key software testing techniques.",
+          "children": [
+            {
+              "id": "positive",
+              "title": "Positive",
+              "description": "Verify that the system works as expected.\nExample: a correct username and password lets you log in.",
+              "children": []
+            },
+            {
+              "id": "negative",
+              "title": "Negative",
+              "description": "Test normal, expected errors.\nExample: an incorrect username or password is handled gracefully. The system asks whether you forgot your password, and does not crash.",
+              "children": []
+            },
+            {
+              "id": "misuse",
+              "title": "Misuse",
+              "description": "Abuse the system the way an attacker might.\nExamples: testing for buffer overflows and SQL injection vulnerabilities.",
+              "children": []
+            },
+            {
+              "id": "decision-table-analysis",
+              "title": "Decision table analysis",
+              "description": "Tests system behavior for different input combinations.\nBuild a table of every input combination and its expected behavior, so you check all combinations and miss nothing, even in a complex application.\nParticularly useful for complex software and requirements management.",
+              "children": []
+            },
+            {
+              "id": "state-based-analysis",
+              "title": "State-based analysis",
+              "description": "Tests software that can exist in different abstract states.\nParticularly useful for GUIs and communication protocols such as TCP.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "efficiency",
+          "title": "Efficiency",
+          "description": "Techniques that reduce the number of tests needed while still giving the required level of confidence.\nExample: a password must be 8 to 16 characters long. There is a boundary between 7 characters (rejected) and 8 (accepted), and another between 16 and 17. The boundaries create three partitions: 7 or fewer, 8 to 16, and 17 or more.",
+          "children": [
+            {
+              "id": "boundary-value-analysis",
+              "title": "Boundary Value Analysis",
+              "description": "Find where the behavior changes (a boundary), then focus testing on either side of each boundary.\nFormal definition: test cases cover the extreme ends of the input values.\nPassword example: test 7 and 8 characters, and 16 and 17 characters.",
+              "children": []
+            },
+            {
+              "id": "equivalence-partitioning",
+              "title": "Equivalence Partitioning",
+              "description": "Divide (partition) the inputs into groups that behave the same way, then write test cases to cover each partition.\nPassword example: identify the three partitions and test within each one.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "operational",
+          "title": "Operational",
+          "description": "Testing systems that are deployed and in production.",
+          "children": [
+            {
+              "id": "real-user-monitoring",
+              "title": "Real User Monitoring",
+              "description": "RUM: monitor how real users use the system.\nTracks user transactions in real time for usage, performance and errors.",
+              "children": []
+            },
+            {
+              "id": "synthetic-performance-monitoring",
+              "title": "Synthetic Performance Monitoring",
+              "description": "Run scripted transactions to monitor functionality, availability and response times.\nSmall bots or agents simulate use of the system.\nA good way to do load or stress testing.",
+              "children": []
+            },
+            {
+              "id": "regression-testing",
+              "title": "Regression Testing",
+              "description": "Done after a change to a system, to verify that previously tested software still works correctly.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "testers-assessors",
+      "title": "Testers / Assessors",
+      "description": "Who can perform the testing.",
+      "children": [
+        {
+          "id": "internal",
+          "title": "Internal",
+          "description": "A company's own employees test the company's own software.",
+          "children": []
+        },
+        {
+          "id": "external",
+          "title": "External",
+          "description": "A company hires an independent external tester to test its software.\nCan also mean a company sends its own employees to test a service provider or vendor, and the services it provides.",
+          "children": []
+        },
+        {
+          "id": "third-party",
+          "title": "Third-Party",
+          "description": "Three parties are involved: the customer, the service provider, and an independent third-party auditor.\nThird-party audits often produce SOC (Service Organization Controls) reports.\nAs security professionals, we want SOC 2 Type 2 reports.",
+          "children": [
+            {
+              "id": "soc-1",
+              "title": "SOC 1",
+              "description": "Focuses on financial reporting risks.\nNot very interesting to security professionals.\nLike SOC 2, comes as a Type 1 or Type 2 report.",
+              "children": []
+            },
+            {
+              "id": "soc-2",
+              "title": "SOC 2",
+              "description": "Focuses on the 5 trust principles:\n- Security\n- Availability\n- Confidentiality\n- Processing Integrity\n- Privacy\nDefinitely of interest to security professionals.\nSOC 1 and SOC 2 reports both come in two types: Type 1 and Type 2.",
+              "children": [
+                {
+                  "id": "type-1",
+                  "title": "Type 1",
+                  "description": "Applies to SOC 1 and SOC 2 reports.\nLooks at the design of a control at a point in time. Essentially reviewing some paperwork on a Monday.",
+                  "children": []
+                },
+                {
+                  "id": "type-2",
+                  "title": "Type 2",
+                  "description": "Applies to SOC 1 and SOC 2 reports.\nLooks at the design and operating effectiveness of a control over a period of time, typically a year.\nThe auditors test, through sampling and other methods, whether the control operated effectively over the whole period.\nFar more useful than Type 1.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "soc-3",
+              "title": "SOC 3",
+              "description": "A summarized and sanitized version of a SOC 2 report, for public distribution.\nBasically a marketing tool.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "roles",
+          "title": "Roles",
+          "description": "The roles that may be involved in the audit and assurance function.",
+          "children": [
+            {
+              "id": "executive-management",
+              "title": "Executive Management",
+              "description": "Set the tone from the top, and promote and fund the audit process.",
+              "children": []
+            },
+            {
+              "id": "audit-committee",
+              "title": "Audit Committee",
+              "description": "Members of the board and senior stakeholders who oversee the audit program.",
+              "children": []
+            },
+            {
+              "id": "security-officer",
+              "title": "Security Officer",
+              "description": "Advises on the security-related risks to evaluate in the audit program.",
+              "children": []
+            },
+            {
+              "id": "compliance-manager",
+              "title": "Compliance Manager",
+              "description": "Manages the compliance program, so the company complies with applicable laws and regulations, professional standards and company policy.",
+              "children": []
+            },
+            {
+              "id": "internal-auditors",
+              "title": "Internal Auditors",
+              "description": "Company employees who provide assurance that corporate controls are operating effectively.",
+              "children": []
+            },
+            {
+              "id": "external-auditors",
+              "title": "External Auditors",
+              "description": "Provide unbiased, independent assurance, because they are independent of the entity being audited.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "metrics",
+      "title": "Metrics",
+      "description": "Define metrics as part of security assessment and testing, to measure what matters.",
+      "children": [
+        {
+          "id": "focus",
+          "title": "Focus",
+          "description": "Tie metrics back to business goals and objectives.\nIf you understand what the business is trying to achieve, you can create metrics that show whether it is making progress.",
+          "children": []
+        },
+        {
+          "id": "kpis",
+          "title": "KPIs",
+          "description": "Key Performance Indicators: backward-looking metrics.\nThey show whether performance targets were achieved.",
+          "children": []
+        },
+        {
+          "id": "kris",
+          "title": "KRIs",
+          "description": "Key Risk Indicators: forward-looking metrics.\nThey show the level of exposure to operational risk, and help monitor potential future shifts in risk conditions or new emerging risks.",
+          "children": []
+        }
+      ]
+    }
+  ]
+}

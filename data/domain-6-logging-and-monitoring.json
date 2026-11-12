@@ -1,0 +1,129 @@
+{
+  "id": "logging-and-monitoring",
+  "title": "Log Review & Analysis",
+  "description": "What to monitor logs for, how a SIEM handles log data from generation to disposal, and continuous monitoring of controls.",
+  "domain": 6,
+  "order": 3,
+  "source": "https://destcert.com/resources/logging-monitoring-mindmap-cissp-domain-6/",
+  "nodes": [
+    {
+      "id": "monitor-for",
+      "title": "Monitor for",
+      "description": "Logging events from many systems, aggregating the data and analyzing it is an important part of security assessment.\n- Log what is relevant. Many systems can generate an avalanche of event data, so configure them to log only what matters.\n- Review the logs, ideally as close to real time as possible. Finding a significant breach months after it happened is not ideal.\n- Look for errors and anomalies.",
+      "children": [
+        {
+          "id": "errors",
+          "title": "Errors",
+          "description": "Errors show that something is broken and needs to be fixed.\nExample: a web server generating many Error 404 (file not found) messages.",
+          "children": []
+        },
+        {
+          "id": "modification",
+          "title": "Modification",
+          "description": "Specifically, unauthorized modifications.\nAttackers often exploit a vulnerability to break in, install something like a backdoor, then patch the vulnerability behind them. Unauthorized patching of a system may indicate a breach.",
+          "children": []
+        },
+        {
+          "id": "breaches",
+          "title": "Breaches",
+          "description": "One of the main things to monitor for: whether any system has been breached.\nExamples: a system used for cryptocurrency mining, data exfiltration, or an imminent ransomware attack.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "siem",
+      "title": "Security Information and Event Management (SIEM)",
+      "description": "So many devices and systems generate so much log data that finding a problem is like looking for a needle in a haystack. SIEM systems automate many of the logging and monitoring tasks and the analysis.\nThe SIEM process runs from Generation to Disposal.",
+      "children": [
+        {
+          "id": "generation",
+          "title": "Generation",
+          "description": "Before data can feed a SIEM, enable logging on devices across the environment so they generate log data.\nAlmost every system can generate log event data:\n- Network devices such as firewalls, routers and switches\n- IDS and IPS (Intrusion Detection and Intrusion Prevention Systems)\n- Servers, desktops and laptops\n- Operating systems\n- Applications\n- Anti-malware",
+          "children": [
+            {
+              "id": "limiting-log-file-size",
+              "title": "Limiting log file size",
+              "description": "Endpoint devices such as firewalls, routers and switches can generate a lot of log data but have very limited onboard storage, so log file sizes must be limited.",
+              "children": [
+                {
+                  "id": "circular-overwrite",
+                  "title": "Circular Overwrite",
+                  "description": "Set a maximum log file size, for example 10 MB or 10,000 lines.\nWhen the log reaches the maximum, writing circles back to the top of the file and overwrites the old entries, until it reaches the maximum again. Rinse and repeat.",
+                  "children": []
+                },
+                {
+                  "id": "clipping-levels",
+                  "title": "Clipping Levels",
+                  "description": "Set a threshold: below it, log nothing; above it, start logging.\nExample: one or two failed logins are normal, because everyone mistypes a password. 10, 50 or 10,000 failed attempts in quick succession mean someone is trying to brute force a password.\nWith the threshold at 3 failed logins, fewer than 3 are not logged; 3 or more are logged.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "time-stamps",
+              "title": "Time Stamps",
+              "description": "Every log event needs a timestamp, so events from different systems can be correlated.",
+              "children": [
+                {
+                  "id": "consistent",
+                  "title": "Consistent",
+                  "description": "Use the same timestamp format on every system, for example year, month, day and a 24-hour clock.\nConsistent timestamps make it easier to correlate events from different systems.",
+                  "children": []
+                },
+                {
+                  "id": "ntp",
+                  "title": "Network Time Protocol (NTP)",
+                  "description": "The clocks of all systems in the environment must be synchronized.\nIt is very hard to trace how an attacker moved through a network if one system's clock is 3 seconds slow, another is 5 seconds fast, and another's date is set to 1979.\nNTP synchronizes all system clocks.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "transmission",
+          "title": "Transmission",
+          "description": "When any device generates a log event, send the event data to the SIEM in real time.",
+          "children": []
+        },
+        {
+          "id": "collection-aggregation",
+          "title": "Collection / Aggregation",
+          "description": "The SIEM collects and aggregates event data from across the environment in one central system.",
+          "children": []
+        },
+        {
+          "id": "normalization",
+          "title": "Normalization",
+          "description": "The SIEM cleans up event data from disparate devices, so that all the data and variables are comparable.",
+          "children": []
+        },
+        {
+          "id": "analysis",
+          "title": "Analysis",
+          "description": "The SIEM analyzes the incoming event data to find the needle in the haystack: errors and anomalies.\nTechniques include event correlation, statistical models and rules.",
+          "children": []
+        },
+        {
+          "id": "retention",
+          "title": "Retention",
+          "description": "The SIEM keeps log event data in long-term storage, for longitudinal analysis and tracking, and to meet contractual or regulatory log retention requirements.",
+          "children": []
+        },
+        {
+          "id": "disposal",
+          "title": "Disposal",
+          "description": "When event data no longer needs to be kept, destroy it securely and defensibly.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "continuous-monitoring",
+      "title": "Continuous Monitoring",
+      "description": "Also called Continuous Security Monitoring (CSM).\nThe organization identifies all its systems and the risks to each one, applies controls to mitigate those risks, then continuously monitors the controls to assess how effective they are against the ever-changing threat landscape.",
+      "children": []
+    }
+  ]
+}

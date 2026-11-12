@@ -1,0 +1,221 @@
+{
+  "id": "investigations",
+  "title": "Investigations",
+  "description": "How to apply forensic science to investigations: secure the scene, collect and control evidence, types and rules of evidence, analysis techniques, and investigation types.",
+  "domain": 7,
+  "order": 1,
+  "source": "https://destcert.com/resources/investigations-mindmap-cissp-domain-7/",
+  "nodes": [
+    {
+      "id": "secure-the-scene",
+      "title": "Secure the Scene",
+      "description": "An investigation can start when, for example, a breach is detected, a whistleblower reports something, or VISA calls to ask why your systems are leaking millions of customer credit card numbers.\nSecuring the scene is one of the most important first steps. Set up a perimeter so unauthorized people cannot enter the scene and lose or contaminate evidence.\nOnce evidence is contaminated, it cannot be decontaminated.\nA digital crime scene is especially hard to secure: you want to keep as much evidence as possible, but you also need to stop an ongoing breach.\nShould a system be unplugged from the network, or even shut down? Too quickly can compromise the investigation. Too slowly can let more data leak.",
+      "children": []
+    },
+    {
+      "id": "collect-and-control-evidence",
+      "title": "Collect & Control Evidence",
+      "description": "Once evidence collection begins, know these principles, techniques and sources.",
+      "children": [
+        {
+          "id": "locards-principle",
+          "title": "Locard’s Principle",
+          "description": "Often comes up on the exam.\nWhen a crime is committed, the perpetrator leaves something behind and takes something with them.\nIt helps investigators think through where they may find evidence.",
+          "children": []
+        },
+        {
+          "id": "mom",
+          "title": "MOM",
+          "description": "Motive, Opportunity and Means: an investigative technique to decide whether a suspect had:\n- Motive: for example, financial gain\n- Opportunity: were they at the crime scene?\n- Means: the tools and technical expertise needed",
+          "children": []
+        },
+        {
+          "id": "sources",
+          "title": "Sources",
+          "description": "Where an investigator can get evidence.",
+          "children": [
+            {
+              "id": "oral-written-statements",
+              "title": "Oral / Written statements",
+              "description": "Witnesses tell an investigator what they saw, or write it down.",
+              "children": []
+            },
+            {
+              "id": "documents",
+              "title": "Documents",
+              "description": "Any notes, files and similar items an investigator can find.",
+              "children": []
+            },
+            {
+              "id": "digital-forensics",
+              "title": "Digital Forensics",
+              "description": "The scientific examination and analysis of data from storage media, done in a way that lets the information be used as evidence in a court of law.",
+              "children": [
+                {
+                  "id": "live-evidence-volatile",
+                  "title": "Live Evidence (Volatile)",
+                  "description": "One of the most challenging and important types of digital evidence: any data in volatile memory, such as RAM and the CPU cache.\nRecovering it requires specialized tools.\nAll live evidence is lost when the system is powered down.",
+                  "children": []
+                },
+                {
+                  "id": "secondary-storage-hd",
+                  "title": "Secondary Storage (HD)",
+                  "description": "Where most digital evidence is found: mainly hard drives, but also USB drives, memory sticks, CDs and DVDs, tapes, zip disks and so on.\nNever investigate the original drive. Make two bit-for-bit copies, verify them with hashing, and investigate only one of the copies.\nThis helps make sure the evidence is admissible.",
+                  "children": []
+                },
+                {
+                  "id": "vm-instance-virtual-disk",
+                  "title": "VM Instance / Virtual Disk",
+                  "description": "Cloud-based systems make investigations both easier and harder.\nEasier: in IaaS (Infrastructure as a Service) you can make an exact copy of a VM instance, including the live evidence on it. This is often called snapshotting.\nHarder: physical hard drives. A public cloud provider is unlikely to hand over physical drives, because they also hold other clients' data. Investigators can request virtual disks or volumes instead.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "e-discovery",
+              "title": "E Discovery",
+              "description": "Electronic discovery: the process of identifying, collecting and producing electronically stored information for legal proceedings.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "chain-of-custody",
+          "title": "Chain of Custody",
+          "description": "Associate it with one word: control.\nThe process of documenting the complete journey of evidence during the life of the case.\nIt shows you had control of the evidence from the moment it was collected until it is presented in court, possibly years later, so the evidence has integrity.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "types-of-evidence",
+      "title": "Types of Evidence",
+      "description": "Ways to categorize the evidence an investigator collects.\nThe page's summary table also lists three types that are not on the map:\n- Circumstantial Evidence: suggests a fact by implication or inference. Can prove an intermediate fact.\n- Corroborative Evidence: supports facts or elements of the case. Not a fact on its own, but supports other facts. The video and table say \"Collaborative\"; the page corrects it to \"Corroborative\".\n- Hearsay Evidence: statements made by witnesses who were not present. No firsthand proof of accuracy or reliability.",
+      "children": [
+        {
+          "id": "real-evidence",
+          "title": "Real Evidence",
+          "description": "Tangible, physical objects, such as hard drives, SSDs and USB drives.\nData is NOT real evidence: it is not a tangible, physical object. You cannot see data on a hard drive, and even if you could see the bits, you cannot turn them into an image, video or audio in your head.",
+          "children": []
+        },
+        {
+          "id": "direct-evidence",
+          "title": "Direct Evidence",
+          "description": "Speaks for itself and requires no inference.\nExamples: eyewitness accounts, confessions, a smoking gun.",
+          "children": []
+        },
+        {
+          "id": "secondary-evidence",
+          "title": "Secondary Evidence",
+          "description": "A reproduction of, or substitute for, an original document or item of proof.\nData IS secondary evidence: you cannot see data directly, so it must be reproduced, for example by a JPEG algorithm that turns bits into a picture you can see.\nExample: a printout of log files.",
+          "children": []
+        },
+        {
+          "id": "best-evidence-rule",
+          "title": "Best Evidence Rule",
+          "description": "A legal principle that applies to all of these types of evidence.\nCourts view original, unaltered evidence as superior, the best evidence, rather than a copy or duplicate.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "rules-of-evidence",
+      "title": "Rules of Evidence",
+      "description": "Five rules that evidence must meet to be useful in an investigation.",
+      "children": [
+        {
+          "id": "authentic",
+          "title": "Authentic",
+          "description": "You can tie the evidence back to the scene, and prove it relates to the incident in a relevant way.",
+          "children": []
+        },
+        {
+          "id": "accurate",
+          "title": "Accurate",
+          "description": "Equates to integrity: you can prove the evidence has integrity.",
+          "children": []
+        },
+        {
+          "id": "complete",
+          "title": "Complete",
+          "description": "Collect all evidence, even exculpatory evidence that might help clear a suspect.",
+          "children": []
+        },
+        {
+          "id": "convincing-reliable",
+          "title": "Convincing / Reliable",
+          "description": "The evidence must be convincing, reliable and explainable to a jury.\nYour collection and analysis procedures must not cast doubt on the evidence's authenticity and veracity (its degree of truth).",
+          "children": []
+        },
+        {
+          "id": "admissible",
+          "title": "Admissible",
+          "description": "The transcript calls this rule Admissible / Believable.\nThe most basic rule: the evidence must be able to be used in a court of law or elsewhere.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "investigative-techniques",
+      "title": "Investigative Techniques",
+      "description": "Techniques to analyze the evidence that has been collected.",
+      "children": [
+        {
+          "id": "media-analysis",
+          "title": "Media Analysis",
+          "description": "Often called computer forensics. Examining physical media, such as hard drives, for evidence.\nIncludes trying to recover data from a drive that someone drilled a hole in, put in the microwave or hit with a hammer.",
+          "children": []
+        },
+        {
+          "id": "software-analysis",
+          "title": "Software Analysis",
+          "description": "Also called software forensics. Examining software, such as malware, to find out what it was designed to do. Examples: encrypt files for ransomware, or exfiltrate credit card numbers.\nAttribution is another important part: carefully analyzing the code to identify who wrote it.",
+          "children": []
+        },
+        {
+          "id": "network-analysis",
+          "title": "Network Analysis",
+          "description": "Examining network traffic and log files to find out how an attacker first got into the network, how they moved through it, what they gained access to, and what they compromised.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "types-of-investigations",
+      "title": "Types of Investigations",
+      "description": "The types of investigation you need to know.",
+      "children": [
+        {
+          "id": "criminal",
+          "title": "Criminal",
+          "description": "Deals with crimes and the legal punishment of criminal offenses.\nDriven mainly by law enforcement, with support from the organization.",
+          "children": []
+        },
+        {
+          "id": "civil",
+          "title": "Civil",
+          "description": "Deals with disputes between individuals, between organizations, or between an individual and an organization, where the victim is awarded compensation.\nCan be driven by law enforcement or by the organization.",
+          "children": []
+        },
+        {
+          "id": "regulatory",
+          "title": "Regulatory",
+          "description": "Deals with violations of regulated activities, such as breaches of Personally Identifiable Information (PII).\nDriven by the regulator.",
+          "children": []
+        },
+        {
+          "id": "administrative",
+          "title": "Administrative",
+          "description": "An organization investigates its own internal incident.\nBased on the findings, it may become a criminal, civil or regulatory investigation.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "document-and-report",
+      "title": "Document & Report",
+      "description": "The final part of any investigation: extremely thorough documentation of the evidence collected, and preparation to present it to the relevant stakeholders.\nStakeholders include a judge and jury, the opposition, regulators and investors.",
+      "children": []
+    }
+  ]
+}

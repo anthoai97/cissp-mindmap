@@ -1,0 +1,216 @@
+{
+  "id": "privacy-and-intellectual-property",
+  "title": "Privacy & Intellectual Property",
+  "description": "What privacy means, how personal data is protected through its lifecycle, the main privacy frameworks and laws, and the four types of intellectual property.",
+  "domain": 1,
+  "order": 2,
+  "source": "https://destcert.com/resources/privacy-and-intellectual-property-mindmap/",
+  "layout": "stacked",
+  "nodes": [
+    {
+      "id": "privacy",
+      "title": "Privacy",
+      "description": "\"State or condition of being free from being observed or disturbed by other people.\" Memorize this definition for the exam.\nIn practice, privacy means a person can keep parts of their personal information from wider society and control what others know about them.\nMisuse of personal information can harm a person, for example by limiting their job options, where they can travel, or whether they can get health insurance.",
+      "children": [
+        {
+          "id": "privacy-policy",
+          "title": "Privacy policy",
+          "description": "Strong privacy controls start with a good privacy policy.\nThe most important part of the policy is well-defined roles, with clear accountability and responsibilities.\nMany regulations require a Data Controller: the owner of the privacy program, who is accountable for its controls.\nThe policy should state what types of personal data are collected, how the data is used and stored, how people can opt out, and which security policies protect the data.",
+          "children": [
+            {
+              "id": "standards-procedures-baselines-guidelines",
+              "title": "Standards / Procedures / Baselines / Guidelines",
+              "description": "Standards, procedures, baselines and guidelines should be well defined and based on the privacy policy.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "personal-data",
+          "title": "Personal Data",
+          "description": "The main thing privacy protects.\nInformation that can identify a person, either on its own or combined with other information.",
+          "children": [
+            {
+              "id": "pii-spi-phi-pi",
+              "title": "PII / SPI / PHI / PI",
+              "description": "Different laws use different names for personal data:\n- PII: Personally Identifiable Information\n- SPI: Sensitive Personal Information\n- PHI: Personal Health Information\n- PI: Personal Information",
+              "children": []
+            },
+            {
+              "id": "direct-identifiers",
+              "title": "Direct Identifiers",
+              "description": "Identify a person on their own.\nExamples: government ID numbers (social insurance, social security, driver's license, passport), bank account numbers, certificate numbers, names and biometric data.",
+              "children": []
+            },
+            {
+              "id": "indirect-identifiers",
+              "title": "Indirect Identifiers",
+              "description": "Do not identify a person on their own, but enough of them together can identify someone uniquely.\nExamples: age, gender, ethnicity, city, state, and zip or postal code.",
+              "children": []
+            },
+            {
+              "id": "online-identifiers",
+              "title": "Online Identifiers",
+              "description": "Identifiers used online.\nExamples: email address, IP address and cookies.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "data-lifecycle",
+          "title": "Data Lifecycle",
+          "description": "Every stage data passes through, from creation to destruction. Security professionals use it to choose the controls that protect data at each stage.\nClassification is the most important step, done at the very start. The classification shows how valuable the data is, and sets the controls for every stage:\n- where it can be stored, and with what encryption and access controls\n- who can use it, and for what purposes\n- who it can be shared with, and under what controls\n- how long it must be kept\n- how securely it must be destroyed",
+          "children": [
+            {
+              "id": "creation-update",
+              "title": "Creation / Update",
+              "description": "New data is created, or existing data is changed.",
+              "children": []
+            },
+            {
+              "id": "store",
+              "title": "Store",
+              "description": "Data is saved to a storage location, such as memory or a hard drive, as soon as it is created or updated.",
+              "children": []
+            },
+            {
+              "id": "use",
+              "title": "Use",
+              "description": "People or processes view or process the data without changing it. Changing data belongs to Creation / Update.",
+              "children": []
+            },
+            {
+              "id": "share",
+              "title": "Share",
+              "description": "Data is made available to others: other parts of the organization, customers, business partners, regulators and so on.\nDecide who it can be shared with, under what circumstances, and with what controls.",
+              "children": []
+            },
+            {
+              "id": "archive",
+              "title": "Archive",
+              "description": "Data that is no longer used actively is moved to long-term storage, to free space and reduce cost.\nKeep it for as long as the data retention policy requires.",
+              "children": []
+            },
+            {
+              "id": "destroy",
+              "title": "Destroy",
+              "description": "Data that is no longer needed is permanently destroyed, by physical or logical means.\nSome data must be defensibly destroyed, depending on the requirements.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "oecd-guidelines",
+          "title": "OECD Guidelines",
+          "description": "Privacy guidelines from the OECD (Organisation for Economic Co-operation and Development).\nThey are guidelines, not mandatory rules: best practice.\nThe most internationally recognized privacy framework, and the basis for leading privacy programs. They help an organization decide what its privacy program should cover.\nThey define eight principles.",
+          "children": [
+            {
+              "id": "collection-limitation",
+              "title": "Collection Limitation",
+              "description": "Limit the collection of PII. Collect it lawfully and, where appropriate, with the knowledge or consent of the data subject (the person the data is about).",
+              "children": []
+            },
+            {
+              "id": "data-quality",
+              "title": "Data Quality",
+              "description": "PII should be relevant, accurate, complete and up to date.\nThe organization that collects PII is accountable for its integrity and accuracy.",
+              "children": []
+            },
+            {
+              "id": "purpose-specification",
+              "title": "Purpose Specification",
+              "description": "State why PII is being collected at the time it is collected, and be clear about how it will be used.",
+              "children": []
+            },
+            {
+              "id": "use-limitation",
+              "title": "Use Limitation",
+              "description": "Use or disclose PII only for the purposes it was collected for, unless the data subject consents or the law allows it.",
+              "children": []
+            },
+            {
+              "id": "security-safeguards",
+              "title": "Security Safeguards",
+              "description": "Protect PII with reasonable security controls against loss, unauthorized access, destruction, use, modification and similar risks.",
+              "children": []
+            },
+            {
+              "id": "openness",
+              "title": "Openness",
+              "description": "About the organization's culture: be open about developments, practices and policies on PII.\nDo not hide or be vague about what PII is collected and how it is used.",
+              "children": []
+            },
+            {
+              "id": "individual-participation",
+              "title": "Individual Participation",
+              "description": "A data subject should be able to get their data from the controller and have it removed.\nGDPR often calls this the right to be forgotten.",
+              "children": []
+            },
+            {
+              "id": "accountability",
+              "title": "Accountability",
+              "description": "The data controller is accountable for complying with the other principles.\nThere must be a named owner with clear accountability for protecting PII.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "gdpr",
+          "title": "GDPR",
+          "description": "The General Data Protection Regulation: the core of EU digital privacy law, and one of the strictest privacy laws in the world.\nMany countries model their privacy laws on it.\nYou do not need to be an expert on every privacy law for the exam.",
+          "children": [
+            {
+              "id": "supervisory-authority",
+              "title": "Supervisory Authority (SA)",
+              "description": "GDPR requires an independent public authority in each EU member state.\nIt monitors and enforces compliance, helps organizations become compliant, and runs investigations.\nData subjects can file complaints with it.",
+              "children": []
+            },
+            {
+              "id": "breaches-72-hours",
+              "title": "Breaches reported within 72 hours",
+              "description": "Privacy breaches must be reported within 72 hours.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "privacy-requires-security",
+          "title": "Cannot Achieve Privacy without Security",
+          "description": "Privacy depends on security controls that protect the confidentiality, integrity and availability of personal data.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "intellectual-property",
+      "title": "Intellectual Property",
+      "description": "Legal rights given to the creators and owners of intangible assets, such as inventions, works of art, symbols and designs.\nThe rights give owners exclusive control over how their creations are used, distributed and sold, and let them stop others from using them without permission.\nKnow, at a high level, what each of the four types protects.",
+      "children": [
+        {
+          "id": "trade-secret",
+          "title": "Trade Secret",
+          "description": "Confidential information that gives a business a competitive advantage.\nExample: the Coca-Cola formula.\nA company can take legal action against anyone who steals or discloses its trade secrets without permission.",
+          "children": []
+        },
+        {
+          "id": "patent",
+          "title": "Patent",
+          "description": "Gives an inventor exclusive ownership of an invention for a set period, so the inventor can profit from it. This encourages innovation.\nHow long a patent lasts varies widely by country. You do not need to memorize it.",
+          "children": []
+        },
+        {
+          "id": "copyright",
+          "title": "Copyright",
+          "description": "Protects the expression of an idea, not the idea itself, once it is fixed in a medium such as a book, movie or song, for a set period.\nIt stops others from making and selling exact copies.\nRemember: copyright protects expression.",
+          "children": []
+        },
+        {
+          "id": "trademark",
+          "title": "Trademark",
+          "description": "Symbols, words, phrases or designs that identify a brand or product and set it apart from others.\nExamples: the Nike swoosh and the McDonald's arches.\nIt stops others from using the same logo and confusing customers.",
+          "children": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,223 @@
+{
+  "id": "network-defense",
+  "title": "Network Defense",
+  "description": "Tools and techniques to protect networks: defense in depth, segmentation, firewalls, IDS/IPS inspection and detection methods, and endpoint security.",
+  "domain": 4,
+  "order": 3,
+  "source": "https://destcert.com/resources/network-defense-mindmap-cissp-domain-4/",
+  "nodes": [
+    {
+      "id": "defense-in-depth",
+      "title": "Defense in Depth",
+      "description": "Multiple layers of controls, so that if one control fails, the crown jewels (the valuable assets) are not exposed.\nAt each layer of defense, use at least a combination of preventive, detective and corrective controls.\nExample of adding layers:\n- Instead of a single firewall between the internet and all systems, including internet-facing web, mail and FTP servers, segment the network and move those servers into a DMZ.\n- Add a second firewall to create a screened subnet architecture, perhaps from a different firewall vendor.\n- Beyond preventive controls, add an IDS for detection, or an IPS for detection and correction.\nAll this technology must be balanced against the value of the assets being protected. Controls must be cost effective.",
+      "children": []
+    },
+    {
+      "id": "network-segmentation-partitioning",
+      "title": "Network Segmentation / Partitioning",
+      "description": "Break a network into pieces (segments or partitions), then control the flow of traffic between them and apply different levels of control to each segment.\nExample: a guest network that is only allowed out to the internet, with very limited controls, and a segment holding back-end, high-value databases, with extensive controls to prevent and detect unauthorized access.",
+      "children": [
+        {
+          "id": "network-perimeter",
+          "title": "Network Perimeter",
+          "description": "The largest segmentation: between the organization's internal network and the internet.\nIdeally, there is a clearly defined boundary between the internal network and the public-facing side, and the flow of traffic between them is controlled, typically with a firewall.\nNever use the idea of an internal trusted network. Always assume attackers are inside your network. There is no trusted network: Zero Trust.",
+          "children": []
+        },
+        {
+          "id": "dmz",
+          "title": "DMZ",
+          "description": "Demilitarized Zone: a network segment for bastion hosts, the systems that are intentionally reachable by the public over the internet, such as web, mail and FTP servers.\nThese systems are expected to be attacked. If one is compromised inside a DMZ, the attacker does not have a foothold in the internal network.\nTraffic from the DMZ into the internal network is severely restricted. The DMZ is essentially connected only out to the internet.",
+          "children": []
+        },
+        {
+          "id": "bastion-host",
+          "title": "Bastion Host",
+          "description": "Computers or servers specifically configured to withstand attacks.\nTypically a public-facing server, such as a web server, placed in a DMZ.",
+          "children": []
+        },
+        {
+          "id": "proxy",
+          "title": "Proxy",
+          "description": "A server located between two devices. It acts as an intermediary: all traffic between the devices must pass through it.\nThis lets the proxy read, filter and control the communications, and even hide the devices behind it.",
+          "children": []
+        },
+        {
+          "id": "nat-pat",
+          "title": "NAT / PAT",
+          "description": "Examples of proxies.\n- NAT (Network Address Translation): remaps (swaps) one IP address for another by modifying the IP header of packets as they pass through the proxy. Typically an internal, unroutable IP address is remapped to a publicly routable address as a packet goes out to the internet. For returning responses, the proxy changes the destination address from its own IP address back to the internal system's IP address.\n- PAT (Port Address Translation): exactly the same idea, but the port number is remapped instead of the IP address.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "firewalls",
+      "title": "Firewalls",
+      "description": "One of the most fundamental tools in network security.\nAt the most basic level, a firewall controls the flow of traffic between network segments. Example: what traffic from the internet is allowed through to the internal network.",
+      "children": [
+        {
+          "id": "firewall-types",
+          "title": "Types",
+          "description": "Firewalls have evolved a lot over the years and become much smarter about how they inspect traffic and decide what to allow through.\nBe able to compare the core types, so you can choose the right one for a network segment or security requirement.\nMost modern firewalls offer the capabilities of all these types: quick, simple decisions from the packet header, and much deeper analysis of packet contents when needed. You get speed and intelligence where you want them.",
+          "children": [
+            {
+              "id": "packet-filtering",
+              "title": "Packet Filtering",
+              "description": "The oldest and simplest type. Inspects only packet headers: source and destination IP addresses and ports, checked against a set of rules, typically an Access Control List (ACL).\nNot very smart, but extremely efficient: very fast decisions and very low latency, so traffic is barely slowed down.\nOperates at layer 3, the network layer.",
+              "children": []
+            },
+            {
+              "id": "stateful-packet-filtering",
+              "title": "Stateful Packet Filtering",
+              "description": "Still looks only at packet headers, but keeps a state table: a little memory with a history of recent traffic through the firewall.\nExample: two systems complete the TCP three-way handshake (SYN, SYN/ACK, ACK). The firewall records that they have an established connection and will likely allow their packets. A TCP packet from another system out of the blue is likely blocked, because there is no record of it setting up a connection.\nIn short: if it sees a packet go out, it allows the reply back in, because it remembers the outgoing packet.\nOperates at layer 3, the network layer.",
+              "children": []
+            },
+            {
+              "id": "circuit-proxy",
+              "title": "Circuit Proxy",
+              "description": "Operates at layer 5, the session layer.\nUnderstands what is happening at the session layer, and allows a circuit (a session) to be set up if it complies with predefined rules.",
+              "children": []
+            },
+            {
+              "id": "application-firewall",
+              "title": "Application",
+              "description": "Application firewalls operate at layer 7, the application layer.\nThey do deep packet inspection: they can inspect anything in the packet header, and reassemble a series of packets to inspect the data being sent. Example: scan a file being sent for viruses.\nVery intelligent, able to make very sophisticated decisions. But this costs speed: they are the slowest type of firewall, with the highest latency.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "inspection",
+      "title": "Inspection",
+      "description": "The major network monitoring tools, IDS and IPS systems, and other ways to detect suspicious activity on a network.",
+      "children": [
+        {
+          "id": "ids",
+          "title": "IDS",
+          "description": "Intrusion Detection System: inspects network traffic (packets) to detect potentially suspicious activity. If it detects something suspicious, it raises an alarm.\nAn IDS can work with, for example, a firewall to block traffic.",
+          "children": []
+        },
+        {
+          "id": "ips",
+          "title": "IPS",
+          "description": "Intrusion Prevention System: does exactly what an IDS does, then goes a step further. If it detects something suspicious, it can block the traffic, preventing an attack.\nAn IPS can detect and block traffic on its own.",
+          "children": []
+        },
+        {
+          "id": "ids-ips-location",
+          "title": "IDS/IPS Location",
+          "description": "The two major places to put an IDS or IPS.",
+          "children": [
+            {
+              "id": "host-based",
+              "title": "Host Based",
+              "description": "Installed on a specific host, typically a high-value server, and monitors only that host.\nTo monitor several hosts, each one needs its own host-based IDS or IPS.",
+              "children": []
+            },
+            {
+              "id": "network-based",
+              "title": "Network Based",
+              "description": "Connected to a network segment, and monitors all the traffic in that segment.\nThere are two ways to connect it to the segment.",
+              "children": [
+                {
+                  "id": "in-line",
+                  "title": "In-line",
+                  "description": "All traffic coming in and out of the network segment must pass through the IDS or IPS.\nIPSs are often installed in-line. The advantage: all traffic passes through the IPS, so it can easily block traffic it does not like.\nThe major downside: it is another point of failure. If the device goes down or fails secure, all traffic is blocked, causing a denial of service.",
+                  "children": []
+                },
+                {
+                  "id": "mirror-span-promiscuous",
+                  "title": "Mirror, Span, Promiscuous",
+                  "description": "The IDS or IPS is connected to a switch port that is configured as a mirror, span or promiscuous port.\nBy default, a switch forwards packets only to the intended system, so the IDS or IPS would not see most of the traffic. With a mirror port, all packets going through the switch are copied to the IDS or IPS, so it can monitor everything.\nIDSs are more commonly installed this way.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ids-ips-detection-methods",
+          "title": "IDS / IPS Detection Methods",
+          "description": "The two major methods an IDS or IPS uses to look for suspicious activity are pattern matching and anomaly detection. It can also use allow and deny lists, and sandboxes.",
+          "children": [
+            {
+              "id": "pattern",
+              "title": "Pattern",
+              "description": "Pattern matching: the IDS or IPS is programmed to look for a specific pattern, such as a specific type of network attack, and alerts or blocks when it detects it.\nFast and efficient, but it can only detect what it has been programmed to detect.",
+              "children": [
+                {
+                  "id": "signature-analysis",
+                  "title": "Signature analysis",
+                  "description": "How a pattern-matching IDS or IPS is told which patterns to look for.\nA signature is like a unique fingerprint for a specific type of network attack, such as byte sequences in network traffic or known malicious instruction sequences.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "anomaly",
+              "title": "Anomaly",
+              "description": "Does not rely on signatures. It addresses the weakness of pattern matching, which can only detect what it has been programmed to detect.\nThe IDS or IPS learns what normal looks like (it establishes a baseline), then looks for behavior that falls outside the accepted model: anomalous behavior.\nThere are four major ways to detect anomalies.",
+              "children": [
+                {
+                  "id": "stateful-matching",
+                  "title": "Stateful matching",
+                  "description": "Looks for anomalies in the context of a stream of traffic.\nThe IDS or IPS keeps a state table, so it can detect, for example, a system sending TCP packets to another system it has not set up a session with.",
+                  "children": []
+                },
+                {
+                  "id": "statistical",
+                  "title": "Statistical",
+                  "description": "Compares traffic to typical, known or predicted traffic profiles, looking for statistically significant deviations from the norm.",
+                  "children": []
+                },
+                {
+                  "id": "protocol",
+                  "title": "Protocol",
+                  "description": "Detects anomalies based on the network protocols in use. Certain protocols are defined as allowed, and any other protocol is an anomaly.\nExample: an organization allows only SFTP. FTP traffic, or especially TFTP traffic, is an anomaly.",
+                  "children": []
+                },
+                {
+                  "id": "traffic",
+                  "title": "Traffic",
+                  "description": "Identifies anomalies in the expected pattern and behavior of network traffic sent within a session.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "white-black-lists",
+              "title": "White & Black Lists",
+              "description": "An IDS or IPS can inspect traffic against these lists.\n- White list, better called an allow list: the IPs a system is allowed to connect to. All other IPs are blocked.\n- Black list, better called a deny list: the IPs a system is not allowed to connect to. All other IPs are allowed.",
+              "children": []
+            },
+            {
+              "id": "sandbox",
+              "title": "Sandbox",
+              "description": "A safe area to run untrusted code and watch what it does, for example trying to install ransomware.\nAn IDS or IPS can detect that an executable is being transmitted, run a copy of it in a sandbox, and, if it does something nefarious, alert and possibly block the file from reaching the intended victim.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "honeypots-honeynets",
+          "title": "Honeypots & honeynets",
+          "description": "A honeypot is a system that looks as close as possible to a real system, such as a file server, print server, database or industrial control system. But it is not a real system used by employees or clients.\nIt is carefully monitored. Anyone trying to connect to and use it is a very good sign that a threat actor is in the network, exploring for systems to compromise.\nA honeypot is a single system. A honeynet is a whole network of honeypots.\nA good way to detect Advanced Persistent Threats.",
+          "children": []
+        },
+        {
+          "id": "ingress-vs-egress",
+          "title": "Ingress vs. Egress",
+          "description": "Monitoring the traffic coming into a network, for example from the internet (ingress), or the traffic leaving it (egress).\nOrganizations often detect a breach by watching egress traffic. Traffic going out to a known bad IP address is a good sign that malware has infected a company system and is calling home.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "endpoint-security",
+      "title": "Endpoint Security",
+      "description": "A network can never be secure if its endpoints are not secure: laptops, mobile phones, iPads, Alexa devices, IP security cameras and so on.\nHarden endpoint devices: make sure they are correctly configured, patched, use strong authentication and so forth.\nDiscussed in the fourth Domain 3 mind map video.",
+      "children": []
+    }
+  ]
+}

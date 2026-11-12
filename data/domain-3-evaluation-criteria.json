@@ -1,0 +1,251 @@
+{
+  "id": "evaluation-criteria",
+  "title": "Evaluation Criteria",
+  "description": "How independent labs evaluate and rate vendor products: certification under TCSEC, ITSEC and Common Criteria, followed by management accreditation.",
+  "domain": 3,
+  "order": 2,
+  "source": "https://destcert.com/resources/evaluation-criteria-mindmap-domain-3/",
+  "nodes": [
+    {
+      "id": "certification",
+      "title": "Certification",
+      "description": "Evaluation criteria are independent, objective systems for evaluating products, so you do not have to trust a vendor's own marketing claims.\nCertification is the first of the two major steps: a comprehensive technical analysis of a product to make sure it meets your needs. This is where an independent testing lab evaluates the product and gives it a rating.\nHow it works: the vendor pays an independent lab to evaluate its product against one of the evaluation criteria. The lab tests the product, rates it and writes a report that the vendor hands out to customers. Customers trust the rating because it comes from an independent lab, not the vendor.",
+      "children": [
+        {
+          "id": "tcsec",
+          "title": "TCSEC (Orange Book)",
+          "description": "Trusted Computer System Evaluation Criteria: one of the oldest evaluation criteria. Known as the Orange Book because of its orange cover.\nIt evaluates confidentiality only, for stand-alone systems only, and rates products on seven functional levels.",
+          "children": [
+            {
+              "id": "confidentiality-only",
+              "title": "Confidentiality only",
+              "description": "TCSEC was designed to evaluate only the confidentiality that a system provides.",
+              "children": []
+            },
+            {
+              "id": "single-box-only",
+              "title": "Single Box only",
+              "description": "TCSEC was designed to evaluate only products that are not connected to a network: single, stand-alone boxes.",
+              "children": []
+            },
+            {
+              "id": "functional-levels",
+              "title": "Functional Levels",
+              "description": "TCSEC defines seven functional levels that a product can be rated at. Each level builds on the previous one.\nFrom lowest to highest: D1, C1, C2, B1, B2, B3, A1.",
+              "children": [
+                {
+                  "id": "d1",
+                  "title": "D1 – failed or not tested",
+                  "description": "The lowest possible rating: the product failed the evaluation or was not tested.",
+                  "children": []
+                },
+                {
+                  "id": "c1",
+                  "title": "C1 – Weak protection mechanisms",
+                  "description": "The product provides weak protection mechanisms.",
+                  "children": []
+                },
+                {
+                  "id": "c2",
+                  "title": "C2 – Strict login procedures",
+                  "description": "Adds strict login procedures.\nC2 is the most common rating for products.",
+                  "children": []
+                },
+                {
+                  "id": "b1",
+                  "title": "B1 - Security labels",
+                  "description": "Labeling becomes a requirement at B1. Remember: B1 means labels.",
+                  "children": []
+                },
+                {
+                  "id": "b2",
+                  "title": "B2 - Security labels and verification of no covert channels",
+                  "description": "Security labels, plus verification that there are no covert channels.",
+                  "children": []
+                },
+                {
+                  "id": "b3",
+                  "title": "B3 - Security labels, verification of no covert channels, and must stay secure during start-up",
+                  "description": "Security labels and verification of no covert channels, and the product must stay secure during start-up.",
+                  "children": []
+                },
+                {
+                  "id": "a1",
+                  "title": "A1 – Verified design",
+                  "description": "The highest possible functional rating: a verified design.\nSo secure that it is virtually unusable.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "itsec",
+          "title": "ITSEC",
+          "description": "Information Technology Security Evaluation Criteria: a big improvement on the older TCSEC.\nIt evaluates confidentiality and integrity, works for networked devices, uses the same functional levels as TCSEC, and adds assurance levels.",
+          "children": [
+            {
+              "id": "confidentiality-integrity",
+              "title": "Confidentiality + Integrity",
+              "description": "ITSEC evaluates not just the confidentiality a product provides, but also its integrity.",
+              "children": []
+            },
+            {
+              "id": "networked-devices",
+              "title": "Networked devices",
+              "description": "ITSEC can evaluate devices that are connected to a network.",
+              "children": []
+            },
+            {
+              "id": "same-functional-levels-as-tcsec",
+              "title": "Same Functional levels as TCSEC",
+              "description": "ITSEC uses exactly the same functional levels as TCSEC: D1, C1, C2, B1 and so on.",
+              "children": []
+            },
+            {
+              "id": "assurance-levels",
+              "title": "Assurance Levels",
+              "description": "The last major improvement: ITSEC evaluates assurance as well as functionality.\n- Functionality: what a system should do.\n- Assurance: how you verify and test that it is working correctly.\nThe assurance levels are called evaluation levels, or E levels. There are seven of them, E0 to E6.\nYou do not need to memorize the specifics of each E level.",
+              "children": [
+                {
+                  "id": "e0",
+                  "title": "E0",
+                  "description": "The lowest of the seven ITSEC assurance levels (E0 to E6).\nYou do not need to memorize the specifics of each E level.",
+                  "children": []
+                },
+                {
+                  "id": "e1",
+                  "title": "E1",
+                  "description": "One of the seven ITSEC assurance levels, between E0 (lowest) and E6 (highest).\nYou do not need to memorize the specifics of each E level.",
+                  "children": []
+                },
+                {
+                  "id": "e2",
+                  "title": "E2",
+                  "description": "One of the seven ITSEC assurance levels, between E0 (lowest) and E6 (highest).\nYou do not need to memorize the specifics of each E level.",
+                  "children": []
+                },
+                {
+                  "id": "e3",
+                  "title": "E3",
+                  "description": "One of the seven ITSEC assurance levels, between E0 (lowest) and E6 (highest).\nYou do not need to memorize the specifics of each E level.",
+                  "children": []
+                },
+                {
+                  "id": "e4",
+                  "title": "E4",
+                  "description": "One of the seven ITSEC assurance levels, between E0 (lowest) and E6 (highest).\nYou do not need to memorize the specifics of each E level.",
+                  "children": []
+                },
+                {
+                  "id": "e5",
+                  "title": "E5",
+                  "description": "One of the seven ITSEC assurance levels, between E0 (lowest) and E6 (highest).\nYou do not need to memorize the specifics of each E level.",
+                  "children": []
+                },
+                {
+                  "id": "e6",
+                  "title": "E6",
+                  "description": "The highest of the seven ITSEC assurance levels (E0 to E6).\nYou do not need to memorize the specifics of each E level.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "common-criteria",
+          "title": "Common Criteria",
+          "description": "The Common Criteria for Information Technology Security Evaluation: the latest and greatest evaluation criteria. Everyone just calls it Common Criteria.\nThe process: define a Protection Profile, identify the Target of Evaluation, the vendor writes a Security Target, the lab tests the functional and assurance requirements, and an EAL is assigned.",
+          "children": [
+            {
+              "id": "iso-15408",
+              "title": "ISO 15408",
+              "description": "Common Criteria has been adopted as an international standard: ISO 15408.",
+              "children": []
+            },
+            {
+              "id": "protection-profile",
+              "title": "Protection Profile",
+              "description": "The evaluation process starts with a Protection Profile (PP): the security requirements for a class of security devices, such as firewalls or smart cards.",
+              "children": []
+            },
+            {
+              "id": "target-of-evaluation",
+              "title": "Target of Evaluation",
+              "description": "The Target of Evaluation (TOE): the specific product or system, provided by the vendor, that will be evaluated.\nExample: a Cisco ASA 5515-X firewall.",
+              "children": []
+            },
+            {
+              "id": "security-targets",
+              "title": "Security Targets",
+              "description": "The Security Target (ST): a document the vendor prepares that defines the functional and assurance security properties and capabilities the vendor claims are built into the TOE.",
+              "children": []
+            },
+            {
+              "id": "functional-assurance-requirements",
+              "title": "Functional & Assurance Requirements",
+              "description": "The independent testing lab tests the functional and assurance aspects of the TOE.",
+              "children": []
+            },
+            {
+              "id": "assign-eal",
+              "title": "Assign EAL",
+              "description": "The end result of the evaluation is an Evaluation Assurance Level (EAL) rating.\nThere are seven levels, and they build on each other. Memorize the levels and their order.",
+              "children": [
+                {
+                  "id": "eal1",
+                  "title": "EAL1 – Functionally tested",
+                  "description": "The lowest rating: only the functionality of the product was tested.",
+                  "children": []
+                },
+                {
+                  "id": "eal2",
+                  "title": "EAL2 – Structurally tested",
+                  "description": "Only the structure of the product was tested.",
+                  "children": []
+                },
+                {
+                  "id": "eal3",
+                  "title": "EAL3 – Methodically tested & checked",
+                  "description": "The product was methodically tested and checked.",
+                  "children": []
+                },
+                {
+                  "id": "eal4",
+                  "title": "EAL4 – Methodically designed, tested & reviewed",
+                  "description": "The product was methodically designed, tested and reviewed.",
+                  "children": []
+                },
+                {
+                  "id": "eal5",
+                  "title": "EAL5 – Semi formally designed & tested",
+                  "description": "The product was semi-formally designed and tested.",
+                  "children": []
+                },
+                {
+                  "id": "eal6",
+                  "title": "EAL6 – Semi formally verified designed & tested",
+                  "description": "The product's design was semi-formally verified, and the product was tested.",
+                  "children": []
+                },
+                {
+                  "id": "eal7",
+                  "title": "EAL7 – Formally verified designed and tested",
+                  "description": "The best possible rating: the product's design was formally verified, and the product was tested.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "accreditation",
+      "title": "Accreditation",
+      "description": "The second major step, and the final step in choosing a product: management's approval and sign-off.\nOfficial management sign-off to buy and deploy a product in the organization, for a set period of time.\nThe point of evaluation criteria is to help the organization compare products and choose the best solution.",
+      "children": []
+    }
+  ]
+}

@@ -1,0 +1,263 @@
+{
+  "id": "risk-management",
+  "title": "Risk Management",
+  "description": "How to protect an organization's assets with limited time and budget: value the assets, analyze the risks, treat them, and use a framework to manage the process.",
+  "domain": 1,
+  "order": 3,
+  "source": "https://destcert.com/resources/risk-management-mindmap/",
+  "nodes": [
+    {
+      "id": "asset-valuation",
+      "title": "1. Asset Valuation",
+      "description": "Step 1: give each asset a value, so assets can be ranked from most to least valuable.\nSimple in concept, hard in practice.",
+      "children": [
+        {
+          "id": "asset-valuation-quantitative",
+          "title": "Quantitative",
+          "description": "Give each asset a monetary value.\nThe preferred method in principle, but usually not possible with reasonable accuracy. For most assets, such as reputation or a data set, you cannot assign an exact monetary value.",
+          "children": []
+        },
+        {
+          "id": "asset-valuation-qualitative",
+          "title": "Qualitative",
+          "description": "Rank assets relative to each other, often with categories such as high, medium and low value.\nUsed most of the time, because monetary values are usually impossible to determine.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "risk-analysis",
+      "title": "2. Risk Analysis",
+      "description": "Step 2: identify the risks to each asset by looking at threats, vulnerabilities, likelihood and impact, then rank the risks.",
+      "children": [
+        {
+          "id": "threats",
+          "title": "Threats",
+          "description": "Any potential danger: events, situations or actions that can harm assets, operations or reputation.\nSources include natural disasters, cyber attacks, fraud, theft and human error.",
+          "children": [
+            {
+              "id": "threat-modeling",
+              "title": "Threat Modeling",
+              "description": "Methods to identify threats systematically. Know these three.",
+              "children": [
+                {
+                  "id": "stride",
+                  "title": "STRIDE",
+                  "description": "Identifies threats. Quick and easy, but not very thorough.\nSpoofing, Tampering, Repudiation, Information disclosure, Denial of service, Elevation of privilege.",
+                  "children": []
+                },
+                {
+                  "id": "pasta",
+                  "title": "PASTA",
+                  "description": "Process for Attack Simulation and Threat Analysis.\nA seven-step, risk-centric method. Time-consuming and in-depth.\nConsiders the business value of assets and compliance, and gives a strategic threat analysis with more useful results than STRIDE.",
+                  "children": []
+                },
+                {
+                  "id": "dread",
+                  "title": "DREAD",
+                  "description": "Does not identify threats: it prioritizes threats that are already identified.\nOften used with STRIDE: STRIDE finds the threats, DREAD ranks them.\nDamage, Reproducibility, Exploitability, Affected users, Discoverability.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "vulnerabilities",
+          "title": "Vulnerabilities",
+          "description": "A weakness or gap in security or controls that a threat can exploit to harm assets, operations or reputation.",
+          "children": [
+            {
+              "id": "vuln-assessment-pen-testing",
+              "title": "Vuln. Assessment & Pen. Testing",
+              "description": "Two techniques to identify vulnerabilities systematically.\nCovered in detail in its own mind map in Domain 6 (Identifying Vulnerabilities).",
+              "highlight": "own-mindmap",
+              "mindmap": "vulnerability-assessment-and-penetration-testing",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "likelihood",
+          "title": "Likelihood",
+          "description": "The probability that a risk event will happen.",
+          "children": []
+        },
+        {
+          "id": "impact",
+          "title": "Impact",
+          "description": "The harm or damage to the organization if the risk happens.\nExamples: downtime, damage to reputation, data integrity problems, a breach, ransomware.",
+          "children": []
+        },
+        {
+          "id": "risk-analysis-quantitative",
+          "title": "Quantitative",
+          "description": "Calculate how much a risk will cost the organization per year.\nUseful to decide which controls are worth their cost.\nThe inputs are usually impossible to determine accurately, so qualitative analysis is used most of the time.",
+          "children": [
+            {
+              "id": "ale-formula",
+              "title": "ALE = SLE(Value x Exposure) x ARO",
+              "description": "Know this formula for the exam.\n- ALE (Annualized Loss Expectancy) = SLE x ARO: the expected loss per year.\n- SLE (Single Loss Expectancy) = Asset Value x Exposure Factor: the loss if the risk happens once.\n- Exposure Factor: the percentage of the asset expected to be lost. 10% means a tenth of the asset is lost; 100% means all of it.\n- ARO (Annualized Rate of Occurrence): how many times per year the risk is expected to happen. Once a year is 1; five times a year is 5.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "risk-analysis-qualitative",
+          "title": "Qualitative",
+          "description": "Rank risks relative to each other.\nNot great, but much better than nothing.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "treatment",
+      "title": "3. Treatment",
+      "description": "Step 3: decide how to treat each risk. There are four ways: avoid, transfer, mitigate or accept.",
+      "children": [
+        {
+          "id": "avoid",
+          "title": "Avoid",
+          "description": "Stop the risk from happening, or do not do the activity that causes it.\nExample: do not jump out of an airplane without a parachute.",
+          "children": []
+        },
+        {
+          "id": "transfer",
+          "title": "Transfer",
+          "description": "Move the financial burden to someone else, for example by buying insurance.\nYou can never transfer accountability. The insurer does not become accountable for the risk.",
+          "children": []
+        },
+        {
+          "id": "mitigate",
+          "title": "Mitigate",
+          "description": "Reduce the risk with controls. Security professionals spend most of their time here.\nNo set of controls removes a risk completely. The risk left after the controls are in place is the residual risk.",
+          "children": [
+            {
+              "id": "administrative",
+              "title": "Administrative",
+              "description": "Controls made of policies, procedures and other organizational practices.\nExamples: security policies, employee training and awareness.",
+              "children": []
+            },
+            {
+              "id": "technical-logical",
+              "title": "Technical / Logical",
+              "description": "Controls made of technology.\nExamples: firewalls, intrusion detection systems, encryption, automated backups.",
+              "children": []
+            },
+            {
+              "id": "physical",
+              "title": "Physical",
+              "description": "Controls in the physical world.\nExamples: fences, cameras, locks, fire suppression systems.",
+              "children": []
+            },
+            {
+              "id": "safeguards",
+              "title": "Safeguards",
+              "description": "Controls that try to stop a risk from happening.",
+              "children": [
+                {
+                  "id": "directive",
+                  "title": "Directive",
+                  "description": "Tell people how to behave and how to handle risks.\nExample: policies.",
+                  "children": []
+                },
+                {
+                  "id": "deterrent",
+                  "title": "Deterrent",
+                  "description": "Discourage people from risky or harmful behavior. They discourage; they do not prevent.\nExample: a warning sign on private property.",
+                  "children": []
+                },
+                {
+                  "id": "preventative",
+                  "title": "Preventative",
+                  "description": "Stop a risk from happening.\nExamples: fences topped with razor wire, login mechanisms, firewalls.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "countermeasures",
+              "title": "Countermeasures",
+              "description": "Controls that detect and respond to a risk that has already happened.",
+              "children": [
+                {
+                  "id": "detective",
+                  "title": "Detective",
+                  "description": "Identify risks that have happened or are happening.\nExamples: SIEM (Security Information and Event Management) systems, intrusion detection systems, smoke detectors.",
+                  "children": []
+                },
+                {
+                  "id": "corrective",
+                  "title": "Corrective",
+                  "description": "Reduce the damage after a risk has happened.\nExample: a fire suppression system that puts out a fire.",
+                  "children": []
+                },
+                {
+                  "id": "recovery",
+                  "title": "Recovery",
+                  "description": "Help the organization recover and get back to business as usual.\nExample: a Disaster Recovery Plan (DRP).",
+                  "children": []
+                },
+                {
+                  "id": "compensating",
+                  "title": "Compensating",
+                  "description": "Reduce the damage when other controls are not effective or not possible. They make up for the lack of a better control.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "functional",
+              "title": "Functional",
+              "description": "Every good control has two aspects. The functional aspect is what the control is meant to do.\nExample: a firewall controls the traffic between network segments.",
+              "children": []
+            },
+            {
+              "id": "assurance",
+              "title": "Assurance",
+              "description": "The second aspect of a good control: being able to confirm that it keeps working correctly over time.\nExample: logging and monitoring a firewall.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "accept",
+          "title": "Accept",
+          "description": "A deliberate decision to accept a level of risk and its consequences.\nThe asset owner should accept the risk, because the owner is accountable for the asset and best placed to decide.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "risk-frameworks",
+      "title": "Risk Frameworks",
+      "description": "Structured, systematic approaches to managing risk.",
+      "children": [
+        {
+          "id": "rmf",
+          "title": "RMF (NIST 800-37)",
+          "description": "The NIST Risk Management Framework: a seven-step process to manage risks to information systems and data.\nKnow the seven steps and their order at a high level:\n1. Prepare: get ready to run the RMF.\n2. Categorize: categorize systems and identify the risks.\n3. Select: choose controls for the identified risks.\n4. Implement: put the controls in place.\n5. Assess: check that the controls are effective.\n6. Authorize: based on the assessment, the system owner decides whether the system can go into production.\n7. Monitor: keep checking that the controls work in production.",
+          "children": []
+        },
+        {
+          "id": "iso-31000",
+          "title": "ISO 31000",
+          "description": "A risk management framework. Recognize the name.",
+          "children": []
+        },
+        {
+          "id": "coso",
+          "title": "COSO",
+          "description": "The COSO risk management framework. Recognize the name.",
+          "children": []
+        },
+        {
+          "id": "isaca-risk-it",
+          "title": "ISACA Risk IT",
+          "description": "A risk management framework from ISACA. Recognize the name.",
+          "children": []
+        }
+      ]
+    }
+  ]
+}

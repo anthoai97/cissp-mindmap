@@ -1,0 +1,330 @@
+{
+  "id": "networking",
+  "title": "Networking",
+  "description": "Wide area networks, wireless, IP addressing, converged protocols, network authentication, network attacks, virtualization and common network commands.",
+  "domain": 4,
+  "order": 2,
+  "source": "https://destcert.com/resources/networking-mindmap-cissp-domain-4/",
+  "nodes": [
+    {
+      "id": "wan",
+      "title": "WAN",
+      "description": "Wide Area Networks: networks spread over a large geographical area, such as an entire country, a continent or the world.\nSeveral protocols have been created over the years to enable WANs. Know these.",
+      "children": [
+        {
+          "id": "x-25",
+          "title": "X.25",
+          "description": "One of the first protocol suites for packet-switched networks across a WAN.\nFirst published in 1976, before IPv4 and the OSI model.",
+          "children": []
+        },
+        {
+          "id": "frame-relay",
+          "title": "Frame Relay",
+          "description": "Mostly replaced X.25.",
+          "children": []
+        },
+        {
+          "id": "atm",
+          "title": "ATM",
+          "description": "Asynchronous Transfer Mode.\nMostly replaced Frame Relay.",
+          "children": []
+        },
+        {
+          "id": "mpls",
+          "title": "MPLS",
+          "description": "Multiprotocol Label Switching.\nCan encapsulate various protocols, including Frame Relay and ATM.\nThe dominant WAN protocol today.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "wireless",
+      "title": "Wireless",
+      "description": "We are moving steadily toward a wireless future: few people still use a landline phone, and laptops have lost most of their ports.\nOne of the biggest challenges with wireless is that signals are much easier to intercept. Instead of breaking into a building to connect to the corporate network, an attacker can sit in a van in the parking lot.\nSo encrypting wireless traffic is extremely important.",
+      "children": [
+        {
+          "id": "wi-fi",
+          "title": "Wi-Fi",
+          "description": "The technology used everywhere to create local area networks without wires. (The Wi-Fi access point still plugs into a physical network.)\nRange of about 100 meters.",
+          "children": [
+            {
+              "id": "wi-fi-protocols",
+              "title": "Protocols",
+              "description": "IEEE (Institute of Electrical and Electronics Engineers) 802.11 is the protocol used for wireless local area networks.\nMany generations of 802.11 have been ratified over the last 20+ years.",
+              "children": [
+                {
+                  "id": "ieee-802-11-versions",
+                  "title": "802.11a, b, g, n, ac, ax",
+                  "description": "Recognize these 802.11 standards: 802.11a, 802.11b, g, n, ac and ax.\nThe versions show the evolution of the standard toward ever greater bandwidth and capabilities.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "wi-fi-encryption",
+              "title": "Encryption",
+              "description": "Encrypting wireless traffic is critically important, because it is so much easier to eavesdrop on a wireless network.",
+              "children": [
+                {
+                  "id": "wep",
+                  "title": "WEP",
+                  "description": "Wired Equivalent Privacy. One of the first wireless encryption protocols, and it does not live up to its name.\nIt has very significant flaws in how it implements the RC4 encryption algorithm: the initialization vectors are far too short, so WEP encryption can be easily broken.\nNever use WEP.\nWhen the flaws were discovered, a quick band-aid was needed to prop up WEP until new wireless encryption protocols could be created and ratified.",
+                  "children": []
+                },
+                {
+                  "id": "tkip",
+                  "title": "TKIP",
+                  "description": "Temporal Key Integrity Protocol: the band-aid created for WEP.\nTKIP has since been found to have significant flaws too, so do not use it.",
+                  "children": []
+                },
+                {
+                  "id": "wpa-wpa2",
+                  "title": "WPA / WPA2",
+                  "description": "WPA (Wi-Fi Protected Access): also an interim protocol, to deal with the WEP fiasco until the much better WPA2 could be ratified. WPA used TKIP for encryption by default.\nWPA2 uses the AES encryption algorithm by default. AES is much better than TKIP.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "wimax",
+          "title": "WiMAX",
+          "description": "WiMAX (Worldwide Interoperability for Microwave Access): a protocol for wireless Metropolitan Area Networks, with ranges of up to 90 kilometers.\nCompare Wi-Fi, which creates local area networks with a range of about 100 meters.",
+          "children": [
+            {
+              "id": "ieee-802-16",
+              "title": "802.16",
+              "description": "The IEEE standard behind WiMAX.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "gsm-cdma",
+          "title": "GSM / CDMA",
+          "description": "Wireless radio protocols used by cellular companies to provide 2G and 3G voice and data services for mobile phones.\n- GSM: Global System for Mobile Communications.\n- CDMA: Code Division Multiple Access.\nGSM has significant security issues:\n- It is vulnerable to man-in-the-middle attacks. An attacker can create a rogue cell tower that phones connect to, and intercept communications.\n- SIM (Subscriber Identity Module) cards can be cloned by extracting the user's IMSI (International Mobile Subscriber Identity). The attacker can then make and receive calls and receive the user's SMS messages. This cloning attack can be done over the air.\nGSM and CDMA have largely been replaced by 4G / LTE, and now by 5G networks.",
+          "children": []
+        },
+        {
+          "id": "microwave",
+          "title": "Microwave",
+          "description": "A cost-effective way to create data links between buildings that are a few miles apart.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "ip-addresses",
+      "title": "Internet Protocol (IP) Addresses",
+      "description": "The major way to make sure data sent across a network reaches the intended destination.\nThink of an IP address as a postal address for a house: to send someone a letter, you need their address, and it must be unique to them. IP addresses serve the same function on a network.",
+      "children": [
+        {
+          "id": "ipv4-vs-ipv6",
+          "title": "IPv4 vs. IPv6",
+          "description": "IPv4 is the version used everywhere today. It has worked well for decades, but has big limitations:\n- The address space is only 2^32: 4,294,967,296 possible addresses. When IPv4 was created, before the internet existed, 4.3 billion sounded like more than enough. With about 7.8 billion people (in 2020), many using several IP addresses each, it is not nearly enough.\n- No security is built in by default.\nIPv6 fixes both problems:\n- The address space is 2^128: about 340 undecillion possible addresses.\n- Encryption and integrity checking are built in. With IPv4, these capabilities had to be added on later.",
+          "children": []
+        },
+        {
+          "id": "ipv4-network-classes",
+          "title": "IPv4 Network Classes",
+          "description": "IPv4 addresses are divided into five classes. You do not need to calculate subnet masks, but recognize the classes and the number of addresses in each:\n- Class A: 2^24 = 16,777,216 addresses (16,777,214 usable).\n- Class B: 2^16 = 65,536 addresses (65,534 usable).\n- Class C: 2^8 = 256 addresses (254 usable).\n- Class D: multicast addresses.\n- Class E: reserved.",
+          "children": []
+        },
+        {
+          "id": "private-ipv4-addresses",
+          "title": "Private IPv4 Addresses",
+          "description": "Three ranges of IPv4 addresses are reserved for private networks, such as home and corporate networks:\n- 10.0.0.0 to 10.255.255.255\n- 172.16.0.0 to 172.31.255.255\n- 192.168.0.0 to 192.168.255.255\nPrivate addresses are NOT routable on the internet.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "converged-protocols",
+      "title": "Converged Protocols",
+      "description": "Many specialty networks have been built over the years, such as the plain old telephone system, surveillance camera networks and storage area networks. Many needed proprietary protocols and dedicated networks.\nConverged protocols run this specialty or proprietary traffic across a standard TCP/IP network instead. This removes the need for separate networks, which can be expensive to maintain.\nExample: plug the security cameras or phones into the existing IP data network.",
+      "children": [
+        {
+          "id": "voip",
+          "title": "VoIP",
+          "description": "Voice over Internet Protocol: a perfect example of a converged protocol.\nTelephone voice data is sent across TCP/IP local area networks and the internet.",
+          "children": []
+        },
+        {
+          "id": "iscsi-fcoe",
+          "title": "iSCSI, FCoE",
+          "description": "Two converged protocols for storing and retrieving data across an IP network:\n- iSCSI: Internet Small Computer Systems Interface.\n- FCoE: Fibre Channel over Ethernet.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "network-authentication",
+      "title": "Network Authentication",
+      "description": "Networks need authentication all the time, for example to authenticate a client to a server. Know these authentication protocols for the exam.",
+      "children": [
+        {
+          "id": "pap",
+          "title": "PAP",
+          "description": "Password Authentication Protocol: one of the oldest authentication protocols.\nUseless from a security perspective: the username and password are both sent in plaintext.",
+          "children": []
+        },
+        {
+          "id": "chap",
+          "title": "CHAP",
+          "description": "Challenge Handshake Authentication Protocol. It sends authentication data in plaintext, but in a much cleverer way:\n1. The server generates a random string, the challenge, and sends it to the client.\n2. The client feeds its password and the challenge into the MD5 hashing algorithm, and sends the hash result to the server.\n3. The server confirms that the user knows the password, without the password ever crossing the network in plaintext.\nThe hash can be sent in plaintext: hashing is a one-way function, so a man-in-the-middle cannot work out the password from it.",
+          "children": []
+        },
+        {
+          "id": "eap",
+          "title": "EAP",
+          "description": "Extensible Authentication Protocol. Originally developed for PPP (Point-to-Point Protocol), but now widely used for authentication on wired LANs, wireless LANs and even WiMAX.\nIt is so widely used because it is extremely flexible: a framework on which many different authentication methods (EAP methods) can run.\nCommon types of EAP:\n- EAP-TLS: client and server both authenticate with certificates. Security high, industry support high, not proprietary. Much more secure than EAP-MD5.\n- EAP-TTLS: client uses ID & password, server uses a certificate. Security medium, industry support medium, proprietary (Certicom).\n- EAP-PEAP: client uses ID & password, server uses a certificate. Security medium, industry support high, partly proprietary (Cisco, RSA & Microsoft).\n- LEAP: client and server both use ID & password. Security low, industry support high, proprietary (Cisco).\n- EAP-MD5: uses the MD5 hashing algorithm and is quite limited. Client uses ID & password, and there is no server authentication. Security low, industry support low, not proprietary.",
+          "children": []
+        },
+        {
+          "id": "peap",
+          "title": "PEAP",
+          "description": "Protected EAP. Not a standalone authentication protocol: just a wrapper for EAP.\nIt encapsulates EAP inside an encrypted TLS (Transport Layer Security) tunnel, so any EAP traffic sent across the network is encrypted.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "network-attacks",
+      "title": "Network Attacks",
+      "description": "Common types of network attacks, and how network attacks are generally carried out.",
+      "children": [
+        {
+          "id": "phases",
+          "title": "Phases",
+          "description": "The four major phases of a network attack.",
+          "children": [
+            {
+              "id": "reconnaissance",
+              "title": "Reconnaissance",
+              "description": "Passive: only publicly available information is gathered, from sources such as job postings, LinkedIn profiles and DNS records.\nThe organization being attacked has no way to detect the attack in this phase.",
+              "children": []
+            },
+            {
+              "id": "enumeration",
+              "title": "Enumeration",
+              "description": "Active: the attacker systematically scans IP address ranges and ports, looking for live systems that offer services, as potential targets.\nBecause it is active, this is where an attack can start to be detected.",
+              "children": []
+            },
+            {
+              "id": "vulnerability-analysis",
+              "title": "Vulnerability Analysis",
+              "description": "The attacker tries to determine the exact version of a system and identify vulnerabilities that could be exploited.",
+              "children": []
+            },
+            {
+              "id": "exploitation",
+              "title": "Exploitation",
+              "description": "The final phase: the attacker tries to exploit the vulnerabilities found.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "eavesdropping",
+          "title": "Eavesdropping",
+          "description": "Passively listening to network traffic.\nThe prevailing network topology is bus, so an attacker connected to a wired or wireless network can usually listen in on traffic quite easily.",
+          "children": []
+        },
+        {
+          "id": "syn-flooding",
+          "title": "SYN Flooding",
+          "description": "A form of denial-of-service attack. The attacker sends a succession of SYN packets to a target system, trying to consume enough resources that it cannot respond to legitimate traffic.",
+          "children": []
+        },
+        {
+          "id": "ip-spoofing",
+          "title": "IP Spoofing",
+          "description": "The attacker changes the source IP address of a packet, either to hide their identity or to match another IP address on the network and pretend (spoof) to be another system.",
+          "children": []
+        },
+        {
+          "id": "dos-ddos",
+          "title": "DoS / DDoS",
+          "description": "Denial of Service: any attack that harms the availability of the victim system, so that authorized users cannot use it for business purposes.\nDistributed Denial of Service: a DoS attack from multiple attacking systems, possibly thousands, hundreds of thousands or even millions, all focused on making one target unavailable.",
+          "children": []
+        },
+        {
+          "id": "man-in-the-middle",
+          "title": "Man-in-the-Middle",
+          "description": "The attacker places themselves between computers that are communicating with each other, so they can intercept or even modify the communications.",
+          "children": []
+        },
+        {
+          "id": "arp-poisoning",
+          "title": "ARP poisoning",
+          "description": "Address Resolution Protocol poisoning: the attacker modifies an ARP table, often their own, so that the router reads the update and starts redirecting traffic to a new destination.\nExample: traffic meant for the victim is sent to the attacker instead. A way to set up a man-in-the-middle attack.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "virtualization",
+      "title": "Virtualization",
+      "description": "Virtualization can segment networks logically and, with SDN, deliver strong security benefits.",
+      "children": [
+        {
+          "id": "vlan",
+          "title": "VLAN",
+          "description": "Virtual Local Area Network: segments a network logically, through software, instead of physically by buying and configuring new network hardware.\nA VLAN can be a subset of the ports on one switch, or subsets of ports on several switches, so systems can be separated into groups.\nNetwork segmentation has many security benefits, and VLANs are an efficient and economical way to achieve it.",
+          "children": []
+        },
+        {
+          "id": "sdn",
+          "title": "SDN",
+          "description": "Software Defined Network: a massive leap in virtualization beyond simple VLANs. It creates multiple fully virtualized, software-controlled networks on top of a physical network.\nCentralizing all control of the virtualized network gives far greater flexibility to reconfigure the network rapidly.\nA critical part of what makes the cloud work.\nSDN provides abstraction for network topology, network flow and network protocols.",
+          "children": [
+            {
+              "id": "northbound-southbound-apis",
+              "title": "Northbound & Southbound APIs",
+              "description": "An SDN is split into three planes, linked by APIs:\n- Application plane: network services such as load balancers and firewalls.\n- Northbound APIs: connect the application plane to the control plane.\n- Control plane: the SDN controller, the central brain of the network.\n- Southbound APIs: connect the control plane to the data plane.\n- Data plane: the switches and routers.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "common-commands",
+      "title": "Common Commands",
+      "description": "Some of the most common tools used to manage and maintain networks.",
+      "children": [
+        {
+          "id": "ipconfig",
+          "title": "ipconfig",
+          "description": "Shows the current TCP/IP network configuration of an endpoint, such as a computer: the IP and MAC addresses of every network interface card, plus the gateway, DHCP and DNS IP addresses.",
+          "children": []
+        },
+        {
+          "id": "ping",
+          "title": "ping",
+          "description": "Tests whether a host on an IP network is reachable. Commonly used to see whether a system is online and responding.",
+          "children": []
+        },
+        {
+          "id": "traceroute",
+          "title": "traceroute",
+          "description": "A network diagnostic tool that shows the route and transit delays of packets across an IP network: each hop on the way to the destination, with its response times.\nAlso called tracert or tracepath, depending on the system.",
+          "children": []
+        },
+        {
+          "id": "whois",
+          "title": "whois",
+          "description": "Queries databases that store the registered users of an internet resource, such as a domain name. Use it to find out who owns a domain name.",
+          "children": []
+        },
+        {
+          "id": "dig",
+          "title": "dig",
+          "description": "Queries DNS (Domain Name System) for all the details of a domain name, such as the name servers and mail server it uses.",
+          "children": []
+        }
+      ]
+    }
+  ]
+}

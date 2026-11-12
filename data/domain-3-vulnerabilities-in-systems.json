@@ -1,0 +1,276 @@
+{
+  "id": "vulnerabilities-in-systems",
+  "title": "Vulnerabilities in Systems",
+  "description": "Common system vulnerabilities and how to prevent them: single points of failure, bypass controls, race conditions, emanations, mobile devices and web-based attacks.",
+  "domain": 3,
+  "order": 4,
+  "source": "https://destcert.com/resources/vulnerabilities-in-systems-mindmap-cissp-domain-3/",
+  "layout": "stacked",
+  "nodes": [
+    {
+      "id": "vulnerabilities-in-systems",
+      "title": "Vulnerabilities in Systems",
+      "description": "Vulnerabilities inevitably arise in complex systems. A single line of code can hold a vulnerability, let alone millions of lines of code and many interconnected systems.\nSecurity professionals must understand where vulnerabilities typically occur and how to design and develop systems to prevent them.\nThe people involved in design, development, deployment and operations need the right knowledge and training.",
+      "children": [
+        {
+          "id": "single-point-of-failure",
+          "title": "Single Point of Failure",
+          "description": "A non-redundant part of a larger system. If it fails, the entire system stops working.\nExample: a single router or firewall that all traffic to and from the internet must pass through. If it fails, all internet access is lost.",
+          "children": [
+            {
+              "id": "redundancy",
+              "title": "Redundancy",
+              "description": "How to prevent single points of failure.\nExample: at least two firewalls, configured and interconnected so that the failure of one does not cut the network off from the internet.\nYou can also have redundancy in software, services, providers and people.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "bypass-controls",
+          "title": "Bypass Controls",
+          "description": "Methods intentionally built into a system that allow a security control to be bypassed or circumvented.\nExample: the configuration reset button on the back of a network device. Hold it down with a paper clip or pencil for 5 or 10 seconds and the device resets to factory defaults, forgetting the current administrator password.\nThey are intentional and created for good reasons, but they add risk by allowing security controls to be circumvented.",
+          "children": [
+            {
+              "id": "mitigating-controls",
+              "title": "Mitigating Controls",
+              "description": "Additional controls that reduce the risk of a bypass control to an acceptable level.\nExample: physical security, so only authorized people can get near the network device and its reset button.\nMitigating controls can be physical security, enhanced logging and monitoring, segregation of duties and so on. The right one depends on the nature of the bypass control.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "toctou-race-conditions",
+          "title": "TOCTOU (Race Conditions)",
+          "description": "Time of Check Time of Use, also called a race condition.\nAn application checks the state of a resource before using it, but the state can change between the check and the use in a way that makes the check invalid. The application may then perform invalid actions.\nAn attacker tries to race in and change the resource (a file, a variable, some data in memory) between when it is checked and when it is used.",
+          "children": [
+            {
+              "id": "increase-frequency-of-re-authentication",
+              "title": "Increase frequency of Re-authentication",
+              "description": "The answer to look for on the exam: check more often that access is still appropriate. This shrinks the window of time in which an attacker can race in.\nThere are also more technical defenses, such as exception handling, transactions that provide concurrency controls, and file locks.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "emanations",
+          "title": "Emanations",
+          "description": "Radio waves, electrical signals, light, sounds, vibrations and so on that radiate from a system. They can be intercepted to eavesdrop on the system and leak information.\nThree major ways to address them: shielding, white noise and control zones.",
+          "children": [
+            {
+              "id": "shielding-tempest",
+              "title": "Shielding (TEMPEST)",
+              "description": "Block the emanations from a system so they cannot be detected: Faraday cages for electromagnetic fields, insulation for sound, opaque walls for light.\nTEMPEST is a type of shielding developed by the military, designed specifically for devices that emit electromagnetic radiation. Remember: TEMPEST is a method of shielding.",
+              "children": []
+            },
+            {
+              "id": "white-noise",
+              "title": "White Noise",
+              "description": "Broadcast strong random signals that drown out the weak emanations from a secure device.",
+              "children": []
+            },
+            {
+              "id": "control-zones",
+              "title": "Control Zones",
+              "description": "Place high-value systems in physically secured zones, so only authorized people can get near them. An attacker cannot get close enough to detect the emanations.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "covert-channels",
+          "title": "Covert Channels",
+          "description": "Unintentional communication paths that can unintentionally disclose confidential information.\nTwo major types: storage and timing.\nExample: the predictive power of pizza deliveries.",
+          "children": [
+            {
+              "id": "analysis-design",
+              "title": "Analysis & Design",
+              "description": "Carefully analyze systems and processes to find these unintentional communication paths, then design controls to prevent or mitigate them.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "aggregation-inference",
+          "title": "Aggregation & Inference",
+          "description": "Vulnerabilities that occur when a lot of data is collected and centralized in one place, such as a data warehouse or a big data lake.\nThe major vulnerability is unauthorized inference: someone figures out something they are not supposed to know.",
+          "children": [
+            {
+              "id": "polyinstantiation",
+              "title": "Polyinstantiation",
+              "description": "Reduces the risk of unauthorized inference. Different versions of the same information or process exist at different classification levels.\nA would-be attacker sees only their own version of a process or database row. The other versions, with different information, are invisible to them, which prevents unauthorized inference.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "mobile-devices",
+          "title": "Mobile Devices",
+          "description": "A significant vulnerability: they often contain a lot of sensitive information, and they are mobile.\nThey get left behind in taxis, trains, airplanes and washrooms, and misplaced or stolen devices have caused many privacy breaches.",
+          "children": [
+            {
+              "id": "policy-training-procedures",
+              "title": "Policy, training & procedures",
+              "description": "Clearly defined policies on the acceptable use of mobile devices, in particular requiring that sensitive data is not stored on them, or only in very limited amounts.\nTraining and procedures make sure employees follow the acceptable use policy.",
+              "children": []
+            },
+            {
+              "id": "remote-access-security",
+              "title": "Remote access security",
+              "description": "Mobile devices are taken away from the office and used remotely. Encrypt their connections back to the corporate network to protect sensitive data in transit.",
+              "children": []
+            },
+            {
+              "id": "end-point-security",
+              "title": "End-point security",
+              "description": "Secure the mobile device itself, the end-point.\nExamples: strong authentication, whole-drive encryption and remote wipe.",
+              "children": []
+            },
+            {
+              "id": "owasp-mobile-top-10",
+              "title": "OWASP Mobile Top 10",
+              "description": "The Open Web Application Security Project (OWASP) list of the 10 most common security flaws and vulnerabilities in mobile devices.\nSecurity professionals must make sure these are addressed in system design, development and operation.",
+              "children": [
+                {
+                  "id": "m1-improper-platform-usage",
+                  "title": "M1: Improper Platform Usage",
+                  "description": "The security features built into the device, such as Touch ID, Face ID and Keychain, are not used or are used incorrectly.\nPrevent: secure coding and configuration management.",
+                  "children": []
+                },
+                {
+                  "id": "m2-insecure-data-storage",
+                  "title": "M2: Insecure Data Storage",
+                  "description": "Sensitive data, such as PII, is stored in insecure directories on the device. It can be easily accessed if an attacker gets physical access to the device (steals it), or by malware that copies it out and sends it to the attacker.\nPrevent: do not store sensitive data on a mobile device.",
+                  "children": []
+                },
+                {
+                  "id": "m3-insecure-communication",
+                  "title": "M3: Insecure Communication",
+                  "description": "Most mobile devices talk to a server across the internet, where data in transit can be intercepted and read by an attacker.\nPrevent: encrypt data in transit with protocols such as SSL/TLS, and authenticate the server with certificates.",
+                  "children": []
+                },
+                {
+                  "id": "m4-insecure-authentication",
+                  "title": "M4: Insecure Authentication",
+                  "description": "An attacker figures out how the app calls its back-end server, then bypasses the app and sends requests directly to the server, skipping the app's authentication.\nPrevent: perform authentication on the server side.",
+                  "children": []
+                },
+                {
+                  "id": "m5-insufficient-cryptography",
+                  "title": "M5: Insufficient Cryptography",
+                  "description": "The device uses a weak encryption algorithm, the algorithm is poorly implemented, or both.\nPrevent: use good algorithms that have stood the test of time, and implement them properly.",
+                  "children": []
+                },
+                {
+                  "id": "m6-insecure-authorization",
+                  "title": "M6: Insecure Authorization",
+                  "description": "Authorization decides what functionality a user can access. Doing it poorly can let an attacker bypass it or grant themselves access they are not entitled to.\nPrevent: perform authorization on the back-end server, not the mobile device. The server must verify that each request from the device is permitted for that user.",
+                  "children": []
+                },
+                {
+                  "id": "m7-client-code-quality",
+                  "title": "M7: Client Code Quality",
+                  "description": "Software on the device is vulnerable to common attacks such as memory leaks and buffer overflows, which are exploited with malware or phishing.\nPrevent: write more secure code. Developers must know and be trained in secure coding practices.",
+                  "children": []
+                },
+                {
+                  "id": "m8-code-tampering",
+                  "title": "M8: Code Tampering",
+                  "description": "An attacker changes the app's code or adds new malicious code, so they can do fraudulent things such as stealing identities.\nPrevent: the app must be able to detect at runtime if its code has been tampered with.",
+                  "children": []
+                },
+                {
+                  "id": "m9-reverse-engineering",
+                  "title": "M9: Reverse Engineering",
+                  "description": "An attacker carefully analyzes an app to learn about its back-end servers, find weaknesses in its cryptography, steal intellectual property and so on.\nPrevent: use code obfuscation tools. The types of code obfuscation are covered in the first Domain 8 mind map.",
+                  "children": []
+                },
+                {
+                  "id": "m10-extraneous-functionality",
+                  "title": "M10: Extraneous Functionality",
+                  "description": "An attacker analyzes an app to find hidden functionality left behind by a developer. It often shows how to gain unauthorized access to back-end servers.\nPrevent: remove extraneous functionality before the app is published, for example through manual code review.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "web-based-vulnerabilities",
+      "title": "Web-based Vulnerabilities",
+      "description": "A huge and growing share of applications are web-based, so common web vulnerabilities are an important topic on the exam.",
+      "children": [
+        {
+          "id": "cross-site-scripting",
+          "title": "Cross Site Scripting (XSS)",
+          "description": "Malicious scripts are injected into otherwise benign and trusted websites, and a visitor's browser downloads and runs the attacker's script.\nThis lets the attacker run code on victims' machines, for example to exfiltrate data.\nThree major types: stored, reflected and DOM.",
+          "children": [
+            {
+              "id": "stored-persistent",
+              "title": "Stored (Persistent)",
+              "description": "The attacker injects code into a vulnerable web application so that it is stored on the server and shown to every later visitor to the page.\nExample: instead of a normal comment, the attacker enters JavaScript in a website's comment field. Every later visitor's browser downloads the page with the code embedded, parses it and runs the malicious code.\nPersistent: every later user downloads and runs the injected code.",
+              "children": []
+            },
+            {
+              "id": "reflected-most-common",
+              "title": "Reflected (Most common)",
+              "description": "The malicious code is reflected back to only one specific user.\nExample: a phishing email contains a link (URL) with malicious JavaScript in it. The user clicks it and sends the request to the server, the server returns a page that includes the code from the URL, and the user's browser runs it.\nRemember: reflected XSS is the most common form of XSS.",
+              "children": []
+            },
+            {
+              "id": "dom",
+              "title": "DOM",
+              "description": "Document Object Model XSS: a much more technically complicated way of achieving XSS, and rare.\nDo not worry about it for the exam.",
+              "children": []
+            },
+            {
+              "id": "target-of-attack-client",
+              "title": "Target of Attack: Client",
+              "description": "In XSS, the target of attack is the client: the user's browser.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "cross-site-request-forgery",
+          "title": "Cross Site Request Forgery (CSRF)",
+          "description": "An attacker forces or tricks a user into executing unwanted actions on a web application where the user is currently authenticated.\nThis lets the attacker execute authorized commands on the server.",
+          "children": [
+            {
+              "id": "target-of-attack-server",
+              "title": "Target of Attack: Server",
+              "description": "In CSRF, the attack passes through the user, and may harm the user, but the target of attack is the server.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "sql-injection",
+          "title": "SQL Injection",
+          "description": "SQL (Structured Query Language) is the language used to communicate with databases. A web application sends SQL commands to its back-end database, for example to check a username and password, store new data or retrieve data. A user should never be able to directly command and control the database.\nIn SQL injection, an attacker sends SQL code to the web server, for example by typing it into a username or password form field. If the web server has not validated the input, it passes the code on to the database, and the attacker controls the database.",
+          "children": []
+        },
+        {
+          "id": "input-validation",
+          "title": "Input Validation",
+          "description": "How to prevent SQL injection: never let SQL code from a user pass directly to the database. The web server must validate all input, sanitizing it by removing or escaping special characters.\nExam hint: SQL injection and XSS questions can be very technical, with equally technical answers. Boiled down, the answer is almost always that the user's input is validated (sanitized).",
+          "children": [
+            {
+              "id": "client-side-vs-server-side",
+              "title": "Client Side vs. Server Side",
+              "description": "Where should input validation happen? Emphatically on the server side.\nClient-side validation in the user's browser is trivially easy for an attacker to bypass, so for security, input validation must always be done on the server.",
+              "children": []
+            },
+            {
+              "id": "allow-lists-vs-deny-lists",
+              "title": "Allow Lists vs. Deny Lists",
+              "description": "Two input validation techniques:\n- Allow list: only specific characters are allowed, and everything else is blocked.\n- Deny list: the inverse. Only specific characters are blocked or removed, and everything else is allowed.\nAllow lists are more secure, because they are far more restrictive.\nYou may still see the older terms on the exam: whitelist means allow list, and blacklist means deny list.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

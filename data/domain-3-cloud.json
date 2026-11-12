@@ -1,0 +1,317 @@
+{
+  "id": "cloud",
+  "title": "Cloud Computing",
+  "description": "Cloud basics for the CISSP: characteristics, service and deployment models, virtualized compute, cloud identity, roles, protocols, migration, forensics and data destruction.",
+  "domain": 3,
+  "order": 5,
+  "source": "https://destcert.com/resources/cloud-mindmap-cissp-domain-3/",
+  "nodes": [
+    {
+      "id": "characteristics",
+      "title": "Characteristics",
+      "description": "Cloud is many different things to different people, so it is hard to define simply. Instead, the industry defines a set of characteristics: if a service has them, it is probably cloud.\nThere are five.",
+      "children": [
+        {
+          "id": "on-demand-self-service",
+          "title": "On-Demand Self Service",
+          "description": "Users request services, and the provider's software provisions them automatically, usually within milliseconds or seconds.\nA huge shift from the old way: a 17-page form, approval in triplicate, then a 4 to 6 month wait for a new server.\nGreat for innovating, experimenting and failing fast. The dark side is shadow IT.",
+          "children": []
+        },
+        {
+          "id": "broad-network-access",
+          "title": "Broad Network Access",
+          "description": "Cloud resources are available from many device types and many locations.\nThe main way to access cloud services is a web browser across a network. Almost everything has a browser and internet access, so you can reach cloud services from basically anywhere.",
+          "children": []
+        },
+        {
+          "id": "resource-pooling",
+          "title": "Resource Pooling",
+          "description": "A really important characteristic. The three primary resources are pooled and shared among users:\n- Compute: the ability to execute code (fetch, decode, execute and store).\n- Storage: somewhere to keep the bits, both data and code.\n- Network: the ability to move the bits around.\nUsers do not access the physical resources directly. A layer of virtualization sits in between: a virtual machine or container instead of a physical CPU, a virtual disk or object storage instead of a hard drive, a virtual switch instead of a physical one.\nPooling is what makes it easy to provision new services almost instantly, and to scale usage of compute, storage and network up or down quickly.",
+          "children": []
+        },
+        {
+          "id": "rapid-elasticity",
+          "title": "Rapid Elasticity",
+          "description": "Also called rapid elasticity and scalability: resources can be quickly provisioned and deprovisioned.\nNeed lots more bandwidth, or terabytes of extra storage? No problem. Scaling back down is just as easy.",
+          "children": []
+        },
+        {
+          "id": "measured-service",
+          "title": "Measured Service",
+          "description": "The provider closely monitors your usage, and you pay only for what you use.\nUsage is monitored and reported to the consumer, which gives visibility and transparency of rates and costs.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "service-models",
+      "title": "Service Models",
+      "description": "The three most common types of cloud service: IaaS, PaaS and SaaS.\nNewer models fit between them: Containers as a Service sits between IaaS and PaaS, and serverless (Functions as a Service) sits between PaaS and SaaS.\nFor every service model it must be clear who is responsible for what. If responsibilities are not clearly defined, assume no one is doing it. You do not need to memorize the exact split for each model.\nThe onus is on the customer, who stays accountable for any data and services it outsources to the cloud. The customer must define responsibilities in contracts and SLAs, and make sure the provider's controls operate effectively. Assurance comes from service level reports or, more commonly, SOC 2 reports (covered in the first Domain 6 mind map).",
+      "children": [
+        {
+          "id": "iaas",
+          "title": "IaaS",
+          "description": "Infrastructure as a Service: customers deploy virtualized infrastructure such as servers, appliances, storage and networking components.\nA customer can recreate an entire physical data center as virtual components: virtual firewalls, virtual routers, virtual servers and so on.",
+          "children": []
+        },
+        {
+          "id": "paas",
+          "title": "PaaS",
+          "description": "Platform as a Service: services and functionality for customers to develop and deploy their own custom applications, without worrying about the underlying servers, network and storage.",
+          "children": []
+        },
+        {
+          "id": "saas",
+          "title": "SaaS",
+          "description": "Software as a Service: the customer rents access to an application hosted in the cloud.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "deployment-models",
+      "title": "Deployment Models",
+      "description": "The major cloud deployment models: public, private, community and hybrid.",
+      "children": [
+        {
+          "id": "public",
+          "title": "Public",
+          "description": "Cloud services available to anyone. A cloud service provider owns and operates cloud infrastructure that is open to the general public.",
+          "children": []
+        },
+        {
+          "id": "private",
+          "title": "Private",
+          "description": "Cloud infrastructure provisioned for the exclusive use of a single customer.\nIt can be owned and operated by the customer or by a cloud service provider, can be on or off premises, and can be physically or logically separated from other customers. It's complicated.",
+          "children": []
+        },
+        {
+          "id": "community",
+          "title": "Community",
+          "description": "Cloud infrastructure accessible only to a small community of organizations with similar shared concerns, such as similar security and regulatory requirements.",
+          "children": []
+        },
+        {
+          "id": "hybrid",
+          "title": "Hybrid",
+          "description": "Any combination of public, private and community cloud.\nExample: a large organization has its own on-premises private cloud for sensitive data, and uses the public cloud for less sensitive data and workloads.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "virtualized-compute",
+      "title": "Virtualized Compute",
+      "description": "In the cloud you usually have no direct access to physical servers and CPUs (see Resource Pooling). Instead you run your code and applications on virtualized compute: virtual machines, containers or serverless.",
+      "children": [
+        {
+          "id": "virtual-machine",
+          "title": "Virtual Machine",
+          "description": "An operating system and some applications running on a layer of abstraction, instead of directly on the physical hardware.\nThe physical server (CPU, RAM, network interface card and so on) is called the compute node. Several VMs can run at the same time on one compute node.\nOn the exam, virtual machines may also be called instances or guests.",
+          "children": [
+            {
+              "id": "hypervisor",
+              "title": "Hypervisor",
+              "description": "The software that provides the layer of abstraction between the hardware and the operating systems. Also called a VM monitor.\nAn operating system expects total control of the hardware, so two cannot normally share it. The hypervisor is a 'giant liar': it simulates the hardware for each OS, so each OS thinks it controls the hardware but really controls virtual hardware.\nKnow the difference between Type 1 (hardware) and Type 2 (software) hypervisors. Type 1 is more secure and efficient.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "containers",
+          "title": "Containers",
+          "description": "Highly portable code execution environments that run within an operating system, sharing and using that operating system's resources.\nLike an intermodal shipping container: pack your code once, then run it anywhere without repacking, on a Mac laptop, an on-premises Linux server, the Azure cloud or Google Cloud.",
+          "children": [
+            {
+              "id": "container-engine",
+              "title": "Container Engine",
+              "description": "Containers also run on a layer of abstraction, called the containerization engine. The difference is where the layer sits:\n- Virtual machines: between the hardware and the operating system.\n- Containers: between the operating system and the containers.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "serverless",
+          "title": "Serverless",
+          "description": "More correctly called Functions as a Service.\nApplications used to be monolithic: all functions packaged into one large executable, which is hard to scale. Microservices break the application into groups of functions that can be scaled separately. Functions as a Service goes further: the application is broken into individual functions that talk to each other through API calls.\nSimple functions are written and stored in the cloud and called as much or as little as needed, a million times a second or once every three weeks. Developers basically do not have to think about infrastructure, and a function that is never called costs nothing.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "identity-provider",
+      "title": "Identity Provider",
+      "description": "The cloud removes the traditional well-defined perimeter and trusted internal network. Identity is the new perimeter.\nAssume all traffic is a potential threat, and verify every user thoroughly so you know exactly who is accessing what. This zero-trust approach needs very robust identification, authentication and authorization controls.\nUser identities can be stored in two main places: locally or in the cloud.",
+      "children": [
+        {
+          "id": "identity-provider-local",
+          "title": "Local",
+          "description": "Identities are stored in a system the organization maintains on premises, in its own data center. Usually Active Directory.",
+          "children": []
+        },
+        {
+          "id": "identity-provider-cloud",
+          "title": "Cloud",
+          "description": "A cloud service stores the organization's user identities.\nExample: Okta, a cloud-based identity provider.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "cloud-identity",
+      "title": "Cloud identity",
+      "description": "The types of identity you can use: cloud, linked, synced or federated.",
+      "children": [
+        {
+          "id": "cloud-identity-cloud",
+          "title": "Cloud",
+          "description": "An identity created and managed solely in the cloud.",
+          "children": []
+        },
+        {
+          "id": "linked",
+          "title": "Linked",
+          "description": "Two separate identities, one in the cloud and one local, with some indication that they are linked.\nChanges to one are NOT automatically synchronized to the other.",
+          "children": []
+        },
+        {
+          "id": "synced",
+          "title": "Synced",
+          "description": "Two identities, one in the cloud and one local, that are synchronized. A change to one is automatically reflected in the other.",
+          "children": []
+        },
+        {
+          "id": "federated",
+          "title": "Federated",
+          "description": "One identity that gives the user access to both local and cloud-based services through federated access.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "roles",
+      "title": "Roles",
+      "description": "In the cloud it is critical to have clearly defined accountabilities and responsibilities.\nEach common cloud role has its own accountabilities and/or responsibilities.",
+      "children": [
+        {
+          "id": "accountable",
+          "title": "Accountable",
+          "description": "Ultimate ownership, answerability, blameworthiness and liability for an asset. The accountable person is the owner of the asset.\nAssign accountability to only one person per asset: the throat that gets choked if something goes wrong.\nAccountability CANNOT be delegated. The accountable person sets the policies and requirements for protecting the asset, and delegates the responsibilities to others.",
+          "children": []
+        },
+        {
+          "id": "responsible",
+          "title": "Responsible",
+          "description": "The doers: the person or people in charge of meeting the requirements set by the accountable person.\nMultiple people can be responsible, and responsibility can be delegated.",
+          "children": []
+        },
+        {
+          "id": "cloud-consumer",
+          "title": "Cloud Consumer",
+          "description": "The customer: the person or organization using cloud services.",
+          "children": []
+        },
+        {
+          "id": "owner-controller",
+          "title": "Owner / Controller",
+          "description": "People within the cloud consumer who own any data stored in the cloud. Also called data controllers.\nThey are accountable for protecting the data they store and process in the cloud, and they stay accountable even when they outsource the data to a cloud provider.",
+          "children": []
+        },
+        {
+          "id": "cloud-provider-processor",
+          "title": "Cloud Provider / Processor",
+          "description": "The cloud service provider, also called the processor.\nResponsible for protecting consumer data in the cloud, based on the requirements set by the data owner.\nAccountable for running its own infrastructure and protecting its own data.",
+          "children": []
+        },
+        {
+          "id": "cloud-broker",
+          "title": "Cloud Broker",
+          "description": "Middlemen between the consumer and the cloud service provider.\nThey do aggregation, arbitrage and intermediation: packaging various cloud services together for a consumer, or adding functionality to a provider's offering.",
+          "children": []
+        },
+        {
+          "id": "cloud-auditor",
+          "title": "Cloud Auditor",
+          "description": "Audits cloud services to check whether controls are properly designed and operating effectively.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "protocols",
+      "title": "Protocols",
+      "description": "Protocols that enable identification, authentication and authorization in the cloud.\nSAML, OpenID and OAuth all enable federated access, which is covered in more detail in the second Domain 5 mind map.",
+      "children": [
+        {
+          "id": "spml",
+          "title": "SPML",
+          "description": "Service Provisioning Markup Language: an XML-based framework for exchanging provisioning information (setting up, changing and revoking access) between cooperating organizations.\nIt standardizes and simplifies provisioning access across multiple systems in multiple organizations.",
+          "children": []
+        },
+        {
+          "id": "saml",
+          "title": "SAML",
+          "description": "Security Assertion Markup Language: provides both authentication and authorization in federated access.",
+          "children": []
+        },
+        {
+          "id": "openid",
+          "title": "OpenID",
+          "description": "Provides only authentication.",
+          "children": []
+        },
+        {
+          "id": "oauth",
+          "title": "OAuth",
+          "description": "Provides only authorization.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "migration",
+      "title": "Migration",
+      "description": "Moving systems and data to the cloud raises many security questions: access controls, confidentiality, integrity and availability of the data, portability, interoperability, reversibility, resiliency, compliance and more.",
+      "children": [
+        {
+          "id": "data-centric",
+          "title": "Data Centric",
+          "description": "Focus on the data to be migrated: its classification, and so the security controls needed at each stage of the data lifecycle: creation, storage, use, sharing, archiving and destruction.",
+          "children": []
+        },
+        {
+          "id": "sla",
+          "title": "SLA",
+          "description": "Service Level Agreement: an important contractual tool for communicating the consumer's requirements to the provider.\nDocumented commitments by the provider to the consumer, covering things such as confidentiality, integrity, availability and responsiveness.\nSLAs are addendums to the overall contract.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "forensics",
+      "title": "Forensics",
+      "description": "Forensic investigations in the cloud, especially the public cloud, bring significant challenges as well as opportunities.",
+      "children": [
+        {
+          "id": "snapshot-virtual-disk-image",
+          "title": "Snapshot, Virtual Disk, Image",
+          "description": "Sources of evidence in the cloud, from most to least useful:\n1. Snapshot: a copy of a VM that preserves its state and data at a specific point in time. A primary source of evidence.\n2. Virtual disk (VM volume): holds a lot of data, but none of the volatile data in the CPU cache, registers or RAM that a snapshot captures.\n3. Image: a pre-built VM. Useful to find vulnerabilities and misconfigurations, but it holds none of the data of the running system.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "data-destruction",
+      "title": "Data Destruction",
+      "description": "Defensible data destruction is a challenge in the cloud. Many laws and regulations require the data owner to destroy sensitive data, especially personal data, defensibly and demonstrably.",
+      "children": [
+        {
+          "id": "crypto-shredding-crypto-erase",
+          "title": "Crypto Shredding / Crypto Erase",
+          "description": "A way to defensibly destroy data in the cloud.\nEncrypt the sensitive data with an excellent algorithm such as AES, then physically destroy every copy of the encryption key.\nWith no way to recover the key, the data is unrecoverable, so it has been defensibly destroyed.",
+          "children": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,294 @@
+{
+  "id": "physical-security",
+  "title": "Physical Security",
+  "description": "Physical security controls that protect people first, then facilities and equipment: control categories, layered defense, infrastructure, and fire detection and suppression.",
+  "domain": 3,
+  "order": 9,
+  "source": "https://destcert.com/resources/physical-security-mindmap-cissp-domain-3/",
+  "nodes": [
+    {
+      "id": "safety-of-people",
+      "title": "Safety of people",
+      "description": "The one overarching, primary goal of physical security. People are the most valuable and important asset of any organization, so physical security controls must put the safety of people above everything else.\nPhysical security is also critical for confidentiality, integrity and availability:\n- If you can touch the box, you own the box. An attacker with physical access to a device such as a firewall or server can easily take control of it, because equipment has built-in bypass controls such as factory reset buttons. So carefully control who can access facilities, specific rooms and equipment.\n- UPSs and generators supply clean power, HVAC supplies air at the right temperature and humidity, and fire detection and suppression keep facilities from burning down.",
+      "children": [
+        {
+          "id": "categories-of-controls",
+          "title": "Categories of Controls",
+          "description": "The five categories of controls used in physical security: deter, delay, detect, assess and respond.",
+          "children": [
+            {
+              "id": "deter-delay-detect-assess-respond",
+              "title": "Deter, Delay, Detect, Assess, Respond",
+              "description": "- Deter: discourage trespassing, property damage, theft and intrusion, through signage and the environmental design of the building and the land around it.\n- Delay: delay a risk from happening. Example: locks delay an attacker from gaining unauthorized access.\n- Detect: detect that a risk has happened. Example: CCTV cameras.\n- Assess: determine the method of attack and the target.\n- Respond: take appropriate action to remediate the risk.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "layered-defense",
+          "title": "Layered Defense",
+          "description": "Never implement a control in isolation: if the only control protecting an asset fails, bad things happen.\nUse multiple layers of controls. At each layer, combine preventive, detective and corrective controls, or in physical security terms, deterrent, detective, and assess and respond controls. This is defense in depth.",
+          "children": [
+            {
+              "id": "perimeter",
+              "title": "Perimeter",
+              "description": "Often the first layer of defense around a facility, such as an outside fence. The exterior walls of the building are another perimeter.\nBest way to secure a perimeter: minimize the number of entrances and exits (doors).",
+              "children": [
+                {
+                  "id": "landscape",
+                  "title": "Landscape",
+                  "description": "The foliage around a building: trees and plants.\nMaintain it so that cameras have clear sight lines, and so that an attacker cannot climb a tree and get into the building.",
+                  "children": []
+                },
+                {
+                  "id": "grading",
+                  "title": "Grading",
+                  "description": "How the land slopes around a building.\nThe ground should slope down and away from the building, so that in a flood the building stays dry, like an island, instead of sitting at the bottom of a lake.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "cameras",
+              "title": "Cameras",
+              "description": "CCTV (Closed Circuit Television) camera systems are an important part of physical security. They act as a deterrent and a detective control, and can also be used for monitoring and auditing.\nCameras are primarily detective controls.",
+              "children": []
+            },
+            {
+              "id": "passive-infrared-devices",
+              "title": "Passive Infrared Devices",
+              "description": "Motion sensors. Essentially very low-resolution cameras that detect infrared light: the heat emitted by objects in their field of view. When a warm-blooded person walks into the room, the infrared light increases and the movement is detected.\nThey must recalibrate automatically when the ambient air temperature changes.",
+              "children": []
+            },
+            {
+              "id": "lighting",
+              "title": "Lighting",
+              "description": "A well-lit building helps deter crime.\nGood lighting is also important for the safety of people.",
+              "children": []
+            },
+            {
+              "id": "card-readers-badges",
+              "title": "Card Readers / Badges",
+              "description": "Card readers are electronic systems that control who is authorized to pass through a door into the building, or into rooms within it.\nTwo major types:\n- Contact: the employee swipes the card through the reader (older magnetic readers).\n- Contactless: the employee only holds the card near the reader (RFID, Radio Frequency ID).\nBadges are simply a card with the employee's name and photo.",
+              "children": []
+            },
+            {
+              "id": "doors-mantraps",
+              "title": "Doors / Mantraps",
+              "description": "Doors are the primary way to control who can enter the building and specific parts of it.\nTailgating or piggybacking is a very common and successful social engineering attack on doors: an intruder follows an authorized person through a door after they unlock it. Prevent it with specialized doors: mantraps or turnstiles.\nA mantrap is two doors, one after the other. Unlock the first door, enter a small space, close the first door behind you, and only then can you unlock the second door.",
+              "children": []
+            },
+            {
+              "id": "locks",
+              "title": "Locks",
+              "description": "A perfect example of a delay control. Given time, an attacker will pick, force or break a lock and get in.\nBecause locks only delay, never use them in isolation. Remember layered defense (defense in depth).\nFor combination locks, one of the most important security factors is the complexity of the combination.",
+              "children": [
+                {
+                  "id": "mechanical",
+                  "title": "Mechanical",
+                  "description": "Mechanical locks. Examples: keyed locks, mechanical combination locks and magnetic locks.",
+                  "children": []
+                },
+                {
+                  "id": "digital",
+                  "title": "Digital",
+                  "description": "Electronic locks. Examples: proximity or RFID locks, electronic combination locks and biometric locks.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "windows",
+              "title": "Windows",
+              "description": "Windows let in natural light, but they are often the weak link in a building's perimeter.\nWindow glass comes in many types, such as plate, tempered, laminated, wired and polycarbonate. You do not need to memorize them.\nInstead, understand the sensors that detect when the glass in a window has been broken.",
+              "children": [
+                {
+                  "id": "shock",
+                  "title": "Shock",
+                  "description": "Shock sensors are attached directly to a pane of glass. They detect the small shockwave created when the window breaks.",
+                  "children": []
+                },
+                {
+                  "id": "glass-break",
+                  "title": "Glass break",
+                  "description": "Acoustic sensors that listen for the sound of breaking glass. Unlike shock sensors, they do not need to be attached to the glass.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "walls",
+              "title": "Walls",
+              "description": "Critical to physical security: it is hard to secure a building without exterior and interior walls.",
+              "children": []
+            },
+            {
+              "id": "skimming",
+              "title": "Skimming",
+              "description": "Placed in this map for lack of a better place.\nCriminals use an electronic device to steal card information from a valid transaction. Examples: a device on a bank machine that records your debit card number, a device on a point-of-sale machine that skims your credit card details, or an attacker near a secure door who wirelessly records the RFID communication from your employee card.",
+              "children": []
+            },
+            {
+              "id": "infrastructure",
+              "title": "Infrastructure",
+              "description": "The three major infrastructure services critical to the operation of a facility: network, power and HVAC.",
+              "children": [
+                {
+                  "id": "network",
+                  "title": "Network",
+                  "description": "A reliable connection to the internet, the largest distributed network in the world, and/or to the organization's other locations.",
+                  "children": []
+                },
+                {
+                  "id": "power",
+                  "title": "Power",
+                  "description": "Almost all equipment needs electricity, and few businesses could keep working without electronic systems. So security is very concerned with a consistent supply of clean power.\nClean power does not mean renewable here. It means AC (Alternating Current) power that oscillates at a perfect 60 Hz, with no noise or distortion on the line: a perfect sine wave.\nUPSs and generators are the important devices for a consistent supply of clean power.",
+                  "children": [
+                    {
+                      "id": "ups",
+                      "title": "UPS",
+                      "description": "Uninterruptible Power Supply: essentially a giant battery that provides instant but short-term power, until the generator has time to start up and come online.",
+                      "children": []
+                    },
+                    {
+                      "id": "generator",
+                      "title": "Generator",
+                      "description": "Typically a large diesel engine connected to an alternator.\nProvides long-term backup power: hours or even days, depending on how much fuel is on site.",
+                      "children": []
+                    },
+                    {
+                      "id": "power-outages",
+                      "title": "Power Outages",
+                      "description": "Types of power outage:\n- Blackout: no power for a long period.\n- Fault: a momentary loss of power.",
+                      "children": []
+                    },
+                    {
+                      "id": "power-degradation",
+                      "title": "Power Degradation",
+                      "description": "Too little or too much power:\n- Brownout: an intentional reduction of voltage by the utility company.\n- Sag / dip: a short period of low voltage.\n- Surge: a momentary spike of too much voltage. Think lightning strike.",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "id": "hvac",
+                  "title": "HVAC",
+                  "description": "Heating, Ventilation and Air Conditioning: the systems that supply air to a building at the correct temperature and humidity, and filter it.",
+                  "children": [
+                    {
+                      "id": "temperature",
+                      "title": "Temperature",
+                      "description": "The main reason to bring cool air into a data center is to cool the equipment and keep it operating within the desired temperature range.\nIdeal range, defined by ASHRAE (the American Society of Heating, Refrigerating and Air-Conditioning Engineers): 18 °C to 27 °C (64.4 °F to 80.6 °F). Most office buildings and data centers are built to these ranges.\nExam questions list both Celsius and Fahrenheit.",
+                      "children": []
+                    },
+                    {
+                      "id": "humidity",
+                      "title": "Humidity",
+                      "description": "HVAC also supplies air at the right humidity. Too dry gives static electricity; too humid gives condensation. Both are bad.\nIdeal relative humidity (ASHRAE): 40% to 60%.",
+                      "children": []
+                    },
+                    {
+                      "id": "air-quality",
+                      "title": "Air Quality",
+                      "description": "HVAC filters the air to remove dust and other contaminants. In a data center, air is sucked into and through servers and other equipment. Contaminants could clog the equipment and cause shorts, or make it overheat and fail.\nKnow the term positive pressurization: clean, filtered air is blown into the data center at slightly above ambient pressure. If there are cracks in the walls, or someone opens a door, clean air is forced out, so dirty air and contaminants cannot get in.",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "fire-detection",
+              "title": "Fire Detection",
+              "description": "Fire is a significant risk. As with any risk, control it with a combination of preventive, detective and corrective controls:\n- Prevent: limit or eliminate combustible materials. You can never prevent fire entirely.\n- Detect: detect a fire as quickly as possible.\n- Correct: suppress the fire as quickly as possible.\nThree major types of fire detection: flame, smoke and heat detectors.\nWhich detects a fire earliest? There is always smoke before a fire, and the main concern is flaming (fast) fires, so pick ionization detectors.",
+              "children": [
+                {
+                  "id": "flame",
+                  "title": "Flame (Infrared)",
+                  "description": "Flame detectors detect the infrared and ultraviolet light that flames create.\nThey are essentially video cameras pointed at something you are worried might catch fire.",
+                  "children": []
+                },
+                {
+                  "id": "smoke",
+                  "title": "Smoke",
+                  "description": "There is always smoke before a fire, so smoke detectors are one of the best ways to detect a fire as early as possible.\nTwo major types: ionization and photo-electric.",
+                  "children": [
+                    {
+                      "id": "ionization",
+                      "title": "Ionization",
+                      "description": "Respond more quickly to flaming, or fast, fires.",
+                      "children": []
+                    },
+                    {
+                      "id": "photo-electric",
+                      "title": "Photo-electric",
+                      "description": "Often called optical detectors. Respond more quickly to smoldering fires.",
+                      "children": []
+                    },
+                    {
+                      "id": "dual",
+                      "title": "Dual",
+                      "description": "Combine ionization and photo-electric detection in one device.\nMost good-quality detectors today are dual detectors.",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "id": "heat",
+                  "title": "Heat (Thermal)",
+                  "description": "Heat detectors, also called thermal or rate-of-rise detectors, are temperature sensors that watch for a rapid rise in temperature.\nIf the temperature spikes rapidly, you probably have a fire.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "fire-suppression",
+              "title": "Fire Suppression",
+              "description": "Two major types of fire suppression system: water-based and gas-based.\nWater-based systems are cheaper, but water and expensive electrical equipment in a data center are a terrible combination. So gas-based systems are cost-justified in data centers.",
+              "children": [
+                {
+                  "id": "water",
+                  "title": "Water",
+                  "description": "Common in office buildings, hotels and other spaces where some water will not destroy millions of dollars' worth of equipment.\nKnow four types of water-based system.",
+                  "children": [
+                    {
+                      "id": "water-based-systems",
+                      "title": "Wet, Dry, Pre-action, Deluge",
+                      "description": "- Wet (wet pipe): the pipes always hold pressurized water, waiting to be released. The cheapest, but with big downsides: it cannot be used where pipes might freeze, and with pressurized water in the pipes at all times, leaks are inevitable.\n- Dry (dry pipe): looks the same as wet pipe, but the pipes are dry, filled with pressurized gas. Water floods into the pipes only when needed.\n- Pre-action: the pipes stay dry until a fire detection system triggers and fills them with water. Each sprinkler head then opens only when heat activates it. The two steps reduce accidental water release.\n- Deluge: the pipes are dry and the sprinkler heads are open. When triggered, a large volume of water flows out of all heads at once.",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "id": "gas",
+                  "title": "Gas",
+                  "description": "Gas-based systems use various gases to put out a fire.\nSome displace the oxygen in a room: no oxygen, no fire. But no oxygen also means no human life, so safety systems must let people leave the data center before the gas is released.\nOther gas-based systems interrupt the chemical, exothermic process that is fire.",
+                  "children": [
+                    {
+                      "id": "gas-agents",
+                      "title": "INERGEN, Argonite, FM-200, Aero-K",
+                      "description": "The four major gas-based fire suppression agents to know:\n- INERGEN\n- Argonite\n- FM-200\n- Aero-K\nHalon is deliberately not listed. It was traditionally used in data centers, but it has been banned globally because it destroys the ozone layer. Do not pick Halon on the exam.",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "id": "extinguisher",
+                  "title": "Extinguisher",
+                  "description": "Fire extinguishers: the red devices hanging on walls everywhere.\nFive classes, each for a different type of fire and using different suppression agents:\n- A (Ash): common combustibles. Water, foam, dry chemicals.\n- B (Boil): liquids. Gas, CO₂, foam, dry chemicals.\n- C (Current): electrical. Gas, CO₂, dry chemicals.\n- D (Dense): combustible metals. Dry powders.\n- K (Kitchen): commercial kitchens. Wet chemicals.\nThe one class to highlight is C: for electrical fires, the type you might have in a data center. Class C extinguishers often use CO₂ (carbon dioxide) as the suppression agent.",
+                  "children": []
+                },
+                {
+                  "id": "co2",
+                  "title": "CO₂",
+                  "description": "An excellent fire suppression agent for data centers: it is non-corrosive (it will not damage expensive equipment), leaves no residue, does not conduct electricity and, as long as you do not use too much, is safe for humans.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

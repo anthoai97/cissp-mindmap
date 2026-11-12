@@ -1,0 +1,349 @@
+{
+  "id": "access-control-overview",
+  "title": "Access Control",
+  "description": "Access control principles, administration approaches, the four access control services (identification, authentication, authorization, accountability) and session management.",
+  "domain": 5,
+  "order": 1,
+  "source": "https://destcert.com/resources/access-control-overview-mindmap-cissp-domain-5/",
+  "nodes": [
+    {
+      "id": "access-control-principles",
+      "title": "Access Control Principles",
+      "description": "Three major principles applied throughout access control.",
+      "children": [
+        {
+          "id": "separation-of-duties",
+          "title": "Separation of Duties",
+          "description": "Divide key processes into multiple parts, assigned to different people.",
+          "children": []
+        },
+        {
+          "id": "need-to-know",
+          "title": "Need to Know",
+          "description": "Need to know and least privilege are very similar: give users only the access they need for their job, and nothing more. Know the subtle difference.\nNeed to know restricts a user's KNOWLEDGE: access only to the data their role requires.",
+          "children": []
+        },
+        {
+          "id": "least-privilege",
+          "title": "Least Privilege",
+          "description": "Restricts a user's ACTIONS to only those their role requires.\nCompare need to know, which restricts a user's knowledge (access to data).",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "administration-approaches",
+      "title": "Administration Approaches",
+      "description": "How access to systems is administered: adding, changing and removing users.\nThree main approaches: centralized, decentralized and hybrid.",
+      "children": [
+        {
+          "id": "centralized",
+          "title": "Centralized",
+          "description": "Access to many separate applications is managed through one central system.",
+          "children": []
+        },
+        {
+          "id": "decentralized",
+          "title": "Decentralized",
+          "description": "Access to each application is managed separately, within that application.",
+          "children": []
+        },
+        {
+          "id": "hybrid",
+          "title": "Hybrid",
+          "description": "Some combination of centralized and decentralized. Many organizations use it.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "access-controls-services",
+      "title": "Access Controls Services",
+      "description": "Every access control system must provide four major services: identification, authentication, authorization and accountability.\nAccess controls are the mechanisms that work together to protect an organization's assets. They can be physical, like locks, or logical, like a login to an operating system. They let management specify which users can access which resources, what operations they can perform, and hold each individual accountable.\nEvery access control system controls a subject's access to an object through mediation based on a set of rules, with everything logged and monitored. This is the Reference Monitor Concept (RMC). An implementation of the RMC is a security kernel, so every access control system is a security kernel.",
+      "children": [
+        {
+          "id": "identification",
+          "title": "Identification",
+          "description": "The user asserts their identity to the system.\nExample: a username, such as rwitcher.",
+          "children": []
+        },
+        {
+          "id": "authentication",
+          "title": "Authentication",
+          "description": "The system verifies the user's identity using one of the three factors of authentication: knowledge, ownership or characteristic.",
+          "children": [
+            {
+              "id": "knowledge",
+              "title": "Knowledge",
+              "description": "Something you know: the user proves their identity with information they have memorized.",
+              "children": [
+                {
+                  "id": "password",
+                  "title": "Password",
+                  "description": "A memorized secret the user provides to authenticate.",
+                  "children": []
+                },
+                {
+                  "id": "passphrase",
+                  "title": "Passphrase",
+                  "description": "A long sequence of words that is easy to remember.",
+                  "children": []
+                },
+                {
+                  "id": "questions",
+                  "title": "Questions",
+                  "description": "Security questions the user answers.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "ownership",
+              "title": "Ownership",
+              "description": "Something you have: things in the user's possession.",
+              "children": [
+                {
+                  "id": "one-time-passwords",
+                  "title": "One-time Passwords",
+                  "description": "The most common form of authentication by ownership.\nEach password is meant to be used only once.",
+                  "children": [
+                    {
+                      "id": "hard-tokens",
+                      "title": "Hard Tokens",
+                      "description": "Dedicated hardware devices that generate one-time passwords.\nExample: an RSA ID key.",
+                      "children": []
+                    },
+                    {
+                      "id": "soft-tokens",
+                      "title": "Soft Tokens",
+                      "description": "Apps (software) that generate one-time passwords.\nExample: the Microsoft or Google authenticator apps on a mobile phone.",
+                      "children": []
+                    },
+                    {
+                      "id": "synchronous",
+                      "title": "Synchronous",
+                      "description": "Hard and soft tokens come in two types: synchronous and asynchronous.\nIn a synchronous system, the token and the authentication server generate the same one-time password every 30 to 60 seconds. They are synchronized.",
+                      "children": []
+                    },
+                    {
+                      "id": "asynchronous",
+                      "title": "Asynchronous",
+                      "description": "Uses a challenge and a response. The user receives a challenge, enters it into the token, and the token generates the response: the one-time password.\nRare, because it is more expensive and complicated, but more secure. Used in high-value situations, such as Bloomberg financial terminals.",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "id": "smart-memory-cards",
+                  "title": "Smart / Memory Cards",
+                  "description": "The other form of authentication by ownership.\n- Smart cards contain a computer chip that provides some smarts.\n- Memory cards only store data that can be read. It is the same data every time, so they are less secure.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "characteristic",
+              "title": "Characteristic",
+              "description": "Called characteristic, not just biometrics, because there are two kinds of characteristics: physiological and behavioral.",
+              "children": [
+                {
+                  "id": "physiological",
+                  "title": "Physiological",
+                  "description": "Characteristics of our physiology, our bodies. Often called biometrics.",
+                  "children": [
+                    {
+                      "id": "fingerprint",
+                      "title": "Fingerprint",
+                      "description": "Scans our fingerprints.",
+                      "children": []
+                    },
+                    {
+                      "id": "hand-geometry",
+                      "title": "Hand Geometry",
+                      "description": "Measures the overall dimensions of the hand.",
+                      "children": []
+                    },
+                    {
+                      "id": "vascular-pattern",
+                      "title": "Vascular Pattern",
+                      "description": "Scans vein patterns, often on the back of the hand.\nMany Pearson VUE test centers use vascular scanners when you register for the CISSP exam, to make sure it is you who comes back into the room after a break, not someone hired to write the exam for you.",
+                      "children": []
+                    },
+                    {
+                      "id": "facial",
+                      "title": "Facial",
+                      "description": "Scans the face.",
+                      "children": []
+                    },
+                    {
+                      "id": "iris",
+                      "title": "Iris",
+                      "description": "Scans the colored ring of the eye: the outside of the eyeball.",
+                      "children": []
+                    },
+                    {
+                      "id": "retina",
+                      "title": "Retina",
+                      "description": "Scans the vein pattern at the back of the eye: the inside of the eyeball.\nUsually considered the most accurate biometric system.",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "id": "behavioral",
+                  "title": "Behavioral",
+                  "description": "How we act and do things, such as speaking, typing and walking.",
+                  "children": [
+                    {
+                      "id": "voice",
+                      "title": "Voice",
+                      "description": "Analyzes the way we speak: the fine details of our voices.",
+                      "children": []
+                    },
+                    {
+                      "id": "signature",
+                      "title": "Signature",
+                      "description": "Analyzes how we write, for example how we sign our name.",
+                      "children": []
+                    },
+                    {
+                      "id": "key-stroke",
+                      "title": "Key Stroke",
+                      "description": "Keystroke dynamics: analyzes how we type, using characteristics such as dwell time and flight time.",
+                      "children": []
+                    },
+                    {
+                      "id": "gait",
+                      "title": "Gait",
+                      "description": "Gait dynamics: analyzes how we walk.",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "id": "templates",
+                  "title": "Templates",
+                  "description": "A biometric system processes a user's sample, such as a fingerprint or face scan, to find unique characteristics, and creates a mathematical representation of them: the biometric template.\nTwo major uses:\n- 1 to N (one to many) lookup, for identification\n- 1 to 1 direct comparison, for authentication",
+                  "children": []
+                },
+                {
+                  "id": "type-1-false-reject",
+                  "title": "Type 1: False Reject",
+                  "description": "Biometric authentication is not binary: the system is never 100% sure a user is valid or invalid. So there are two types of errors.\nType 1, false reject: a valid user is falsely rejected.",
+                  "children": []
+                },
+                {
+                  "id": "type-2-false-accept",
+                  "title": "Type 2: False Accept",
+                  "description": "The inverse of a Type 1 error: an invalid user, such as an attacker, is falsely authenticated and given access. Not good.",
+                  "children": []
+                },
+                {
+                  "id": "crossover-error-rate",
+                  "title": "Crossover Error Rate",
+                  "description": "Type 1 and Type 2 error rates are inverse to each other. On a graph, the two lines intersect at the Crossover Error Rate (CER), also called the Equal Error Rate (EER).\nThe CER is a good measure of a biometric system's overall accuracy.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "single-multifactor",
+              "title": "Single / Multifactor",
+              "description": "Single-factor authentication uses one of the three factors: knowledge, ownership or characteristic.\nMulti-factor authentication uses two or more DIFFERENT factors.",
+              "children": []
+            },
+            {
+              "id": "authenticator-assurance-levels",
+              "title": "Authenticator Assurance Levels (AAL)",
+              "description": "A model that measures how robust and secure an authentication process is.\nThree levels: AAL1 is the least secure and AAL3 the most secure.",
+              "children": []
+            },
+            {
+              "id": "just-in-time-access",
+              "title": "Just-in-time Access",
+              "description": "Just-in-time (JIT) access grants a user access to a system exactly when it is needed, and only for as long as a specific task takes.\nInstead of constant access, users get permissions dynamically when they need them, and the permissions are revoked once the task is done.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "authorization",
+          "title": "Authorization",
+          "description": "Defines a user's specific access within a system: what they are authorized to access.\nThis is where principles such as least privilege and need to know are applied.\nThree access control philosophies: discretionary, non-discretionary and mandatory.",
+          "children": [
+            {
+              "id": "discretionary",
+              "title": "Discretionary",
+              "description": "The owner of the system decides who is authorized to access what.\nA very good security practice: owners understand their systems best, and are accountable for their security.",
+              "children": [
+                {
+                  "id": "rule",
+                  "title": "Rule",
+                  "description": "Rule-based access: a list of rules in a file, or an ACL (access control list).",
+                  "children": []
+                },
+                {
+                  "id": "role",
+                  "title": "Role",
+                  "description": "Role-based access (RBAC): create roles, define the access for each role, then assign one or more roles to a user. A user's roles define their access.",
+                  "children": [
+                    {
+                      "id": "types-of-rbac",
+                      "title": "Types of RBAC",
+                      "description": "Four major types to be familiar with:\n- Non-RBAC: no role-based access.\n- Limited RBAC: roles are created within specific applications, and a role defines access only in that application.\n- Hybrid RBAC: one role can define a user's access in several applications, but not every application in the organization is integrated.\n- Full RBAC: one role can grant access to any application across the organization.\nMost companies do not reach full RBAC. They use limited or hybrid RBAC.",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "id": "attribute-context",
+                  "title": "Attribute / Context",
+                  "description": "Attribute-based access, sometimes called context-based access.\nLooks at a set of attributes to make an authorization decision: source IP address, geolocation, OS type, classification of the asset being accessed, and so on.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "non-discretionary",
+              "title": "Non-discretionary",
+              "description": "Someone other than the owner decides who is authorized to access what, such as an IT help desk person.\nNot a good security practice.",
+              "children": []
+            },
+            {
+              "id": "mandatory",
+              "title": "Mandatory",
+              "description": "The system decides, based on the security clearance of users and the classification of assets.\nLabeling is an important requirement for mandatory access.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "accountability",
+          "title": "Accountability",
+          "description": "The final and most important access control service.\nTo have security, users must be accountable for their actions on a system.",
+          "children": [
+            {
+              "id": "principle-of-access-control",
+              "title": "Principle of Access Control",
+              "description": "Accountability is the most important access control service, so it has a special name: the principle of access control.\nRemember: the principle of access control is accountability, and accountability is the principle of access control.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "session-management",
+      "title": "Session Management",
+      "description": "A session begins once a user has been identified, authenticated and authorized into a system.\nSession management keeps these sessions secure.",
+      "children": [
+        {
+          "id": "session-hijacking",
+          "title": "Session Hijacking",
+          "description": "The major risk related to sessions.",
+          "children": []
+        }
+      ]
+    }
+  ]
+}

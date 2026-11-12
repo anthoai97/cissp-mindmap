@@ -1,0 +1,306 @@
+{
+  "id": "secure-software-development",
+  "title": "Secure Software Development",
+  "description": "How to build security into software: the system and software development life cycles, development methods, APIs, obfuscation, acquisition, common vulnerabilities and secure programming.",
+  "domain": 8,
+  "order": 1,
+  "source": "https://destcert.com/resources/secure-software-development-mindmap-cissp-domain-8/",
+  "nodes": [
+    {
+      "id": "bake-in-security",
+      "title": "Bake In Security",
+      "description": "Involve security right from the start of every development project, and throughout. This is baking security in.\nRetrofitting security later costs much more than building it in from the start.\nSecurity requirements are usually labeled non-functional requirements. When a project is over budget and behind schedule, they are often the first thing management cuts.",
+      "children": []
+    },
+    {
+      "id": "system-life-cycle",
+      "title": "System Life Cycle (SLC)",
+      "description": "The whole life of a system, from cradle to grave. It includes the Software Development Life Cycle.\nCovers planning, design, development, testing, operations, maintenance and eventual disposal of the system.\nThere are many SLC and SDLC frameworks, and their steps vary a little, but they share the same concepts: understand the business requirements, design the right controls, implement and test them, deploy them, make sure they operate effectively, and eventually retire the system. Expect slight variations in wording on the exam; look for the general process.\nA simplified five-step model: Initiation, Development and Acquisition, Implementation, Operation / Maintenance, Disposal. In this model, certification and accreditation fit in the Implementation step.",
+      "children": [
+        {
+          "id": "sdlc",
+          "title": "Software Development Life Cycle (SDLC)",
+          "description": "Focuses on the development phases of the system life cycle.\nSteps: Initiation, Requirements, Architecture & Design, Development, Testing, and Release / Deployment.",
+          "children": [
+            {
+              "id": "plan-mgmt-approval",
+              "title": "Plan + Mgmt. Approval",
+              "description": "Define a plan for the project: the goals and objectives it will help the organization achieve, and high-level cost estimates.\nGet management approval to proceed with requirements analysis.",
+              "children": []
+            },
+            {
+              "id": "requirements",
+              "title": "Requirements",
+              "description": "Gather and validate business requirements to create a detailed set of requirements.\nExamples: user needs, the types of data to be collected, stored and processed, and the business uses of the system.",
+              "children": []
+            },
+            {
+              "id": "architecture-design",
+              "title": "Architecture & Design",
+              "description": "Turn the requirements into detailed system design documents, including the architecture, security controls, screen layouts and so on.",
+              "children": []
+            },
+            {
+              "id": "development",
+              "title": "Development",
+              "description": "Coding begins: writing code to create the system.\nMany methodologies guide development. Key ones: waterfall, agile and DevOps.",
+              "children": [
+                {
+                  "id": "waterfall",
+                  "title": "Waterfall",
+                  "description": "Starts with a plan, then defines requirements, builds, tests and finally releases.",
+                  "children": [
+                    {
+                      "id": "cannot-go-back",
+                      "title": "Cannot go back",
+                      "description": "The defining feature of waterfall: the phases run one after another, and you cannot go backwards. Water only flows downhill.\nExample: if you find a missed requirement during a 2-year waterfall project, you cannot go back and redefine the requirements. You finish build, test and release, then include the missed requirement in the next waterfall cycle.\nWaterfall suits projects where no changes are planned.",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "id": "agile",
+                  "title": "Agile",
+                  "description": "Created to solve waterfall's problem.\nSuits projects where many changes are expected, and organizations that want to iterate ideas rapidly and fail fast.",
+                  "children": [
+                    {
+                      "id": "sprints",
+                      "title": "Sprints",
+                      "description": "Agile follows the same phases as waterfall, but in sprints, typically 2 weeks long, iterating rapidly through plan, define, build, test and release.",
+                      "children": []
+                    },
+                    {
+                      "id": "scrum-master",
+                      "title": "Scrum Master",
+                      "description": "An agile role. The scrum master is a facilitator: remember that word.\nHas no real authority over the team and is not a project manager. Acts as a coach to the team, and facilitates communication with the organization to maximize the team's productivity.",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "id": "devops",
+                  "title": "DevOps",
+                  "description": "The latest, and arguably greatest, software development methodology.",
+                  "children": [
+                    {
+                      "id": "combine-dev-qa-ops",
+                      "title": "Combine Dev, QA & Ops",
+                      "description": "DevOps combines development (Dev), quality assessment and operations (Ops) to greatly shorten the development life cycle, possibly to releasing new code daily.\nIncludes automated practices such as continuous integration and continuous delivery.",
+                      "children": []
+                    },
+                    {
+                      "id": "secdevops",
+                      "title": "SecDevOps",
+                      "description": "DevOps can seem to conflict with security: practices such as segregation of duties between development and operations are removed on purpose, and many traditional security techniques are too slow for its rapid iterations.\nIntegrating security into DevOps requires:\n- strong engagement between developers and security\n- secure development frameworks\n- automating much of the security testing\n- using traditional techniques, such as penetration testing, only sparingly",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "testing",
+              "title": "Testing",
+              "description": "Test throughout the system life cycle: validate business requirements, review designs, and test units, interfaces, integration and whole software systems during development and operations.\nTesting techniques are covered in detail in the first Domain 6 mind map.",
+              "children": [
+                {
+                  "id": "canary",
+                  "title": "Canary",
+                  "description": "Canary deployments: gradually release new features to a subset of users, as an early warning of anything that breaks, before releasing to a wider audience. Like the canary in a coal mine.",
+                  "children": []
+                },
+                {
+                  "id": "certification",
+                  "title": "Certification",
+                  "description": "Evaluation criteria (covered in Domain 3) are the independent, objective evaluation and measurement of vendor products from a security perspective. They have two major steps: certification and accreditation.\nCertification is the independent, comprehensive technical analysis of a solution or product. It fits under testing in the SDLC.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "deployment",
+              "title": "Deployment",
+              "description": "The final stage of the SDLC: the system is moved into production.",
+              "children": [
+                {
+                  "id": "accreditation",
+                  "title": "Accreditation",
+                  "description": "The second step of evaluation criteria: management's official sign-off on the certification, for a set period of time.\nManagement signs off on the product being used in production for that period. It fits under deployment.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "operation",
+          "title": "Operation",
+          "description": "The system is in active use for business purposes.",
+          "children": []
+        },
+        {
+          "id": "disposal",
+          "title": "Disposal",
+          "description": "Extremely important and often overlooked.\nWhen a system is retired and replaced, controls must make sure that:\n- data, logic and processes are migrated to the new system with integrity\n- data in the old system is retained as needed\n- if the old system and data are deleted, the data is defensibly destroyed when required, not left on a hard drive sold on eBay",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "maturity-models",
+      "title": "Maturity Models",
+      "description": "Useful in software development and operations. They enable repeatable evaluation and benchmarking of processes, using well-defined levels:\n1. Initial (ad hoc): no real processes, barely controlled chaos. Processes are unpredictable, poorly controlled and reactive; success depends on heroic efforts.\n2. Repeatable: basic project management. Processes are characterized for projects, but often reactive.\n3. Defined: standardized processes. Processes are characterized for projects, and proactive.\n4. Managed: detailed metrics are collected. Processes are measured and controlled.\n5. Optimized: focus on continuous process improvement. An uneconomical and unreachable goal for most organizations.\nThe Software Capability Maturity Model is specific to software development. The Common Maturity Model covers many types of processes across an organization. Pay particular attention to the Common Maturity Model: it is widely used, and exam questions on its levels are not uncommon.",
+      "children": []
+    },
+    {
+      "id": "apis",
+      "title": "APIs",
+      "description": "Application Programming Interfaces: the tools and resources that let two applications, such as a client and a server, talk to each other across a network.\nUsed everywhere in development: they make repetitive but complex processes highly reusable with a little code.\nTwo major protocols for creating APIs: REST and SOAP.",
+      "children": [
+        {
+          "id": "rest",
+          "title": "REST",
+          "description": "Representational State Transfer.\nThe most commonly used. Lightweight and fast.",
+          "children": []
+        },
+        {
+          "id": "soap",
+          "title": "SOAP",
+          "description": "Simple Object Access Protocol.\nFar more complex and heavyweight, but provides many more capabilities.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "obfuscation",
+      "title": "Obfuscation",
+      "description": "Code obfuscation: deliberately writing code that is hard for humans to understand.\nIt makes code harder to reverse engineer and hides its purpose. Used when we do not want unauthorized people to understand how the code works and what it does.",
+      "children": [
+        {
+          "id": "lexical-data-control-flow",
+          "title": "Lexical, Data, Control flow",
+          "description": "The three major methods of obfuscating code:\n- Lexical: changes how the code looks (changing comments, removing debugging information, changing the format). The easiest but weakest method.\n- Data: changes the data structures (use of variables, arrays and so on).\n- Control flow: changes the flow of control through the code (reordering statements, methods and loops, adding irrelevant conditional statements).",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "acquire-software",
+      "title": "Acquire Software",
+      "description": "When an organization acquires code, by contracting someone to write custom code or by buying an off-the-shelf product, it must do software assurance activities.\nThese make sure the code is free from vulnerabilities and works as intended.",
+      "children": [
+        {
+          "id": "assess-vendors",
+          "title": "Assess vendors",
+          "description": "Assess the vendor that provides the code: make sure it uses secure software development techniques, tests its code enough, and so on.",
+          "children": []
+        },
+        {
+          "id": "contracts-slas",
+          "title": "Contracts / SLAs",
+          "description": "Contracts and SLAs define the controls a vendor must have in place, and measure how effective those controls are through metrics and reports.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "software-security-weaknesses-vulnerabilities",
+      "title": "Software Security Weaknesses & Vulnerabilities",
+      "description": "Common software weaknesses and vulnerabilities. Put controls in place to avoid them during development, and test to detect them during development and operations.",
+      "children": [
+        {
+          "id": "buffer-overflows",
+          "title": "Buffer Overflows",
+          "description": "A program writes a chunk of data to a buffer (memory) that is larger than the buffer, overruns the buffer's boundary and overwrites adjacent memory.\nThe risk comes when another program reads and executes the overwritten data.\nDefenses:\n- Parameter (bounds) checking: never write data larger than the buffer.\n- Address Space Layout Randomization (ASLR): randomizes where system executables are loaded into memory.",
+          "children": []
+        },
+        {
+          "id": "sql-injection",
+          "title": "SQL Injection",
+          "description": "Malicious SQL (Structured Query Language) code is sent to a web application, which passes it on to the database. The attacker can then directly control a database they should have no access to.\nThe major defense is input validation: the web application must never pass SQL code from a user directly to the database.\nExplained in more detail in the Domain 3 vulnerabilities mind map.",
+          "children": []
+        },
+        {
+          "id": "xss-csrf",
+          "title": "XSS / CSRF",
+          "description": "XSS (cross-site scripting): an attacker injects client-side scripts, usually JavaScript, into web pages that other users view. The victim's browser runs the attacker's code.\n- Stored XSS is persistent.\n- Reflected XSS is more common.\nAll types of XSS target the victim's browser. Input validation protects against XSS.\nCSRF (cross-site request forgery) targets a web application instead. It tricks a valid, authenticated user into sending commands to a web application that trusts the user, so the application runs commands from the attacker that it should not run.\nXSS is covered in more detail in the Domain 3 vulnerabilities mind map.",
+          "children": []
+        },
+        {
+          "id": "covert-channels",
+          "title": "Covert Channels",
+          "description": "An unintentional communication path that can disclose confidential information.\nTwo major types: storage and timing. Storage is by far the most common.",
+          "children": []
+        },
+        {
+          "id": "backdoors-trapdoors",
+          "title": "Backdoors / Trapdoors",
+          "description": "An intentional, covert way to access a system that bypasses the normal authentication and encryption controls.\nAn attacker installs a backdoor in a system, or hides one in code, to gain unauthorized access to an application or system.",
+          "children": []
+        },
+        {
+          "id": "memory-object-reuse",
+          "title": "Memory / Object Reuse",
+          "description": "A vulnerability in how memory is allocated to applications.\nApplication A stores data in memory, then no longer needs it. The memory is deallocated and reallocated to application B. If A's data is still in memory, B can access it.\nPrevention: the operating system zeroes out memory before reallocating it to another application.",
+          "children": []
+        },
+        {
+          "id": "toctou",
+          "title": "TOCTOU",
+          "description": "Time of Check Time of Use, also called a race condition.\nAn application checks the state of a resource before using it, but the state can change between the check and the use, which invalidates the check. The application can then perform invalid actions.\nAn attacker tries to race in and change the resource (a file, a variable, data in memory) between the check and the use.",
+          "children": []
+        },
+        {
+          "id": "citizen-developers",
+          "title": "Citizen Developers",
+          "description": "Business employees who create applications with new tools that make programming accessible to almost anyone.\nThe risk: people who should not be creating applications do. They are not properly trained developers, so they inevitably write insecure code.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "secure-programming",
+      "title": "Secure Programming",
+      "description": "Secure programming techniques that address the vulnerabilities above.",
+      "children": [
+        {
+          "id": "input-validation",
+          "title": "Input Validation",
+          "description": "Accepts only properly formed data, so malformed or malicious input is rejected.\nA major exam topic as the way to prevent XSS and SQL injection.\nTwo ways to validate input:\n- Syntactic validation: enforces the syntax or structure of the input.\n- Semantic validation: enforces correct values, for example a start date before the end date.",
+          "children": []
+        },
+        {
+          "id": "session-management",
+          "title": "Session Management",
+          "description": "A session begins when a user is authenticated and authorized to access an application.\nSession management controls whether a session may be created (for example, no more than one session per username), and ends sessions that are not in use with timeouts and screensavers.\nGood session management helps prevent session hijacking.",
+          "children": []
+        },
+        {
+          "id": "polyinstantiation",
+          "title": "Polyinstantiation",
+          "description": "Lets different versions of the same information exist at different classification levels.\nCreates different objects with the same name at the same time, to prevent unauthorized inference.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "maintain-software",
+      "title": "Maintain Software",
+      "description": "Types of tools used to maintain software that is in operation.",
+      "children": [
+        {
+          "id": "scm",
+          "title": "SCM",
+          "description": "Software Configuration Management: tools that track and control changes to software.",
+          "children": []
+        },
+        {
+          "id": "soar",
+          "title": "SOAR",
+          "description": "Security Orchestration, Automation and Response: software that automates security operations, including threat and vulnerability management and incident response.",
+          "children": []
+        }
+      ]
+    }
+  ]
+}

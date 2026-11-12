@@ -1,0 +1,237 @@
+{
+  "id": "trusted-computing-base",
+  "title": "Trusted Computing Base (TCB)",
+  "description": "The TCB is the totality of protection mechanisms that enforce a security policy; this map covers the reference monitor, components and protection mechanisms.",
+  "domain": 3,
+  "order": 3,
+  "source": "https://destcert.com/resources/trusted-computing-base-mindmap-cissp-domain-3/",
+  "nodes": [
+    {
+      "id": "reference-monitor-concept",
+      "title": "Reference Monitor Concept",
+      "description": "The RMC: to have security, you must control which subjects can access which objects, and what each subject can do with each object.\nA subject accesses an object through mediation, which is based on a set of rules, and everything is logged and monitored to give assurance that it works correctly.\nThe RMC is just a concept. To be useful it must be implemented, and an implementation of it is called a security kernel.",
+      "children": [
+        {
+          "id": "subject",
+          "title": "Subject",
+          "description": "An active entity, such as a person or a process, that wants to access objects.",
+          "children": []
+        },
+        {
+          "id": "mediation",
+          "title": "Mediation",
+          "description": "Anything that controls a subject's access to an object.\nExamples: a physical lock on a building door, the Windows login prompt that controls whether a user can access their computer, the system kernel controlling which applications can access the network card.",
+          "children": [
+            {
+              "id": "rules",
+              "title": "Rules",
+              "description": "The set of rules the mediation uses to decide which subjects can access which objects.\nThe rules are the functional aspect of the control.",
+              "children": []
+            },
+            {
+              "id": "logging-monitoring",
+              "title": "Logging & Monitoring",
+              "description": "Every control also needs an assurance aspect: knowing that the mediation keeps working correctly.\nLogging and monitoring provide that assurance.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "object",
+          "title": "Object",
+          "description": "A passive entity: whatever the subject accesses.\nExamples: databases, Word files, buildings, and even other processes.",
+          "children": []
+        },
+        {
+          "id": "security-kernel",
+          "title": "Security Kernel",
+          "description": "Any implementation of the Reference Monitor Concept.\nSecurity kernels are used wherever a subject's access to an object is controlled, so there are many examples in hardware, firmware and software.\nThe RMC and its implementation, the security kernel, must satisfy three principles: completeness, isolation and verifiability.",
+          "children": [
+            {
+              "id": "completeness",
+              "title": "Completeness",
+              "description": "A subject can never bypass the mediation. For example, there are no backdoors.",
+              "children": []
+            },
+            {
+              "id": "isolation",
+              "title": "Isolation",
+              "description": "The rules that control the mediation are tamperproof. Only someone who is authorized can change them.\nRemember: isolation means the rules are tamperproof.",
+              "children": []
+            },
+            {
+              "id": "verifiability",
+              "title": "Verifiability",
+              "description": "Logging and monitoring verify that the mediation is working correctly. This is the assurance aspect.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hardware-components",
+      "title": "Hardware Components",
+      "description": "Key hardware components within a computer system: the processor and storage.",
+      "children": [
+        {
+          "id": "processor",
+          "title": "Processor",
+          "description": "The CPU (Central Processing Unit): the brain of the computer.\nIt fetches instructions, decodes them, executes them and stores the results. These steps run millions of times per second, which lets many complex applications run at the same time (multitasking).",
+          "children": []
+        },
+        {
+          "id": "storage",
+          "title": "Storage",
+          "description": "Where all the operating system code, application code and data are kept.\nThere are two major categories: primary and secondary.\nFrom fastest, most expensive and smallest to slowest, cheapest and largest: CPU registers and cache, RAM, then the hard drive. Registers, cache and RAM are volatile; a hard drive is non-volatile.",
+          "children": [
+            {
+              "id": "primary",
+              "title": "Primary",
+              "description": "Very fast, small and volatile.\nExamples: the cache and registers built into the CPU, and RAM (Random Access Memory).\nVolatile means that when the power is turned off, the data is gone.",
+              "children": []
+            },
+            {
+              "id": "secondary",
+              "title": "Secondary",
+              "description": "The inverse of primary storage: much slower, much more storage space, and non-volatile.\nExamples: magnetic hard drives, SSDs (solid-state drives), optical media such as CDs and DVDs, and tapes.",
+              "children": []
+            },
+            {
+              "id": "virtual-memory",
+              "title": "Virtual Memory",
+              "description": "Not a type of memory, but a memory management technique.\nWhen you open a program, its code and data are copied from the slow hard drive into much faster RAM, so the CPU can access them quickly. RAM is relatively small (8, 16 or 32 GB), so with too many programs open the system can run out of RAM and crash with a blue screen of death.\nTo avoid this, the operating system temporarily moves less frequently used data from RAM back to the hard drive. This is often called paging, and it simulates having more memory than the system really has.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "software-components",
+      "title": "Software Components",
+      "description": "Major software components within a system: the system kernel, firmware and middleware.",
+      "children": [
+        {
+          "id": "system-kernel",
+          "title": "System Kernel",
+          "description": "The core of the operating system: the central part that controls everything.\nAn operating system is the software that controls all the computer hardware and lets multiple programs run. Examples: Windows, macOS, Linux, Unix, iOS, Android.\nDo not confuse the system kernel with the security kernel, which is an implementation of the Reference Monitor Concept.",
+          "children": []
+        },
+        {
+          "id": "firmware",
+          "title": "Firmware",
+          "description": "Software that provides low-level control of the underlying hardware.\nStored on the hardware itself, usually in non-volatile memory such as ROM (Read Only Memory).",
+          "children": []
+        },
+        {
+          "id": "middleware",
+          "title": "Middleware",
+          "description": "Software glue: a translator between incompatible applications.\nApplications pass messages through the middleware, which lets them talk to each other (interoperability).",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "protection-mechanisms",
+      "title": "Protection Mechanisms",
+      "description": "The concepts and software techniques used to secure systems and enforce security policies.",
+      "children": [
+        {
+          "id": "process-isolation",
+          "title": "Process Isolation",
+          "description": "Modern systems are multitasking: many applications run at the same time. The processes must be isolated, so that one application cannot interfere with another.\nTwo major methods: memory segmentation and time division multiplexing.",
+          "children": [
+            {
+              "id": "memory-segmentation",
+              "title": "Memory Segmentation",
+              "description": "Each process gets its own memory space and can only access the data in that space.",
+              "children": []
+            },
+            {
+              "id": "time-division-multiplexing",
+              "title": "Time Division Multiplexing",
+              "description": "Each process gets access to a resource, such as the CPU or the network card, for a small slice of time. Then control is taken away and given to the next process.\nThe processes are isolated because they can only access the resource one at a time.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "processor-states",
+          "title": "Processor States",
+          "description": "CPUs provide different privilege levels of access to their functionality: problem state and supervisor state.",
+          "children": [
+            {
+              "id": "problem",
+              "title": "Problem",
+              "description": "The lower privilege level, where most applications run. They do not get full access to the CPU's capabilities, but enough to run.\nThe name refers to what CPUs are meant to do: solve problems. Problem state is the normal operating privilege level.",
+              "children": []
+            },
+            {
+              "id": "supervisor",
+              "title": "Supervisor",
+              "description": "The higher privilege level, with full access to all the CPU's capabilities.\nThe system kernel usually runs in supervisor state.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "operating-system-modes",
+          "title": "Operating System Modes",
+          "description": "The two common privilege levels that applications, processes and code can run at: user mode and kernel mode.",
+          "children": [
+            {
+              "id": "user-mode",
+              "title": "User Mode",
+              "description": "The lower privilege level, where most applications run.\nIt restricts which system resources an application can access: no direct access to hardware, and a limit on the share of resources it can consume.",
+              "children": []
+            },
+            {
+              "id": "kernel-mode",
+              "title": "Kernel Mode",
+              "description": "The higher privilege level, where the system kernel runs.\nUnrestricted access to the underlying hardware.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "ring-protection-model",
+          "title": "Ring Protection Model",
+          "description": "Another way to define levels of trust or privilege and protect access to system resources.\nRing 0, in the center, has the most privilege, so it needs the most protection and access to it must be limited as much as possible. Each outer ring (1, 2, 3) has less privilege.\nDo not worry about rings 1 and 2. Operating systems do not agree on what they are used for, so you will not get questions on them.",
+          "children": [
+            {
+              "id": "ring-3-user-programs",
+              "title": "Ring 3: User Programs",
+              "description": "The outermost ring, with the least privilege. Most applications run here.",
+              "children": []
+            },
+            {
+              "id": "ring-0-system-kernel",
+              "title": "Ring 0: System Kernel",
+              "description": "The innermost ring, with the most privilege.\nRemember: the system kernel runs in ring 0. Firmware also resides in ring 0.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "secure-memory-management",
+          "title": "Secure Memory Management",
+          "description": "Running applications store and retrieve data in memory. Process isolation, in the form of memory segmentation, must stop one application from accessing another application's data.\nSecure memory management means a security kernel mediates applications' access to shared memory. This enforces memory segmentation and prevents problems such as buffer overflows and memory exhaustion.",
+          "children": []
+        },
+        {
+          "id": "data-hiding",
+          "title": "Data Hiding",
+          "description": "Data at a higher privilege level is simply hidden from an application running at a lower privilege level. The application cannot try to access data it does not know exists.\nThis sounds like an implementation of the Bell-LaPadula confidentiality model.",
+          "children": []
+        },
+        {
+          "id": "defence-in-depth",
+          "title": "Defence in depth",
+          "description": "Multiple layers of security controls, with a complete control at each layer: a combination of preventive, detective and corrective controls.\nA single failure at one layer does not expose or compromise the security of the asset.\nMany of the other protection mechanisms can be combined to achieve defense in depth.",
+          "children": []
+        }
+      ]
+    }
+  ]
+}

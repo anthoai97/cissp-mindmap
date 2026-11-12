@@ -1,0 +1,214 @@
+{
+  "id": "digital-certificates-signatures-pki",
+  "title": "Digital Certificates, Digital Signatures, PKI & Key Management",
+  "description": "How digital signatures and certificates work, how a PKI builds trust across untrusted networks, and how keys are managed through their lifecycle.",
+  "domain": 3,
+  "order": 7,
+  "source": "https://destcert.com/resources/digital-certificates-digital-signatures-pki-mindmap-cissp-domain-3/",
+  "layout": "stacked",
+  "nodes": [
+    {
+      "id": "digital-signatures",
+      "title": "Digital Signatures",
+      "description": "Digital signatures provide three major services: integrity, authenticity and non-repudiation.\nThey are used in many places:\n- Email: verify the integrity, authenticity and non-repudiation of a message.\n- Code signing: verify that an update you downloaded (for example, for an iPhone) really came from the vendor (Apple) and was not modified in transit.\n- Legal documents such as PDFs: let others verify exactly who signed the document.",
+      "children": [
+        {
+          "id": "integrity",
+          "title": "Integrity",
+          "description": "You can tell whether a message or file has been changed or modified in any way.",
+          "children": []
+        },
+        {
+          "id": "authenticity",
+          "title": "Authenticity",
+          "description": "You know who the message came from: who the sender is.",
+          "children": []
+        },
+        {
+          "id": "non-repudiation",
+          "title": "Non-repudiation",
+          "description": "Someone cannot deny the validity of something.\nDigital signatures give non-repudiation in two scenarios: origin and delivery.",
+          "children": [
+            {
+              "id": "origin",
+              "title": "Origin",
+              "description": "Non-repudiation of origin: the sender cannot deny that they sent exactly the message that was received.",
+              "children": []
+            },
+            {
+              "id": "delivery",
+              "title": "Delivery",
+              "description": "Non-repudiation of delivery: the receiver cannot deny that they received a specific message.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "digital-certificates",
+      "title": "Digital Certificates",
+      "description": "Used to verify the owner of a public key.\nTo communicate securely with someone, you often need their public key and they need yours. If you just exchange public keys across the internet, anyone could intercept and modify them, or swap in their own key, and you would have no idea it happened.\nExample: you cannot communicate securely with your online bank unless you know you have the bank's public key.",
+      "children": [
+        {
+          "id": "verify-owner-of-public-key",
+          "title": "Verify the owner of a Public Key",
+          "description": "Digital certificates solve the problem above: they let you verify who a public key belongs to.\nTwo important pieces of information in a certificate are the name of the owner of the public key and a copy of their public key.",
+          "children": [
+            {
+              "id": "x-509",
+              "title": "X.509",
+              "description": "Many different organizations can create digital certificates:\n- A big Certificate Authority, such as Comodo, Symantec, DigiCert or Entrust: everyone in the world trusts the certificate.\n- Your company: the certificate is trusted only within the company.\n- You, with a self-signed certificate: no one but you trusts it.\nBecause certificates come from so many sources, a standard is needed to make them interoperable. That standard is X.509.",
+              "children": []
+            },
+            {
+              "id": "replacement",
+              "title": "Replacement",
+              "description": "CAs typically issue a certificate valid for one to two years. The expiry date is written in the certificate itself.\nWhen the expiry date is reached, or just before, a new certificate must be created. Replacement is this regular replacement of expired certificates, and the expiry date shows when it is due.",
+              "children": []
+            },
+            {
+              "id": "revocation",
+              "title": "Revocation",
+              "description": "A certificate holds a copy of a public key. The matching private key must stay private: if it is compromised, no communication from that entity can be trusted.\nIf your private key is compromised, tell everyone at once not to trust your public key: ask your Certificate Authority to revoke your certificate. The CA keeps a list of all revoked certificates.\nBefore you trust the public key in any certificate, check with the CA that the certificate has not been revoked. If it has, do not trust the key.\nSoftware such as a web browser checks for you with one of two protocols: CRL or OCSP.",
+              "children": [
+                {
+                  "id": "crl",
+                  "title": "CRL",
+                  "description": "Certificate Revocation List: the older, less efficient way to check.\nThe client asks the CA whether a certificate is revoked. The CA sends a large file listing every certificate it has ever revoked, and the client searches the whole list for the certificate. Lots of overhead.",
+                  "children": []
+                },
+                {
+                  "id": "ocsp",
+                  "title": "OCSP",
+                  "description": "Online Certificate Status Protocol: much newer and more efficient.\nThe client asks the CA for the revocation status of one specific certificate, and the CA replies with that status: revoked, or good.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "pinning",
+              "title": "Pinning",
+              "description": "Certificate pinning. When you download a certificate from a server, there is a very small but non-zero chance that an attacker intercepts it and forwards a spoofed certificate. DigiNotar is a real-world example.\nInstead, trust a local certificate pinned on your system. Less secure: pin the first certificate you receive from the server. More secure: use software that comes with pre-installed pinned certificates.\nSignificant issues have been found with pinning, and Certificate Transparency has superseded it. Know it in case it is on the exam.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pki",
+      "title": "PKI",
+      "description": "Public Key Infrastructure: the broad set of roles, policies, procedures, hardware and software used to create, distribute, use, store, replace and revoke digital certificates.\nIts purpose is to bind a public key to its owner, so you can trust users and systems you communicate with across an untrustworthy environment such as the internet.",
+      "children": [
+        {
+          "id": "certificate-authority",
+          "title": "Certificate Authority (Root of Trust)",
+          "description": "All trust in a PKI is ultimately rooted in the Certificate Authority (CA), which is why it is called the root of trust.\nThe CA uses its private key to sign (encrypt) data that includes the owner's name and public key, creating a digital certificate. Only the CA has its private key, so no one can modify its certificates or create spoofed ones that look as if they came from it.\nAnyone can verify (decrypt) a certificate from a big public CA, because everyone has the CA's public key: it comes pre-installed in browsers such as Firefox, Chrome and Safari.",
+          "children": []
+        },
+        {
+          "id": "registration-authority",
+          "title": "Registration Authority",
+          "description": "Before a CA creates a certificate for you, it must proof your identity: confirm you are who you say you are.\nThe role within the CA that does this identity proofing is the Registration Authority (RA).",
+          "children": []
+        },
+        {
+          "id": "intermediate-issuing-ca",
+          "title": "Intermediate / Issuing CA",
+          "description": "If the CA signed new certificates directly with its root private key, that key would have to sit on a system connected to the internet. If the root private key is ever compromised, no certificate the CA has ever issued can be trusted.\nSo the root private key is kept offline and air-gapped, in a highly secure location.\nThe root key signs intermediate certificates, intermediate certificates sign issuing certificates, and issuing certificates sign entity certificates: the ones customers pay a CA for. This is the chain of trust. You can follow it back up to verify that the CA's private key signed the first certificate in the chain.\nExam tip: the role in the CA that issues certificates is the Issuing CA.",
+          "children": []
+        },
+        {
+          "id": "certificate-db",
+          "title": "Certificate DB (Revocation List)",
+          "description": "Each CA keeps its own Certificate DB: a list of every certificate it has ever issued, and which of them have been revoked.",
+          "children": []
+        },
+        {
+          "id": "certificate-store",
+          "title": "Certificate Store (Local)",
+          "description": "Secure local storage on an end-point device, such as a desktop, laptop or mobile phone. It holds your private keys and any other keys and certificates you need, such as the big CAs' public keys.\nEvery end-point device has its own certificate store.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "key-management",
+      "title": "Key Management",
+      "description": "The hardest part of security is cryptography, and the hardest part of cryptography is key management.\nKeys must be handled very securely in every key management activity: generation, distribution, storage, rotation, disposition and recovery.",
+      "children": [
+        {
+          "id": "kerckhoffs-principle",
+          "title": "Kerckhoffs's Principle",
+          "description": "Stated by Kerckhoffs in 1883: a cryptosystem should be secure even if everything about the system, except the key, is public knowledge.\nAn attacker can know the algorithm and the initialization vector and have the ciphertext, and the data stays secure as long as the key is kept secret.\nThis is why keys must be generated, distributed, stored, rotated, disposed of and recovered very securely.",
+          "children": []
+        },
+        {
+          "id": "generation",
+          "title": "Generation",
+          "description": "Creating new symmetric keys or asymmetric key pairs.\nCritical: each new key must be selected randomly from the entire keyspace, to avoid the plague of cryptography: patterns.",
+          "children": []
+        },
+        {
+          "id": "distribution",
+          "title": "Distribution",
+          "description": "Securely sending new keys to whoever needs them, and no one else.",
+          "children": [
+            {
+              "id": "key-distribution-methods",
+              "title": "Diffie-Hellman, Out-of-band, Hybrid",
+              "description": "Options for key distribution:\n- Diffie-Hellman: a key exchange protocol that uses asymmetric techniques to generate the same key for two people without sending the key itself.\n- Out-of-band: send the key through a different communication channel, such as a letter, a carrier pigeon, or a phone call where you read out 256 ones and zeros.\n- Hybrid: more realistic and much more common. Encrypt the symmetric key with the recipient's public key (for example, Alice's) and send it. Only Alice can decrypt it, with her private key. Then switch to symmetric cryptography to encrypt and decrypt lots of data quickly and efficiently. It is called hybrid because asymmetric cryptography is used to send a symmetric key. This is exactly how TLS works.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "storage",
+          "title": "Storage",
+          "description": "Created or received keys must be stored in an extremely secure location.\nTwo pieces of hardware are purpose-built to store encryption keys securely.",
+          "children": [
+            {
+              "id": "tpm-hsm",
+              "title": "TPM, HSM",
+              "description": "- TPM (Trusted Platform Module): a tiny chip built into end-point devices such as desktops, laptops and mobile phones, designed to store encryption keys very securely. A TPM is required for whole drive encryption.\n- HSM (Hardware Security Module): typically an external, standalone device. It stores encryption keys securely and acts as a cryptographic accelerator, for example to encrypt, decrypt and verify digital signatures quickly and efficiently.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "rotation",
+          "title": "Rotation",
+          "description": "Change encryption keys periodically: rotate to a new symmetric key or asymmetric key pair.\nHow often depends on the value of the data being protected and the risk of the keys being compromised, among other factors.",
+          "children": []
+        },
+        {
+          "id": "disposition",
+          "title": "Disposition",
+          "description": "Sometimes every single copy of a key must be securely and defensibly destroyed.",
+          "children": [
+            {
+              "id": "crypto-shredding-key-destruction",
+              "title": "Crypto-shredding, Key Destruction",
+              "description": "One reason to destroy every copy of a key is crypto-shredding: destroy data by destroying the keys used to encrypt it.\nIf the data was encrypted with an excellent algorithm such as AES and every copy of the key is destroyed, the data is unrecoverable, and so effectively destroyed.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "recovery",
+          "title": "Recovery",
+          "description": "Sometimes a lost key must be recovered. There are a few ways to do it.",
+          "children": [
+            {
+              "id": "key-recovery-methods",
+              "title": "Split Knowledge, Dual Control, Key Escrow",
+              "description": "- Split Knowledge: knowledge of the key is split among two or more people. To recover the key, they must combine their pieces of knowledge.\n- Dual Control: two or more people must perform an action together to recover the key. Think of launching a nuclear missile, where two people turn their keys at the same time.\n- Key Escrow: a copy of the key is stored (kept in escrow) with a trusted third party. To recover the key, ask the third party for its copy.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

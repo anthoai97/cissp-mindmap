@@ -1,0 +1,301 @@
+{
+  "id": "osi-model",
+  "title": "Open Systems Interconnection (OSI) Model",
+  "description": "The OSI model is a conceptual guide to how systems communicate: its seven layers, and the media, devices, protocols and addresses at each.",
+  "domain": 4,
+  "order": 1,
+  "source": "https://destcert.com/resources/osi-model-mindmap-cissp-domain-4/",
+  "nodes": [
+    {
+      "id": "physical",
+      "title": "1. Physical",
+      "description": "Layer 1: binary transmission of data across physical media.\nElectrons across wires, photons through fiber optic cables, and electromagnetic waves through the air for wireless. All different ways of moving bits.\nMemorize the seven layers in order: Physical, Datalink, Network, Transport, Session, Presentation, Application.\n- From the bottom: Please Do Not Throw Sausage Pizza Away.\n- From the top: All People Seem To Need Data Processing.\nThe OSI model is a guide, a conceptual framework to help standardize how systems communicate. It is not a strict set of rules.",
+      "children": [
+        {
+          "id": "media",
+          "title": "Media",
+          "description": "How bits are moved. There are two major methods: with wires of some sort, or wirelessly through the air.",
+          "children": [
+            {
+              "id": "wired-media",
+              "title": "Wired: Twisted Pair, Coaxial, Fiber Optic",
+              "description": "The types of wire to know a little about:\n- Twisted pair: also called ethernet cable, Category 5 or CAT5 cable. Newer standards include CAT6, CAT7 and CAT8. All use the RJ45 jack.\n- Coaxial cable.\n- Fiber optic cable.",
+              "children": []
+            },
+            {
+              "id": "wireless-media",
+              "title": "Wireless: Radio Frequency, Infrared, Microwave",
+              "description": "The three major ways to send bits wirelessly:\n- Radio frequency, which includes Wi-Fi.\n- Infrared.\n- Microwave: a good way to connect buildings that are within line of sight, and saves the cost of burying cable in the ground.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "topologies",
+          "title": "Topologies",
+          "description": "The different ways to connect the wires that interconnect several systems.",
+          "children": [
+            {
+              "id": "bus",
+              "title": "Bus",
+              "description": "Every system is connected to every other system across a wire. The vast majority of networks today are fundamentally bus topologies.\nA broadcast technology. The major issue is collisions: if two systems send data across the bus at the same time, they collide. The more systems, the more collisions.",
+              "children": []
+            },
+            {
+              "id": "tree",
+              "title": "Tree",
+              "description": "Still fundamentally a bus topology, but the network starts to be segmented: signals are forced down a particular branch, which helps reduce collisions.",
+              "children": []
+            },
+            {
+              "id": "star",
+              "title": "Star",
+              "description": "All systems are interconnected through a central device, such as a switch.\nThe switch can have some intelligence and send packets only to the intended recipient. This greatly reduces collisions and increases network throughput.",
+              "children": []
+            },
+            {
+              "id": "mesh",
+              "title": "Mesh",
+              "description": "Every device is interconnected with every other device. Wonderful for redundancy.\nFull mesh networks are very rare. Partial mesh networks, where critical devices such as boundary firewalls and routers are interconnected, are very common.",
+              "children": []
+            },
+            {
+              "id": "ring",
+              "title": "Ring",
+              "description": "The old-school token ring, with built-in collision avoidance. A token is passed around the ring, and a system can send data only when it has the token, so only one system sends at a time. No collisions.\nBut if a system malfunctions and does not pass the token on, no one can talk. That is one reason token ring networks are rare today.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "collisions",
+          "title": "Collisions",
+          "description": "Most networks today are fundamentally bus topologies, which have the big problem of collisions. So we need methods to deal with collisions effectively.",
+          "children": [
+            {
+              "id": "csma-ca",
+              "title": "CSMA/CA",
+              "description": "Carrier Sense Multiple Access with Collision Avoidance.\nAvoids collisions. Used mainly in wireless networks.",
+              "children": []
+            },
+            {
+              "id": "csma-cd",
+              "title": "CSMA/CD",
+              "description": "Carrier Sense Multiple Access with Collision Detection.\nDetects when a collision has happened and deals with it. Used mainly in wired networks.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "physical-devices",
+          "title": "Devices",
+          "description": "The major devices that operate at the Physical layer.",
+          "children": [
+            {
+              "id": "hubs-repeaters-concentrators",
+              "title": "Hubs, Repeaters, Concentrators",
+              "description": "These devices have no intelligence: they just repeat signals, but incredibly quickly and efficiently.\nA common theme in the OSI model: the Physical layer has essentially zero intelligence (no ability to make decisions) but very high speed. Each layer up gains more intelligence, at the cost of efficiency.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "physical-protocols",
+          "title": "Protocols",
+          "description": "The major protocol to know at layer 1.",
+          "children": [
+            {
+              "id": "physical-802-1x",
+              "title": "802.1x",
+              "description": "The video describes 802.11 here: a whole family of protocols for wireless local area networks, such as 802.11a, 802.11b, g, n, ac and Wi-Fi 6 (802.11ax).\nThe main 802.11 versions are covered in the Networking mind map.\nThe video describes 802.1x itself with the layer 2 protocols: it is used for Network Access Control.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "datalink",
+      "title": "2. Datalink",
+      "description": "Layer 2, the Data Link layer: responsible for physical addressing and reliable point-to-point connections.",
+      "children": [
+        {
+          "id": "mac-address",
+          "title": "MAC Address",
+          "description": "Media Access Control address: a unique identifier assigned to every network interface controller ever manufactured. Every device that connects to a network has one.\nLayer 2 switches use MAC addresses to work out which system to send data to.",
+          "children": []
+        },
+        {
+          "id": "datalink-devices",
+          "title": "Devices",
+          "description": "The layer 2 devices to know.",
+          "children": [
+            {
+              "id": "switches-bridges",
+              "title": "Switches & Bridges",
+              "description": "Bridges connect two physical network segments together.\nSwitches interconnect multiple devices so they can talk to each other. They forward data only to the intended recipient, based on MAC address, which greatly improves network performance over hubs.\nNewer, more intelligent switches operate at layers 2 and 3. Unless the question says otherwise, assume a switch operates at layer 2.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "datalink-protocols",
+          "title": "Protocols",
+          "description": "The layer 2 protocols.\nThe video also lists 802.1x here: it authenticates network devices to a network, and is a protocol used for Network Access Control.",
+          "children": [
+            {
+              "id": "arp-pptp-ppp-pap-chap-eap",
+              "title": "ARP, PPTP, PPP, PAP, CHAP, EAP",
+              "description": "- ARP (Address Resolution Protocol): translates an IP address (layer 3) down to a MAC address (layer 2). RARP (Reverse Address Resolution Protocol) does the opposite: MAC address up to IP address.\n- PPTP (Point-to-Point Tunneling Protocol): creates tunnels. Covered in the Remote Access mind map.\n- PPP (Point-to-Point Protocol): encapsulates IP traffic so it can be sent over analog connections. Provides authentication, encryption and compression.\n- PAP, CHAP and EAP: authentication protocols, covered in the Networking mind map.\nARP shows why OSI layers are not clear-cut: it operates at both layer 2 and layer 3. Many protocols span several layers, and sources often disagree about which layer a protocol belongs to. The exam asks which layer a protocol or device operates at; learn the simple answers, but recognize the real picture is more complicated.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "network",
+      "title": "3. Network",
+      "description": "Layer 3: responsible for logical addressing, routing and delivery of datagrams.",
+      "children": [
+        {
+          "id": "ip-address",
+          "title": "IP Address",
+          "description": "Internet Protocol addresses work like a postal address. To mail you a letter from anywhere on the planet, someone needs your country, province or state, city, street and house number, so the letter can be routed to your mailbox.\nIP addresses do the same on networks: they identify a specific system and allow datagrams (packets) to be routed to it, across local area networks and across the internet.\nCovered in more detail in the Networking mind map.",
+          "children": []
+        },
+        {
+          "id": "network-devices",
+          "title": "Devices",
+          "description": "The layer 3 devices to know: routers and packet filtering firewalls.",
+          "children": [
+            {
+              "id": "routers-packet-filtering-firewalls",
+              "title": "Routers & Packet Filtering Firewalls",
+              "description": "- Routers forward packets between different network segments based on IP addresses.\n- Packet filtering firewalls are the simplest and fastest firewalls. Firewalls are covered in the Network Defense mind map.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "network-protocols",
+          "title": "Protocols",
+          "description": "The layer 3 protocols.",
+          "children": [
+            {
+              "id": "icmp-ipsec-igmp",
+              "title": "ICMP (Ping), IPSec, IGMP",
+              "description": "- ICMP (Internet Control Message Protocol): lets network devices send error and control messages. Enables the Ping and Traceroute utilities.\n- IPSec (Internet Protocol Security): a suite of protocols that provide data authentication, integrity and confidentiality. Its components are covered in the Remote Access mind map.\n- IGMP (Internet Group Management Protocol): used by hosts and adjacent routers to set up multicast group memberships. Multicast means sending the same packets to multiple systems at once.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "transport",
+      "title": "4. Transport",
+      "description": "Layer 4: responsible for end-to-end connections, with error detection and correction.",
+      "children": [
+        {
+          "id": "ports-services",
+          "title": "Ports = Services",
+          "description": "Ports live at layer 4. Different ports equate to different services that a system offers across a network.\nThink of ports as the doors in a building: if a door is open, you can use the services of that room, such as a cafeteria, a washroom or a bedroom.\nThere are 65,535 ports. You only need to remember a few common ones.",
+          "children": [
+            {
+              "id": "common-ports",
+              "title": "Common Ports",
+              "description": "Remember these common ports:\n- 21: FTP (File Transfer Protocol), transfers files between a client and a server.\n- 22: SSH (Secure Shell), for remotely connecting to a system.\n- 23: Telnet, a remote command line protocol.\n- 53: DNS (Domain Name System), translates domain names such as google.com to IP addresses such as 142.251.46.174.\n- 80: HTTP (HyperText Transfer Protocol), used by web browsers to connect to web servers.\n- 443: HTTPS, HTTP secured with TLS (Transport Layer Security).",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "transport-protocols",
+          "title": "Protocols",
+          "description": "The layer 4 protocols.",
+          "children": [
+            {
+              "id": "tcp-udp-ssl-tls-bgp",
+              "title": "TCP/UDP, SSL/TLS & BGP",
+              "description": "- TCP (Transmission Control Protocol): reliable, ordered and error-checked delivery of packets.\n- UDP (User Datagram Protocol): delivers packets with great speed and efficiency, but without a reliable connection or error correction. Send and pray.\n- SSL (Secure Sockets Layer) and its latest version, TLS: used to encrypt HTTP traffic. Covered in the Remote Access mind map.\n- BGP (Border Gateway Protocol): exchanges routing and reachability information between routers. It looks at all the paths a packet could take and picks the best route based on many variables. Critical for getting packets where they need to go across the internet.\nTCP and UDP are two very important protocols to understand.\nIt helps to connect SSL/TLS and other crypto tools to their place in the stack. That makes it easier to remember which layers secure packets, sessions or full application traffic.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "session",
+      "title": "5. Session",
+      "description": "Layer 5: responsible for interhost communication.",
+      "children": [
+        {
+          "id": "session-devices",
+          "title": "Devices",
+          "description": "There is one layer 5 device to know.",
+          "children": [
+            {
+              "id": "circuit-proxy-firewall",
+              "title": "Circuit Proxy Firewall",
+              "description": "The lone layer 5 device to know. Firewalls are covered in the Network Defense mind map.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "session-protocols",
+          "title": "Protocols",
+          "description": "The layer 5 protocols.",
+          "children": [
+            {
+              "id": "netbios-rpc",
+              "title": "NetBIOS & RPC",
+              "description": "- NetBIOS (Network Basic Input/Output System): lets applications on different computers communicate with each other over a LAN.\n- RPC (Remote Procedure Call): lets a client ask a remote server to run a specified procedure with supplied parameters.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "presentation",
+      "title": "6. Presentation",
+      "description": "Layer 6 is all about presentation:\n- character conversion\n- codecs: compression and decompression for streaming audio and video\n- image conversion\n- formatting\nThat is all you need to know about layer 6.",
+      "children": []
+    },
+    {
+      "id": "application",
+      "title": "7. Appl.",
+      "description": "Layer 7, the Application layer: the top of the OSI model, with the greatest intelligence to make decisions.\nResponsible for human-computer interaction. This is where applications access network services.",
+      "children": [
+        {
+          "id": "application-devices",
+          "title": "Devices",
+          "description": "The major device to recognize as a layer 7 device.",
+          "children": [
+            {
+              "id": "application-firewalls",
+              "title": "Application Firewalls",
+              "description": "Very intelligent firewalls. They can make very advanced decisions about what to allow through, for example with deep packet inspection.\nThe cost is a lot of latency.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "application-protocols",
+          "title": "Protocols",
+          "description": "The layer 7 protocols to know.",
+          "children": [
+            {
+              "id": "http-dns-ssh-snmp-ldap-dhcp",
+              "title": "HTTP/S, DNS, SSH, SNMP, LDAP, DHCP",
+              "description": "- HTTP/S (Hypertext Transfer Protocol): a request-response service that lets a client request web pages from a web server.\n- DNS: Domain Name System.\n- SSH: Secure Shell.\n- SNMP (Simple Network Management Protocol): collects data from, and manages the configuration of, network devices such as switches and routers.\n- LDAP (Lightweight Directory Access Protocol): accesses and maintains distributed directory information: connecting to, accessing, modifying and searching directories. Example: a corporate email directory.\n- DHCP (Dynamic Host Configuration Protocol): assigns IP addresses to devices as they are added to the network, so there are no duplicate IP addresses.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

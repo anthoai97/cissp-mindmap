@@ -1,0 +1,276 @@
+{
+  "id": "asset-classification",
+  "title": "Asset Classification",
+  "description": "How to protect assets appropriately: inventory them, assign owners, classify them by value, protect them based on classification, and review regularly.",
+  "domain": 2,
+  "order": 1,
+  "source": "https://destcert.com/resources/asset-classification-mindmap-domain-2/",
+  "nodes": [
+    {
+      "id": "asset-inventory",
+      "title": "Asset Inventory",
+      "description": "The first step in asset classification: create and maintain an asset inventory, a catalog of all the assets across the organization.\nAn asset is anything of value to the organization: people, buildings, equipment, software, data, intellectual property and many more.",
+      "children": []
+    },
+    {
+      "id": "assign-ownership",
+      "title": "Assign Ownership",
+      "description": "Every asset needs a clearly defined owner.\nThe owner is accountable for protecting the asset.\nThe owner is best placed to judge how valuable the asset is to the organization, and so which classification it should get.",
+      "children": []
+    },
+    {
+      "id": "classify",
+      "title": "Classify",
+      "description": "Based on value.\nWe classify assets to find out how valuable they are to the organization, and so the level of protection they need.\nClassify all assets, not only data. People often say data classification, but asset classification includes data classification and covers every asset of the organization.",
+      "children": [
+        {
+          "id": "data-classification-policy",
+          "title": "Data classification policy",
+          "description": "Before classifying anything, define the classification levels (the classes) and clearly identify who is accountable and responsible for what.\nDocument all of this in a data classification policy.",
+          "children": [
+            {
+              "id": "standards-procedures-baselines-guidelines",
+              "title": "Standards / Procedures / Baselines / Guidelines",
+              "description": "Created from the data classification policy.\n- Procedures: step-by-step instructions for classifying data into the classes the policy defines.\n- Baselines: the minimum security requirements for each class. Remember this point.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "classification",
+          "title": "Classification",
+          "description": "A system of classes, ordered by value.\nExample: public, proprietary and confidential, with public the least valuable and confidential the most.\nEach organization chooses the classes that suit its needs. Do not memorize any particular scheme: they vary a lot between organizations.",
+          "children": [
+            {
+              "id": "security-label",
+              "title": "Security Label",
+              "description": "Associates a set of security attributes with an information object, as part of the object's data structure.\nLabels are read by the system, so it knows the data's classification and the protection it needs.",
+              "children": [
+                {
+                  "id": "system-readable",
+                  "title": "System Readable",
+                  "description": "Remember: labels are meant to be read by the system. They enable system-based enforcement.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "security-marking",
+              "title": "Security Marking",
+              "description": "Very similar to a label: associates a set of security attributes with objects, but in a human-readable form.\nMarkings are read by people, so they know the data's classification and the protection it needs.",
+              "children": [
+                {
+                  "id": "human-readable",
+                  "title": "Human Readable",
+                  "description": "Remember: markings are meant to be read by humans. They enable organizational, process-based enforcement of security policies.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "categorization",
+          "title": "Categorization",
+          "description": "The act of sorting assets into the defined classes.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "protect",
+      "title": "Protect",
+      "description": "Based on classification: protect each asset according to its classification.\nStart with clearly defined roles, then protect data at rest, in motion and in use, when archived, and when defensibly destroyed.",
+      "children": [
+        {
+          "id": "roles",
+          "title": "Roles",
+          "description": "Clearly define who is accountable or responsible for what.",
+          "children": [
+            {
+              "id": "data-owner-controller",
+              "title": "Data Owner / Controller",
+              "description": "The most important role. The data owner is also called the data controller.\nAccountable for protecting the data.\nDefines the data's classification, and is accountable for making sure the data is protected accordingly.",
+              "children": []
+            },
+            {
+              "id": "data-processor",
+              "title": "Data Processor",
+              "description": "Responsible for processing data on behalf of the owner.\nTypical example: a cloud service provider, which stores and processes data for the owner.",
+              "children": []
+            },
+            {
+              "id": "data-custodian",
+              "title": "Data Custodian",
+              "description": "Technical responsibility for the data: data security, availability and capacity, and making sure backups are done and data can be restored.",
+              "children": []
+            },
+            {
+              "id": "data-steward",
+              "title": "Data Steward",
+              "description": "Business responsibility for the data: data governance, data quality and compliance.\nStewards are employees from the business who make sure the data is useful for business purposes.",
+              "children": []
+            },
+            {
+              "id": "data-subject",
+              "title": "Data Subject",
+              "description": "The individual that personal data relates to. The data is about them.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "Rest",
+          "description": "Data at rest: data stored on a storage device.",
+          "children": [
+            {
+              "id": "encryption",
+              "title": "Encryption",
+              "description": "A major technique. Use a strong encryption algorithm (covered in Domain 3) to turn the data into ciphertext.\nThe ciphertext stays protected unless an attacker gets the correct key, or finds a flaw in the encryption.",
+              "children": []
+            },
+            {
+              "id": "access-control",
+              "title": "Access Control",
+              "description": "Strong access controls (covered in Domain 5) make sure only properly authenticated and authorized people can access the data.\nExamples: multi-factor authentication, and good logging and monitoring to hold users accountable for what they do with the data.",
+              "children": []
+            },
+            {
+              "id": "backups",
+              "title": "Backups",
+              "description": "Backup and data resiliency controls make sure data is not lost or destroyed by accident. Covered in Domain 7.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "motion",
+          "title": "Motion",
+          "description": "Data in motion: data in transit across a network.\nAll these controls encrypt the data in some way while it crosses potentially insecure networks.",
+          "children": [
+            {
+              "id": "end-to-end",
+              "title": "End-to-End",
+              "description": "The sender encrypts the data portion of the packet. The data stays encrypted through every node it passes (switches, routers, firewalls and so on) and is decrypted only when it reaches the recipient.\nThe data is never in plaintext in transit: it is encrypted and decrypted only at the endpoints.\nExample: a VPN (Virtual Private Network), covered in Domain 4.\nDownside: routing information, such as the source and destination IP addresses, must be in plaintext and visible to anyone. So end-to-end encryption gives no anonymity.",
+              "children": []
+            },
+            {
+              "id": "link",
+              "title": "Link",
+              "description": "Encrypts the whole packet, including the headers and routing information, on each link between two nodes.\nEach node decrypts the packet to read where to send it, then re-encrypts it for the next link.\nSo the data is in plaintext inside every node along the path.",
+              "children": []
+            },
+            {
+              "id": "onion",
+              "title": "Onion",
+              "description": "Onion networks give confidentiality and anonymity: it is very hard to tell who the sender and receiver are while the data is in transit.\nThe sender chooses in advance the series of nodes the packet will pass through, and encrypts the whole packet many times, one layer for each node, using that node's key.\nEach node strips off one layer, which reveals the next node to send the packet to. Only the destination can decrypt the data inside.\nEach node knows only the node before and the node after, not the original source and destination, and cannot read the data in the innermost layer.\nExample: Tor (The Onion Router).\nThe big downside is performance.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "use",
+          "title": "Use",
+          "description": "Data in use is more vulnerable than data at rest, because people and processes must be able to view and edit it.\nThe main controls are good access controls, and possibly DLP to monitor and control what users do with the data.\nHomomorphic encryption is another option, but you do not need to know it for the exam.",
+          "children": []
+        },
+        {
+          "id": "archive",
+          "title": "Archive",
+          "description": "Move data that is no longer actively used to cheaper storage for long-term retention.\nKeep archived data as long as the data classification policy requires, and keep protecting it based on its classification. Data archived on a tape still needs protection.",
+          "children": [
+            {
+              "id": "retention-period",
+              "title": "Retention Period",
+              "description": "Keep data as long as compliance, regulatory and contractual requirements need, but no longer.\nYou do not have to worry about a data breach if you do not have the data.\nRetain data as long as the policy requires, then dispose of it.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "defensible-destruction",
+          "title": "Defensible Destruction",
+          "description": "Laws, regulations and contracts may require data to be defensibly destroyed: securely destroyed and made unrecoverable, in a way that stands up as reasonable and consistent. You can prove the data cannot be recovered.\nSome ways to destroy data are much better than others.\nThree categories, from best to worst: destruction, purging, clearing.\nTechniques, from best to worst: media destruction (incinerate), shred / disintegrate / drill, degauss, crypto shredding, overwrite / wipe / erasure, format.",
+          "children": [
+            {
+              "id": "destruction",
+              "title": "Destruction",
+              "description": "The best category: physically destroy the media the data is stored on.",
+              "children": [
+                {
+                  "id": "media-destruction",
+                  "title": "Media Destruction",
+                  "description": "The best technique: physically destroy the media. Ideally melt it or burn it (incinerate) until only smoke and maybe a puddle of metal are left. There is no way to get that data back.",
+                  "children": []
+                },
+                {
+                  "id": "shred-disintegrate-drill",
+                  "title": "Shred / Disintegrate / Drill",
+                  "description": "The next best technique: shred or disintegrate the media, or drill a hole in it.\nNot nearly as good as media destruction: with the right tools, data can still be read from small shredded pieces of a hard drive or tape.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "purging",
+              "title": "Purging",
+              "description": "The next best category: use logical or physical techniques to sanitize data, so the data cannot be reconstructed.",
+              "children": [
+                {
+                  "id": "degauss",
+                  "title": "Degauss",
+                  "description": "Expose magnetic media to a strong magnetic field to erase the data.\nRanked third best, after media destruction and shredding, and placed in the purging category.\nWorks only on magnetic media, such as hard drives and tapes.",
+                  "children": []
+                },
+                {
+                  "id": "crypto-shredding",
+                  "title": "Crypto shredding",
+                  "description": "Encrypt the data with a strong algorithm, such as AES-256, then destroy every copy of the encryption key. Without the key, the data is unrecoverable.\nIt fits between purging and clearing. If the key is never recovered or brute-forced, and no flaw is found in the algorithm, the data has been purged. If any of those happens, the data may be recoverable, so it was only cleared.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "clearing",
+              "title": "Clearing",
+              "description": "The worst category: use logical techniques to sanitize data, so the data may not be reconstructed.\n\"May not be reconstructed\" is not very reassuring.",
+              "children": [
+                {
+                  "id": "overwrite-wipe-erasure",
+                  "title": "Overwrite / Wipe / Erasure",
+                  "description": "All three terms mean writing all zeros, all ones or a combination to every sector of a storage device, replacing the original data.\nIt can be done many times, but research shows that however many times you overwrite, some original data may be recoverable. So it is a clearing technique.",
+                  "children": []
+                },
+                {
+                  "id": "format",
+                  "title": "Format",
+                  "description": "The worst method. By default, formatting leaves most if not all of the data on the disk, so it can easily be recovered with the right tool.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "drm",
+          "title": "DRM",
+          "description": "Digital Rights Management: technology that protects the rights of copyright holders of digital media.\nIt encrypts media such as videos, music and eBooks, and controls who can do what with them: how many times a movie can be played, which device can play music, whether an eBook can be printed. Copyright holders can set and enforce rules on how their content is used.\nDigital watermarks are related: they mark copyright ownership on digital media, visibly or invisibly, and can trace unauthorized copies back to the source.\nWatermarks cannot prevent unauthorized copying, so DRM and watermarks are often used together: DRM to encrypt and control access, watermarks for traceability.",
+          "children": []
+        },
+        {
+          "id": "dlp",
+          "title": "DLP",
+          "description": "Data Loss Prevention: tools and processes that make sure sensitive or critical information is not lost, misused or accessed by unauthorized people.\nDLP can identify, monitor and protect data in use, in motion and at rest.\nData classification is a critical requirement for DLP. DLP cannot stop every bit of data from leaking or being misused, so you must know which data is sensitive.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "assess-review",
+      "title": "Assess & Review",
+      "description": "Periodically review and assess the classes, and the classifications assets have received.\nLaws, regulations and business requirements change over time, which may require changing the classes and the classification of assets.",
+      "children": []
+    }
+  ]
+}

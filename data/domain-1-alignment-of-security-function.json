@@ -1,0 +1,193 @@
+{
+  "id": "alignment-of-security-function-to-business-strategy",
+  "title": "Alignment of Security Function to Business Strategy",
+  "description": "How security governance aligns the security function with the organization's business goals.",
+  "domain": 1,
+  "order": 1,
+  "source": "https://destcert.com/resources/alignment-of-security-function-to-business-strategy-mindmap-cissp-domain-1/",
+  "nodes": [
+    {
+      "id": "corporate-governance",
+      "title": "Corporate Governance",
+      "description": "The rules, practices and processes that direct and control an organization toward its goals, usually to increase its value.\nKeeps everyone in the organization aligned on the same goals.",
+      "children": [
+        {
+          "id": "security-governance",
+          "title": "Security Governance",
+          "description": "The rules, practices and processes that direct and control the security function, so that security is aligned with the organization's goals.\nSecurity should be an enabler for the business.\nInstead of just saying no, explain the risks and the ways to reduce them.",
+          "children": [
+            {
+              "id": "focus-of-security",
+              "title": "Focus of Security",
+              "description": "Security exists to help the organization reach its goals.",
+              "children": [
+                {
+                  "id": "enable-business",
+                  "title": "Enable Business",
+                  "description": "Security should enable the business, not block it.",
+                  "children": []
+                },
+                {
+                  "id": "increase-value",
+                  "title": "Increase Value",
+                  "description": "Security should increase the organization's value, not be seen only as a cost center.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "roles-and-responsibilities",
+              "title": "Clearly Defined Roles & Responsibilities",
+              "description": "People must know what they are accountable for and what they are responsible for.",
+              "children": [
+                {
+                  "id": "accountability",
+                  "title": "Accountability",
+                  "description": "Ownership: ultimate answerability, blameworthiness and liability. Where the buck stops.\nCannot be delegated or outsourced.\nThe asset owner stays accountable even when someone else does the work.",
+                  "children": []
+                },
+                {
+                  "id": "responsibility",
+                  "title": "Responsibility",
+                  "description": "Can be delegated. The responsible party implements and enforces controls as directed by the accountable party.\nExample: a cloud provider is responsible for storing, processing and securing customer data, but the customer stays accountable for it.",
+                  "children": []
+                },
+                {
+                  "id": "due-care",
+                  "title": "Due Care",
+                  "description": "Protecting assets responsibly, based on the organization's goals and objectives.",
+                  "children": []
+                },
+                {
+                  "id": "due-diligence",
+                  "title": "Due Diligence",
+                  "description": "Being able to prove to stakeholders that you are exercising due care.\nStakeholders include management, regulators, customers and shareholders.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "import-export-controls",
+              "title": "Import/export controls",
+              "description": "Laws that restrict exporting certain technologies, including some cryptographic algorithms and systems.\nThese laws followed advances in cryptography in the 1970s and 1980s, such as DES and asymmetric cryptography.\nViolations can carry serious penalties, including federal prison.",
+              "children": [
+                {
+                  "id": "itar-ear",
+                  "title": "ITAR & EAR",
+                  "description": "US regulations that restrict the manufacture, sale and distribution of specific technologies, including some cryptography.\nITAR (International Traffic in Arms Regulations): defense articles, technical data and defense services.\nEAR (Export Administration Regulations): dual-use items not covered by ITAR, and some defense-related items.",
+                  "children": []
+                },
+                {
+                  "id": "wassenaar-arrangement",
+                  "title": "Wassenaar Arrangement",
+                  "description": "A voluntary, multinational export control regime, not a strict law.\n42 participating countries.\nMembers exchange information on transfers of conventional weapons and dual-use goods and technologies.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "transborder-data-flow",
+              "title": "Transborder data flow",
+              "description": "Data residency (data localization) laws that restrict data from crossing national borders.\nExample: a law that requires citizens' personal data to be stored inside the country.",
+              "children": []
+            },
+            {
+              "id": "privacy",
+              "title": "Privacy",
+              "description": "You cannot achieve privacy without security.\nNot a major topic in this mind map. It is covered in its own mind map.",
+              "highlight": "own-mindmap",
+              "mindmap": "privacy-and-intellectual-property",
+              "children": []
+            },
+            {
+              "id": "ethics",
+              "title": "Ethics",
+              "description": "Organizations should write their ethics into policy.\nEthics is based on doing nothing that harms anyone else.",
+              "children": [
+                {
+                  "id": "isc2-code-of-ethics",
+                  "title": "(ISC)² Code of Professional Ethics",
+                  "description": "Every CISSP must agree to this code. Expect it on the exam.\nThe four canons are applied in order: when they conflict, the earlier canon wins.\n1. Protect society, the common good, necessary public trust and confidence, and the infrastructure.\n2. Act honorably, honestly, justly, responsibly, and legally.\n3. Provide diligent and competent service to principals.\n4. Advance and protect the profession.",
+                  "highlight": "exam-key",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "corporate-laws",
+              "title": "Corporate Laws",
+              "description": "Policies are the organization's laws: they tell people what they must do.",
+              "children": [
+                {
+                  "id": "overarching-security-policy",
+                  "title": "Overarching Security Policy",
+                  "description": "The organization's overall approach to security.\nIssued and supported by the Board and senior management.\nSets the security goals and keeps security aligned with business goals.",
+                  "children": [
+                    {
+                      "id": "functional-security-policies",
+                      "title": "Functional Security Policies",
+                      "description": "Detailed policies for specific areas, such as access control, encryption, incident response and data backups.\nExample: every laptop must have malware protection.",
+                      "children": [
+                        {
+                          "id": "standards",
+                          "title": "Standards",
+                          "description": "Mandatory hardware or software mechanisms.\nExample: one specific antivirus product is required on all Windows laptops.",
+                          "children": []
+                        },
+                        {
+                          "id": "procedures",
+                          "title": "Procedures",
+                          "description": "Mandatory step-by-step instructions.\nExample: the steps to install and configure the required antivirus.",
+                          "children": []
+                        },
+                        {
+                          "id": "baselines",
+                          "title": "Baselines",
+                          "description": "Minimum security levels and mandatory configurations.\nExample: a Windows laptop checklist: host firewall on, patches applied, antivirus configured.",
+                          "children": []
+                        },
+                        {
+                          "id": "guidelines",
+                          "title": "Guidelines",
+                          "description": "Recommendations, not mandatory.\nExample: use MFA for admin accounts, while some systems cannot support it yet.",
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "risk-management",
+              "title": "Risk Management",
+              "description": "A critical tool for protecting assets with limited resources. Part of security governance.\nCovered in its own mind map.",
+              "highlight": "own-mindmap",
+              "mindmap": "risk-management",
+              "children": []
+            },
+            {
+              "id": "procurement",
+              "title": "Procurement",
+              "description": "Involve security from the start of buying anything.\nValidate the business requirements first.\nFor services, document the security requirements in the SLR (Service Level Requirements) and use it to evaluate providers.",
+              "children": [
+                {
+                  "id": "contracts-and-slas",
+                  "title": "Contracts & SLAs",
+                  "description": "After a provider is chosen, the SLR becomes the SLA (Service Level Agreement).\nThe SLA is an addendum to the legally binding contract. It describes the service, its targets and each party's responsibilities.\nResponsibility can be outsourced. Accountability cannot.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "awareness-training-education",
+              "title": "Awareness, Training & Education",
+              "description": "Everyone is responsible for security, but people need to know what that means for them.\n- Awareness: informal communication, such as emails and posters, to change culture. Example: phishing awareness.\n- Training: semi-formal teaching of specific skills. Example: how to deploy a particular firewall.\n- Education: teaching fundamental concepts. Example: a CISSP course.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

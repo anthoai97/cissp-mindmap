@@ -1,0 +1,135 @@
+{
+  "id": "databases",
+  "title": "Databases",
+  "description": "The components of a database management system, how relational databases organize data, how locks and ACID maintain data integrity, and SQL injection.",
+  "domain": 8,
+  "order": 2,
+  "source": "https://destcert.com/resources/databases-mindmap-cissp-domain-8/",
+  "nodes": [
+    {
+      "id": "dbms-components",
+      "title": "Components of a Database Management System (DBMS)",
+      "description": "A database stores an organized collection of structured data in tables with rows and columns, which makes the data easy to add, access, modify and analyze.\nRelational databases, the focus of this map, relate data in one table to data in other tables, based on a relational model.\nA DBMS is the collection of components that let people and processes control and use the database.",
+      "children": [
+        {
+          "id": "hardware",
+          "title": "Hardware",
+          "description": "The first component. The DBMS runs on a server that must provide enough processing power and storage space.",
+          "children": []
+        },
+        {
+          "id": "software",
+          "title": "Software",
+          "description": "An operating system, and the DBMS software that runs on it.\nExamples of DBMSs: MySQL, Oracle RDBMS, IBM DB2, Microsoft SQL Server, Amazon RDS and many others.",
+          "children": [
+            {
+              "id": "database",
+              "title": "Database",
+              "description": "The DBMS software controls the database.\nA database contains one or more tables.",
+              "children": [
+                {
+                  "id": "tables",
+                  "title": "Tables",
+                  "description": "Tables contain rows and columns of data.",
+                  "children": [
+                    {
+                      "id": "rows-tuples-records",
+                      "title": "Rows = Tuples / Records",
+                      "description": "Rows are also called tuples or records.",
+                      "children": []
+                    },
+                    {
+                      "id": "columns-attributes",
+                      "title": "Columns = Attributes",
+                      "description": "Columns are also called attributes.",
+                      "children": []
+                    },
+                    {
+                      "id": "fields",
+                      "title": "Fields",
+                      "description": "The intersection of a tuple (row) and an attribute (column): one cell of data in the table.",
+                      "children": []
+                    },
+                    {
+                      "id": "primary-foreign-keys",
+                      "title": "Primary & Foreign Keys",
+                      "description": "How a relational database relates data in one table to data in another table.\n- Primary key: a unique identifier for a specific record (row). For a person, it could be a social insurance number, a passport number or a student ID.\n- Foreign key: a column whose values match primary keys in another table. It forms the link, the relationship, to that table.\nExample: a course registration table has a row for each course a student is registered in, and each row holds the student ID as the foreign key. The student ID links students to the courses they are registered in.",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "language-sql",
+          "title": "Language (SQL)",
+          "description": "Structured Query Language: the language used to communicate with and control a relational DBMS.",
+          "children": []
+        },
+        {
+          "id": "users",
+          "title": "Users",
+          "description": "Users or processes send SQL commands to the DBMS to store new data, modify data, delete data and so on.",
+          "children": []
+        },
+        {
+          "id": "data",
+          "title": "Data",
+          "description": "The final major component: all the data stored in the DBMS.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "maintaining-integrity-of-data",
+      "title": "Maintaining Integrity of Data",
+      "description": "A database is of little use to an organization if its data is inaccurate, so controls must ensure the integrity of the data.",
+      "children": [
+        {
+          "id": "concurrency",
+          "title": "Concurrency",
+          "description": "Modern high-performance databases usually run many transactions concurrently, in parallel.\nA transaction is a unit of work, usually several operations such as reads, writes and acquiring locks.\nWhen many users or processes run transactions concurrently, maintaining data integrity is much harder.",
+          "children": []
+        },
+        {
+          "id": "locks",
+          "title": "Locks",
+          "description": "A major control to prevent data corruption when transactions run concurrently.\nWhen a record (tuple) is locked, only one user or process can update it until the lock is released, by committing the update or rolling back.",
+          "children": []
+        },
+        {
+          "id": "acid-atomicity",
+          "title": "A - Atomicity",
+          "description": "ACID is a standard set of properties that guarantee database transactions are processed reliably. Enforce them to further protect data integrity.\nAtomicity: all changes in a transaction take effect, or none do.",
+          "children": []
+        },
+        {
+          "id": "acid-consistency",
+          "title": "C - Consistency",
+          "description": "Updates to the database are consistent with the rules. The rules are enforced.",
+          "children": []
+        },
+        {
+          "id": "acid-isolation",
+          "title": "I - Isolation",
+          "description": "Transactions are invisible to other users until they are complete.",
+          "children": []
+        },
+        {
+          "id": "acid-durability",
+          "title": "D - Durability",
+          "description": "Completed transactions are not lost: they are durable.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "sql-injection",
+      "title": "SQL Injection",
+      "description": "A major attack against databases. You definitely need to understand it for the exam.\nAn attacker injects SQL code through a web application to control the database behind it. Security professionals should always work to prevent it.\nCovered in detail in the Domain 3 vulnerabilities mind map.",
+      "children": []
+    }
+  ]
+}

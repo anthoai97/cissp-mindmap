@@ -1,0 +1,199 @@
+{
+  "id": "single-sign-on-and-federated-access",
+  "title": "Single Sign-on / Federated Access",
+  "description": "How single sign-on (Kerberos, Sesame) and federated identity management (trust relationships, SAML, WS-Federation, OpenID, OAuth) let users access many systems with one login.",
+  "domain": 5,
+  "order": 2,
+  "source": "https://destcert.com/resources/single-sign-on-and-federated-access-mindmap-cissp-domain-5/",
+  "nodes": [
+    {
+      "id": "single-set-of-credentials",
+      "title": "Allows users to access multiple systems with a single set of credentials",
+      "description": "What single sign-on and federated identity management have in common: both let users access multiple systems with one set of credentials.\nUsers love this: they remember one terrible password instead of many, and authenticate once to get access to all their applications.",
+      "children": [
+        {
+          "id": "single-sign-on",
+          "title": "Single Sign-on",
+          "description": "Access systems within the same organization.\nSingle sign-on protocols and systems are designed to work within one organization.",
+          "children": [
+            {
+              "id": "kerberos",
+              "title": "Kerberos",
+              "description": "A major protocol that enables single sign-on.\nAuthenticates users with tickets over an insecure network.",
+              "children": [
+                {
+                  "id": "kerberos-components",
+                  "title": "Components",
+                  "description": "Kerberos is a complicated, very flexible protocol, so it has many components.",
+                  "children": [
+                    {
+                      "id": "user-client",
+                      "title": "User / Client",
+                      "description": "The person who wants to access services through Kerberos.",
+                      "children": []
+                    },
+                    {
+                      "id": "key-distribution-center",
+                      "title": "Key Distribution Center",
+                      "description": "The KDC. Contains the two services Kerberos provides: the Authentication Service and the Ticket Granting Service.",
+                      "children": []
+                    },
+                    {
+                      "id": "authentication-service",
+                      "title": "Authentication Service",
+                      "description": "To access a service through Kerberos, the user first authenticates with the Authentication Service.\nIt checks that the user exists. If so, it sends the user two tickets, one of which is the Ticket Granting Ticket (TGT).",
+                      "children": []
+                    },
+                    {
+                      "id": "ticket-granting-ticket",
+                      "title": "Ticket Granting Ticket (TGT)",
+                      "description": "The user passes the TGT to the Ticket Granting Service, the other component in the KDC, with a couple of messages saying which service the user wants to access.",
+                      "children": []
+                    },
+                    {
+                      "id": "ticket-granting-service",
+                      "title": "Ticket Granting Service",
+                      "description": "Checks that the requested service exists and that the user is authorized to access it.\nIf so, it creates a Service Ticket and sends it to the user.",
+                      "children": []
+                    },
+                    {
+                      "id": "service-tickets",
+                      "title": "Service Tickets",
+                      "description": "What the user finally sends to the application to get access to it.\nThe user caches the Service Ticket for future access, while the ticket is valid and not expired.",
+                      "children": []
+                    },
+                    {
+                      "id": "service",
+                      "title": "Service",
+                      "description": "The application the user wants to access. The user presents a Service Ticket to it to get access.",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "id": "symmetric-encryption-only",
+                  "title": "Symmetric encryption only",
+                  "description": "By default, Kerberos supports only symmetric key cryptography.\nA significant limitation: quite a few symmetric keys may need to be created and securely distributed among the components.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "sesame",
+              "title": "Sesame",
+              "description": "Another single sign-on protocol: the Secure European System for Applications in a Multi-vendor Environment.\nUnlike Kerberos, it supports asymmetric cryptography too.",
+              "children": [
+                {
+                  "id": "symmetric-asymmetric-encryption",
+                  "title": "Symmetric & Asymmetric encryption",
+                  "description": "Sesame supports asymmetric cryptography as well as symmetric.\nThis solves the major problems of symmetric key cryptography: scalability and key distribution.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "federated-identity-management",
+          "title": "Federated Identity Management (FIM)",
+          "description": "Access systems across multiple entities.\nTo the user it looks exactly like single sign-on: enter one set of credentials and get access to many applications.\nThe key difference: with federated access, users can access not only internal applications, but also externally managed ones, such as SaaS applications in the cloud.",
+          "children": [
+            {
+              "id": "trust-relationship",
+              "title": "Trust Relationship",
+              "description": "Federated access relies on a trust relationship between three entities: the user, the identity provider and the service provider.\nThe service provider must trust the authentication done by the identity provider before it authorizes the user to access the service.",
+              "children": [
+                {
+                  "id": "principal-user",
+                  "title": "Principal / User",
+                  "description": "The user, sometimes also called the principal.",
+                  "children": []
+                },
+                {
+                  "id": "identity-provider",
+                  "title": "Identity Provider",
+                  "description": "Authenticates the user: verifies the user's identity by knowledge, ownership or characteristic.\nIn many organizations, the identity provider is something like Active Directory.",
+                  "children": []
+                },
+                {
+                  "id": "relying-party-service-provider",
+                  "title": "Relying Party / Service Provider",
+                  "description": "What the user wants to access. The service provider is sometimes also called the relying party.\nOften not owned by the organization, but owned and managed by a vendor. Example: SaaS applications used at work to submit help desk tickets, book travel or enter expenses.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "saml",
+              "title": "SAML",
+              "description": "Security Assertion Markup Language.\nSeveral protocols enable federated access. SAML is the major one you need to know.",
+              "children": [
+                {
+                  "id": "tokens",
+                  "title": "Tokens",
+                  "description": "Kerberos sends tickets. SAML does the same thing, but calls them tokens.",
+                  "children": []
+                },
+                {
+                  "id": "assertions-written-in-xml",
+                  "title": "Assertions written in XML",
+                  "description": "Tokens contain assertion statements, such as the user ID, the service ID, and the timestamp and lifetime of the token.\nThe assertion statements are written in XML (Extensible Markup Language).",
+                  "children": []
+                },
+                {
+                  "id": "saml-components",
+                  "title": "Components",
+                  "description": "SAML was designed for many different use cases, so it is made of several components that make it flexible and adaptable.",
+                  "children": [
+                    {
+                      "id": "profiles",
+                      "title": "Profiles",
+                      "description": "Define how SAML can be used for different business use cases, such as web single sign-on or through LDAP.",
+                      "children": []
+                    },
+                    {
+                      "id": "bindings",
+                      "title": "Bindings",
+                      "description": "Map SAML onto different communication protocols, such as HTTP, so SAML can communicate across different types of networks.",
+                      "children": []
+                    },
+                    {
+                      "id": "protocol",
+                      "title": "Protocol",
+                      "description": "Defines how entities send and respond to requests.",
+                      "children": []
+                    },
+                    {
+                      "id": "assertion",
+                      "title": "Assertion",
+                      "description": "Defines the authentication, authorization and other attributes.",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "ws-federation",
+              "title": "WS-Federation",
+              "description": "A federated access protocol to recognize. Provides both authentication and authorization.",
+              "children": []
+            },
+            {
+              "id": "openid",
+              "title": "OpenID",
+              "description": "A federated access protocol to recognize. Provides authentication.",
+              "children": []
+            },
+            {
+              "id": "oauth",
+              "title": "OAuth",
+              "description": "A federated access protocol to recognize. Provides authorization.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

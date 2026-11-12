@@ -1,0 +1,98 @@
+{
+  "id": "incident-response",
+  "title": "Incident Response",
+  "description": "The incident response process: events versus incidents, then preparation, triage, action and investigation, and recovery with lessons learned.",
+  "domain": 7,
+  "order": 2,
+  "source": "https://destcert.com/resources/incident-respones-mindmap-cissp-domain-7/",
+  "nodes": [
+    {
+      "id": "preparation",
+      "title": "Prep.",
+      "description": "Preparation. To respond to an incident effectively, you must prepare first.\nExamples: write an incident response policy and procedures, identify and train the right people, and put monitoring capabilities in place.",
+      "children": []
+    },
+    {
+      "id": "triage",
+      "title": "Triage",
+      "description": "The incident response process can be grouped into three high-level buckets: Triage, Action / Investigation, and Recovery. Triage is the beginning of the process.\nIncident response focuses on detecting incidents, responding effectively and efficiently to reduce the impact on the organization, maintaining or restoring business continuity, and defending against future attacks.\nMany incident response processes exist, from sources such as NIST and CSIRT, with slightly different numbers and names of steps. Do not focus too much on the exact steps and names. They all share the same goals:\n- be prepared for an incident\n- detect it, then respond quickly\n- minimize the damage\n- return to normal operations\n- learn from it, to improve and to prevent future incidents",
+      "children": [
+        {
+          "id": "detection",
+          "title": "Detection",
+          "description": "The first and absolutely most important step. If you cannot detect an incident, you cannot activate the incident response process or do any of the other steps.\nOn the exam, if asked to put the incident response steps in order, always look for detection as the first step.",
+          "children": [
+            {
+              "id": "sources",
+              "title": "Sources",
+              "description": "Ways to identify and detect incidents in the flood of events that keep happening. The box lists:\n- SIEM (Security Information and Event Management) systems, fed by tools such as intrusion detection systems\n- IDS/IPS (Intrusion Detection / Prevention Systems)\n- DLP (Data Loss Prevention)\n- Fire detectors, and other building monitoring systems such as fire alarms\n- Etc., for example a report from an employee",
+              "children": []
+            },
+            {
+              "id": "event",
+              "title": "Event",
+              "description": "An observable occurrence.\nExamples: someone logging in, a file being written to a drive, someone scanning the external firewall.\nMost events are not of particular concern.",
+              "children": []
+            },
+            {
+              "id": "incident",
+              "title": "Incident",
+              "description": "An adverse event: an event that negatively impacts the organization in some way.\nExamples: a server crashing, a password being brute forced, an attacker getting through the firewall.\nIncidents definitely matter.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "response",
+          "title": "Response (IR Team Deployed)",
+          "description": "Once an incident is detected, respond by activating the incident response team.\nOne of the team's first tasks is an impact assessment: how severe the incident is and how long recovery will take. The impact assessment drives the rest of the process.\nIf the Maximum Tolerable Downtime (MTD) will be exceeded, it is no longer treated as an incident: declare a disaster and enact the BCP or DRP. This is covered in the Business Continuity Management mind map.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "action-investigation",
+      "title": "Action / Investigation",
+      "description": "The second bucket of the incident response process, after triage.",
+      "children": [
+        {
+          "id": "mitigation",
+          "title": "Mitigation (Containment)",
+          "description": "Minimize the damage and contain the incident.\nExamples: if a worm is spreading across the network, disconnect systems from the network; if there is a fire, activate the fire suppression system.",
+          "children": []
+        },
+        {
+          "id": "reporting",
+          "title": "Reporting (Relevant Stakeholders)",
+          "description": "Reporting actually happens throughout the incident response process.\nOne dedicated contact person on the incident response team reports to all relevant stakeholders (management, investors, regulators, customers, the media and so on), so the rest of the team can stay focused on responding.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "recovery",
+      "title": "Recovery",
+      "description": "The last bucket: get things back to business as usual, and make improvements so the same incident does not happen again.",
+      "children": [
+        {
+          "id": "recovery-return-to-normal",
+          "title": "Recovery (Return to normal)",
+          "description": "Return things to business as usual.\nExamples: eradicate the worm and reconnect systems to the network; after a fire, clean up the charred, soaking office, install new carpet, paint the walls and move in new furniture.",
+          "children": []
+        },
+        {
+          "id": "remediation",
+          "title": "Remediation (Prevention)",
+          "description": "Actually begins in parallel with mitigation.\nRoot cause analysis to find out how to prevent the problem, for example to stop the worm spreading while systems are recovered, or to stop the fire reigniting.\nContinues through recovery and the closure of the incident, and leads into lessons learned.",
+          "children": []
+        },
+        {
+          "id": "lessons-learned",
+          "title": "Lessons Learned (Improve Process)",
+          "description": "The post-incident step: how did this happen, and how can we prevent it from happening again?\nThe goal is to improve processes and systems and to teach people, so future incidents are prevented, or are detected more quickly and handled more effectively if they do happen.",
+          "children": []
+        }
+      ]
+    }
+  ]
+}

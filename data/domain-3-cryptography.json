@@ -1,0 +1,309 @@
+{
+  "id": "cryptography",
+  "title": "Cryptography",
+  "description": "The services cryptography provides, key terminology, and the methods of secret writing: hiding, hashing, symmetric and asymmetric encryption, substitution and transposition.",
+  "domain": 3,
+  "order": 6,
+  "source": "https://destcert.com/resources/cryptography-mindmap-cissp-domain-3/",
+  "layout": "stacked",
+  "nodes": [
+    {
+      "id": "cryptographic-services",
+      "title": "Cryptographic Services",
+      "description": "The five major services that cryptography provides: confidentiality, integrity, authenticity, non-repudiation and access control.\nWe rely on cryptography every day, often without noticing: buying online without having card details stolen, checking that a software update really came from the vendor and was not modified in transit, digital rights management, electronic voting, signing documents, defensible data destruction in the cloud and cryptocurrencies.",
+      "children": [
+        {
+          "id": "confidentiality",
+          "title": "Confidentiality",
+          "description": "Make data available only to those authorized to view it.\nHelps prevent unauthorized disclosure of information.",
+          "children": []
+        },
+        {
+          "id": "integrity",
+          "title": "Integrity",
+          "description": "Ensures information has not been changed by unauthorized people.\nHelps prevent unauthorized or unexpected changes to data.",
+          "children": [
+            {
+              "id": "integrity-hashing",
+              "title": "= Hashing",
+              "description": "Integrity is achieved with hashing. Equate the two in your mind: hashing = integrity, integrity = hashing.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "authenticity",
+          "title": "Authenticity",
+          "description": "Confirm who something came from. For example, verify that a message came from a particular sender.",
+          "children": []
+        },
+        {
+          "id": "non-repudiation",
+          "title": "Non-Repudiation",
+          "description": "Prevents someone from denying their prior actions.\nThere are two kinds: non-repudiation of origin and of delivery.",
+          "children": [
+            {
+              "id": "origin",
+              "title": "Origin",
+              "description": "Non-repudiation of origin: the sender cannot deny that they sent a specific message, or that the exact message came from them.",
+              "children": []
+            },
+            {
+              "id": "delivery",
+              "title": "Delivery",
+              "description": "Non-repudiation of delivery: the receiver cannot deny that they received a specific message.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "access-control",
+          "title": "Access Control",
+          "description": "Cryptography enables a form of access control. By controlling who gets the ciphertext and who gets the decryption key, you control who can decrypt and so access the data.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "cryptographic-terminology",
+      "title": "Cryptographic terminology",
+      "description": "Important terms: how plaintext becomes ciphertext and back again, and the properties that make a cryptographic algorithm strong.",
+      "children": [
+        {
+          "id": "plaintext",
+          "title": "Plaintext",
+          "description": "Data that anyone can read. Also called clear text.",
+          "children": []
+        },
+        {
+          "id": "encrypt",
+          "title": "Encrypt",
+          "description": "Turn plaintext into ciphertext using a cryptographic algorithm and a crypto variable (key).\nEncrypting protects plaintext and provides confidentiality.",
+          "children": []
+        },
+        {
+          "id": "key-crypto-variable",
+          "title": "Key / Crypto variable",
+          "description": "A string of bits that must be kept secret. More commonly called a key.\nThe key programs the algorithm: it decides the exact steps the algorithm performs to turn plaintext into ciphertext (encryption), or ciphertext back into plaintext (decryption).",
+          "children": []
+        },
+        {
+          "id": "decrypt",
+          "title": "Decrypt",
+          "description": "Turn ciphertext back into plaintext using a cryptographic algorithm and a key.",
+          "children": []
+        },
+        {
+          "id": "key-clustering",
+          "title": "Key clustering",
+          "description": "Two different keys produce the same ciphertext from the same plaintext.\nBad: if two keys can decrypt the ciphertext, a brute force attack becomes twice as easy. Good algorithms are designed to minimize or, ideally, eliminate key clustering.",
+          "children": []
+        },
+        {
+          "id": "work-factor",
+          "title": "Work factor",
+          "description": "The estimated time or effort an attacker needs to break a cryptosystem.\nThe higher the work factor, the more secure the cryptosystem.",
+          "children": []
+        },
+        {
+          "id": "initialization-vector-nonce",
+          "title": "Initialization vector/Nonce",
+          "description": "A random number fed into the algorithm together with the key when encrypting plaintext.\nUse an IV only once in any session. It prevents patterns in the ciphertext: the same plaintext encrypted with the same key gives different ciphertext as long as the IV is different.",
+          "children": []
+        },
+        {
+          "id": "confusion",
+          "title": "Confusion",
+          "description": "A property of good algorithms: hide the relationship between the key and the ciphertext.\nIf one bit of the key changes, about half of the bits in the ciphertext should change.",
+          "children": []
+        },
+        {
+          "id": "diffusion",
+          "title": "Diffusion",
+          "description": "The same idea as confusion, but for the plaintext: hide the relationship between the plaintext and the ciphertext.\nIf one bit of the plaintext changes, about half of the bits in the ciphertext should change.",
+          "children": []
+        },
+        {
+          "id": "avalanche",
+          "title": "Avalanche",
+          "description": "The avalanche effect measures how much confusion and diffusion an algorithm provides. Use it to judge how secure the algorithm is.\nIdeal: a single-bit change to the key (confusion) or to the plaintext (diffusion) changes at least 50% of the ciphertext.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "secret-writing",
+      "title": "Secret Writing",
+      "description": "Ways to write secrets and hide messages: either hide the plaintext, or scramble it with cryptography.",
+      "children": [
+        {
+          "id": "hidden",
+          "title": "Hidden",
+          "description": "Hide plaintext so that it cannot easily be seen or recognized, and so cannot easily be read.",
+          "children": [
+            {
+              "id": "steganography",
+              "title": "Steganography",
+              "description": "Hide secret data inside an ordinary, non-secret file to avoid detection.\nExample: plaintext hidden inside a picture file, such as a JPEG image.",
+              "children": []
+            },
+            {
+              "id": "null-cipher",
+              "title": "Null Cipher",
+              "description": "Hide a secret message in plain sight by mixing its characters with other, non-secret plaintext.\nExample: the secret message is the first letter of each word in a paragraph.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "scrambled-cryptography",
+          "title": "Scrambled (Cryptography)",
+          "description": "Use machines or algorithms to encrypt plaintext into ciphertext.\nThere are two ways to scramble: one-way and two-way. Algorithms do the scrambling with two simple methods: substitution and transposition.",
+          "children": [
+            {
+              "id": "one-way",
+              "title": "One-way",
+              "description": "Turn plaintext into ciphertext with no way back: you cannot determine the plaintext from the ciphertext.\nUsed for integrity.",
+              "children": [
+                {
+                  "id": "hashing",
+                  "title": "Hashing",
+                  "description": "One-way encryption is usually called hashing.\nHashing uses one-way mathematical functions that turn an input of any length into a fixed-length output: the message digest.\nHashing algorithms are deterministic: the same input always gives the same digest. If even one bit of a huge file changes, the digest is completely different.\nHash a file at different times and compare the values to see whether it has changed. That is integrity.",
+                  "children": [
+                    {
+                      "id": "hashing-algorithms",
+                      "title": "MD5, SHA-1, SHA-2, SHA-3",
+                      "description": "Recognize these as hashing algorithms:\n- MD5\n- SHA-1\n- SHA-2\n- SHA-3",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "two-way",
+              "title": "Two-way",
+              "description": "Encrypt plaintext with a key into ciphertext, then, with the right key, decrypt it back into plaintext. You can go in both directions.\nTwo major types of algorithms: symmetric and asymmetric. The main difference is the number of keys. Symmetric uses one key to encrypt and the same key to decrypt. Asymmetric uses a key pair: one key to encrypt and the other to decrypt.",
+              "children": [
+                {
+                  "id": "symmetric",
+                  "title": "Symmetric",
+                  "description": "Uses one key: the same key encrypts and decrypts.\nAdvantages: fast and efficient (can be orders of magnitude faster than asymmetric), and strong. When you need to encrypt lots of data quickly, use symmetric.\nDisadvantages:\n- Key distribution: the recipient needs the same key. If you send the key with the ciphertext, anyone who intercepts both can decrypt. Solutions: send the key out-of-band (often inconvenient and inefficient), or use hybrid cryptography.\n- Scalability: the number of keys grows very quickly. Formula: N(N-1)/2. Talking securely with 1 other person needs 1 key, 2 others need 3 keys, 3 others need 6, 4 others need 10. With 1,000 others you need over half a million keys.\n- No authenticity, integrity or non-repudiation.\nTwo major types: block ciphers and stream ciphers.",
+                  "children": [
+                    {
+                      "id": "block",
+                      "title": "Block",
+                      "description": "Block ciphers encrypt or decrypt a block of data at a time: for example 16, 32, 64 or 128-bit blocks.",
+                      "children": [
+                        {
+                          "id": "block-cipher-algorithms",
+                          "title": "DES, 3DES, AES (Rijndael), CAST-128, SAFER, Blowfish, Twofish, RC5/RC6",
+                          "description": "The major symmetric block ciphers. Know specifics for the top three:\n- DES (Data Encryption Standard): 56-bit keys, 64-bit blocks, 16 rounds of substitution and transposition. A 56-bit key can easily be brute forced, so DES should not be used.\n- 3DES (Triple DES): runs DES three times with three 56-bit keys, for a key length of 168 bits (3 x 56). Because of the meet-in-the-middle attack, its effective key length is only 112 bits. The various ways to configure 3DES are beyond the exam.\n- AES (Advanced Encryption Standard): the US government ran a competition to replace DES, and the winner, Rijndael, was renamed AES. Excellent and used everywhere. Variable key length of 128, 192 or 256 bits, and 128-bit blocks.\n- Just recognize these as symmetric block ciphers: CAST-128, SAFER, Blowfish, Twofish, RC5 and RC6.",
+                          "children": []
+                        },
+                        {
+                          "id": "block-modes",
+                          "title": "Block Modes",
+                          "description": "Different ways to encrypt blocks of plaintext or decrypt blocks of ciphertext. All block ciphers, including DES and AES, use them, and each mode has advantages and disadvantages.\nKnow specifics about ECB and CTR:\n- ECB (Electronic Codebook): the least secure mode, because it does not use an initialization vector. Also the fastest, for the same reason. Use it only for short pieces of random text that do not repeat.\n- CBC (Cipher Block Chaining), CFB (Cipher Feedback) and OFB (Output Feedback): all use an initialization vector, so all are much more secure than ECB.\n- CTR (Counter): the best balance of speed and security. Not the most secure, and slower than ECB, but the best compromise.",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "id": "stream",
+                      "title": "Stream",
+                      "description": "Each bit of plaintext is combined with one bit of a pseudorandom keystream, using XOR (exclusive OR), to produce one bit of ciphertext.",
+                      "children": [
+                        {
+                          "id": "rc4",
+                          "title": "RC4",
+                          "description": "The only major stream cipher you need to know. For any question about symmetric stream ciphers, think RC4.",
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "asymmetric",
+                  "title": "Asymmetric",
+                  "description": "Uses a mathematically related key pair. The private key must be kept absolutely private and never shared with anyone. The public key can be given to anyone and everyone.\nAdvantages:\n- Solves key distribution: use it to distribute symmetric keys securely and efficiently.\n- Solves scalability: the number of keys grows only linearly.\n- Enables digital signatures, digital certificates and the whole root of trust.\nDisadvantage: it is significantly slower, and can be orders of magnitude slower than symmetric. To encrypt lots of data, or as fast as possible, use symmetric.\nAsymmetric algorithms rely on hard math problems. Knapsack is deliberately not on the map: significant issues have been found with it, so it should not be used.",
+                  "children": [
+                    {
+                      "id": "factoring",
+                      "title": "Factoring",
+                      "description": "A hard math problem: it is easy to multiply two large prime numbers, and very hard to go backwards and factor the result into the two original primes.",
+                      "children": [
+                        {
+                          "id": "rsa",
+                          "title": "RSA",
+                          "description": "The one asymmetric algorithm you need to know that relies on factoring as its hard math problem.",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "id": "discrete-log",
+                      "title": "Discrete Log",
+                      "description": "A hard math problem: it is easy to exponentiate, and much harder to go backwards and find the original integers.",
+                      "children": [
+                        {
+                          "id": "discrete-log-algorithms",
+                          "title": "Diffie-Hellman (key exchange), Elliptic Curve (ECC), El Gamal, DSA",
+                          "description": "Asymmetric algorithms that rely on discrete logs:\n- Diffie-Hellman: a key exchange protocol, used to securely exchange symmetric keys over an insecure channel such as the internet.\n- Elliptic Curve (ECC): the same strength as RSA with a much shorter key, so it is very efficient for an asymmetric algorithm. That is the main thing to remember.\n- El Gamal: just recognize it as an asymmetric algorithm based on discrete logs.\n- DSA (Digital Signature Algorithm): as the name says, used to create digital signatures.",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "id": "digital-certificates",
+                      "title": "Digital Certificates",
+                      "description": "A very useful tool that asymmetric cryptography enables: digital certificates let you verify the owner of a public key.\nCovered in detail in its own mind map.",
+                      "highlight": "own-mindmap",
+                      "mindmap": "digital-certificates-signatures-pki",
+                      "children": []
+                    },
+                    {
+                      "id": "digital-signatures",
+                      "title": "Digital Signatures",
+                      "description": "Enabled by asymmetric cryptography. Digital signatures provide integrity, authenticity, and non-repudiation of both origin and delivery.\nCovered in detail in its own mind map.",
+                      "highlight": "own-mindmap",
+                      "mindmap": "digital-certificates-signatures-pki",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "substitution",
+              "title": "Substitution",
+              "description": "One of the two simple methods algorithms use to turn plaintext into ciphertext: replace one character with another.\nExample: replace C with D, A with O and T with G, and cat becomes dog.",
+              "children": [
+                {
+                  "id": "substitution-ciphers",
+                  "title": "Caesar Cypher, Monoalphabetic, Polyalphabetic, Running, One-time Pads",
+                  "description": "- Caesar Cypher: one of the earliest known substitution ciphers, named after its inventor, Julius Caesar. Each letter is replaced by the letter three places to the right in the alphabet: G becomes J, U becomes X, and so on.\n- Monoalphabetic: uses just one substitution alphabet. The structure is fixed: if B is replaced with X, it is always replaced with X. This creates patterns, and patterns must always be avoided in cryptography. The Caesar cipher is monoalphabetic.\n- Polyalphabetic: uses multiple substitution alphabets to reduce patterns. Example with the key 4312: the two Bs in the plaintext become two different letters, A and Z, in the ciphertext.\n- Running: a running key cipher uses text, typically from a book, to provide a very long keystream to draw the substituted letters from.\n- One-time Pads: need a pre-shared, one-time key: a long string of truly random characters at least as long as the text to encrypt. Each plaintext character is combined with the matching pad character using modular addition. Done properly, with a truly random pad that is never reused, it is unbreakable.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "transposition",
+              "title": "Transposition",
+              "description": "The other simple method to turn plaintext into ciphertext: rearrange the letters of the plaintext.",
+              "children": [
+                {
+                  "id": "transposition-ciphers",
+                  "title": "Spartan Scytale, Rail Fence (zigzag)",
+                  "description": "- Spartan Scytale: one of the earliest known transposition ciphers, from ancient Greece. Wrap a thin strip of leather around a stick of a precise diameter and write the message on it. Unwrapped, the letters are transposed. The receiver wraps the strip around a stick of exactly the same diameter to decrypt.\n- Rail Fence (zigzag): write the plaintext in a zigzag pattern into a table, then copy the letters out row by row.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

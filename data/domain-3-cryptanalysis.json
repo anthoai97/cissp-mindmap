@@ -1,0 +1,158 @@
+{
+  "id": "cryptanalysis",
+  "title": "Cryptanalysis",
+  "description": "How cryptanalysis defeats cryptosystems: cryptanalytic attacks that deduce the key, and cryptographic attacks on protocols, implementations, systems and people.",
+  "domain": 3,
+  "order": 8,
+  "source": "https://destcert.com/resources/cryptanalysis-mindmap-cissp-domain-3/",
+  "nodes": [
+    {
+      "id": "cryptanalytic-attacks",
+      "title": "Cryptanalytic Attacks",
+      "description": "Cryptanalysis is the art and science of understanding how cryptosystems work, to find ways to defeat them (or strengthen them). It covers decoding secrets, gaining access to encrypted messages and even forging new messages.\nThere are two major types of cryptanalysis: cryptanalytic attacks and cryptographic attacks.\nThe primary goal of every cryptanalytic attack is to deduce the key: the crypto variable that can decrypt the ciphertext. Remember this.",
+      "children": [
+        {
+          "id": "brute-force",
+          "title": "Brute Force",
+          "description": "The simplest attack: try every possible key until you find the right one. Simple, but ineffective against algorithms that use longer keys.\nThe key space (the total number of possible keys) doubles every time the key length grows by one bit, so it grows exponentially. No system that exists now, or in the reasonably foreseeable future, can brute force 128-bit, let alone 256-bit, keys.\nBrute force times from the page (key length: key space, attack time):\n- 56 bits: 7.2 x 10^16 keys, 20 hours\n- 80 bits: 1.2 x 10^24 keys, 54,800 years\n- 128 bits: 3.4 x 10^38 keys, 1.5 x 10^19 years\n- 256 bits: 1.15 x 10^77 keys, 5.2 x 10^57 years",
+          "children": []
+        },
+        {
+          "id": "ciphertext-only",
+          "title": "Ciphertext Only",
+          "description": "The attacker has only ciphertext to work with to deduce the key.\nThis makes ciphertext-only attacks very difficult.",
+          "children": []
+        },
+        {
+          "id": "known-plaintext",
+          "title": "Known Plaintext",
+          "description": "The attacker has both the ciphertext and the matching plaintext, and uses them to deduce the encryption key.\nWith the key, the attacker can decrypt other messages and even forge messages.",
+          "children": []
+        },
+        {
+          "id": "chosen-plaintext",
+          "title": "Chosen Plaintext",
+          "description": "\"Chosen\" means the attacker has access to the machine or algorithm that performs the encryption and decryption.\nThe attacker chooses the plaintext to feed into it, then studies the resulting ciphertext to deduce the key.",
+          "children": []
+        },
+        {
+          "id": "chosen-ciphertext",
+          "title": "Chosen Ciphertext",
+          "description": "The same idea as chosen plaintext, in the other direction.\nThe attacker chooses the ciphertext to feed into the machine or algorithm, then studies the resulting plaintext to deduce the key.",
+          "children": []
+        },
+        {
+          "id": "linear-differential",
+          "title": "Linear & Differential",
+          "description": "Advanced statistical techniques, used mainly against block ciphers, to deduce the key.\n- Linear cryptanalysis: finds linear approximations of how the cipher relates plaintext, ciphertext and key bits, using many known plaintext and ciphertext pairs.\n- Differential cryptanalysis: studies how chosen differences in the plaintext affect the differences in the resulting ciphertext, using chosen plaintext pairs.",
+          "children": []
+        },
+        {
+          "id": "factoring",
+          "title": "Factoring",
+          "description": "Only one asymmetric algorithm you need to know uses factoring as its hard math problem: RSA.\nSee a factoring attack, think RSA. Want to attack RSA, think factoring attack.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "cryptographic-attacks",
+      "title": "Cryptographic Attacks",
+      "description": "Not focused only on deducing the key. Some are, and some are not.",
+      "children": [
+        {
+          "id": "man-in-the-middle",
+          "title": "Man-in-the-middle",
+          "description": "The attacker places themselves in the middle of a conversation.\nThey can eavesdrop on the communications sent back and forth, and possibly alter or decipher them.",
+          "children": []
+        },
+        {
+          "id": "replay",
+          "title": "Replay",
+          "description": "A form of man-in-the-middle attack. The attacker eavesdrops and intercepts data, such as a user's hashed password sent to a server to authenticate.\nThe attacker may not be able to decipher the data, but can replay (re-send) it later to their advantage. Example: re-send the password hash later to masquerade as the user and gain unauthorized access.",
+          "children": []
+        },
+        {
+          "id": "pass-the-hash",
+          "title": "Pass the Hash",
+          "description": "A type of replay attack: the attacker captures a hashed password and re-sends it later to authenticate as the user.\nRemember: pass the hash is a type of replay attack, and replay is a type of man-in-the-middle attack.",
+          "children": []
+        },
+        {
+          "id": "temporary-files",
+          "title": "Temporary Files",
+          "description": "While a cryptosystem encrypts and decrypts data, it often uses temporary files to store plaintext, ciphertext and encryption keys.\nThese files may not be secured well enough. The attacker gets the sensitive plaintext or keys by accessing them.",
+          "children": []
+        },
+        {
+          "id": "implementation",
+          "title": "Implementation",
+          "description": "Targets weaknesses in how an algorithm, cryptosystem, protocol or application has been implemented.\nExam example: WEP (Wired Equivalent Privacy), which uses the RC4 algorithm to secure wireless traffic. RC4 is excellent, but WEP implements it terribly: among other issues, its initialization vectors are too short and partly static. WEP is badly broken and should never be used.",
+          "children": []
+        },
+        {
+          "id": "side-channel",
+          "title": "Side Channel",
+          "description": "Any attack that gathers sensitive information by carefully monitoring a system while it performs cryptographic tasks.",
+          "children": [
+            {
+              "id": "power",
+              "title": "Power",
+              "description": "Measure how much power certain calculations consume.",
+              "children": []
+            },
+            {
+              "id": "timing",
+              "title": "Timing",
+              "description": "Measure how long certain operations take.",
+              "children": []
+            },
+            {
+              "id": "radiation-emissions",
+              "title": "Radiation Emissions",
+              "description": "Closely monitor the electromagnetic waves that the system emanates.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "dictionary-attack",
+          "title": "Dictionary Attack",
+          "description": "A form of brute force attack used to find encryption keys or a user's password.\nInstead of trying every combination in sequence, try the most likely combinations first. This can be much faster and more efficient than simple brute force.\nExample: to guess a password, first try the most common passwords in the world, such as password or 123456. Giant dictionaries of the most common passwords exist.",
+          "children": []
+        },
+        {
+          "id": "rainbow-tables",
+          "title": "Rainbow Tables",
+          "description": "An extension of password dictionaries.\nPasswords should never be stored in plaintext; store their hash values instead. Hashing is one-way, so an attacker who steals a database of hashes cannot reverse them. But the attacker can hash a likely password, such as 123456, and compare it with the stored hashes: a match reveals the password.\nA rainbow table is a giant database of the most common passwords and their pre-computed hash values.\nDefense: salt and pepper.",
+          "children": []
+        },
+        {
+          "id": "birthday-attack",
+          "title": "Birthday Attack",
+          "description": "Exploits the mathematics of the birthday paradox in probability theory.\nAssociate birthday attacks with finding collisions in hashing algorithms.",
+          "children": []
+        },
+        {
+          "id": "social-engineering",
+          "title": "Social Engineering",
+          "description": "Attack the weakest link in any system: people.",
+          "children": [
+            {
+              "id": "purchase-key",
+              "title": "Purchase Key",
+              "description": "Often the easiest way to get a very secure key is to bribe someone for it.",
+              "children": []
+            },
+            {
+              "id": "rubber-hose",
+              "title": "Rubber Hose",
+              "description": "If the carrot (bribery) does not work, use the stick: torture someone for the key. This is rubber hose cryptanalysis.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

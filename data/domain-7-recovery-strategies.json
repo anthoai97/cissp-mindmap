@@ -1,0 +1,242 @@
+{
+  "id": "recovery-strategies",
+  "title": "Recovery Strategies",
+  "description": "Ways to recover parts, systems and whole data centers after a failure, where less downtime costs more and the owner decides what is cost-justified.",
+  "domain": 7,
+  "order": 5,
+  "source": "https://destcert.com/resources/recovery-strategies-mindmap-cissp-domain-7/",
+  "nodes": [
+    {
+      "id": "failure-modes",
+      "title": "Failure Modes",
+      "description": "Before choosing recovery strategies, know the three ways a system can be designed to fail.",
+      "children": [
+        {
+          "id": "fail-soft",
+          "title": "Fail-Soft",
+          "description": "The system fails to a less secure state. Also called fail-open.\nExample: a firewall that lets all traffic through when it fails.",
+          "children": []
+        },
+        {
+          "id": "fail-secure",
+          "title": "Fail-Secure",
+          "description": "The inverse of fail-soft: the system fails to a more secure state. Also called fail-closed.\nExample: a firewall that blocks all traffic when it fails.",
+          "children": []
+        },
+        {
+          "id": "fail-safe",
+          "title": "Fail-Safe",
+          "description": "Completely different from the other two.\nPhysical security mechanisms designed to put the safety of people above everything else when there is a failure.\nExample: doors in a building unlock when the fire alarm goes off.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "backup-storage",
+      "title": "Backup Storage",
+      "description": "Backup strategies: methods to back up data so it can be recovered after a hardware failure.",
+      "children": [
+        {
+          "id": "archive-bit",
+          "title": "Archive Bit",
+          "description": "Metadata (data about data). Every file on a computer has an archive bit.\n- 0: no changes to the file, no backup required.\n- 1: the file was created or modified, backup required.\nThe operating system automatically sets the bit to 1 whenever a file is created or modified.",
+          "children": []
+        },
+        {
+          "id": "types-of-backups",
+          "title": "Types of Backups",
+          "description": "Different backup strategies. They trade off backup time, restore time and storage space.",
+          "children": [
+            {
+              "id": "mirror",
+              "title": "Mirror",
+              "description": "Also called a stream backup.\nAn exact copy with no compression and no attempt to reduce the backup size.\nVery fast, but uses a lot of storage.\nBackup time: fastest. Restore time: fastest. Storage: high.",
+              "children": []
+            },
+            {
+              "id": "full",
+              "title": "Full",
+              "description": "Backs up every file, whatever its archive bit is set to.\nUses compression, so it is slower than a mirror backup.\nBackup time: slowest. Restore time: fast. Storage: high.",
+              "children": []
+            },
+            {
+              "id": "incremental",
+              "title": "Incremental",
+              "description": "A full backup, then each incremental backup copies every change since the last backup.\nEach incremental backup resets the archive bit to 0 for every file it backs up, so the next one only copies files created or modified since then.\nUses the least storage, but recovery can be slow: you may need to pull several incremental tapes and restore them in sequence.\nBackup time: fast. Restore time: slow. Storage: lowest.",
+              "children": []
+            },
+            {
+              "id": "differential",
+              "title": "Differential",
+              "description": "A full backup, then each differential backup copies every change since the last full backup.\nIt leaves the archive bit set to 1, so every differential backup copies all files created or modified since the last full backup.\nUses more storage than incremental, but recovery is faster: you never need more than two tapes, the latest full backup and the latest differential.\nBackup time: moderate. Restore time: moderate. Storage: moderate.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "validation",
+          "title": "Validation",
+          "description": "Check that backups are being made correctly.",
+          "children": [
+            {
+              "id": "checksums-crc",
+              "title": "Checksums / CRC",
+              "description": "Ways to validate backups:\n- CRC (Cyclical Redundancy Check)\n- checksums\n- bit-for-bit comparison of the backup with the original data\n- spot checks of selected files\nChecks can run while the backup is being made, and periodically on stored tapes.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "data-storage",
+          "title": "Data Storage",
+          "description": "Think about where backup data is stored, how long it is kept, and how to make the backup process more efficient.",
+          "children": [
+            {
+              "id": "offsite",
+              "title": "Offsite",
+              "description": "Store backups offsite, ideally in a geographically remote location, away from the primary system or data center.\nGreat backups are useless if they sit next to a primary system that burned down or was flooded.",
+              "children": []
+            },
+            {
+              "id": "tape-rotation",
+              "title": "Tape Rotation",
+              "description": "Schemes for keeping backup tapes for a period of time and then reusing them, overwriting the old data with new data.\nThe scheme should follow the retention policy. The retention policy is driven by regulatory and contractual requirements, restoration needs and costs.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "rpo",
+          "title": "RPO",
+          "description": "Recovery Point Objective: the maximum data loss the organization can tolerate, measured as time. Examples: 5 seconds, 5 minutes, 5 hours or 5 days worth of data.\nA major driver of the cost of a backup solution. The shorter the RPO (the less data the organization will accept losing), the more expensive the backup solution.\nAn owner who wants to cut backup costs may need to relax the RPO requirement.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "spare-parts",
+      "title": "Spare Parts",
+      "description": "Spare power supplies, RAM, hard drives and so on: any part you might put in a system.",
+      "children": [
+        {
+          "id": "spare-parts-cold",
+          "title": "Cold",
+          "description": "A spare part sitting on a shelf.\nIf the primary part fails, the system is down for minutes, hours or longer, until someone gets the spare off the shelf and installs it.",
+          "children": []
+        },
+        {
+          "id": "spare-parts-warm",
+          "title": "Warm",
+          "description": "A spare part installed in the system, but not powered on.\nIf the primary part fails, the system still goes down, but recovery is much faster: someone only needs to flip a switch to change over to the spare.",
+          "children": []
+        },
+        {
+          "id": "spare-parts-hot",
+          "title": "Hot",
+          "description": "A spare part installed in the system and powered on, ready to go.\nIf the primary part fails, the system switches to the spare automatically and stays up.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "raid",
+      "title": "RAID (Redundant Array of Independent Disks)",
+      "description": "Using several hard drives at the same time for more speed, more redundancy, or both.\nRemember the minimum number of drives for each RAID level.\nRAID 10 (RAID 1+0) is not on the map: RAID 1 and RAID 0 together. A file is mirrored and then striped into four pieces, written to four drives. Minimum 4 drives. Redundancy: yes. Read/write performance: highest.",
+      "children": [
+        {
+          "id": "raid-0",
+          "title": "RAID 0 (Striping)",
+          "description": "Uses two or more drives. The RAID controller splits each file: the first half goes to the first drive, the second half to the second drive.\nAll about speed: read and write speed roughly doubles.\nNo redundancy. It at least doubles the chance of data loss: if one drive fails you lose half of every file, which means losing the whole file.\nRead/write performance: highest. Minimum drives: 2.",
+          "children": []
+        },
+        {
+          "id": "raid-1",
+          "title": "RAID 1 (Mirroring)",
+          "description": "Uses two or more drives. The RAID controller copies each file: one copy goes to the first drive, the other copy to the second drive.\nAll about redundancy: if a drive fails, a complete copy of the file is still on the other drive.\nRead/write performance: moderate. Minimum drives: 2.",
+          "children": []
+        },
+        {
+          "id": "raid-5",
+          "title": "RAID 5 (Parity)",
+          "description": "The happy medium: nearly the speed of RAID 0, the redundancy of RAID 1, and fewer drives than RAID 10.\nThe controller splits each file in half, like RAID 0, then calculates parity data with exclusive OR (XOR) math. With the parity data, either half of the file can be rebuilt from the other half.\nThe two halves and the parity data are written across the three drives.\nRead/write performance: high. Minimum drives: 3.",
+          "children": []
+        },
+        {
+          "id": "raid-6",
+          "title": "RAID 6 (Double Parity)",
+          "description": "Very similar to RAID 5: speed and redundancy.\nAdds extra parity data, so two drives can fail and the data can still be recovered: double redundancy.\nRead/write performance: moderate. Minimum drives: 4.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "high-availability-system",
+      "title": "High Availability System",
+      "description": "A system that does not go down when something fails: redundancy at the system level.\nAchieved through clustering and redundancy.",
+      "children": [
+        {
+          "id": "clustering",
+          "title": "Clustering",
+          "description": "Several systems work together at the same time to support a workload.\nExample: a cluster of web servers behind a load balancer.\nIf one member of the cluster fails, the cluster keeps running at reduced capacity.",
+          "children": []
+        },
+        {
+          "id": "redundancy",
+          "title": "Redundancy",
+          "description": "A primary system and one or more secondary systems that do not work together.\nThe primary does all the work. If it fails, a secondary takes over and supports the full workload.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "recovery-sites",
+      "title": "Recovery Sites",
+      "description": "Recovering whole data centers, not just a part or a system.\nThe RTO (Recovery Time Objective) drives the owner's choice between the types of site.",
+      "children": [
+        {
+          "id": "types-of-sites",
+          "title": "Types of Sites",
+          "description": "From the cheapest site, which takes the longest to recover, up to a redundant site, which costs a lot but can have zero downtime if the primary site goes down.\nWhat each site has:\n- Cold: infrastructure / HVAC only. Cost $. Recovery: weeks.\n- Warm: plus basic equipment. Cost $$. Recovery: days.\n- Hot: plus computer hardware. Cost $$$. Recovery: hours, or seconds.\n- Mobile: a hot site on wheels. Cost $$$. Recovery: hours or days.\n- Mirror (Redundant): plus data and people. Cost $$$$. Recovery: seconds or instant.",
+          "children": [
+            {
+              "id": "types-of-sites-cold",
+              "title": "Cold",
+              "description": "Just the shell of a building.\nNo cabling, no server racks, no expensive equipment such as servers, no data and no people.\nCheap, but it can take weeks to get running.",
+              "children": []
+            },
+            {
+              "id": "types-of-sites-warm",
+              "title": "Warm",
+              "description": "The building shell plus the cheap equipment, such as cabling and racks.\nNo expensive equipment such as servers, no data and no people.\nA little more expensive. Recovery takes days.",
+              "children": []
+            },
+            {
+              "id": "types-of-sites-hot",
+              "title": "Hot",
+              "description": "The building, the cheap equipment and the expensive equipment, all set up and ready to go: a fully equipped data center.\nOnly the data and the people to run it are missing.\nMuch more expensive. Recovery takes hours, maybe even seconds.\nMobile and mirror sites are two subtypes of hot site.",
+              "children": []
+            },
+            {
+              "id": "mobile",
+              "title": "Mobile",
+              "description": "A subtype of hot site: a hot site on wheels, usually a shipping container packed with equipment.\nIt can be moved to where it is needed. It only needs data and people to start running.\nRecovery takes hours, or days if the site must first be transported across the country.",
+              "children": []
+            },
+            {
+              "id": "mirror-redundant",
+              "title": "Mirror / Redundant",
+              "description": "The second subtype of hot site: a fully operational data center, staffed and running 24/7 in parallel with the primary site.\nHuge cost, but recovery can take seconds, or even be instantaneous, depending on how it is architected.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "geographically-remote",
+          "title": "Geographically remote",
+          "description": "Every recovery site should be geographically remote from the primary site.\nThere is no exact distance. It must be far enough away that the disaster that hit the primary site (earthquake, hurricane, flood, wildfire, massive power outage, etc.) does not also affect the recovery site.",
+          "children": []
+        }
+      ]
+    }
+  ]
+}
