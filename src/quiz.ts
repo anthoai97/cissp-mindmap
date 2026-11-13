@@ -85,15 +85,25 @@ function distractors(card: Card, cards: Card[]): Card[] {
 }
 
 /**
- * Whether a card makes a fair question: once the answer is blanked out, enough of the
- * description must remain to recognise it ("The layer 3 _____." does not qualify).
- * Cards that do not qualify still appear as wrong answers.
+ * The cards that make fair questions. A card is left out when, once the answer is blanked
+ * out, too little of its description remains ("The layer 3 _____."), or when another card in
+ * the same map has the same description (ITSEC E1 to E5), so nothing tells them apart.
+ * Cards left out still appear as wrong answers.
  */
-export const isAskable = (card: Card) => maskedDescription(card.node).replace(/_____|[\s.,;:()-]/g, '').length >= 12;
+export function askableCards(cards: Card[]): Card[] {
+  const sameText = new Map<string, number>();
+  const textKey = (card: Card) => `${card.map.id}\n${card.node.description.trim()}`;
+  for (const card of cards) sameText.set(textKey(card), (sameText.get(textKey(card)) ?? 0) + 1);
+  return cards.filter(
+    (card) =>
+      sameText.get(textKey(card)) === 1 &&
+      maskedDescription(card.node).replace(/_____|[\s.,;:()-]/g, '').length >= 12,
+  );
+}
 
 /** A fresh run: every askable card once, in a new random order, each with newly picked options. */
 export function newRun(cards: Card[]): Run {
-  const deck = shuffle(cards.filter(isAskable)).map((card) => ({
+  const deck = shuffle(askableCards(cards)).map((card) => ({
     id: card.key,
     options: shuffle([card.key, ...distractors(card, cards).map((c) => c.key)]),
   }));
@@ -158,7 +168,7 @@ const isStringArray = (v: unknown): v is string[] => Array.isArray(v) && v.every
  */
 export function loadRun(cards: Card[]): Run | undefined {
   const keys = new Set(cards.map((card) => card.key));
-  const askable = cards.filter(isAskable).length;
+  const askable = askableCards(cards).length;
   const saved = read(RUN_KEY);
   if (typeof saved !== 'object' || saved === null) return undefined;
   const { deck, answers, position } = saved as Record<string, unknown>;
