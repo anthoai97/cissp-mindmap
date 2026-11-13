@@ -38,24 +38,24 @@
             {
               "id": "threat-modeling",
               "title": "Threat Modeling",
-              "description": "Methods to identify threats systematically. Know these three.",
+              "description": "Structured methods to identify and analyze threats systematically.\nThe three to know are STRIDE, PASTA and DREAD.",
               "children": [
                 {
                   "id": "stride",
                   "title": "STRIDE",
-                  "description": "Identifies threats. Quick and easy, but not very thorough.\nSpoofing, Tampering, Repudiation, Information disclosure, Denial of service, Elevation of privilege.",
+                  "description": "Identifies threats. Quick and easy, but not very thorough.\nSorts threats into six categories: pretending to be someone else, changing data without permission, denying having done an action, leaking information, making a service unavailable, and gaining privileges you should not have.",
                   "children": []
                 },
                 {
                   "id": "pasta",
                   "title": "PASTA",
-                  "description": "Process for Attack Simulation and Threat Analysis.\nA seven-step, risk-centric method. Time-consuming and in-depth.\nConsiders the business value of assets and compliance, and gives a strategic threat analysis with more useful results than STRIDE.",
+                  "description": "A seven-step, risk-centric method that simulates attacks to analyze threats. Time-consuming and in-depth.\nConsiders the business value of assets and compliance, and gives a strategic threat analysis with more useful results than the quick six-category method.\nFull name: Process for Attack Simulation and Threat Analysis.",
                   "children": []
                 },
                 {
                   "id": "dread",
                   "title": "DREAD",
-                  "description": "Does not identify threats: it prioritizes threats that are already identified.\nOften used with STRIDE: STRIDE finds the threats, DREAD ranks them.\nDamage, Reproducibility, Exploitability, Affected users, Discoverability.",
+                  "description": "Does not identify threats: it prioritizes threats that are already identified.\nOften used with STRIDE: STRIDE finds the threats, DREAD ranks them.\nRates each threat on five factors: the damage it could do, how easily the attack can be repeated, how easily it can be exploited, how many users would be affected, and how easily the weakness can be found.",
                   "children": []
                 }
               ]
@@ -70,7 +70,7 @@
             {
               "id": "vuln-assessment-pen-testing",
               "title": "Vuln. Assessment & Pen. Testing",
-              "description": "Two techniques to identify vulnerabilities systematically.\nCovered in detail in its own mind map in Domain 6 (Identifying Vulnerabilities).",
+              "description": "Two techniques to find weaknesses systematically:\n- scanning and reviewing systems to find and list known weaknesses\n- simulating real attacks to find which weaknesses can actually be exploited\nCovered in detail in its own mind map in Domain 6.",
               "highlight": "own-mindmap",
               "mindmap": "vulnerability-assessment-and-penetration-testing",
               "children": []
@@ -92,7 +92,7 @@
         {
           "id": "risk-analysis-quantitative",
           "title": "Quantitative",
-          "description": "Calculate how much a risk will cost the organization per year.\nUseful to decide which controls are worth their cost.\nThe inputs are usually impossible to determine accurately, so qualitative analysis is used most of the time.",
+          "description": "Calculate how much a risk will cost the organization per year.\nUseful to decide which controls are worth their cost.\nThe inputs are usually impossible to determine accurately, so ranking risks relative to each other is used most of the time.",
           "children": [
             {
               "id": "ale-formula",
@@ -113,7 +113,7 @@
     {
       "id": "treatment",
       "title": "3. Treatment",
-      "description": "Step 3: decide how to treat each risk. There are four ways: avoid, transfer, mitigate or accept.",
+      "description": "Step 3: decide how to respond to each risk. There are four ways: avoid, transfer, mitigate or accept.",
       "children": [
         {
           "id": "avoid",
@@ -236,25 +236,25 @@
         {
           "id": "rmf",
           "title": "RMF (NIST 800-37)",
-          "description": "The NIST Risk Management Framework: a seven-step process to manage risks to information systems and data.\nKnow the seven steps and their order at a high level:\n1. Prepare: get ready to run the RMF.\n2. Categorize: categorize systems and identify the risks.\n3. Select: choose controls for the identified risks.\n4. Implement: put the controls in place.\n5. Assess: check that the controls are effective.\n6. Authorize: based on the assessment, the system owner decides whether the system can go into production.\n7. Monitor: keep checking that the controls work in production.",
+          "description": "The US federal government's seven-step process to manage risks to information systems and data.\nKnow the seven steps and their order at a high level:\n1. Prepare: get ready to manage risk at the organization and system levels.\n2. Categorize: categorize systems and identify the risks.\n3. Select: choose controls for the identified risks.\n4. Implement: put the controls in place.\n5. Assess: check that the controls are effective.\n6. Authorize: based on the assessment, a senior official (the authorizing official) decides whether the risk is acceptable and the system can go into production.\n7. Monitor: keep checking that the controls work in production.\nFull name: Risk Management Framework.",
           "children": []
         },
         {
           "id": "iso-31000",
           "title": "ISO 31000",
-          "description": "A risk management framework. Recognize the name.",
+          "description": "An international standard that gives principles and guidelines for managing any type of risk in any organization. Recognize the name.",
           "children": []
         },
         {
           "id": "coso",
           "title": "COSO",
-          "description": "The COSO risk management framework. Recognize the name.",
+          "description": "An enterprise risk management framework focused on internal control and corporate governance. It grew out of US work on fraudulent financial reporting (the Treadway Commission). Recognize the name.",
           "children": []
         },
         {
           "id": "isaca-risk-it",
           "title": "ISACA Risk IT",
-          "description": "A risk management framework from ISACA. Recognize the name.",
+          "description": "A framework for managing IT-related business risk, from the professional association that also publishes COBIT. Recognize the name.",
           "children": []
         }
       ]

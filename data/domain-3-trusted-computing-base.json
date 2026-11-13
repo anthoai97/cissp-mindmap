@@ -9,7 +9,7 @@
     {
       "id": "reference-monitor-concept",
       "title": "Reference Monitor Concept",
-      "description": "The RMC: to have security, you must control which subjects can access which objects, and what each subject can do with each object.\nA subject accesses an object through mediation, which is based on a set of rules, and everything is logged and monitored to give assurance that it works correctly.\nThe RMC is just a concept. To be useful it must be implemented, and an implementation of it is called a security kernel.",
+      "description": "The core idea of access control: to have security, you must control which subjects can access which objects, and what each subject can do with each object.\nA subject accesses an object through mediation, which is based on a set of rules, and everything is logged and monitored to give assurance that it works correctly.\nIt is just a concept. To be useful it must be implemented, and an implementation of it is called a security kernel.",
       "children": [
         {
           "id": "subject",
@@ -31,7 +31,7 @@
             {
               "id": "logging-monitoring",
               "title": "Logging & Monitoring",
-              "description": "Every control also needs an assurance aspect: knowing that the mediation keeps working correctly.\nLogging and monitoring provide that assurance.",
+              "description": "Every control also needs an assurance aspect: knowing that the mediation keeps working correctly.\nRecording every access and continuously watching those records provides that assurance.",
               "children": []
             }
           ]
@@ -62,7 +62,7 @@
             {
               "id": "verifiability",
               "title": "Verifiability",
-              "description": "Logging and monitoring verify that the mediation is working correctly. This is the assurance aspect.",
+              "description": "Logging and monitoring prove that the mediation is working correctly. This is the assurance aspect.",
               "children": []
             }
           ]
@@ -77,7 +77,7 @@
         {
           "id": "processor",
           "title": "Processor",
-          "description": "The CPU (Central Processing Unit): the brain of the computer.\nIt fetches instructions, decodes them, executes them and stores the results. These steps run millions of times per second, which lets many complex applications run at the same time (multitasking).",
+          "description": "The brain of the computer.\nIt fetches instructions, decodes them, executes them and stores the results. These steps run millions of times per second, which lets many complex applications run at the same time (multitasking).",
           "children": []
         },
         {
@@ -135,12 +135,12 @@
     {
       "id": "protection-mechanisms",
       "title": "Protection Mechanisms",
-      "description": "The concepts and software techniques used to secure systems and enforce security policies.",
+      "description": "The concepts and software techniques used to secure systems and enforce security policies.\nExamples: process isolation, privilege levels, data hiding and defense in depth.",
       "children": [
         {
           "id": "process-isolation",
           "title": "Process Isolation",
-          "description": "Modern systems are multitasking: many applications run at the same time. The processes must be isolated, so that one application cannot interfere with another.\nTwo major methods: memory segmentation and time division multiplexing.",
+          "description": "Modern systems are multitasking: many applications run at the same time. The processes must be kept apart, so that one application cannot interfere with another.\nTwo major methods: memory segmentation and time division multiplexing.",
           "children": [
             {
               "id": "memory-segmentation",
@@ -151,7 +151,7 @@
             {
               "id": "time-division-multiplexing",
               "title": "Time Division Multiplexing",
-              "description": "Each process gets access to a resource, such as the CPU or the network card, for a small slice of time. Then control is taken away and given to the next process.\nThe processes are isolated because they can only access the resource one at a time.",
+              "description": "Each process gets access to a resource, such as the CPU or the network card, for a short turn. Then control is taken away and given to the next process.\nThe processes are isolated because they can only access the resource one at a time.",
               "children": []
             }
           ]
@@ -159,18 +159,18 @@
         {
           "id": "processor-states",
           "title": "Processor States",
-          "description": "CPUs provide different privilege levels of access to their functionality: problem state and supervisor state.",
+          "description": "Privilege levels built into the CPU hardware itself: a lower level called problem and a higher level called supervisor.",
           "children": [
             {
               "id": "problem",
               "title": "Problem",
-              "description": "The lower privilege level, where most applications run. They do not get full access to the CPU's capabilities, but enough to run.\nThe name refers to what CPUs are meant to do: solve problems. Problem state is the normal operating privilege level.",
+              "description": "The CPU's lower privilege level, where most applications run. They do not get full access to the CPU's capabilities, but enough to run.\nThe name refers to what CPUs are meant to do: solve _____. _____ state is the normal operating privilege level.",
               "children": []
             },
             {
               "id": "supervisor",
               "title": "Supervisor",
-              "description": "The higher privilege level, with full access to all the CPU's capabilities.\nThe system kernel usually runs in supervisor state.",
+              "description": "The CPU's higher privilege level, with full access to all the CPU's capabilities.\nThe system kernel usually runs in _____ state.",
               "children": []
             }
           ]
@@ -178,18 +178,18 @@
         {
           "id": "operating-system-modes",
           "title": "Operating System Modes",
-          "description": "The two common privilege levels that applications, processes and code can run at: user mode and kernel mode.",
+          "description": "The two common privilege levels that applications, processes and code can run at: user (restricted) and kernel (unrestricted).",
           "children": [
             {
               "id": "user-mode",
               "title": "User Mode",
-              "description": "The lower privilege level, where most applications run.\nIt restricts which system resources an application can access: no direct access to hardware, and a limit on the share of resources it can consume.",
+              "description": "The operating system's lower privilege level, where most applications run.\nIt restricts which system resources an application can access: no direct access to hardware, and a limit on the share of resources it can consume.",
               "children": []
             },
             {
               "id": "kernel-mode",
               "title": "Kernel Mode",
-              "description": "The higher privilege level, where the system kernel runs.\nUnrestricted access to the underlying hardware.",
+              "description": "The operating system's higher privilege level, where the core of the operating system runs.\nUnrestricted access to the underlying hardware.",
               "children": []
             }
           ]
@@ -197,7 +197,7 @@
         {
           "id": "ring-protection-model",
           "title": "Ring Protection Model",
-          "description": "Another way to define levels of trust or privilege and protect access to system resources.\nRing 0, in the center, has the most privilege, so it needs the most protection and access to it must be limited as much as possible. Each outer ring (1, 2, 3) has less privilege.\nDo not worry about rings 1 and 2. Operating systems do not agree on what they are used for, so you will not get questions on them.",
+          "description": "Another way to define levels of trust or privilege and protect access to system resources, drawn as concentric circles numbered 0 to 3.\nLevel 0, in the center, has the most privilege, so it needs the most protection and access to it must be limited as much as possible. Each outer level (1, 2, 3) has less privilege.\nDo not worry about levels 1 and 2. Operating systems do not agree on what they are used for, so you will not get questions on them.",
           "children": [
             {
               "id": "ring-3-user-programs",
@@ -208,7 +208,7 @@
             {
               "id": "ring-0-system-kernel",
               "title": "Ring 0: System Kernel",
-              "description": "The innermost ring, with the most privilege.\nRemember: the system kernel runs in ring 0. Firmware also resides in ring 0.",
+              "description": "The innermost ring, with the most privilege.\nThe core of the operating system runs here. Firmware also resides here.",
               "children": []
             }
           ]
@@ -222,13 +222,13 @@
         {
           "id": "data-hiding",
           "title": "Data Hiding",
-          "description": "Data at a higher privilege level is simply hidden from an application running at a lower privilege level. The application cannot try to access data it does not know exists.\nThis sounds like an implementation of the Bell-LaPadula confidentiality model.",
+          "description": "Data at a higher privilege level is simply made invisible to an application running at a lower privilege level. The application cannot try to access data it does not know exists.\nIt works like an implementation of the Bell-LaPadula confidentiality model.",
           "children": []
         },
         {
           "id": "defence-in-depth",
           "title": "Defence in depth",
-          "description": "Multiple layers of security controls, with a complete control at each layer: a combination of preventive, detective and corrective controls.\nA single failure at one layer does not expose or compromise the security of the asset.\nMany of the other protection mechanisms can be combined to achieve defense in depth.",
+          "description": "Multiple layers of security controls, with a complete control at each layer: a combination of preventive, detective and corrective controls.\nA single failure at one layer does not expose or compromise the security of the asset.\nMany of the other protection mechanisms can be combined to achieve this layered protection.",
           "children": []
         }
       ]

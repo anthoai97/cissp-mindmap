@@ -20,19 +20,19 @@
             {
               "id": "zachman",
               "title": "Zachman",
-              "description": "An enterprise security architecture. It defines a two-dimensional table that gives a structured way to define an enterprise and break it down into components.\nThe columns are how, where, who, when and why.\nYou do not need to memorize the table. Just know that Zachman is an enterprise security architecture.",
+              "description": "An enterprise security architecture. It defines a two-dimensional table that gives a structured way to define an enterprise and break it down into components.\nThe columns are what, how, where, who, when and why.\nYou do not need to memorize the table. Just know that Zachman is an enterprise security architecture.",
               "children": []
             },
             {
               "id": "sabsa",
               "title": "Sabsa",
-              "description": "SABSA: the Sherwood Applied Business Security Architecture.\nDeveloped independently of Zachman, but with a very similar structure.\nIts main characteristic: a risk-driven enterprise security architecture, derived from an analysis of the business requirements for security.\nYou do not need to memorize its specifics.",
+              "description": "Developed independently of Zachman, but with a very similar layered structure.\nIts main characteristic: a risk-driven enterprise security architecture, derived from an analysis of the business requirements for security.\nYou do not need to memorize its specifics.",
               "children": []
             },
             {
               "id": "togaf",
               "title": "TOGAF",
-              "description": "The Open Group Architecture Framework: the third major enterprise security architecture framework.\nLike Zachman and SABSA, it breaks an organization down into components so that security can be built into each one.",
+              "description": "The third major enterprise architecture framework.\nIts core is the Architecture Development Method (ADM): an iterative cycle to develop and manage an enterprise architecture.\nIt breaks an organization down into components so that security can be built into each one.\nFull name: The Open Group Architecture Framework.",
               "children": []
             }
           ]
@@ -45,7 +45,7 @@
             {
               "id": "lattice-based",
               "title": "Lattice Based",
-              "description": "Lattice means layers. These models define layers of confidentiality or integrity, and rules for what can be read or written between the layers.",
+              "description": "Models that define ordered layers (levels) of confidentiality or integrity, and what a subject can read or write between the layers.",
               "children": [
                 {
                   "id": "bell-lapadula",
@@ -55,7 +55,7 @@
                     {
                       "id": "confidentiality",
                       "title": "Confidentiality",
-                      "description": "Bell-LaPadula is entirely focused on keeping information confidential. It is a confidentiality-only model.",
+                      "description": "Bell-LaPadula's single goal: keep information secret from subjects who are not cleared to see it.\nIt does nothing to protect integrity or availability.",
                       "children": []
                     },
                     {
@@ -86,7 +86,7 @@
                     {
                       "id": "integrity",
                       "title": "Integrity",
-                      "description": "Biba is all about integrity. Remember: the I in Biba stands for integrity.\nIts layers are levels of integrity: low, medium and high.",
+                      "description": "Biba is all about _____. Memory trick: think of the I in Biba as _____.\nIts layers are levels of _____: low, medium and high.",
                       "children": []
                     },
                     {
@@ -98,7 +98,7 @@
                     {
                       "id": "star-integrity-property",
                       "title": "Star Integrity Property",
-                      "description": "To maintain integrity, you can only write down.\nWriting up would corrupt more accurate data.\nIt is the inverse of Bell-LaPadula.",
+                      "description": "To maintain integrity, you can only write at your own level or below. You can only write down.\nWriting up would corrupt more accurate data.\nIt is the inverse of the Bell-LaPadula star property.",
                       "children": []
                     }
                   ]
@@ -106,7 +106,7 @@
                 {
                   "id": "lipner-implementation",
                   "title": "Lipner Implementation",
-                  "description": "Not a model, but an implementation.\nBell-LaPadula and Biba are inverses of each other. Lipner worked out how to combine them, so a system can maintain both confidentiality and integrity.",
+                  "description": "Not a model itself, but a way to put two models into practice together.\nBell-LaPadula and Biba are inverses of each other. This approach combines them, so a system can maintain both confidentiality and integrity.",
                   "children": []
                 }
               ]
@@ -114,7 +114,7 @@
             {
               "id": "rule-based",
               "title": "Rule Based",
-              "description": "The second group of security models.\nKnow Clark-Wilson and Brewer-Nash. Just recognize Graham-Denning and Harrison-Ruzzo-Ullman as rule-based models.",
+              "description": "The second group of security models: not built on layers of classification.\nKnow Clark-Wilson and Brewer-Nash. Just recognize Graham-Denning and Harrison-Ruzzo-Ullman as members of this group.",
               "children": [
                 {
                   "id": "clark-wilson",
@@ -151,7 +151,7 @@
                 {
                   "id": "graham-denning",
                   "title": "Graham-Denning",
-                  "description": "Specifies rules that allow subjects to access objects.\nJust recognize it as a rule-based model.",
+                  "description": "Specifies a set of basic protection rules for how subjects and objects are securely created and deleted, and how access rights are granted, transferred and deleted.\nJust recognize it as a rule-based model.",
                   "children": []
                 },
                 {
@@ -192,31 +192,31 @@
         {
           "id": "secure-defaults",
           "title": "Secure Defaults",
-          "description": "A system's default configuration should be the most secure settings possible.\nExample: a new firewall should block all traffic by default.",
+          "description": "Out of the box, a system should come configured with the most secure settings possible.\nExample: a new firewall should block all traffic until someone configures it.",
           "children": []
         },
         {
           "id": "fail-securely",
           "title": "Fail Securely",
-          "description": "When a system fails, it should fail to a more secure state.\nExample: a firewall that fails securely blocks all traffic. The opposite is failing open: a firewall that lets all traffic through when it fails.",
+          "description": "When a system breaks down or crashes, it should end up in a more protected state, not a less protected one.\nExample: a firewall that crashes should block all traffic. The opposite is a firewall that lets all traffic through when it crashes.",
           "children": []
         },
         {
           "id": "separation-of-duties",
           "title": "Separation of Duties (SoD)",
-          "description": "Also called segregation of duties. A task needs more than one person to complete, to prevent errors and fraud.\nWith SoD in place, fraud requires collusion.",
+          "description": "A task needs more than one person to complete, to prevent errors and fraud.\nWith _____ in place, fraud requires collusion.",
           "children": []
         },
         {
           "id": "keep-it-simple",
           "title": "Keep it Simple",
-          "description": "The KISS principle: Keep It Simple, Stupid. Also called economy of mechanism.\nVulnerabilities inevitably increase as complexity increases. Smaller, simpler systems have fewer vulnerabilities and are easier to test.",
+          "description": "Also called economy of mechanism.\nVulnerabilities inevitably increase as complexity increases. Smaller, less complex systems have fewer vulnerabilities and are easier to test.",
           "children": []
         },
         {
           "id": "zero-trust",
           "title": "Zero Trust",
-          "description": "Do not automatically trust anything inside or outside the organization's perimeter. Verify anything and everything that tries to connect to or access the organization's assets.\nTrust nothing, verify everything.",
+          "description": "Do not automatically trust anything inside or outside the organization's perimeter. Verify anything and everything that tries to connect to or access the organization's assets.\nBeing on the internal network earns no trust by itself.",
           "children": []
         },
         {
@@ -228,13 +228,13 @@
         {
           "id": "privacy-by-design",
           "title": "Privacy by Design",
-          "description": "Bake privacy in, just as you bake security in. Building controls in from the very start is always easier, cheaper and more effective than adding them later.\nIt is a framework of seven foundational principles, for example:\n- Proactive not reactive: do not wait for a privacy breach before you think about privacy controls.\n- Privacy as the default setting.",
+          "description": "Bake the protection of personal data in from the very start, just as you bake security in. Building controls in from the start is always easier, cheaper and more effective than adding them later.\nIt is a framework of seven foundational principles, for example:\n- Proactive not reactive: do not wait for a breach of personal data before you think about controls to protect it.\n- Protection of personal data as the default setting.",
           "children": []
         },
         {
           "id": "shared-responsibility",
           "title": "Shared Responsibility",
-          "description": "Almost every organization relies heavily on service providers, such as cloud service providers. An organization cannot be secure if its service providers do not have good security controls.\nSo accountabilities and responsibilities must be clearly defined, and service providers must clearly understand their responsibilities.",
+          "description": "Almost every organization relies heavily on service providers, such as cloud service providers. An organization cannot be secure if its service providers do not have good security controls.\nSo it must be clearly defined who is accountable for what and who does what, and each service provider must clearly understand its part.",
           "children": []
         }
       ]
@@ -242,12 +242,12 @@
     {
       "id": "security-frameworks",
       "title": "Security Frameworks",
-      "description": "The major security frameworks to know for the exam.\nKnow ISO 27001 fairly well. For the others, you do not need to be an expert: know what each one focuses on and is used for.",
+      "description": "Structured sets of standards, controls and best practices that an organization can adopt to build and run its security program.\nKnow ISO 27001 fairly well. For the others, you do not need to be an expert: know what each one focuses on and is used for.",
       "children": [
         {
           "id": "iso-27001",
           "title": "ISO 27001",
-          "description": "The most widely used security framework in the world.\nBest practice recommendations for an ISMS (Information Security Management System).\nAnnex A defines 114 controls across 14 categories: the best practices for a well-run security program, from security governance and policies through onboarding, asset management, access control, cryptography, physical security and network security, to a compliance function.\nIt defines the controls, so an organization can be ISO 27001 certified.",
+          "description": "The most widely used security framework in the world.\nDefines the requirements for an ISMS (Information Security Management System).\nIn the 2013 version, Annex A defines 114 controls across 14 categories: the best practices for a well-run security program, from security governance and policies through onboarding, asset management, access control, cryptography, physical security and network security, to a compliance function. The 2022 version regroups them into 93 controls in 4 themes.\nIt defines the controls, so an organization can be ISO 27001 certified.",
           "children": []
         },
         {
@@ -259,31 +259,31 @@
         {
           "id": "nist-800-53",
           "title": "NIST 800-53",
-          "description": "A set of security and privacy controls for US federal agencies.",
+          "description": "A detailed catalog of security and privacy controls, organized into control families, for US federal agencies and their information systems.",
           "children": []
         },
         {
           "id": "cobit",
           "title": "COBIT",
-          "description": "Control Objectives for Information and Related Technologies.\nCreated by the IT auditors at ISACA, so it is particularly useful for audit and assurance work.",
+          "description": "A framework for IT governance and management.\nCreated by the IT auditors at ISACA, so it is particularly useful for audit and assurance work.",
           "children": []
         },
         {
           "id": "itil",
           "title": "ITIL",
-          "description": "Information Technology Infrastructure Library: a framework of best practices for delivering IT services that are aligned with business goals and objectives.\nParticularly useful for IT processes such as change management, configuration management, access management, event management and availability management.",
+          "description": "A framework of best practices for IT service management: delivering IT services that are aligned with business goals and objectives.\nParticularly useful for IT processes such as change management, configuration management, access management, event management and availability management.\nFull name: Information Technology Infrastructure Library.",
           "children": []
         },
         {
           "id": "hipaa",
           "title": "HIPAA",
-          "description": "Health Insurance Portability and Accountability Act: a framework focused on safeguarding medical information.",
+          "description": "A US federal law focused on safeguarding medical information.\nFull name: Health Insurance Portability and Accountability Act.",
           "children": []
         },
         {
           "id": "sox",
           "title": "SOX",
-          "description": "The Sarbanes-Oxley Act: a US federal law that followed the Enron and WorldCom scandals.\nTop management must individually certify that financial information is accurate, and the penalties for fraudulent activity are much more severe.\nThe security aspect: financial records must have integrity and be available.",
+          "description": "A US federal law that followed the Enron and WorldCom scandals.\nTop management must individually certify that financial information is accurate, and the penalties for fraudulent activity are much more severe.\nThe security aspect: financial records must have integrity and be available.",
           "children": []
         },
         {
@@ -295,13 +295,13 @@
         {
           "id": "fisma",
           "title": "FISMA",
-          "description": "Defines security requirements for US federal government agencies and contractors.\nEach agency must develop, document and implement an agency-wide information security program.",
+          "description": "A US federal law that defines security requirements for US federal government agencies and contractors.\nEach agency must develop, document and implement an agency-wide information security program.",
           "children": []
         },
         {
           "id": "cyber-kill-chain",
           "title": "Cyber Kill Chain",
-          "description": "Also called the Cyber Attack Chain. It defines seven stages of common cyberattacks: the links in the chain where the security team can prevent, detect or intercept attackers.\nBreak a link in the chain and there is no attack. The earlier you break the chain, the less chance the attack harms the organization.\nKnow the order of the seven stages and, at a high level, what happens at each:\n1. Reconnaissance\n2. Weaponization\n3. Delivery\n4. Exploit\n5. Installation\n6. Command & Control\n7. Actions",
+          "description": "Defines seven stages of common cyberattacks: the points where the security team can prevent, detect or intercept attackers.\nStop the attack at any one stage and there is no attack. The earlier you stop it, the less chance the attack harms the organization.\nKnow the order of the seven stages and, at a high level, what happens at each:\n1. Reconnaissance\n2. Weaponization\n3. Delivery\n4. Exploit\n5. Installation\n6. Command & Control\n7. Actions",
           "children": []
         }
       ]

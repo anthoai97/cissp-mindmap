@@ -19,18 +19,18 @@
             {
               "id": "focus-of-security",
               "title": "Focus of Security",
-              "description": "Security exists to help the organization reach its goals.",
+              "description": "Security exists to help the organization reach its goals.\nIts two aims: let the business do what it needs to do, and make the organization worth more.",
               "children": [
                 {
                   "id": "enable-business",
                   "title": "Enable Business",
-                  "description": "Security should enable the business, not block it.",
+                  "description": "Security should help the business do what it needs to do, not stand in its way.",
                   "children": []
                 },
                 {
                   "id": "increase-value",
                   "title": "Increase Value",
-                  "description": "Security should increase the organization's value, not be seen only as a cost center.",
+                  "description": "Security should make the organization worth more, not be seen only as a cost center.",
                   "children": []
                 }
               ]
@@ -38,7 +38,7 @@
             {
               "id": "roles-and-responsibilities",
               "title": "Clearly Defined Roles & Responsibilities",
-              "description": "People must know what they are accountable for and what they are responsible for.",
+              "description": "People must know exactly what they own and must answer for, and which tasks they must carry out.",
               "children": [
                 {
                   "id": "accountability",
@@ -49,19 +49,19 @@
                 {
                   "id": "responsibility",
                   "title": "Responsibility",
-                  "description": "Can be delegated. The responsible party implements and enforces controls as directed by the accountable party.\nExample: a cloud provider is responsible for storing, processing and securing customer data, but the customer stays accountable for it.",
+                  "description": "Can be delegated. The party doing the work implements and enforces controls as directed by the accountable party.\nExample: a cloud provider stores, processes and secures customer data, but the customer stays accountable for it.",
                   "children": []
                 },
                 {
                   "id": "due-care",
                   "title": "Due Care",
-                  "description": "Protecting assets responsibly, based on the organization's goals and objectives.",
+                  "description": "Protecting assets responsibly, based on the organization's goals and objectives: doing what a reasonable, prudent person would do in the same situation.",
                   "children": []
                 },
                 {
                   "id": "due-diligence",
                   "title": "Due Diligence",
-                  "description": "Being able to prove to stakeholders that you are exercising due care.\nStakeholders include management, regulators, customers and shareholders.",
+                  "description": "Being able to prove to stakeholders that assets are being protected responsibly.\nStakeholders include management, regulators, customers and shareholders.",
                   "children": []
                 }
               ]
@@ -69,12 +69,12 @@
             {
               "id": "import-export-controls",
               "title": "Import/export controls",
-              "description": "Laws that restrict exporting certain technologies, including some cryptographic algorithms and systems.\nThese laws followed advances in cryptography in the 1970s and 1980s, such as DES and asymmetric cryptography.\nViolations can carry serious penalties, including federal prison.",
+              "description": "Laws that restrict selling or shipping certain technologies to other countries, including some cryptographic algorithms and systems.\nThese laws followed advances in cryptography in the 1970s and 1980s, such as DES and asymmetric cryptography.\nViolations can carry serious penalties, including federal prison.",
               "children": [
                 {
                   "id": "itar-ear",
                   "title": "ITAR & EAR",
-                  "description": "US regulations that restrict the manufacture, sale and distribution of specific technologies, including some cryptography.\nITAR (International Traffic in Arms Regulations): defense articles, technical data and defense services.\nEAR (Export Administration Regulations): dual-use items not covered by ITAR, and some defense-related items.",
+                  "description": "Two US regulations that restrict the manufacture, sale and distribution of specific technologies, including some cryptography:\n- the first covers military items: defense articles, technical data and defense services\n- the second covers dual-use items not covered by the first, and some defense-related items\nFull names: International Traffic in Arms Regulations; Export Administration Regulations.",
                   "children": []
                 },
                 {
@@ -88,13 +88,13 @@
             {
               "id": "transborder-data-flow",
               "title": "Transborder data flow",
-              "description": "Data residency (data localization) laws that restrict data from crossing national borders.\nExample: a law that requires citizens' personal data to be stored inside the country.",
+              "description": "Data residency (data localization) laws that restrict data from leaving a country.\nExample: a law that requires citizens' personal data to be stored inside the country.",
               "children": []
             },
             {
               "id": "privacy",
               "title": "Privacy",
-              "description": "You cannot achieve privacy without security.\nNot a major topic in this mind map. It is covered in its own mind map.",
+              "description": "Protecting personal information, and letting people control what others know about them.\nYou cannot achieve privacy without security.\nCovered in its own mind map.",
               "highlight": "own-mindmap",
               "mindmap": "privacy-and-intellectual-property",
               "children": []
@@ -116,7 +116,7 @@
             {
               "id": "corporate-laws",
               "title": "Corporate Laws",
-              "description": "Policies are the organization's laws: they tell people what they must do.",
+              "description": "Policies act as the organization's internal rules: they tell people what they must do.\nThey range from the overarching security policy down to standards, procedures, baselines and guidelines.",
               "children": [
                 {
                   "id": "overarching-security-policy",
@@ -161,7 +161,7 @@
             {
               "id": "risk-management",
               "title": "Risk Management",
-              "description": "A critical tool for protecting assets with limited resources. Part of security governance.\nCovered in its own mind map.",
+              "description": "A critical tool for protecting assets with limited resources: value the assets, analyze the risks and treat them. Part of security governance.\nCovered in its own mind map.",
               "highlight": "own-mindmap",
               "mindmap": "risk-management",
               "children": []
@@ -174,7 +174,7 @@
                 {
                   "id": "contracts-and-slas",
                   "title": "Contracts & SLAs",
-                  "description": "After a provider is chosen, the SLR becomes the SLA (Service Level Agreement).\nThe SLA is an addendum to the legally binding contract. It describes the service, its targets and each party's responsibilities.\nResponsibility can be outsourced. Accountability cannot.",
+                  "description": "After a provider is chosen, the SLR is turned into the provider's formal service commitments, added as an addendum to the legally binding agreement with the provider.\nTogether they describe the service, its targets and each party's responsibilities.\nResponsibility can be outsourced. Accountability cannot.\nFull name: Service Level Agreement.",
                   "children": []
                 }
               ]
@@ -182,7 +182,7 @@
             {
               "id": "awareness-training-education",
               "title": "Awareness, Training & Education",
-              "description": "Everyone is responsible for security, but people need to know what that means for them.\n- Awareness: informal communication, such as emails and posters, to change culture. Example: phishing awareness.\n- Training: semi-formal teaching of specific skills. Example: how to deploy a particular firewall.\n- Education: teaching fundamental concepts. Example: a CISSP course.",
+              "description": "Everyone is responsible for security, but people need to know what that means for them. Three levels, from least to most formal:\n- informal communication, such as emails and posters, to change culture. Example: posters that warn staff about phishing.\n- semi-formal teaching of specific skills. Example: how to deploy a particular firewall.\n- teaching fundamental concepts. Example: a CISSP course.",
               "children": []
             }
           ]

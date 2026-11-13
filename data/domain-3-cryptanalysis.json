@@ -9,18 +9,18 @@
     {
       "id": "cryptanalytic-attacks",
       "title": "Cryptanalytic Attacks",
-      "description": "Cryptanalysis is the art and science of understanding how cryptosystems work, to find ways to defeat them (or strengthen them). It covers decoding secrets, gaining access to encrypted messages and even forging new messages.\nThere are two major types of cryptanalysis: cryptanalytic attacks and cryptographic attacks.\nThe primary goal of every cryptanalytic attack is to deduce the key: the crypto variable that can decrypt the ciphertext. Remember this.",
+      "description": "Attacks whose primary goal is always to deduce the key: the crypto variable that can decrypt the ciphertext.\nThey are one of the two major types of cryptanalysis: the art and science of understanding how cryptosystems work, to find ways to defeat them (or strengthen them). Cryptanalysis covers decoding secrets, gaining access to encrypted messages and even forging new messages.",
       "children": [
         {
           "id": "brute-force",
           "title": "Brute Force",
-          "description": "The simplest attack: try every possible key until you find the right one. Simple, but ineffective against algorithms that use longer keys.\nThe key space (the total number of possible keys) doubles every time the key length grows by one bit, so it grows exponentially. No system that exists now, or in the reasonably foreseeable future, can brute force 128-bit, let alone 256-bit, keys.\nBrute force times from the page (key length: key space, attack time):\n- 56 bits: 7.2 x 10^16 keys, 20 hours\n- 80 bits: 1.2 x 10^24 keys, 54,800 years\n- 128 bits: 3.4 x 10^38 keys, 1.5 x 10^19 years\n- 256 bits: 1.15 x 10^77 keys, 5.2 x 10^57 years",
+          "description": "The simplest attack: try every possible key until you find the right one. Simple, but ineffective against algorithms that use longer keys.\nThe key space (the total number of possible keys) doubles every time the key length grows by one bit, so it grows exponentially. No system that exists now, or in the reasonably foreseeable future, can brute force 128-bit, let alone 256-bit, keys.\nExample times to try every key (key length: key space, attack time):\n- 56 bits: 7.2 x 10^16 keys, 20 hours\n- 80 bits: 1.2 x 10^24 keys, 54,800 years\n- 128 bits: 3.4 x 10^38 keys, 1.5 x 10^19 years\n- 256 bits: 1.15 x 10^77 keys, 5.2 x 10^57 years",
           "children": []
         },
         {
           "id": "ciphertext-only",
           "title": "Ciphertext Only",
-          "description": "The attacker has only ciphertext to work with to deduce the key.\nThis makes ciphertext-only attacks very difficult.",
+          "description": "The attacker has only ciphertext to work with to deduce the key: no matching plaintext and no access to the encryption machine.\nThis makes these attacks very difficult.",
           "children": []
         },
         {
@@ -44,13 +44,13 @@
         {
           "id": "linear-differential",
           "title": "Linear & Differential",
-          "description": "Advanced statistical techniques, used mainly against block ciphers, to deduce the key.\n- Linear cryptanalysis: finds linear approximations of how the cipher relates plaintext, ciphertext and key bits, using many known plaintext and ciphertext pairs.\n- Differential cryptanalysis: studies how chosen differences in the plaintext affect the differences in the resulting ciphertext, using chosen plaintext pairs.",
+          "description": "Advanced statistical techniques, used mainly against block ciphers, to deduce the key.\n- The first builds simple equations that approximate how the cipher relates plaintext, ciphertext and key bits, using many known plaintext and ciphertext pairs.\n- The second studies how chosen changes in the plaintext affect the changes in the resulting ciphertext, using chosen plaintext pairs.",
           "children": []
         },
         {
           "id": "factoring",
           "title": "Factoring",
-          "description": "Only one asymmetric algorithm you need to know uses factoring as its hard math problem: RSA.\nSee a factoring attack, think RSA. Want to attack RSA, think factoring attack.",
+          "description": "Attack the hard math problem behind RSA: split the product of two large primes back into the original primes, which reveals the private key.\nOnly one asymmetric algorithm you need to know uses factoring as its hard math problem: RSA.\nSee a factoring attack, think RSA. Want to attack RSA, think factoring attack.",
           "children": []
         }
       ]
@@ -69,7 +69,7 @@
         {
           "id": "replay",
           "title": "Replay",
-          "description": "A form of man-in-the-middle attack. The attacker eavesdrops and intercepts data, such as a user's hashed password sent to a server to authenticate.\nThe attacker may not be able to decipher the data, but can replay (re-send) it later to their advantage. Example: re-send the password hash later to masquerade as the user and gain unauthorized access.",
+          "description": "A form of man-in-the-middle attack. The attacker eavesdrops and intercepts data, such as an authentication message or a transaction.\nThe attacker may not be able to decipher the data, but can replay (re-send) it later to their advantage. Example: re-send captured login data later to masquerade as the user and gain unauthorized access.",
           "children": []
         },
         {
@@ -87,7 +87,7 @@
         {
           "id": "implementation",
           "title": "Implementation",
-          "description": "Targets weaknesses in how an algorithm, cryptosystem, protocol or application has been implemented.\nExam example: WEP (Wired Equivalent Privacy), which uses the RC4 algorithm to secure wireless traffic. RC4 is excellent, but WEP implements it terribly: among other issues, its initialization vectors are too short and partly static. WEP is badly broken and should never be used.",
+          "description": "Targets weaknesses in how an algorithm, cryptosystem, protocol or application has been built and deployed in practice, rather than in the underlying math.\nExam example: WEP (Wired Equivalent Privacy), which uses the RC4 algorithm to secure wireless traffic. WEP uses RC4 terribly: among other issues, its initialization vectors are too short and partly static. WEP is badly broken and should never be used.",
           "children": []
         },
         {
@@ -124,13 +124,13 @@
         {
           "id": "rainbow-tables",
           "title": "Rainbow Tables",
-          "description": "An extension of password dictionaries.\nPasswords should never be stored in plaintext; store their hash values instead. Hashing is one-way, so an attacker who steals a database of hashes cannot reverse them. But the attacker can hash a likely password, such as 123456, and compare it with the stored hashes: a match reveals the password.\nA rainbow table is a giant database of the most common passwords and their pre-computed hash values.\nDefense: salt and pepper.",
+          "description": "An extension of password dictionaries.\nPasswords should never be stored in plaintext; store their hash values instead. Hashing is one-way, so an attacker who steals a database of hashes cannot reverse them. But the attacker can hash a likely password, such as 123456, and compare it with the stored hashes: a match reveals the password.\nThis attack uses a giant database of the most common passwords and their pre-computed hash values.\nDefense: salt and pepper.",
           "children": []
         },
         {
           "id": "birthday-attack",
           "title": "Birthday Attack",
-          "description": "Exploits the mathematics of the birthday paradox in probability theory.\nAssociate birthday attacks with finding collisions in hashing algorithms.",
+          "description": "Exploits a surprising result of probability theory: in a group of just 23 people, there is a better than even chance that two of them share the same date of birth. In the same way, two inputs with the same hash turn up far sooner than you would expect.\nAssociate this attack with finding collisions in hashing algorithms.",
           "children": []
         },
         {

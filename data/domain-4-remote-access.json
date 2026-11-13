@@ -14,19 +14,19 @@
         {
           "id": "gre",
           "title": "GRE",
-          "description": "Generic Routing Encapsulation: a simple tunneling protocol that can encapsulate a wide variety of network protocols and create point-to-point connections.\nIt lets you easily connect two networks and pass traffic between them across a third network, typically the internet.",
+          "description": "A simple tunneling protocol that can encapsulate a wide variety of network protocols and create point-to-point connections.\nIt lets you easily connect two networks and pass traffic between them across a third network, typically the internet.\nFull name: Generic Routing Encapsulation.",
           "children": []
         },
         {
           "id": "pptp",
           "title": "PPTP",
-          "description": "Point-to-Point Tunneling Protocol: an obsolete tunneling protocol with many well-known security vulnerabilities.\nOn its own, PPTP provides no encryption or authentication. It must be combined with other protocols to create VPNs.",
+          "description": "An obsolete tunneling protocol, built on PPP, with many well-known security vulnerabilities.\nOn its own, it provides no encryption or authentication. It must be combined with other protocols to create VPNs.\nFull name: Point-to-Point Tunneling Protocol.",
           "children": []
         },
         {
           "id": "l2tp",
           "title": "L2TP",
-          "description": "Layer 2 Tunneling Protocol: the successor to PPTP, with many improvements, such as the ability to encrypt its control messages.\nVery important: on its own, L2TP does not encrypt the data portion of a packet.",
+          "description": "The successor to PPTP, with many improvements, such as the ability to encrypt its control messages.\nVery important: on its own, it does not encrypt the data portion of a packet. It is usually combined with IPSec for that.\nFull name: Layer 2 Tunneling Protocol.",
           "children": []
         },
         {
@@ -38,28 +38,28 @@
         {
           "id": "encryption",
           "title": "Encryption",
-          "description": "Encryption is layered on top of tunneling: encrypt the data portion of packets sent through a tunnel, to provide confidentiality.\nTunnels typically connect two private networks, or a remote device such as a laptop to a corporate network, across the public internet. Always assume that someone, probably several people, is inspecting your data as it crosses the internet.",
+          "description": "Layered on top of tunneling: scramble the data portion of packets sent through a tunnel so only the other end can read it. This provides confidentiality.\nTunnels typically connect two private networks, or a remote device such as a laptop to a corporate network, across the public internet. Always assume that someone, probably several people, is inspecting your data as it crosses the internet.",
           "children": [
             {
               "id": "vpn",
               "title": "VPN (Tunneling + Encryption)",
-              "description": "A Virtual Private Network is an encrypted tunnel: the data sent through the tunnel is encrypted.\nThe major VPN protocols to know: IPSec, SSL/TLS, SOCKS and SSH.",
+              "description": "A tunnel whose data is also protected for confidentiality, so a remote user or site can use a public network as if it were a private one.\nThe major protocols to know: IPSec, SSL/TLS, SOCKS and SSH.\nFull name: Virtual Private Network.",
               "children": [
                 {
                   "id": "ipsec",
                   "title": "IPSec",
-                  "description": "IP Security: a standardized suite of protocols that work together. The VPN protocol you need to know the most about.\nIt allows a massive degree of flexibility in how it is configured to create a VPN. Setting up a connection involves two choices:\n- Authentication Header (AH) or Encapsulating Security Payload (ESP).\n- Transport mode or Tunnel mode.\nHow the four combinations fit together:\n- AH, transport mode: original header, AH, data. Nothing is encrypted.\n- AH, tunnel mode: new header, AH, original header, data. Nothing is encrypted.\n- ESP, transport mode: original header, ESP header, data, ESP trailer. The data is encrypted.\n- ESP, tunnel mode: new header, ESP header, original header, data, ESP trailer. The original header and the data are encrypted.",
+                  "description": "A standardized suite of protocols that work together. The VPN protocol you need to know the most about.\nIt allows a massive degree of flexibility in how it is configured to create a VPN. Setting up a connection involves two choices:\n- Authentication Header (AH) or Encapsulating Security Payload (ESP).\n- Transport mode or Tunnel mode.\nHow the four combinations fit together:\n- AH, transport mode: original header, AH, data. Nothing is encrypted.\n- AH, tunnel mode: new header, AH, original header, data. Nothing is encrypted.\n- ESP, transport mode: original header, ESP header, data, ESP trailer. The data is encrypted.\n- ESP, tunnel mode: new header, ESP header, original header, data, ESP trailer. The original header and the data are encrypted.",
                   "children": [
                     {
                       "id": "authentication-header",
                       "title": "Authentication Header",
-                      "description": "AH provides only integrity, data-origin authentication and replay protection. No confidentiality.\nTechnically, IPSec in AH mode is just a tunnel, not a VPN.",
+                      "description": "Provides only integrity, data-origin authentication and replay protection. No confidentiality.\nTechnically, IPSec using only this is just a tunnel, not a VPN.",
                       "children": []
                     },
                     {
                       "id": "encapsulating-security-payload",
                       "title": "Encapsulating Security Payload",
-                      "description": "ESP provides everything AH does (integrity, data-origin authentication and replay protection) plus confidentiality, by encrypting the data portion of the payload.\nIPSec in ESP mode is a VPN, because it provides an encrypted tunnel.",
+                      "description": "Provides everything AH does (integrity, data-origin authentication and replay protection) plus confidentiality, by encrypting the data portion of the payload.\nIPSec using this is a VPN, because it provides an encrypted tunnel.",
                       "children": []
                     },
                     {
@@ -77,13 +77,13 @@
                     {
                       "id": "ike",
                       "title": "IKE",
-                      "description": "Internet Key Exchange: the part of IPSec used to establish Security Associations.",
+                      "description": "The part of IPSec used to establish Security Associations: the peers authenticate each other and agree on the keys to use.\nFull name: Internet Key Exchange.",
                       "children": []
                     },
                     {
                       "id": "security-association",
                       "title": "Security Association",
-                      "description": "A simplex (one-way) establishment of attributes for a connection, such as the authentication algorithm, the encryption algorithm and the encryption keys.\nWhen an IPSec connection is set up, the two entities must authenticate each other (for example with X.509 digital certificates) and exchange symmetric encryption keys (for example with the Diffie-Hellman key exchange). First they must agree which authentication algorithm, encryption algorithm and IPSec mode to use. Security Associations (SAs) establish these agreements.\nSimplex means an SA allows communication in one direction only:\n- A tunnel where two entities talk back and forth needs 2 SAs, one for each direction.\n- Adding encryption in both directions needs 2 more SAs.\nA total of four SAs are required to establish an IPSec VPN.",
+                      "description": "A simplex (one-way) establishment of attributes for a connection, such as the authentication algorithm, the encryption algorithm and the encryption keys.\nWhen an IPSec connection is set up, the two entities must authenticate each other (for example with X.509 digital certificates) and exchange symmetric encryption keys (for example with the Diffie-Hellman key exchange). First they must agree which authentication algorithm, encryption algorithm and IPSec mode to use. Security Associations (SAs) establish these agreements.\nSimplex means an SA allows communication in one direction only:\n- A tunnel where two entities talk back and forth (for example with AH) needs 2 SAs, one for each direction.\n- Adding encryption (ESP) in both directions needs 2 more SAs.\nA total of four SAs are required to establish an IPSec VPN that uses both.",
                       "children": []
                     }
                   ]
@@ -91,12 +91,12 @@
                 {
                   "id": "ssl-tls",
                   "title": "SSL/TLS",
-                  "description": "Another protocol commonly used to establish VPNs.\nSSL (Secure Sockets Layer) was the name for the first three major versions. It was then renamed TLS (Transport Layer Security) to better reflect that it operates at layer 4, the transport layer. SSL and TLS are the same protocol; TLS is the name of the most recent versions.\nCreated mainly to authenticate and encrypt the connection between a web browser and a web server, but it can secure other connections too, for example a VPN.\nUnderstand the steps to establish a TLS connection:\n1. The client sends a client hello: which TLS versions and encryption algorithms it supports.\n2. The server replies with a server hello, which includes a copy of the server's digital certificate.\n3. The client checks the server's digital certificate, which authenticates the server: it really is Amazon.com, not sketchyhacker.com. The client then generates a new symmetric key (the session key) and encrypts it with the server's public key, taken from the certificate.\n4. The client sends the encrypted session key to the server, which decrypts it with its private key. Both now have the same symmetric session key, and can efficiently encrypt all data they send back and forth.",
+                  "description": "Another protocol commonly used to establish VPNs.\nSSL was the name for the first three major versions. It was then renamed TLS to better reflect that it operates at layer 4, the transport layer. They are the same protocol; TLS is the name of the most recent versions.\nCreated mainly to authenticate and encrypt the connection between a web browser and a web server, but it can secure other connections too, for example a VPN.\nUnderstand the steps to establish a connection:\n1. The client sends a client hello: which versions and encryption algorithms it supports.\n2. The server replies with a server hello, which includes a copy of the server's digital certificate.\n3. The client checks the server's digital certificate, which authenticates the server: it really is Amazon.com, not sketchyhacker.com. The client then generates a new symmetric key (the session key) and encrypts it with the server's public key, taken from the certificate.\n4. The client sends the encrypted session key to the server, which decrypts it with its private key. Both now have the same symmetric session key, and can efficiently encrypt all data they send back and forth.\nFull names: Secure Sockets Layer; Transport Layer Security.",
                   "children": [
                     {
                       "id": "mutual-authentication",
                       "title": "Mutual Authentication",
-                      "description": "In the initial client hello, the client can send its own certificate to the server, so the server can authenticate the client. The client and server then authenticate each other.\nSSL/TLS can even run in a mode called unencrypted SSL, where authentication is required but an encrypted connection is not.",
+                      "description": "During the handshake, the server can ask the client for its own certificate, so the server can authenticate the client as well. The client and server then authenticate each other.\nSSL/TLS can even run in a mode called unencrypted SSL, where authentication is required but an encrypted connection is not.",
                       "children": []
                     }
                   ]
@@ -104,13 +104,13 @@
                 {
                   "id": "socks",
                   "title": "SOCKS",
-                  "description": "Socket Secure protocol. Recognize it as a VPN protocol.\nOperates at layer 5, the session layer.",
+                  "description": "A proxy protocol that relays traffic between a client and a server. Recognize it as a VPN protocol.\nOperates at layer 5, the session layer.",
                   "children": []
                 },
                 {
                   "id": "ssh",
                   "title": "SSH",
-                  "description": "Secure Shell protocol. Recognize it as a VPN protocol.\nOperates at layer 7, the application layer.",
+                  "description": "Gives encrypted remote command-line access to a system, and can tunnel other traffic. Recognize it as a VPN protocol.\nOperates at layer 7, the application layer.",
                   "children": []
                 }
               ]
@@ -122,12 +122,12 @@
     {
       "id": "remote-authentication",
       "title": "Remote Authentication",
-      "description": "Protocols to authenticate remote users, authorize them, and account for their use of a service.\nExample: in 1995 you run a dial-up internet service with a few thousand customers, and need to do all three.",
+      "description": "Protocols that verify users connecting from outside, authorize them, and account for their use of a service.\nExample: in 1995 you run a dial-up internet service with a few thousand customers, and need to do all three.",
       "children": [
         {
           "id": "radius",
           "title": "RADIUS",
-          "description": "Remote Authentication Dial-In User Service: a protocol originally designed for exactly this job.\nIt lets a user connect to and access network resources, and provides Authentication, Authorization and Accounting (AAA, triple A).",
+          "description": "A protocol originally designed for dial-up services that needed to verify, authorize and account for their users.\nIt lets a user connect to and access network resources, and provides Authentication, Authorization and Accounting (AAA, triple A).\nFull name: Remote Authentication Dial-In User Service.",
           "children": []
         },
         {
@@ -139,7 +139,7 @@
         {
           "id": "tacacs-plus",
           "title": "TACACS+",
-          "description": "Terminal Access Controller Access Control System Plus: does the same job as RADIUS.\nThe improvement: TACACS+ encrypts the full contents of the packets it sends, while RADIUS only poorly obfuscates the user's password.",
+          "description": "A Cisco protocol that does the same job as RADIUS.\nThe improvement: it encrypts the full contents of the packets it sends, while RADIUS only poorly obfuscates the user's password.\nFull name: Terminal Access Controller Access Control System.",
           "children": []
         }
       ]
@@ -152,13 +152,13 @@
         {
           "id": "snmp",
           "title": "SNMP",
-          "description": "Simple Network Management Protocol: collects all sorts of information from network devices in real time, including performance metrics, alerts and device configuration. Beyond monitoring, it can send commands to reconfigure a device. A powerful protocol.\nMemory aid: Security's Not My Problem, because the first versions are terrible for security:\n- Version 1 sends passwords in clear text.\n- Version 2 is a slight improvement: it allows password hashing, but not by default.\n- Version 3 is a huge security improvement. If you use SNMP, use version 3.",
+          "description": "Collects all sorts of information from network devices in real time, including performance metrics, alerts and device configuration. Beyond monitoring, it can send commands to reconfigure a device. A powerful protocol.\nThe first versions are terrible for security:\n- Version 1 sends passwords in clear text.\n- Version 2 is a slight improvement: it allows password hashing, but not by default.\n- Version 3 is a huge security improvement. If you use it, use version 3.\nFull name: Simple Network Management Protocol.",
           "children": []
         },
         {
           "id": "telnet",
           "title": "Telnet",
-          "description": "A protocol to connect remotely to a network device, such as a server, and get command-line interface access.",
+          "description": "A protocol to connect remotely to a network device, such as a server, and get command-line interface access.\nEverything, including the password, is sent in plaintext, so use SSH instead.",
           "children": []
         }
       ]

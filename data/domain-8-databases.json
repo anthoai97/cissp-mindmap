@@ -35,13 +35,13 @@
                     {
                       "id": "rows-tuples-records",
                       "title": "Rows = Tuples / Records",
-                      "description": "Rows are also called tuples or records.",
+                      "description": "The horizontal entries of a table. Each one holds all the data for one item, such as one student.",
                       "children": []
                     },
                     {
                       "id": "columns-attributes",
                       "title": "Columns = Attributes",
-                      "description": "Columns are also called attributes.",
+                      "description": "The vertical divisions of a table. Each one holds one kind of data for every item, such as a student's last name.",
                       "children": []
                     },
                     {
@@ -53,7 +53,7 @@
                     {
                       "id": "primary-foreign-keys",
                       "title": "Primary & Foreign Keys",
-                      "description": "How a relational database relates data in one table to data in another table.\n- Primary key: a unique identifier for a specific record (row). For a person, it could be a social insurance number, a passport number or a student ID.\n- Foreign key: a column whose values match primary keys in another table. It forms the link, the relationship, to that table.\nExample: a course registration table has a row for each course a student is registered in, and each row holds the student ID as the foreign key. The student ID links students to the courses they are registered in.",
+                      "description": "How a relational database relates data in one table to data in another table.\n- The first kind: a unique identifier for a specific record (row). For a person, it could be a social insurance number, a passport number or a student ID.\n- The second kind: a column whose values match the unique identifiers in another table. It forms the link, the relationship, to that table.\nExample: a course registration table has a row for each course a student is registered in, and each row holds the student ID, which points to that student's row in the students table. The student ID links students to the courses they are registered in.",
                       "children": []
                     }
                   ]
@@ -65,7 +65,7 @@
         {
           "id": "language-sql",
           "title": "Language (SQL)",
-          "description": "Structured Query Language: the language used to communicate with and control a relational DBMS.",
+          "description": "The standard _____ users and processes use to communicate with and control a relational DBMS: to query, insert, update and delete data.\nFull name: Structured Query Language.",
           "children": []
         },
         {
@@ -85,42 +85,42 @@
     {
       "id": "maintaining-integrity-of-data",
       "title": "Maintaining Integrity of Data",
-      "description": "A database is of little use to an organization if its data is inaccurate, so controls must ensure the integrity of the data.",
+      "description": "A database is of little use to an organization if its data is inaccurate.\nControls such as locks and the ACID properties keep the data accurate and trustworthy, especially when many transactions run at the same time.",
       "children": [
         {
           "id": "concurrency",
           "title": "Concurrency",
-          "description": "Modern high-performance databases usually run many transactions concurrently, in parallel.\nA transaction is a unit of work, usually several operations such as reads, writes and acquiring locks.\nWhen many users or processes run transactions concurrently, maintaining data integrity is much harder.",
+          "description": "Modern high-performance databases usually run many transactions at the same time, in parallel.\nA transaction is a unit of work, usually several operations such as reads, writes and acquiring locks.\nWhen many users or processes run transactions at once, maintaining data integrity is much harder.",
           "children": []
         },
         {
           "id": "locks",
           "title": "Locks",
-          "description": "A major control to prevent data corruption when transactions run concurrently.\nWhen a record (tuple) is locked, only one user or process can update it until the lock is released, by committing the update or rolling back.",
+          "description": "A major control to prevent data corruption when many transactions run at the same time.\nWhile one transaction holds a record (tuple), only that user or process can update it, until it is released by committing the update or rolling back.",
           "children": []
         },
         {
           "id": "acid-atomicity",
           "title": "A - Atomicity",
-          "description": "ACID is a standard set of properties that guarantee database transactions are processed reliably. Enforce them to further protect data integrity.\nAtomicity: all changes in a transaction take effect, or none do.",
+          "description": "ACID is a standard set of properties that guarantee database transactions are processed reliably. Enforce them to further protect data integrity.\nThis property: a transaction is all or nothing. All its changes take effect, or none do.",
           "children": []
         },
         {
           "id": "acid-consistency",
           "title": "C - Consistency",
-          "description": "Updates to the database are consistent with the rules. The rules are enforced.",
+          "description": "Every transaction moves the database from one valid state to another: updates must obey the database's rules, such as constraints. The rules are enforced.",
           "children": []
         },
         {
           "id": "acid-isolation",
           "title": "I - Isolation",
-          "description": "Transactions are invisible to other users until they are complete.",
+          "description": "Transactions running at the same time do not interfere with each other: a transaction's changes are invisible to other users until it is complete.",
           "children": []
         },
         {
           "id": "acid-durability",
           "title": "D - Durability",
-          "description": "Completed transactions are not lost: they are durable.",
+          "description": "Once a transaction is committed, its changes are permanent and survive system failures such as a crash or power loss.",
           "children": []
         }
       ]
@@ -128,7 +128,7 @@
     {
       "id": "sql-injection",
       "title": "SQL Injection",
-      "description": "A major attack against databases. You definitely need to understand it for the exam.\nAn attacker injects SQL code through a web application to control the database behind it. Security professionals should always work to prevent it.\nCovered in detail in the Domain 3 vulnerabilities mind map.",
+      "description": "A major attack against databases. You definitely need to understand it for the exam.\nAn attacker sends malicious database commands through a web application's input fields to control the database behind it. Security professionals should always work to prevent it, mainly with input validation.\nCovered in detail in the Domain 3 vulnerabilities mind map.",
       "children": []
     }
   ]

@@ -1,7 +1,7 @@
 {
   "id": "osi-model",
   "title": "Open Systems Interconnection (OSI) Model",
-  "description": "The OSI model is a conceptual guide to how systems communicate: its seven layers, and the media, devices, protocols and addresses at each.",
+  "description": "The OSI model is a conceptual guide to how systems communicate: its seven layers, and the media, devices, protocols and addresses at each.\nThe seven layers, bottom to top: Physical, Data Link, Network, Transport, Session, Presentation, Application.",
   "domain": 4,
   "order": 1,
   "source": "https://destcert.com/resources/osi-model-mindmap-cissp-domain-4/",
@@ -9,7 +9,7 @@
     {
       "id": "physical",
       "title": "1. Physical",
-      "description": "Layer 1: binary transmission of data across physical media.\nElectrons across wires, photons through fiber optic cables, and electromagnetic waves through the air for wireless. All different ways of moving bits.\nMemorize the seven layers in order: Physical, Datalink, Network, Transport, Session, Presentation, Application.\n- From the bottom: Please Do Not Throw Sausage Pizza Away.\n- From the top: All People Seem To Need Data Processing.\nThe OSI model is a guide, a conceptual framework to help standardize how systems communicate. It is not a strict set of rules.",
+      "description": "Layer 1: binary transmission of data across media.\nElectrons across wires, photons through fiber optic cables, and electromagnetic waves through the air for wireless. All different ways of moving bits.\nMemorize the seven layers in order with a mnemonic:\n- From the bottom: Please Do Not Throw Sausage Pizza Away.\n- From the top: All People Seem To Need Data Processing.\nThe OSI model is a guide, a conceptual framework to help standardize how systems communicate. It is not a strict set of rules.",
       "children": [
         {
           "id": "media",
@@ -19,13 +19,13 @@
             {
               "id": "wired-media",
               "title": "Wired: Twisted Pair, Coaxial, Fiber Optic",
-              "description": "The types of wire to know a little about:\n- Twisted pair: also called ethernet cable, Category 5 or CAT5 cable. Newer standards include CAT6, CAT7 and CAT8. All use the RJ45 jack.\n- Coaxial cable.\n- Fiber optic cable.",
+              "description": "The types of wire to know a little about:\n- Twisted pair: also called ethernet cable, Category 5 or CAT5 cable. Newer standards include CAT6, CAT7 and CAT8. All use the RJ45 jack.\n- Coaxial cable: a copper core inside a shield, as used for cable TV. More resistant to interference than twisted pair.\n- Fiber optic cable: carries pulses of light through glass. Very fast over long distances, immune to electromagnetic interference, and hard to tap.",
               "children": []
             },
             {
               "id": "wireless-media",
               "title": "Wireless: Radio Frequency, Infrared, Microwave",
-              "description": "The three major ways to send bits wirelessly:\n- Radio frequency, which includes Wi-Fi.\n- Infrared.\n- Microwave: a good way to connect buildings that are within line of sight, and saves the cost of burying cable in the ground.",
+              "description": "The three major ways to send bits wirelessly:\n- Radio frequency, which includes Wi-Fi.\n- Infrared: short-range light that needs line of sight, as used by TV remote controls.\n- Microwave: a good way to connect buildings that are within line of sight, and saves the cost of burying cable in the ground.",
               "children": []
             }
           ]
@@ -38,7 +38,7 @@
             {
               "id": "bus",
               "title": "Bus",
-              "description": "Every system is connected to every other system across a wire. The vast majority of networks today are fundamentally bus topologies.\nA broadcast technology. The major issue is collisions: if two systems send data across the bus at the same time, they collide. The more systems, the more collisions.",
+              "description": "All systems are attached to one shared wire, and every system sees what is sent across it. The vast majority of networks today are fundamentally bus topologies.\nA broadcast technology. The major issue is collisions: if two systems send data across the shared wire at the same time, they collide. The more systems, the more collisions.",
               "children": []
             },
             {
@@ -75,13 +75,13 @@
             {
               "id": "csma-ca",
               "title": "CSMA/CA",
-              "description": "Carrier Sense Multiple Access with Collision Avoidance.\nAvoids collisions. Used mainly in wireless networks.",
+              "description": "Carrier Sense Multiple Access, the version that tries to stop collisions before they happen: a system listens and signals before it sends.\nUsed mainly in wireless networks.\nFull name: Carrier Sense Multiple Access with Collision Avoidance.",
               "children": []
             },
             {
               "id": "csma-cd",
               "title": "CSMA/CD",
-              "description": "Carrier Sense Multiple Access with Collision Detection.\nDetects when a collision has happened and deals with it. Used mainly in wired networks.",
+              "description": "Carrier Sense Multiple Access, the version that notices when a collision has happened and deals with it: the systems stop and resend after a random wait.\nUsed mainly in wired networks.\nFull name: Carrier Sense Multiple Access with Collision Detection.",
               "children": []
             }
           ]
@@ -89,7 +89,7 @@
         {
           "id": "physical-devices",
           "title": "Devices",
-          "description": "The major devices that operate at the Physical layer.",
+          "description": "The major hardware that operates at the Physical layer. It has no intelligence: it just repeats signals.",
           "children": [
             {
               "id": "hubs-repeaters-concentrators",
@@ -102,12 +102,12 @@
         {
           "id": "physical-protocols",
           "title": "Protocols",
-          "description": "The major protocol to know at layer 1.",
+          "description": "The major communication standard to know at layer 1: the family of wireless LAN standards.",
           "children": [
             {
               "id": "physical-802-1x",
               "title": "802.1x",
-              "description": "The video describes 802.11 here: a whole family of protocols for wireless local area networks, such as 802.11a, 802.11b, g, n, ac and Wi-Fi 6 (802.11ax).\nThe main 802.11 versions are covered in the Networking mind map.\nThe video describes 802.1x itself with the layer 2 protocols: it is used for Network Access Control.",
+              "description": "The protocol the course lists at layer 1, discussed together with 802.11: a whole family of protocols for wireless local area networks, such as 802.11a, 802.11b, g, n, ac and Wi-Fi 6 (802.11ax). The main 802.11 versions are covered in the Networking mind map.\n802.1x itself is a layer 2 protocol: it authenticates devices to a network, and is used for Network Access Control.",
               "children": []
             }
           ]
@@ -117,18 +117,18 @@
     {
       "id": "datalink",
       "title": "2. Datalink",
-      "description": "Layer 2, the Data Link layer: responsible for physical addressing and reliable point-to-point connections.",
+      "description": "Layer 2: responsible for physical addressing and reliable point-to-point connections.",
       "children": [
         {
           "id": "mac-address",
           "title": "MAC Address",
-          "description": "Media Access Control address: a unique identifier assigned to every network interface controller ever manufactured. Every device that connects to a network has one.\nLayer 2 switches use MAC addresses to work out which system to send data to.",
+          "description": "A unique identifier assigned to every network interface controller ever manufactured. Every device that connects to a network has one.\nLayer 2 switches use these addresses to work out which system to send data to.\nFull name: Media Access Control.",
           "children": []
         },
         {
           "id": "datalink-devices",
           "title": "Devices",
-          "description": "The layer 2 devices to know.",
+          "description": "The layer 2 hardware to know: it forwards data based on MAC addresses.",
           "children": [
             {
               "id": "switches-bridges",
@@ -141,7 +141,7 @@
         {
           "id": "datalink-protocols",
           "title": "Protocols",
-          "description": "The layer 2 protocols.\nThe video also lists 802.1x here: it authenticates network devices to a network, and is a protocol used for Network Access Control.",
+          "description": "The layer 2 communication rules to know: address resolution, tunneling, point-to-point links and authentication.\n802.1x also belongs at layer 2: it authenticates network devices to a network, and is used for Network Access Control.",
           "children": [
             {
               "id": "arp-pptp-ppp-pap-chap-eap",
@@ -161,13 +161,13 @@
         {
           "id": "ip-address",
           "title": "IP Address",
-          "description": "Internet Protocol addresses work like a postal address. To mail you a letter from anywhere on the planet, someone needs your country, province or state, city, street and house number, so the letter can be routed to your mailbox.\nIP addresses do the same on networks: they identify a specific system and allow datagrams (packets) to be routed to it, across local area networks and across the internet.\nCovered in more detail in the Networking mind map.",
+          "description": "Logical addresses at layer 3 work like a postal address. To mail you a letter from anywhere on the planet, someone needs your country, province or state, city, street and house number, so the letter can be routed to your mailbox.\nThese addresses do the same on networks: they identify a specific system and allow datagrams (packets) to be routed to it, across local area networks and across the internet.\nCovered in more detail in the Networking mind map.\nFull name: Internet Protocol.",
           "children": []
         },
         {
           "id": "network-devices",
           "title": "Devices",
-          "description": "The layer 3 devices to know: routers and packet filtering firewalls.",
+          "description": "The layer 3 hardware to know: routers and packet filtering firewalls.",
           "children": [
             {
               "id": "routers-packet-filtering-firewalls",
@@ -200,7 +200,7 @@
         {
           "id": "ports-services",
           "title": "Ports = Services",
-          "description": "Ports live at layer 4. Different ports equate to different services that a system offers across a network.\nThink of ports as the doors in a building: if a door is open, you can use the services of that room, such as a cafeteria, a washroom or a bedroom.\nThere are 65,535 ports. You only need to remember a few common ones.",
+          "description": "Numbered endpoints that live at layer 4. Each number equates to a different service that a system offers across a network.\nThink of them as the doors in a building: if a door is open, you can use the services of that room, such as a cafeteria, a washroom or a bedroom.\nThere are 65,535 of them. You only need to remember a few common ones.",
           "children": [
             {
               "id": "common-ports",
@@ -233,12 +233,12 @@
         {
           "id": "session-devices",
           "title": "Devices",
-          "description": "There is one layer 5 device to know.",
+          "description": "The one piece of layer 5 hardware to know: a type of firewall.",
           "children": [
             {
               "id": "circuit-proxy-firewall",
               "title": "Circuit Proxy Firewall",
-              "description": "The lone layer 5 device to know. Firewalls are covered in the Network Defense mind map.",
+              "description": "The lone layer 5 device to know. It checks that a session is set up according to its rules, then relays the traffic for that session without inspecting the content.\nFirewalls are covered in the Network Defense mind map.",
               "children": []
             }
           ]
@@ -267,12 +267,12 @@
     {
       "id": "application",
       "title": "7. Appl.",
-      "description": "Layer 7, the Application layer: the top of the OSI model, with the greatest intelligence to make decisions.\nResponsible for human-computer interaction. This is where applications access network services.",
+      "description": "Layer 7: the top of the OSI model, with the greatest intelligence to make decisions.\nResponsible for human-computer interaction. This is where applications access network services.",
       "children": [
         {
           "id": "application-devices",
           "title": "Devices",
-          "description": "The major device to recognize as a layer 7 device.",
+          "description": "The major hardware to recognize at layer 7: the most intelligent kind of firewall.",
           "children": [
             {
               "id": "application-firewalls",
@@ -285,12 +285,12 @@
         {
           "id": "application-protocols",
           "title": "Protocols",
-          "description": "The layer 7 protocols to know.",
+          "description": "The layer 7 communication rules to know: web, name resolution, secure remote login, network management, directory and address assignment services.",
           "children": [
             {
               "id": "http-dns-ssh-snmp-ldap-dhcp",
               "title": "HTTP/S, DNS, SSH, SNMP, LDAP, DHCP",
-              "description": "- HTTP/S (Hypertext Transfer Protocol): a request-response service that lets a client request web pages from a web server.\n- DNS: Domain Name System.\n- SSH: Secure Shell.\n- SNMP (Simple Network Management Protocol): collects data from, and manages the configuration of, network devices such as switches and routers.\n- LDAP (Lightweight Directory Access Protocol): accesses and maintains distributed directory information: connecting to, accessing, modifying and searching directories. Example: a corporate email directory.\n- DHCP (Dynamic Host Configuration Protocol): assigns IP addresses to devices as they are added to the network, so there are no duplicate IP addresses.",
+              "description": "- HTTP/S (Hypertext Transfer Protocol): a request-response service that lets a client request web pages from a web server.\n- DNS (Domain Name System): translates domain names to IP addresses.\n- SSH (Secure Shell): encrypted remote command-line access to a system.\n- SNMP (Simple Network Management Protocol): collects data from, and manages the configuration of, network devices such as switches and routers.\n- LDAP (Lightweight Directory Access Protocol): accesses and maintains distributed directory information: connecting to, accessing, modifying and searching directories. Example: a corporate email directory.\n- DHCP (Dynamic Host Configuration Protocol): assigns IP addresses to devices as they are added to the network, so there are no duplicate IP addresses.",
               "children": []
             }
           ]

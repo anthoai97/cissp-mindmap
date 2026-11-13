@@ -9,30 +9,30 @@
     {
       "id": "focuses-on-critical-and-essential-functions",
       "title": "Focuses on critical and essential functions of business",
-      "description": "BCM does not try to cover every business process and system, only the most critical ones.\nIn a disaster you usually cannot keep the whole business running as usual. So decide which processes and systems are most critical, and focus your limited resources on them.\nBCM is the business process that drives planning and preparation for disasters:\n1. Run the BIA (Business Impact Analysis).\n2. Use its results, the measurements of time (RPO, RTO, WRT and MTD), to create BCPs (Business Continuity Plans) and DRPs (Disaster Recovery Plans).\n3. Test the plans, train people on them, and maintain them.\nThe point is to keep critical processes and systems running during a disaster, so that the business survives.",
+      "description": "BCM does not try to cover every business process and system.\nIn a disaster you usually cannot keep the whole business running as usual. So decide which processes and systems matter most, and focus your limited resources on them.\nBCM is the business process that drives planning and preparation for disasters:\n1. Run the BIA (Business Impact Analysis).\n2. Use its results, the measurements of time (RPO, RTO, WRT and MTD), to create BCPs (Business Continuity Plans) and DRPs (Disaster Recovery Plans).\n3. Test the plans, train people on them, and maintain them.\nThe point is to keep the most important processes and systems running during a disaster, so that the business survives.",
       "highlight": "exam-key",
       "children": [
         {
           "id": "goals-of-bcm",
           "title": "Goals of BCM",
-          "description": "The three major goals of BCM. Remember them in this order.",
+          "description": "The three major goals of BCM, in priority order: first protect human life, then limit the harm the disaster causes, then make sure the organization lives on.",
           "children": [
             {
               "id": "safety-of-people",
               "title": "1. Safety of people",
-              "description": "The number one, most important goal.\nPeople are the most valuable asset of an organization. Without people there is no organization.",
+              "description": "The number one, most important goal: protect human life.\nStaff are the most valuable asset of an organization. Without them there is no organization.",
               "children": []
             },
             {
               "id": "minimize-damage",
               "title": "2. Minimize damage",
-              "description": "Minimize the impact and the damage the disaster causes.",
+              "description": "The second goal: reduce, as far as possible, the impact and harm the disaster causes.",
               "children": []
             },
             {
               "id": "survival-of-business",
               "title": "3. Survival of business",
-              "description": "Help make sure the business survives.",
+              "description": "The third goal: make sure the organization lives through the disaster and continues to operate.",
               "children": []
             }
           ]
@@ -40,41 +40,41 @@
         {
           "id": "business-impact-assessment",
           "title": "Business Impact Assessment",
-          "description": "The BIA: the first major process in BCM. The page calls it both Business Impact Assessment and Business Impact Analysis.\nIt identifies the critical processes and systems, and produces the measurements of time that drive the BCP and DRP.\nIt also decides the restoration order.",
+          "description": "The first major process in BCM.\nIt identifies the critical processes and systems, gets the owners to approve the numbers, and produces the measurements of time (RPO, RTO, WRT and MTD) that drive the BCP and DRP.\nIt also decides the restoration order.",
           "children": [
             {
               "id": "identify-critical-processes-and-systems",
               "title": "Identify Critical Processes & Systems",
-              "description": "The BIA identifies the most critical business processes and systems by consulting stakeholders from across the organization.",
+              "description": "The first part of the BIA: consult stakeholders from across the organization to find out which business activities, and the technology supporting them, matter most.",
               "children": []
             },
             {
               "id": "measurements-of-time",
               "title": "Measurements of Time",
-              "description": "The major output of the BIA: four measurements of time, approved by the process or system owner.\nEach one is a measurement of time: seconds, minutes, hours, days.\nOn a timeline:\n- RPO: the period before the disaster, from business as usual up to the disaster.\n- RTO: from the disaster to recovery.\n- WRT: from recovery back to business as usual.\n- MTD: covers RTO plus WRT.",
+              "description": "The major output of the BIA: four values, approved by the process or system owner.\nEach one is expressed as a duration: seconds, minutes, hours, days.\nOn a timeline:\n- RPO: the period before the disaster, from business as usual up to the disaster.\n- RTO: from the disaster to recovery.\n- WRT: from recovery back to business as usual.\n- MTD: covers RTO plus WRT.",
               "children": [
                 {
                   "id": "rpo",
                   "title": "RPO",
-                  "description": "Recovery Point Objective: how much data the organization is willing to lose in a disaster.\nThe maximum tolerable data loss, measured as time. If the server explodes, how much data can you lose? Examples: 5 seconds, 10 minutes, 3 hours or 2 days worth of data.",
+                  "description": "How much data the organization is willing to lose in a disaster.\nThe maximum tolerable data loss, measured as time. If the server explodes, how much data can you lose? Examples: 5 seconds, 10 minutes, 3 hours or 2 days worth of data.\nFull name: Recovery Point Objective.",
                   "children": []
                 },
                 {
                   "id": "rto",
                   "title": "RTO",
-                  "description": "Recovery Time Objective: the maximum tolerable time to recover systems to a defined service level.\nUsually, how long it takes to bring the backup systems online.",
+                  "description": "The maximum tolerable time to recover systems to a defined service level.\nUsually, how long it takes to bring the backup systems online.\nFull name: Recovery Time Objective.",
                   "children": []
                 },
                 {
                   "id": "wrt",
                   "title": "WRT",
-                  "description": "Work Recovery Time: the maximum tolerable time to verify system and/or data integrity, as part of returning systems to normal operations.",
+                  "description": "The maximum tolerable time to verify system and/or data integrity, as part of returning systems to normal operations.\nFull name: Work Recovery Time.",
                   "children": []
                 },
                 {
                   "id": "mtd",
                   "title": "MTD",
-                  "description": "Maximum Tolerable Downtime, also called MAD (Maximum Allowable Downtime).\nThe maximum time a critical process or system can be disrupted before the consequences for the business become unacceptable.\nThe MTD is always greater than or equal to RTO + WRT.",
+                  "description": "Also called MAD.\nThe maximum time a critical process or system can be disrupted before the consequences for the business become unacceptable.\nThe MTD is always greater than or equal to RTO + WRT.\nFull name: Maximum Tolerable Downtime.",
                   "children": []
                 }
               ]
@@ -82,7 +82,7 @@
             {
               "id": "owner-approval-of-numbers-and-costs",
               "title": "Owner approval of #s and associated costs",
-              "description": "The owner of the process or system must approve the RPO, RTO, WRT and MTD numbers.\nThe reason: the owner pays for the recovery strategies needed to achieve those numbers.",
+              "description": "The process or system owner must sign off on the RPO, RTO, WRT and MTD values, and on what it will cost to meet them.\nThe reason: the owner pays for the recovery strategies needed to achieve those values.",
               "children": []
             }
           ]
@@ -90,7 +90,7 @@
         {
           "id": "types-of-plans",
           "title": "Types of Plans",
-          "description": "The two major types of plans. The measurements of time drive how they are written.",
+          "description": "The two major kinds of plan BCM produces: one keeps critical business processes running, the other restores the technology behind them.\nThe measurements of time drive how they are written.",
           "children": [
             {
               "id": "bcp",
@@ -101,7 +101,7 @@
             {
               "id": "drp",
               "title": "Disaster Recovery Plan (DRP)",
-              "description": "Focuses on recovering critical technology, infrastructure and systems.\nExample: if the payroll system explodes, the BCP keeps the payroll process running, while the DRP recovers the actual payroll system.",
+              "description": "Focuses on restoring critical technology, infrastructure and systems.\nExample: if the payroll system explodes, the business may keep paying people by other means, while the DRP restores the actual payroll system.",
               "children": []
             }
           ]
@@ -109,24 +109,24 @@
         {
           "id": "testing-plans",
           "title": "Testing Plans",
-          "description": "BCPs and DRPs must be tested periodically. A plan that was never tested and refined is unlikely to work in a real disaster.\nTests are usually done in order: start with the simplest test, refine the plan based on the results, then move up to the next, more complete test, and so on.",
+          "description": "BCPs and DRPs must be exercised periodically. A plan that was never tried out and refined is unlikely to work in a real disaster.\nExercises usually run in order: start with the simplest one, refine the plan based on the results, then move up to the next, more complete one, and so on.",
           "children": [
             {
               "id": "read-through-checklist",
               "title": "Read-through / Checklist",
-              "description": "The first and simplest test.\nThe author of the plan reads through it to make sure nothing is missing, going through a checklist. Example: are the call tree names and alternate contact details correctly written in the plan?",
+              "description": "The first and simplest test.\nThe author of the plan reviews it alone to make sure nothing is missing, going through a checklist. Example: are the call tree names and alternate contact details correctly written in the plan?",
               "children": []
             },
             {
               "id": "walkthrough",
               "title": "Walkthrough",
-              "description": "An entirely paper-based exercise.\nStakeholders from across the business sit around a conference table with copies of the plan and walk through it: page 1 says we do X, Y and Z.\nThe stakeholders are experts in their own areas (finance, customer relations, IT, business owners, etc.) and give feedback on the plan.",
+              "description": "An entirely paper-based exercise.\nStakeholders from across the business sit around a conference table with copies of the plan and go through it together step by step: page 1 says we do X, Y and Z.\nThe stakeholders are experts in their own areas (finance, customer relations, IT, business owners, etc.) and give feedback on the plan.",
               "children": []
             },
             {
               "id": "simulation",
               "title": "Simulation",
-              "description": "Also entirely paper-based, with stakeholders around a table with copies of the plan.\nThe difference: you invent a scenario, such as a virus outbreak or an earthquake at a location, and everyone must follow the plan as if the disaster were happening.\nYou add updates or twists from time to time (this data center just went offline, CNN is on line 3) to see how well the plan works.",
+              "description": "An entirely paper-based exercise, with stakeholders around a table with copies of the plan.\nThe key feature: you invent a scenario, such as a virus outbreak or an earthquake at a location, and everyone must follow the plan as if the disaster were happening.\nYou add updates or twists from time to time (this data center just went offline, CNN is on line 3) to see how well the plan works.",
               "children": []
             },
             {
@@ -146,18 +146,18 @@
         {
           "id": "restoration-order",
           "title": "Restoration order",
-          "description": "How to decide the order in which business processes and systems are restored.",
+          "description": "How to decide which business processes and systems come back first after a disaster, and which follow: the most critical first, taking what each one relies on into account.",
           "children": [
             {
               "id": "most-critical-first",
               "title": "Most critical first",
-              "description": "Restore the most critical processes and systems first.\nAnother important outcome of the BIA: business and system owners meet, argue it out, and decide which processes and systems are truly the most critical and in what order to restore them.",
+              "description": "Bring back the processes and systems the business can least do without before anything else.\nAnother important outcome of the BIA: business and system owners meet, argue it out, and decide which processes and systems truly matter most and in what sequence to bring them back.",
               "children": []
             },
             {
               "id": "dependency-charts",
               "title": "Dependency charts",
-              "description": "A system usually cannot be brought up on its own. You must consider what it depends on, and bring those dependencies up in the right order.\nDependency charts map this out.",
+              "description": "A system usually cannot be brought up on its own. You must consider which other systems it needs, and bring those up first, in the right sequence.\nDependency charts map this out.",
               "children": []
             }
           ]

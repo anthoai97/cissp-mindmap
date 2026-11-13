@@ -9,18 +9,18 @@
     {
       "id": "access-control-principles",
       "title": "Access Control Principles",
-      "description": "Three major principles applied throughout access control.",
+      "description": "Three core ideas that guide every access decision: separation of duties, need to know and least privilege.",
       "children": [
         {
           "id": "separation-of-duties",
           "title": "Separation of Duties",
-          "description": "Divide key processes into multiple parts, assigned to different people.",
+          "description": "Divide key processes into multiple parts, assigned to different people, so no one person can complete a sensitive process alone.",
           "children": []
         },
         {
           "id": "need-to-know",
           "title": "Need to Know",
-          "description": "Need to know and least privilege are very similar: give users only the access they need for their job, and nothing more. Know the subtle difference.\nNeed to know restricts a user's KNOWLEDGE: access only to the data their role requires.",
+          "description": "Very similar to least privilege: give users only the access they need for their job, and nothing more. The difference is subtle.\n_____ restricts a user's KNOWLEDGE: access only to the data their role requires.",
           "children": []
         },
         {
@@ -51,7 +51,7 @@
         {
           "id": "hybrid",
           "title": "Hybrid",
-          "description": "Some combination of centralized and decentralized. Many organizations use it.",
+          "description": "Some combination of centralized and decentralized. Many organizations use this approach.",
           "children": []
         }
       ]
@@ -92,7 +92,7 @@
                 {
                   "id": "questions",
                   "title": "Questions",
-                  "description": "Security questions the user answers.",
+                  "description": "Security _____ the user answers, with answers the user set up in advance.\nExample: the name of a first pet.",
                   "children": []
                 }
               ]
@@ -105,24 +105,24 @@
                 {
                   "id": "one-time-passwords",
                   "title": "One-time Passwords",
-                  "description": "The most common form of authentication by ownership.\nEach password is meant to be used only once.",
+                  "description": "The most common form of authentication by ownership.\nA hard or soft token generates a code that is valid for a single login only.",
                   "children": [
                     {
                       "id": "hard-tokens",
                       "title": "Hard Tokens",
-                      "description": "Dedicated hardware devices that generate one-time passwords.\nExample: an RSA ID key.",
+                      "description": "Dedicated physical devices, such as a key fob with a small display, that generate one-time passwords.\nExample: an RSA ID key.",
                       "children": []
                     },
                     {
                       "id": "soft-tokens",
                       "title": "Soft Tokens",
-                      "description": "Apps (software) that generate one-time passwords.\nExample: the Microsoft or Google authenticator apps on a mobile phone.",
+                      "description": "Apps on a general-purpose device that generate one-time passwords.\nExample: the Microsoft or Google authenticator apps on a mobile phone.",
                       "children": []
                     },
                     {
                       "id": "synchronous",
                       "title": "Synchronous",
-                      "description": "Hard and soft tokens come in two types: synchronous and asynchronous.\nIn a synchronous system, the token and the authentication server generate the same one-time password every 30 to 60 seconds. They are synchronized.",
+                      "description": "One of the two types of one-time password token, based on time.\nThe token and the authentication server each generate the same one-time password every 30 to 60 seconds, because their clocks are kept in step.",
                       "children": []
                     },
                     {
@@ -136,7 +136,7 @@
                 {
                   "id": "smart-memory-cards",
                   "title": "Smart / Memory Cards",
-                  "description": "The other form of authentication by ownership.\n- Smart cards contain a computer chip that provides some smarts.\n- Memory cards only store data that can be read. It is the same data every time, so they are less secure.",
+                  "description": "Cards used for authentication by ownership, besides one-time password tokens. Two kinds:\n- One kind contains a computer chip that can process data, so it is more secure.\n- The other kind only stores data that can be read. It is the same data every time, so it is less secure.",
                   "children": []
                 }
               ]
@@ -144,12 +144,12 @@
             {
               "id": "characteristic",
               "title": "Characteristic",
-              "description": "Called characteristic, not just biometrics, because there are two kinds of characteristics: physiological and behavioral.",
+              "description": "Something you are: the user proves their identity with a trait of their body or of how they behave.\nCalled _____, not just biometrics, because there are two kinds: physiological and behavioral.",
               "children": [
                 {
                   "id": "physiological",
                   "title": "Physiological",
-                  "description": "Characteristics of our physiology, our bodies. Often called biometrics.",
+                  "description": "Traits of our bodies, such as fingerprints, hand geometry, vein patterns, face, iris and retina. Often called biometrics.",
                   "children": [
                     {
                       "id": "fingerprint",
@@ -172,7 +172,7 @@
                     {
                       "id": "facial",
                       "title": "Facial",
-                      "description": "Scans the face.",
+                      "description": "Measures features of the face, such as the distance between the eyes, nose and mouth, and the shape of the jawline.",
                       "children": []
                     },
                     {
@@ -203,13 +203,13 @@
                     {
                       "id": "signature",
                       "title": "Signature",
-                      "description": "Analyzes how we write, for example how we sign our name.",
+                      "description": "Analyzes how we write our name by hand, including the shape, speed and pressure of the pen strokes.",
                       "children": []
                     },
                     {
                       "id": "key-stroke",
                       "title": "Key Stroke",
-                      "description": "Keystroke dynamics: analyzes how we type, using characteristics such as dwell time and flight time.",
+                      "description": "Analyzes how we type, using characteristics such as dwell time (how long a key is held down) and flight time (the time between keys).",
                       "children": []
                     },
                     {
@@ -229,19 +229,19 @@
                 {
                   "id": "type-1-false-reject",
                   "title": "Type 1: False Reject",
-                  "description": "Biometric authentication is not binary: the system is never 100% sure a user is valid or invalid. So there are two types of errors.\nType 1, false reject: a valid user is falsely rejected.",
+                  "description": "Biometric authentication is not binary: the system is never 100% sure a user is valid or invalid, so it can make two types of errors.\nThis error: a valid user is wrongly refused access. Inconvenient, but not a breach.",
                   "children": []
                 },
                 {
                   "id": "type-2-false-accept",
                   "title": "Type 2: False Accept",
-                  "description": "The inverse of a Type 1 error: an invalid user, such as an attacker, is falsely authenticated and given access. Not good.",
+                  "description": "The more dangerous biometric error: an invalid user, such as an attacker, is wrongly authenticated and given access.",
                   "children": []
                 },
                 {
                   "id": "crossover-error-rate",
                   "title": "Crossover Error Rate",
-                  "description": "Type 1 and Type 2 error rates are inverse to each other. On a graph, the two lines intersect at the Crossover Error Rate (CER), also called the Equal Error Rate (EER).\nThe CER is a good measure of a biometric system's overall accuracy.",
+                  "description": "Type 1 and Type 2 error rates are inverse to each other: lowering one raises the other. On a graph, the two lines intersect at the _____, also called the Equal Error Rate (EER).\nIt is a good measure of a biometric system's overall accuracy: the lower it is, the more accurate the system.",
                   "children": []
                 }
               ]
@@ -249,19 +249,19 @@
             {
               "id": "single-multifactor",
               "title": "Single / Multifactor",
-              "description": "Single-factor authentication uses one of the three factors: knowledge, ownership or characteristic.\nMulti-factor authentication uses two or more DIFFERENT factors.",
+              "description": "How many authentication factors are combined:\n- One factor alone: knowledge, ownership or characteristic, such as just a password.\n- Two or more DIFFERENT factors, such as a password plus a token. A password and a PIN are both knowledge, so together they still count as one factor.",
               "children": []
             },
             {
               "id": "authenticator-assurance-levels",
               "title": "Authenticator Assurance Levels (AAL)",
-              "description": "A model that measures how robust and secure an authentication process is.\nThree levels: AAL1 is the least secure and AAL3 the most secure.",
+              "description": "A model that measures how robust and secure an authentication process is.\nThree levels, defined by NIST in SP 800-63B: level 1 is the least secure and level 3 the most secure.",
               "children": []
             },
             {
               "id": "just-in-time-access",
               "title": "Just-in-time Access",
-              "description": "Just-in-time (JIT) access grants a user access to a system exactly when it is needed, and only for as long as a specific task takes.\nInstead of constant access, users get permissions dynamically when they need them, and the permissions are revoked once the task is done.",
+              "description": "Grants a user access to a system exactly when it is needed, and only for as long as a specific task takes.\nInstead of standing access, users get permissions dynamically when they need them, and the permissions are revoked once the task is done.",
               "children": []
             }
           ]
@@ -269,7 +269,7 @@
         {
           "id": "authorization",
           "title": "Authorization",
-          "description": "Defines a user's specific access within a system: what they are authorized to access.\nThis is where principles such as least privilege and need to know are applied.\nThree access control philosophies: discretionary, non-discretionary and mandatory.",
+          "description": "Defines a user's specific access within a system: what they are allowed to access and do.\nThis is where principles such as least privilege and need to know are applied.\nThree access control philosophies: discretionary, non-discretionary and mandatory.",
           "children": [
             {
               "id": "discretionary",
@@ -279,13 +279,13 @@
                 {
                   "id": "rule",
                   "title": "Rule",
-                  "description": "Rule-based access: a list of rules in a file, or an ACL (access control list).",
+                  "description": "Access is decided by a list of _____ in a file, or an ACL (access control list). A request that matches an entry is allowed or denied.",
                   "children": []
                 },
                 {
                   "id": "role",
                   "title": "Role",
-                  "description": "Role-based access (RBAC): create roles, define the access for each role, then assign one or more roles to a user. A user's roles define their access.",
+                  "description": "Create _____, define the access for each _____, usually by job function, then assign one or more _____ to a user. A user's _____ define their access.",
                   "children": [
                     {
                       "id": "types-of-rbac",
@@ -298,7 +298,7 @@
                 {
                   "id": "attribute-context",
                   "title": "Attribute / Context",
-                  "description": "Attribute-based access, sometimes called context-based access.\nLooks at a set of attributes to make an authorization decision: source IP address, geolocation, OS type, classification of the asset being accessed, and so on.",
+                  "description": "Decides access from properties of the user, the asset and the situation of each request, not from a fixed list or a job function.\nExamples: source IP address, geolocation, OS type, classification of the asset being accessed, and so on.",
                   "children": []
                 }
               ]
@@ -325,7 +325,7 @@
             {
               "id": "principle-of-access-control",
               "title": "Principle of Access Control",
-              "description": "Accountability is the most important access control service, so it has a special name: the principle of access control.\nRemember: the principle of access control is accountability, and accountability is the principle of access control.",
+              "description": "Accountability is the most important access control service, so it has a special name: the _____.\nThe _____ and accountability mean the same thing.",
               "children": []
             }
           ]
@@ -340,7 +340,7 @@
         {
           "id": "session-hijacking",
           "title": "Session Hijacking",
-          "description": "The major risk related to sessions.",
+          "description": "The major risk related to sessions: an attacker takes over a valid user's session, for example by stealing the session ID, and acts as that user.",
           "children": []
         }
       ]

@@ -9,13 +9,13 @@
     {
       "id": "validation",
       "title": "Validation",
-      "description": "Gather the business requirements to understand what the business truly needs, and validate them with the relevant stakeholders.\nAsks: are we building the right product?\nYou cannot do any of the testing in this map until you understand what the business needs.\nSecurity should be involved in testing right from the start and throughout the system life cycle: gathering and validating requirements, defining controls, developing applications and systems, ongoing operation, and retirement and disposal of systems and data.\nExam hint: if asked when security should become involved in testing, pick the earliest possible answer.",
+      "description": "Gather the business requirements to understand what the business truly needs, and confirm them with the relevant stakeholders.\nAsks: are we building the right product?\nYou cannot do any testing until you understand what the business needs.\nSecurity should be involved in testing right from the start and throughout the system life cycle: gathering and confirming requirements, defining controls, developing applications and systems, ongoing operation, and retirement and disposal of systems and data.\nExam hint: if asked when security should become involved in testing, pick the earliest possible answer.",
       "children": []
     },
     {
       "id": "verification",
       "title": "Verification",
-      "description": "All the testing done once you start building the product.\nVerifies that controls are properly designed and built into the system.\nAsks: are we building the product right?",
+      "description": "All the testing done once you start building the product.\nChecks that controls are properly designed and built into the system.\nAsks: are we building the product right?",
       "children": []
     },
     {
@@ -58,17 +58,17 @@
     {
       "id": "testing-techniques",
       "title": "Testing Techniques",
-      "description": "Techniques for performing tests.\nThey are not mutually exclusive: mix and match them to perform different types of tests.",
+      "description": "Ways of performing tests: who or what runs them, whether the code is running, whether the source code is visible, specific test approaches, efficiency, and testing in production.\nThey are not mutually exclusive: mix and match them to perform different types of tests.",
       "children": [
         {
           "id": "methods-and-tools",
           "title": "Methods & Tools",
-          "description": "The two main methods to perform testing.",
+          "description": "The two main ways to perform testing: a person does the work, or software does it.",
           "children": [
             {
               "id": "manual",
               "title": "Manual",
-              "description": "Hands on keyboard: a person manually reads code, or performs actions on a running program.",
+              "description": "Hands on keyboard: a person reads the code, or performs actions on a running program, without a tool doing the work.",
               "children": []
             },
             {
@@ -82,7 +82,7 @@
         {
           "id": "runtime",
           "title": "Runtime",
-          "description": "Whether the code is running or not during the test.",
+          "description": "Whether the code is running or not during the test: examining the code at rest, or testing the program while it executes.",
           "children": [
             {
               "id": "static",
@@ -99,18 +99,18 @@
             {
               "id": "fuzz",
               "title": "Fuzz",
-              "description": "A form of dynamic testing.\nProgrammers are logical people: they expect logical input and produce logical output. Throw chaos at the system, massive amounts of random data, to find unexpected errors and vulnerabilities in the code.\nKnow the two types of fuzzers.",
+              "description": "A form of dynamic testing.\nProgrammers are logical people: they expect logical input and produce logical output. Throw chaos at the system, massive amounts of random data, to find unexpected errors and vulnerabilities in the code.\nComes in two types: dumb and intelligent.",
               "children": [
                 {
                   "id": "mutation",
                   "title": "Mutation",
-                  "description": "Often called dumb fuzzers.\nThey have no understanding of the input data or its structure. They randomly mutate existing input data to a system.",
+                  "description": "Often called dumb fuzzers.\nThey have no understanding of the input data or its structure. They take existing input data to a system and randomly alter it.",
                   "children": []
                 },
                 {
                   "id": "generation",
                   "title": "Generation",
-                  "description": "Often called intelligent fuzzers.\nThey have a basic understanding of the type and structure of input the system expects, so they can generate new chaotic input.",
+                  "description": "Often called intelligent fuzzers.\nThey have a basic understanding of the type and structure of input the system expects, so they can create new chaotic input from scratch.",
                   "children": []
                 }
               ]
@@ -120,18 +120,18 @@
         {
           "id": "access-to-code",
           "title": "Access to Code",
-          "description": "Whether the tester has access to the source code, or only to the running system.",
+          "description": "Whether the tester can see the source code, or only the running system.",
           "children": [
             {
               "id": "white",
               "title": "White",
-              "description": "White-box: you have access to the source code for your testing.",
+              "description": "The tester can see the source code and uses it for testing.",
               "children": []
             },
             {
               "id": "black",
               "title": "Black",
-              "description": "Black-box: you cannot see the source code. You test the running application, and its internal workings are a black box to you.",
+              "description": "The tester cannot see the source code. They test only the running application, and its internal workings are hidden from them.",
               "children": []
             }
           ]
@@ -139,7 +139,7 @@
         {
           "id": "techniques",
           "title": "Techniques",
-          "description": "A few of the key software testing techniques.",
+          "description": "Approaches that decide what each test case checks: correct use, expected errors, attacker-style abuse, input combinations, and changes of condition.",
           "children": [
             {
               "id": "positive",
@@ -162,13 +162,13 @@
             {
               "id": "decision-table-analysis",
               "title": "Decision table analysis",
-              "description": "Tests system behavior for different input combinations.\nBuild a table of every input combination and its expected behavior, so you check all combinations and miss nothing, even in a complex application.\nParticularly useful for complex software and requirements management.",
+              "description": "Tests system behavior for different input combinations.\nList every input combination and its expected behavior in a grid, so you check all combinations and miss nothing, even in a complex application.\nParticularly useful for complex software and requirements management.",
               "children": []
             },
             {
               "id": "state-based-analysis",
               "title": "State-based analysis",
-              "description": "Tests software that can exist in different abstract states.\nParticularly useful for GUIs and communication protocols such as TCP.",
+              "description": "Tests software that can exist in different abstract conditions, and the transitions between them.\nParticularly useful for GUIs and communication protocols such as TCP.",
               "children": []
             }
           ]
@@ -181,13 +181,13 @@
             {
               "id": "boundary-value-analysis",
               "title": "Boundary Value Analysis",
-              "description": "Find where the behavior changes (a boundary), then focus testing on either side of each boundary.\nFormal definition: test cases cover the extreme ends of the input values.\nPassword example: test 7 and 8 characters, and 16 and 17 characters.",
+              "description": "Find where the behavior changes, then focus testing on either side of each change point.\nFormal definition: test cases cover the extreme ends of the input values.\nPassword example: test 7 and 8 characters, and 16 and 17 characters.",
               "children": []
             },
             {
               "id": "equivalence-partitioning",
               "title": "Equivalence Partitioning",
-              "description": "Divide (partition) the inputs into groups that behave the same way, then write test cases to cover each partition.\nPassword example: identify the three partitions and test within each one.",
+              "description": "Divide the inputs into groups that the system handles the same way, then write test cases to cover each group.\nPassword example: identify the three groups (7 or fewer, 8 to 16, 17 or more) and test within each one.",
               "children": []
             }
           ]
@@ -200,7 +200,7 @@
             {
               "id": "real-user-monitoring",
               "title": "Real User Monitoring",
-              "description": "RUM: monitor how real users use the system.\nTracks user transactions in real time for usage, performance and errors.",
+              "description": "Passively monitor how actual people use the system.\nTracks live user transactions as they happen, for usage, performance and errors.",
               "children": []
             },
             {
@@ -239,7 +239,7 @@
         {
           "id": "third-party",
           "title": "Third-Party",
-          "description": "Three parties are involved: the customer, the service provider, and an independent third-party auditor.\nThird-party audits often produce SOC (Service Organization Controls) reports.\nAs security professionals, we want SOC 2 Type 2 reports.",
+          "description": "The customer relies on an independent _____ auditor to assess its service provider.\nThese audits often produce SOC (System and Organization Controls, formerly Service Organization Controls) reports.\nAs security professionals, we want SOC 2 Type 2 reports.",
           "children": [
             {
               "id": "soc-1",
@@ -277,7 +277,7 @@
         {
           "id": "roles",
           "title": "Roles",
-          "description": "The roles that may be involved in the audit and assurance function.",
+          "description": "The people and groups involved in the audit and assurance function, from executive management and the board to auditors.",
           "children": [
             {
               "id": "executive-management",
@@ -322,7 +322,7 @@
     {
       "id": "metrics",
       "title": "Metrics",
-      "description": "Define metrics as part of security assessment and testing, to measure what matters.",
+      "description": "Measurements defined as part of security assessment and testing, to show whether the organization is achieving what matters.",
       "children": [
         {
           "id": "focus",
@@ -333,13 +333,13 @@
         {
           "id": "kpis",
           "title": "KPIs",
-          "description": "Key Performance Indicators: backward-looking metrics.\nThey show whether performance targets were achieved.",
+          "description": "Backward-looking metrics.\nThey show whether performance targets were achieved.\nFull name: Key Performance Indicators.",
           "children": []
         },
         {
           "id": "kris",
           "title": "KRIs",
-          "description": "Key Risk Indicators: forward-looking metrics.\nThey show the level of exposure to operational risk, and help monitor potential future shifts in risk conditions or new emerging risks.",
+          "description": "Forward-looking metrics.\nThey show the level of exposure to operational risk, and help monitor potential future shifts in risk conditions or new emerging risks.\nFull name: Key Risk Indicators.",
           "children": []
         }
       ]

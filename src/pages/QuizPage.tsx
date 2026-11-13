@@ -192,6 +192,13 @@ function QuestionView({
 }) {
   const answered = chosen !== undefined;
   const gotIt = chosen === card.key;
+  // When one option needs its parent to make sense ("Wi-Fi › Protocols"), name the parent on
+  // every option, so they read alike ("Identity Provider › Local", "Identity Provider › Cloud").
+  const withParents = options.some((o) => o.label !== o.node.title);
+  const labelOf = (c: Card) => {
+    const parent = c.parents.at(-1);
+    return withParents && parent ? `${parent.title} › ${c.node.title}` : c.label;
+  };
 
   return (
     <motion.section
@@ -231,7 +238,7 @@ function QuestionView({
                 onClick={() => onAnswer(option.key)}
               >
                 <span className="option-key">{KEYS[i]}</span>
-                <span className="option-title">{option.node.title}</span>
+                <span className="option-title">{labelOf(option)}</span>
               </button>
             </motion.li>
           );
@@ -246,7 +253,7 @@ function QuestionView({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.25, ease }}
           >
-            <span>{gotIt ? 'Correct!' : `Not quite. It is ${card.node.title}.`}</span>
+            <span>{gotIt ? 'Correct!' : `Not quite. It is ${labelOf(card)}.`}</span>
             <button type="button" className="pill filled" onClick={onNext} autoFocus>
               {isLast ? 'See results' : 'Continue'} →
             </button>
@@ -311,7 +318,7 @@ function Summary({
               (card) =>
                 card && (
                   <li key={card.key}>
-                    <strong>{card.node.title}</strong>
+                    <strong>{card.label}</strong>
                     <span> · {contextOf(card)}</span>
                   </li>
                 ),

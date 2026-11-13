@@ -9,12 +9,12 @@
     {
       "id": "single-set-of-credentials",
       "title": "Allows users to access multiple systems with a single set of credentials",
-      "description": "What single sign-on and federated identity management have in common: both let users access multiple systems with one set of credentials.\nUsers love this: they remember one terrible password instead of many, and authenticate once to get access to all their applications.",
+      "description": "What single sign-on and federated identity management have in common.\nUsers love this: they remember one terrible password instead of many, and authenticate once to get access to all their applications.",
       "children": [
         {
           "id": "single-sign-on",
           "title": "Single Sign-on",
-          "description": "Access systems within the same organization.\nSingle sign-on protocols and systems are designed to work within one organization.",
+          "description": "One login gives access to many systems within the same organization.\n_____ protocols and systems, such as Kerberos and Sesame, are designed to work within one organization.",
           "children": [
             {
               "id": "kerberos",
@@ -24,18 +24,18 @@
                 {
                   "id": "kerberos-components",
                   "title": "Components",
-                  "description": "Kerberos is a complicated, very flexible protocol, so it has many components.",
+                  "description": "Kerberos is a complicated, very flexible protocol, so it has many _____: the user, the KDC with its Authentication Service and Ticket Granting Service, the tickets, and the service being accessed.",
                   "children": [
                     {
                       "id": "user-client",
                       "title": "User / Client",
-                      "description": "The person who wants to access services through Kerberos.",
+                      "description": "The person who wants to access services through Kerberos, and the software on their machine that requests tickets on their behalf.",
                       "children": []
                     },
                     {
                       "id": "key-distribution-center",
                       "title": "Key Distribution Center",
-                      "description": "The KDC. Contains the two services Kerberos provides: the Authentication Service and the Ticket Granting Service.",
+                      "description": "Contains the two services Kerberos provides: the Authentication Service and the Ticket Granting Service.\nIt holds the secret keys of all users and services.",
                       "children": []
                     },
                     {
@@ -47,7 +47,7 @@
                     {
                       "id": "ticket-granting-ticket",
                       "title": "Ticket Granting Ticket (TGT)",
-                      "description": "The user passes the TGT to the Ticket Granting Service, the other component in the KDC, with a couple of messages saying which service the user wants to access.",
+                      "description": "Issued by the Authentication Service once the user has authenticated. It proves the user has already logged in.\nThe user passes the _____ to the Ticket Granting Service, the other component in the KDC, with a couple of messages saying which service the user wants to access.",
                       "children": []
                     },
                     {
@@ -73,7 +73,7 @@
                 {
                   "id": "symmetric-encryption-only",
                   "title": "Symmetric encryption only",
-                  "description": "By default, Kerberos supports only symmetric key cryptography.\nA significant limitation: quite a few symmetric keys may need to be created and securely distributed among the components.",
+                  "description": "By default, Kerberos supports only one kind of cryptography: the same secret key encrypts and decrypts.\nA significant limitation: quite a few secret keys may need to be created and securely distributed among the components.",
                   "children": []
                 }
               ]
@@ -81,12 +81,12 @@
             {
               "id": "sesame",
               "title": "Sesame",
-              "description": "Another single sign-on protocol: the Secure European System for Applications in a Multi-vendor Environment.\nUnlike Kerberos, it supports asymmetric cryptography too.",
+              "description": "Another single sign-on protocol, developed in Europe.\nUnlike Kerberos, it supports public key (asymmetric) cryptography too.",
               "children": [
                 {
                   "id": "symmetric-asymmetric-encryption",
                   "title": "Symmetric & Asymmetric encryption",
-                  "description": "Sesame supports asymmetric cryptography as well as symmetric.\nThis solves the major problems of symmetric key cryptography: scalability and key distribution.",
+                  "description": "Sesame supports both secret key and public key cryptography.\nPublic key support solves the major problems of secret key cryptography: scalability and key distribution.",
                   "children": []
                 }
               ]
@@ -106,19 +106,19 @@
                 {
                   "id": "principal-user",
                   "title": "Principal / User",
-                  "description": "The user, sometimes also called the principal.",
+                  "description": "The person who wants to access a service, and whose identity the identity provider vouches for.",
                   "children": []
                 },
                 {
                   "id": "identity-provider",
                   "title": "Identity Provider",
-                  "description": "Authenticates the user: verifies the user's identity by knowledge, ownership or characteristic.\nIn many organizations, the identity provider is something like Active Directory.",
+                  "description": "Authenticates the user: verifies who they are by knowledge, ownership or characteristic, then vouches for them to the service.\nIn many organizations, the _____ is something like Active Directory.",
                   "children": []
                 },
                 {
                   "id": "relying-party-service-provider",
                   "title": "Relying Party / Service Provider",
-                  "description": "What the user wants to access. The service provider is sometimes also called the relying party.\nOften not owned by the organization, but owned and managed by a vendor. Example: SaaS applications used at work to submit help desk tickets, book travel or enter expenses.",
+                  "description": "The application the user wants to access. It trusts the identity provider's authentication instead of authenticating the user itself.\nOften not owned by the organization, but owned and managed by a vendor. Example: SaaS applications used at work to submit help desk tickets, book travel or enter expenses.",
                   "children": []
                 }
               ]
@@ -126,7 +126,7 @@
             {
               "id": "saml",
               "title": "SAML",
-              "description": "Security Assertion Markup Language.\nSeveral protocols enable federated access. SAML is the major one you need to know.",
+              "description": "Several protocols enable federated access. _____ is the major one you need to know.\nAn open standard that passes authentication and authorization data between an identity provider and a service provider, as XML assertions.\nFull name: Security Assertion Markup Language.",
               "children": [
                 {
                   "id": "tokens",
@@ -137,13 +137,13 @@
                 {
                   "id": "assertions-written-in-xml",
                   "title": "Assertions written in XML",
-                  "description": "Tokens contain assertion statements, such as the user ID, the service ID, and the timestamp and lifetime of the token.\nThe assertion statements are written in XML (Extensible Markup Language).",
+                  "description": "What SAML tokens contain: statements such as the user ID, the service ID, and the timestamp and lifetime of the token.\nThe statements are written in a tag-based markup language, the same family as HTML.",
                   "children": []
                 },
                 {
                   "id": "saml-components",
                   "title": "Components",
-                  "description": "SAML was designed for many different use cases, so it is made of several components that make it flexible and adaptable.",
+                  "description": "SAML was designed for many different use cases, so it is made of several _____ that make it flexible and adaptable: profiles, bindings, protocols and assertions.",
                   "children": [
                     {
                       "id": "profiles",
@@ -166,7 +166,7 @@
                     {
                       "id": "assertion",
                       "title": "Assertion",
-                      "description": "Defines the authentication, authorization and other attributes.",
+                      "description": "The statements the identity provider makes about the user: authentication, authorization and other attributes.",
                       "children": []
                     }
                   ]
@@ -176,19 +176,19 @@
             {
               "id": "ws-federation",
               "title": "WS-Federation",
-              "description": "A federated access protocol to recognize. Provides both authentication and authorization.",
+              "description": "A federated access protocol to recognize. Provides both authentication and authorization.\nDeveloped by Microsoft, IBM and others, and used by Active Directory Federation Services (ADFS).",
               "children": []
             },
             {
               "id": "openid",
               "title": "OpenID",
-              "description": "A federated access protocol to recognize. Provides authentication.",
+              "description": "A federated access protocol to recognize. Provides authentication.\nLets a user log in to a site with an existing account from another provider, such as a Google account.",
               "children": []
             },
             {
               "id": "oauth",
               "title": "OAuth",
-              "description": "A federated access protocol to recognize. Provides authorization.",
+              "description": "A federated access protocol to recognize. Provides authorization.\nLets a user grant an application limited access to their resources on another service without sharing their password, for example letting an app read their calendar.",
               "children": []
             }
           ]

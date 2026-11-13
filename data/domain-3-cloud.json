@@ -20,19 +20,19 @@
         {
           "id": "broad-network-access",
           "title": "Broad Network Access",
-          "description": "Cloud resources are available from many device types and many locations.\nThe main way to access cloud services is a web browser across a network. Almost everything has a browser and internet access, so you can reach cloud services from basically anywhere.",
+          "description": "Cloud resources are available from many device types and many locations.\nThe main way to access cloud services is a web browser over the internet. Almost everything has a browser and internet access, so you can reach cloud services from basically anywhere.",
           "children": []
         },
         {
           "id": "resource-pooling",
           "title": "Resource Pooling",
-          "description": "A really important characteristic. The three primary resources are pooled and shared among users:\n- Compute: the ability to execute code (fetch, decode, execute and store).\n- Storage: somewhere to keep the bits, both data and code.\n- Network: the ability to move the bits around.\nUsers do not access the physical resources directly. A layer of virtualization sits in between: a virtual machine or container instead of a physical CPU, a virtual disk or object storage instead of a hard drive, a virtual switch instead of a physical one.\nPooling is what makes it easy to provision new services almost instantly, and to scale usage of compute, storage and network up or down quickly.",
+          "description": "A really important characteristic. The three primary resources are shared among many users:\n- Compute: the ability to execute code (fetch, decode, execute and store).\n- Storage: somewhere to keep the bits, both data and code.\n- Network: the ability to move the bits around.\nUsers do not access the physical resources directly. A layer of virtualization sits in between: a virtual machine or container instead of a physical CPU, a virtual disk or object storage instead of a hard drive, a virtual switch instead of a physical one.\nThis sharing is what makes it easy to provision new services almost instantly, and to scale usage of compute, storage and network up or down quickly.",
           "children": []
         },
         {
           "id": "rapid-elasticity",
           "title": "Rapid Elasticity",
-          "description": "Also called rapid elasticity and scalability: resources can be quickly provisioned and deprovisioned.\nNeed lots more bandwidth, or terabytes of extra storage? No problem. Scaling back down is just as easy.",
+          "description": "Also called scalability: resources can be quickly provisioned and deprovisioned.\nNeed lots more bandwidth, or terabytes of extra storage? No problem. Scaling back down is just as easy.",
           "children": []
         },
         {
@@ -51,19 +51,19 @@
         {
           "id": "iaas",
           "title": "IaaS",
-          "description": "Infrastructure as a Service: customers deploy virtualized infrastructure such as servers, appliances, storage and networking components.\nA customer can recreate an entire physical data center as virtual components: virtual firewalls, virtual routers, virtual servers and so on.",
+          "description": "Customers deploy virtualized servers, appliances, storage and networking components.\nA customer can recreate an entire physical data center as virtual components: virtual firewalls, virtual routers, virtual servers and so on.",
           "children": []
         },
         {
           "id": "paas",
           "title": "PaaS",
-          "description": "Platform as a Service: services and functionality for customers to develop and deploy their own custom applications, without worrying about the underlying servers, network and storage.",
+          "description": "Services and functionality for customers to develop and deploy their own custom applications, without worrying about the underlying servers, network and storage.",
           "children": []
         },
         {
           "id": "saas",
           "title": "SaaS",
-          "description": "Software as a Service: the customer rents access to an application hosted in the cloud.",
+          "description": "The customer rents access to a complete application hosted in the cloud, and simply uses it.",
           "children": []
         }
       ]
@@ -107,12 +107,12 @@
         {
           "id": "virtual-machine",
           "title": "Virtual Machine",
-          "description": "An operating system and some applications running on a layer of abstraction, instead of directly on the physical hardware.\nThe physical server (CPU, RAM, network interface card and so on) is called the compute node. Several VMs can run at the same time on one compute node.\nOn the exam, virtual machines may also be called instances or guests.",
+          "description": "An operating system and some applications running on a layer of abstraction, instead of directly on the physical hardware.\nThe physical server (CPU, RAM, network interface card and so on) is called the compute node. Several of them can run at the same time on one compute node.\nOn the exam, _____ may also be called instances or guests.",
           "children": [
             {
               "id": "hypervisor",
               "title": "Hypervisor",
-              "description": "The software that provides the layer of abstraction between the hardware and the operating systems. Also called a VM monitor.\nAn operating system expects total control of the hardware, so two cannot normally share it. The hypervisor is a 'giant liar': it simulates the hardware for each OS, so each OS thinks it controls the hardware but really controls virtual hardware.\nKnow the difference between Type 1 (hardware) and Type 2 (software) hypervisors. Type 1 is more secure and efficient.",
+              "description": "The software that provides the layer of abstraction between the hardware and the operating systems. Also called a VM monitor.\nAn operating system expects total control of the hardware, so two cannot normally share it. The _____ is a 'giant liar': it simulates the hardware for each OS, so each OS thinks it controls the hardware but really controls virtual hardware.\nKnow the difference between Type 1 (bare metal, runs directly on the hardware) and Type 2 (hosted, runs on top of an operating system) _____. Type 1 is more secure and efficient.",
               "children": []
             }
           ]
@@ -120,12 +120,12 @@
         {
           "id": "containers",
           "title": "Containers",
-          "description": "Highly portable code execution environments that run within an operating system, sharing and using that operating system's resources.\nLike an intermodal shipping container: pack your code once, then run it anywhere without repacking, on a Mac laptop, an on-premises Linux server, the Azure cloud or Google Cloud.",
+          "description": "Highly portable code execution environments that run within an operating system, sharing and using that operating system's resources.\nLike the standard steel boxes of intermodal shipping: pack your code once, then run it anywhere without repacking, on a Mac laptop, an on-premises Linux server, the Azure cloud or Google Cloud.",
           "children": [
             {
               "id": "container-engine",
               "title": "Container Engine",
-              "description": "Containers also run on a layer of abstraction, called the containerization engine. The difference is where the layer sits:\n- Virtual machines: between the hardware and the operating system.\n- Containers: between the operating system and the containers.",
+              "description": "Containers also run on a layer of abstraction. The difference is where the layer sits:\n- Virtual machines: between the hardware and the operating system.\n- Containers: between the operating system and the containers.",
               "children": []
             }
           ]
@@ -141,7 +141,7 @@
     {
       "id": "identity-provider",
       "title": "Identity Provider",
-      "description": "The cloud removes the traditional well-defined perimeter and trusted internal network. Identity is the new perimeter.\nAssume all traffic is a potential threat, and verify every user thoroughly so you know exactly who is accessing what. This zero-trust approach needs very robust identification, authentication and authorization controls.\nUser identities can be stored in two main places: locally or in the cloud.",
+      "description": "The system that stores user identities and verifies who users are.\nThe cloud removes the traditional well-defined perimeter and trusted internal network. Identity is the new perimeter.\nAssume all traffic is a potential threat, and verify every user thoroughly so you know exactly who is accessing what. This zero-trust approach needs very robust identification, authentication and authorization controls.\nUser identities can be stored in two main places: locally or in the cloud.",
       "children": [
         {
           "id": "identity-provider-local",
@@ -152,7 +152,7 @@
         {
           "id": "identity-provider-cloud",
           "title": "Cloud",
-          "description": "A cloud service stores the organization's user identities.\nExample: Okta, a cloud-based identity provider.",
+          "description": "A service hosted by a third party on the internet stores the organization's user identities, so the organization does not run the system itself.\nExample: Okta.",
           "children": []
         }
       ]
@@ -160,7 +160,7 @@
     {
       "id": "cloud-identity",
       "title": "Cloud identity",
-      "description": "The types of identity you can use: cloud, linked, synced or federated.",
+      "description": "How a user's identity for cloud services relates to their local identity. The types you can use: cloud, linked, synced or federated.",
       "children": [
         {
           "id": "cloud-identity-cloud",
@@ -177,7 +177,7 @@
         {
           "id": "synced",
           "title": "Synced",
-          "description": "Two identities, one in the cloud and one local, that are synchronized. A change to one is automatically reflected in the other.",
+          "description": "Two identities, one in the cloud and one local, kept automatically in step. A change to one is automatically reflected in the other.",
           "children": []
         },
         {
@@ -191,18 +191,18 @@
     {
       "id": "roles",
       "title": "Roles",
-      "description": "In the cloud it is critical to have clearly defined accountabilities and responsibilities.\nEach common cloud role has its own accountabilities and/or responsibilities.",
+      "description": "In the cloud it is critical to have clearly defined accountabilities and responsibilities.\nKnow the common parties involved, such as the consumer, provider, broker and auditor, and what each one is accountable or responsible for.",
       "children": [
         {
           "id": "accountable",
           "title": "Accountable",
-          "description": "Ultimate ownership, answerability, blameworthiness and liability for an asset. The accountable person is the owner of the asset.\nAssign accountability to only one person per asset: the throat that gets choked if something goes wrong.\nAccountability CANNOT be delegated. The accountable person sets the policies and requirements for protecting the asset, and delegates the responsibilities to others.",
+          "description": "Ultimate ownership, answerability, blameworthiness and liability for an asset. The _____ person is the owner of the asset.\nAssign this to only one person per asset: the throat that gets choked if something goes wrong.\nIt CANNOT be delegated. The _____ person sets the policies and requirements for protecting the asset, and delegates the work to others.",
           "children": []
         },
         {
           "id": "responsible",
           "title": "Responsible",
-          "description": "The doers: the person or people in charge of meeting the requirements set by the accountable person.\nMultiple people can be responsible, and responsibility can be delegated.",
+          "description": "The doers: the person or people in charge of meeting the requirements set by the accountable person.\nMultiple people can be _____, and this duty can be delegated.",
           "children": []
         },
         {
@@ -214,13 +214,13 @@
         {
           "id": "owner-controller",
           "title": "Owner / Controller",
-          "description": "People within the cloud consumer who own any data stored in the cloud. Also called data controllers.\nThey are accountable for protecting the data they store and process in the cloud, and they stay accountable even when they outsource the data to a cloud provider.",
+          "description": "People within the cloud consumer who are ultimately answerable for any data stored in the cloud. Also called data _____.\nThey are accountable for protecting the data they store and process in the cloud, and they stay accountable even when they outsource the data to a cloud provider.",
           "children": []
         },
         {
           "id": "cloud-provider-processor",
           "title": "Cloud Provider / Processor",
-          "description": "The cloud service provider, also called the processor.\nResponsible for protecting consumer data in the cloud, based on the requirements set by the data owner.\nAccountable for running its own infrastructure and protecting its own data.",
+          "description": "The company that runs the cloud services and handles consumer data on the consumer's behalf.\nResponsible for protecting consumer data in the cloud, based on the requirements set by the data owner.\nAccountable for running its own infrastructure and protecting its own data.",
           "children": []
         },
         {
@@ -232,7 +232,7 @@
         {
           "id": "cloud-auditor",
           "title": "Cloud Auditor",
-          "description": "Audits cloud services to check whether controls are properly designed and operating effectively.",
+          "description": "An independent party that examines cloud services to check whether controls are properly designed and operating effectively.",
           "children": []
         }
       ]
@@ -245,13 +245,13 @@
         {
           "id": "spml",
           "title": "SPML",
-          "description": "Service Provisioning Markup Language: an XML-based framework for exchanging provisioning information (setting up, changing and revoking access) between cooperating organizations.\nIt standardizes and simplifies provisioning access across multiple systems in multiple organizations.",
+          "description": "An XML-based framework for exchanging provisioning information (setting up, changing and revoking access) between cooperating organizations.\nIt standardizes and simplifies provisioning access across multiple systems in multiple organizations.\nFull name: Service Provisioning Markup Language.",
           "children": []
         },
         {
           "id": "saml",
           "title": "SAML",
-          "description": "Security Assertion Markup Language: provides both authentication and authorization in federated access.",
+          "description": "An XML-based standard that provides both authentication and authorization in federated access.\nFull name: Security Assertion Markup Language.",
           "children": []
         },
         {
@@ -282,7 +282,7 @@
         {
           "id": "sla",
           "title": "SLA",
-          "description": "Service Level Agreement: an important contractual tool for communicating the consumer's requirements to the provider.\nDocumented commitments by the provider to the consumer, covering things such as confidentiality, integrity, availability and responsiveness.\nSLAs are addendums to the overall contract.",
+          "description": "An important contractual tool for communicating the consumer's requirements to the provider.\nDocumented commitments by the provider to the consumer, covering things such as confidentiality, integrity, availability and responsiveness.\n_____ are addendums to the overall contract.\nFull name: Service Level Agreement.",
           "children": []
         }
       ]
@@ -290,7 +290,7 @@
     {
       "id": "forensics",
       "title": "Forensics",
-      "description": "Forensic investigations in the cloud, especially the public cloud, bring significant challenges as well as opportunities.",
+      "description": "Investigating incidents and collecting evidence in the cloud, especially the public cloud, brings significant challenges as well as opportunities.",
       "children": [
         {
           "id": "snapshot-virtual-disk-image",
@@ -303,12 +303,12 @@
     {
       "id": "data-destruction",
       "title": "Data Destruction",
-      "description": "Defensible data destruction is a challenge in the cloud. Many laws and regulations require the data owner to destroy sensitive data, especially personal data, defensibly and demonstrably.",
+      "description": "Defensible _____ is a challenge in the cloud. Many laws and regulations require the data owner to get rid of sensitive data, especially personal data, permanently, defensibly and demonstrably.",
       "children": [
         {
           "id": "crypto-shredding-crypto-erase",
           "title": "Crypto Shredding / Crypto Erase",
-          "description": "A way to defensibly destroy data in the cloud.\nEncrypt the sensitive data with an excellent algorithm such as AES, then physically destroy every copy of the encryption key.\nWith no way to recover the key, the data is unrecoverable, so it has been defensibly destroyed.",
+          "description": "A way to defensibly destroy data in the cloud.\nEncrypt the sensitive data with an excellent algorithm such as AES, then securely destroy every copy of the encryption key.\nWith no way to recover the key, the data is unrecoverable, so it has been defensibly destroyed.",
           "children": []
         }
       ]

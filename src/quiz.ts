@@ -7,6 +7,11 @@ export interface Card {
   map: MindMap;
   node: MindNode;
   parents: MindNode[];
+  /**
+   * The answer as shown to the reader: the title, or "Parent › Title" when other topics share
+   * the title ("Wi-Fi › Protocols"), so a generic answer says which one it is.
+   */
+  label: string;
 }
 
 /** One question in a run: the card asked about and the four options, as card keys. */
@@ -37,11 +42,17 @@ export function cardsOf(maps: MindMap[]): Card[] {
   for (const map of maps) {
     const walk = (nodes: MindNode[], parents: MindNode[]) => {
       for (const node of nodes) {
-        if (node.description.trim()) cards.push({ key: `${map.id}/${node.id}`, map, node, parents });
+        if (node.description.trim()) cards.push({ key: `${map.id}/${node.id}`, map, node, parents, label: node.title });
         walk(node.children, [...parents, node]);
       }
     };
     walk(map.nodes, []);
+  }
+  const uses = new Map<string, number>();
+  for (const card of cards) uses.set(titleKey(card), (uses.get(titleKey(card)) ?? 0) + 1);
+  for (const card of cards) {
+    const parent = card.parents.at(-1);
+    if (parent && (uses.get(titleKey(card)) ?? 0) > 1) card.label = `${parent.title} › ${card.node.title}`;
   }
   return cards;
 }
@@ -117,20 +128,68 @@ const escapeRegExp = (text: string) => text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&
 /** Word endings that would still give the answer away: "shared", "encryption", "worms". */
 const ENDINGS = '(?:s|es|d|ed|ing|ion|ions|er|ers|rs|ly)?';
 
+/** Small words an acronym may or may not take a letter from ("Time-of-check to time-of-use"). */
+const SMALL_WORDS = new Set(['a', 'an', 'and', 'as', 'at', 'by', 'for', 'in', 'of', 'on', 'or', 'the', 'to', 'with']);
+
+/**
+ * Phrases in `text` that spell out an acronym in `title`: for "TOCTOU", "Time-of-check to
+ * time-of-use"; for "KPIs", "Key Performance Indicators". A phrase matches when its words'
+ * initials spell the acronym, where small words may be skipped. Used to blank expansions in
+ * questions, since an expansion gives the answer away as surely as the acronym does.
+ */
+export function acronymExpansions(title: string, text: string): string[] {
+  const acronyms = [...title.matchAll(/\b([A-Z][A-Z0-9]{1,7})s?\b/g)].map((m) => (m[1] ?? '').replace(/\d/g, ''));
+  const words = [...text.matchAll(/[A-Za-z][A-Za-z']*/g)].map((m) => ({ word: m[0], start: m.index ?? 0 }));
+  const found = new Set<string>();
+  for (const acronym of acronyms) {
+    if (acronym.length < 2) continue;
+    const letters = acronym.toLowerCase();
+    for (let i = 0; i < words.length; i++) {
+      const first = words[i];
+      if (!first || first.word[0] !== first.word[0]?.toUpperCase()) continue;
+      // Walk forward, taking one letter per word; small words may also be skipped.
+      const match = (w: number, l: number): number | undefined => {
+        if (l === letters.length) return w;
+        const current = words[w];
+        if (!current) return undefined;
+        const initial = current.word[0]?.toLowerCase();
+        // Two-letter acronyms are short enough to match by chance, so their words must be capitalised.
+        const capitalOk = letters.length > 2 || current.word[0] === current.word[0]?.toUpperCase();
+        // A small word can supply a letter or be skipped; keep whichever reading runs longer,
+        // so "Annualized Rate of Occurrence" is matched in full for ARO.
+        const taken = initial === letters[l] && capitalOk ? match(w + 1, l + 1) : undefined;
+        const skipped = l > 0 && SMALL_WORDS.has(current.word.toLowerCase()) ? match(w + 1, l) : undefined;
+        return Math.max(taken ?? -1, skipped ?? -1) >= 0 ? Math.max(taken ?? -1, skipped ?? -1) : undefined;
+      };
+      const end = match(i, 0);
+      const last = end !== undefined ? words[end - 1] : undefined;
+      if (last) found.add(text.slice(first.start, last.start + last.word.length));
+    }
+  }
+  return [...found];
+}
+
 /**
  * The description with the answer blanked out, so the question does not give it away.
  * Covers the full title and its parts: "1. Asset Valuation" → "Asset Valuation",
  * "Security Information and Event Management (SIEM)" → the name and "SIEM",
- * "PII / SPI / PHI / PI" → each acronym.
+ * "PII / SPI / PHI / PI" → each acronym, "Linear & Differential" → each word,
+ * "Diffie-Hellman (key exchange)" → "Diffie-Hellman", and the spelled-out form of an acronym.
  */
 export function maskedDescription(node: MindNode): string {
   const title = node.title.replace(/^\d+\.\s*/, '');
-  const terms = new Set([node.title, title, title.replace(/\s*\([^)]*\)/g, '').trim()]);
+  const terms = new Set([node.title, title]);
   // A numbered title ("2. Risk Analysis") is given away by "Step 2" in its description.
   const number = /^(\d+)\./.exec(node.title)?.[1];
   if (number) terms.add(`Step ${number}`);
-  for (const match of title.matchAll(/\(([^)]+)\)/g)) if (match[1]) terms.add(match[1]);
-  for (const part of title.split(/\s*[/,]\s*/)) terms.add(part);
+  for (const part of [title, ...title.split(/\s*(?:[/,&]|\bvs\.?)\s*/i)]) {
+    terms.add(part);
+    terms.add(part.replace(/\s*\([^)]*\)/g, '').trim());
+    for (const match of part.matchAll(/\(([^)]+)\)/g)) if (match[1]) terms.add(match[1]);
+  }
+  // Every acronym in the title on its own ("ALE", "SLE", "ARO"), and its spelled-out form.
+  for (const match of node.title.matchAll(/\b[A-Z][A-Z0-9]{1,7}s?\b/g)) terms.add(match[0]);
+  for (const expansion of acronymExpansions(node.title, node.description)) terms.add(expansion);
   const sorted = [...terms].filter((t) => t.length >= 2).sort((a, b) => b.length - a.length);
   return sorted.reduce(
     (text, term) => text.replace(new RegExp(`(?<![\\w-])${escapeRegExp(term)}${ENDINGS}(?![\\w-])`, 'gi'), '_____'),

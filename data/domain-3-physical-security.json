@@ -19,7 +19,7 @@
             {
               "id": "deter-delay-detect-assess-respond",
               "title": "Deter, Delay, Detect, Assess, Respond",
-              "description": "- Deter: discourage trespassing, property damage, theft and intrusion, through signage and the environmental design of the building and the land around it.\n- Delay: delay a risk from happening. Example: locks delay an attacker from gaining unauthorized access.\n- Detect: detect that a risk has happened. Example: CCTV cameras.\n- Assess: determine the method of attack and the target.\n- Respond: take appropriate action to remediate the risk.",
+              "description": "- Deter: discourage trespassing, property damage, theft and intrusion, through signage and the environmental design of the building and the land around it.\n- Delay: slow an attacker down, to buy time to detect and respond. Example: locks slow down an attacker trying to gain unauthorized access.\n- Detect: notice that a risk has happened. Example: CCTV cameras.\n- Assess: determine the method of attack and the target.\n- Respond: take appropriate action to remediate the risk.",
               "children": []
             }
           ]
@@ -27,7 +27,7 @@
         {
           "id": "layered-defense",
           "title": "Layered Defense",
-          "description": "Never implement a control in isolation: if the only control protecting an asset fails, bad things happen.\nUse multiple layers of controls. At each layer, combine preventive, detective and corrective controls, or in physical security terms, deterrent, detective, and assess and respond controls. This is defense in depth.",
+          "description": "Never implement a control in isolation: if the only control protecting an asset fails, bad things happen.\nInstead, place controls one behind another, from the outside of the site inward, so an attacker who gets past one still faces the next. At each level, combine preventive, detective and corrective controls, or in physical security terms, deterrent, detective, and assess and respond controls.",
           "children": [
             {
               "id": "perimeter",
@@ -51,7 +51,7 @@
             {
               "id": "cameras",
               "title": "Cameras",
-              "description": "CCTV (Closed Circuit Television) camera systems are an important part of physical security. They act as a deterrent and a detective control, and can also be used for monitoring and auditing.\nCameras are primarily detective controls.",
+              "description": "Closed-circuit video systems are an important part of physical security. They act as a deterrent and a detective control, and can also be used for monitoring and auditing.\nCameras are primarily detective controls.",
               "children": []
             },
             {
@@ -75,7 +75,7 @@
             {
               "id": "doors-mantraps",
               "title": "Doors / Mantraps",
-              "description": "Doors are the primary way to control who can enter the building and specific parts of it.\nTailgating or piggybacking is a very common and successful social engineering attack on doors: an intruder follows an authorized person through a door after they unlock it. Prevent it with specialized doors: mantraps or turnstiles.\nA mantrap is two doors, one after the other. Unlock the first door, enter a small space, close the first door behind you, and only then can you unlock the second door.",
+              "description": "Doors are the primary way to control who can enter the building and specific parts of it.\nTailgating or piggybacking is a very common and successful social engineering attack on them: an intruder follows an authorized person through after they unlock it. Prevent it with specialized entrances: mantraps or turnstiles.\nThe specialized entrance is two doors, one after the other, around a small space. Unlock the first, step inside, close it behind you, and only then can you unlock the second.",
               "children": []
             },
             {
@@ -86,7 +86,7 @@
                 {
                   "id": "mechanical",
                   "title": "Mechanical",
-                  "description": "Mechanical locks. Examples: keyed locks, mechanical combination locks and magnetic locks.",
+                  "description": "Locks operated by physical means, such as a key or a dial. Examples: keyed locks, mechanical combination locks and magnetic locks.",
                   "children": []
                 },
                 {
@@ -100,18 +100,18 @@
             {
               "id": "windows",
               "title": "Windows",
-              "description": "Windows let in natural light, but they are often the weak link in a building's perimeter.\nWindow glass comes in many types, such as plate, tempered, laminated, wired and polycarbonate. You do not need to memorize them.\nInstead, understand the sensors that detect when the glass in a window has been broken.",
+              "description": "Windows let in natural light, but they are often the weak link in a building's perimeter.\nThe glass comes in many types, such as plate, tempered, laminated, wired and polycarbonate. You do not need to memorize them.\nInstead, understand the sensors that detect when the glass has been broken.",
               "children": [
                 {
                   "id": "shock",
                   "title": "Shock",
-                  "description": "Shock sensors are attached directly to a pane of glass. They detect the small shockwave created when the window breaks.",
+                  "description": "Sensors attached directly to a pane of glass. They detect the small vibration created when the pane breaks.",
                   "children": []
                 },
                 {
                   "id": "glass-break",
                   "title": "Glass break",
-                  "description": "Acoustic sensors that listen for the sound of breaking glass. Unlike shock sensors, they do not need to be attached to the glass.",
+                  "description": "Acoustic sensors that listen for the distinctive sound of a pane shattering. They do not need to be attached to the glass.",
                   "children": []
                 }
               ]
@@ -125,7 +125,7 @@
             {
               "id": "skimming",
               "title": "Skimming",
-              "description": "Placed in this map for lack of a better place.\nCriminals use an electronic device to steal card information from a valid transaction. Examples: a device on a bank machine that records your debit card number, a device on a point-of-sale machine that skims your credit card details, or an attacker near a secure door who wirelessly records the RFID communication from your employee card.",
+              "description": "Criminals use an electronic device to steal card information from a valid transaction. Examples: a device on a bank machine that records your debit card number, a device on a point-of-sale machine that copies your credit card details, or an attacker near a secure door who wirelessly records the RFID communication from your employee card.",
               "children": []
             },
             {
@@ -142,12 +142,12 @@
                 {
                   "id": "power",
                   "title": "Power",
-                  "description": "Almost all equipment needs electricity, and few businesses could keep working without electronic systems. So security is very concerned with a consistent supply of clean power.\nClean power does not mean renewable here. It means AC (Alternating Current) power that oscillates at a perfect 60 Hz, with no noise or distortion on the line: a perfect sine wave.\nUPSs and generators are the important devices for a consistent supply of clean power.",
+                  "description": "Almost all equipment needs electricity, and few businesses could keep working without electronic systems. So security is very concerned with a consistent supply of clean power.\nClean power does not mean renewable here. It means AC (Alternating Current) power that oscillates at a steady 60 Hz (50 Hz in many countries), with no noise or distortion on the line: a perfect sine wave.\nUPSs and generators are the important devices for a consistent supply of clean power.",
                   "children": [
                     {
                       "id": "ups",
                       "title": "UPS",
-                      "description": "Uninterruptible Power Supply: essentially a giant battery that provides instant but short-term power, until the generator has time to start up and come online.",
+                      "description": "Essentially a giant battery that provides instant but short-term power, until the generator has time to start up and come online.\nFull name: Uninterruptible Power Supply.",
                       "children": []
                     },
                     {
@@ -159,13 +159,13 @@
                     {
                       "id": "power-outages",
                       "title": "Power Outages",
-                      "description": "Types of power outage:\n- Blackout: no power for a long period.\n- Fault: a momentary loss of power.",
+                      "description": "A complete loss of power:\n- Blackout: no power for a long period.\n- Fault: a momentary loss of power.",
                       "children": []
                     },
                     {
                       "id": "power-degradation",
                       "title": "Power Degradation",
-                      "description": "Too little or too much power:\n- Brownout: an intentional reduction of voltage by the utility company.\n- Sag / dip: a short period of low voltage.\n- Surge: a momentary spike of too much voltage. Think lightning strike.",
+                      "description": "Too little or too much power:\n- Brownout: an intentional reduction of voltage by the utility company.\n- Sag / dip: a short period of low voltage.\n- Surge: a period of too much voltage. A momentary one is a spike. Think lightning strike.",
                       "children": []
                     }
                   ]
@@ -173,7 +173,7 @@
                 {
                   "id": "hvac",
                   "title": "HVAC",
-                  "description": "Heating, Ventilation and Air Conditioning: the systems that supply air to a building at the correct temperature and humidity, and filter it.",
+                  "description": "The systems that supply air to a building at the correct temperature and humidity, and filter it.\nFull name: Heating, Ventilation and Air Conditioning.",
                   "children": [
                     {
                       "id": "temperature",
@@ -222,7 +222,7 @@
                     {
                       "id": "photo-electric",
                       "title": "Photo-electric",
-                      "description": "Often called optical detectors. Respond more quickly to smoldering fires.",
+                      "description": "Detect smoke when it blocks or scatters a beam of light inside the detector. Respond more quickly to smoldering fires.",
                       "children": []
                     },
                     {
@@ -262,12 +262,12 @@
                 {
                   "id": "gas",
                   "title": "Gas",
-                  "description": "Gas-based systems use various gases to put out a fire.\nSome displace the oxygen in a room: no oxygen, no fire. But no oxygen also means no human life, so safety systems must let people leave the data center before the gas is released.\nOther gas-based systems interrupt the chemical, exothermic process that is fire.",
+                  "description": "Systems that flood a room with a suppression agent instead of water.\nSome displace the oxygen in a room: no oxygen, no fire. But no oxygen also means no human life, so safety systems must let people leave the data center before the agent is released.\nOthers interrupt the chemical, exothermic process that is fire.",
                   "children": [
                     {
                       "id": "gas-agents",
                       "title": "INERGEN, Argonite, FM-200, Aero-K",
-                      "description": "The four major gas-based fire suppression agents to know:\n- INERGEN\n- Argonite\n- FM-200\n- Aero-K\nHalon is deliberately not listed. It was traditionally used in data centers, but it has been banned globally because it destroys the ozone layer. Do not pick Halon on the exam.",
+                      "description": "The four major gas-based fire suppression agents to know:\n- INERGEN\n- Argonite\n- FM-200\n- Aero-K\nHalon is deliberately not listed. It was traditionally used in data centers, but its production has been banned globally because it destroys the ozone layer. Do not pick Halon on the exam.",
                       "children": []
                     }
                   ]
@@ -281,7 +281,7 @@
                 {
                   "id": "co2",
                   "title": "CO₂",
-                  "description": "An excellent fire suppression agent for data centers: it is non-corrosive (it will not damage expensive equipment), leaves no residue, does not conduct electricity and, as long as you do not use too much, is safe for humans.",
+                  "description": "An excellent fire suppression agent for data centers: it is non-corrosive (it will not damage expensive equipment), leaves no residue and does not conduct electricity.\nIt works by displacing oxygen, so at the levels needed to flood a room it can suffocate people. Everyone must leave before it is released.",
                   "children": []
                 }
               ]

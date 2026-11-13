@@ -15,7 +15,7 @@
     {
       "id": "assign-ownership",
       "title": "Assign Ownership",
-      "description": "Every asset needs a clearly defined owner.\nThe owner is accountable for protecting the asset.\nThe owner is best placed to judge how valuable the asset is to the organization, and so which classification it should get.",
+      "description": "Every asset needs one clearly named person who is accountable for protecting it.\nThat person is best placed to judge how valuable the asset is to the organization, and so which classification it should get.",
       "children": []
     },
     {
@@ -44,12 +44,12 @@
             {
               "id": "security-label",
               "title": "Security Label",
-              "description": "Associates a set of security attributes with an information object, as part of the object's data structure.\nLabels are read by the system, so it knows the data's classification and the protection it needs.",
+              "description": "Associates a set of security attributes with an information object, as part of the object's data structure.\nThese are read by the system, so it knows the data's classification and the protection it needs.",
               "children": [
                 {
                   "id": "system-readable",
                   "title": "System Readable",
-                  "description": "Remember: labels are meant to be read by the system. They enable system-based enforcement.",
+                  "description": "The key property of security labels: they are built into the object's data structure for machines to process, not for people to look at. They enable enforcement by the technology itself.",
                   "children": []
                 }
               ]
@@ -57,12 +57,12 @@
             {
               "id": "security-marking",
               "title": "Security Marking",
-              "description": "Very similar to a label: associates a set of security attributes with objects, but in a human-readable form.\nMarkings are read by people, so they know the data's classification and the protection it needs.",
+              "description": "Same purpose as its system-readable counterpart: associates a set of security attributes with objects, but in a form people can read.\nPeople read these, so they know the data's classification and the protection it needs.",
               "children": [
                 {
                   "id": "human-readable",
                   "title": "Human Readable",
-                  "description": "Remember: markings are meant to be read by humans. They enable organizational, process-based enforcement of security policies.",
+                  "description": "The key property of security markings: people, not machines, are meant to see and understand them, for example a classification stamped on a printed document. They enable organizational, process-based enforcement of security policies.",
                   "children": []
                 }
               ]
@@ -96,7 +96,7 @@
             {
               "id": "data-processor",
               "title": "Data Processor",
-              "description": "Responsible for processing data on behalf of the owner.\nTypical example: a cloud service provider, which stores and processes data for the owner.",
+              "description": "Responsible for handling data on behalf of the owner.\nTypical example: a cloud service provider, which stores and handles data for the owner.",
               "children": []
             },
             {
@@ -108,7 +108,7 @@
             {
               "id": "data-steward",
               "title": "Data Steward",
-              "description": "Business responsibility for the data: data governance, data quality and compliance.\nStewards are employees from the business who make sure the data is useful for business purposes.",
+              "description": "Business responsibility for the data: data governance, data quality and compliance.\nThey are employees from the business who make sure the data is useful for business purposes.",
               "children": []
             },
             {
@@ -139,7 +139,7 @@
             {
               "id": "backups",
               "title": "Backups",
-              "description": "Backup and data resiliency controls make sure data is not lost or destroyed by accident. Covered in Domain 7.",
+              "description": "Keeping copies of data, and other data resiliency controls, make sure data is not lost or destroyed by accident. Covered in Domain 7.",
               "children": []
             }
           ]
@@ -152,7 +152,7 @@
             {
               "id": "end-to-end",
               "title": "End-to-End",
-              "description": "The sender encrypts the data portion of the packet. The data stays encrypted through every node it passes (switches, routers, firewalls and so on) and is decrypted only when it reaches the recipient.\nThe data is never in plaintext in transit: it is encrypted and decrypted only at the endpoints.\nExample: a VPN (Virtual Private Network), covered in Domain 4.\nDownside: routing information, such as the source and destination IP addresses, must be in plaintext and visible to anyone. So end-to-end encryption gives no anonymity.",
+              "description": "The sender encrypts the data portion of the packet. The data stays encrypted through every node it passes (switches, routers, firewalls and so on) and is decrypted only when it reaches the recipient.\nThe data is never in plaintext in transit: only the sender encrypts it and only the recipient decrypts it.\nExample: a VPN (Virtual Private Network), covered in Domain 4.\nDownside: routing information, such as the source and destination IP addresses, must be in plaintext and visible to anyone. So end-to-end encryption gives no anonymity.",
               "children": []
             },
             {
@@ -172,7 +172,7 @@
         {
           "id": "use",
           "title": "Use",
-          "description": "Data in use is more vulnerable than data at rest, because people and processes must be able to view and edit it.\nThe main controls are good access controls, and possibly DLP to monitor and control what users do with the data.\nHomomorphic encryption is another option, but you do not need to know it for the exam.",
+          "description": "Data in use is more vulnerable than data at rest, because people and processes must be able to view and edit it.\nThe main controls are good access controls, and possibly tools that monitor and control what people do with the data.\nHomomorphic encryption is another option, but you do not need to know it for the exam.",
           "children": []
         },
         {
@@ -183,7 +183,7 @@
             {
               "id": "retention-period",
               "title": "Retention Period",
-              "description": "Keep data as long as compliance, regulatory and contractual requirements need, but no longer.\nYou do not have to worry about a data breach if you do not have the data.\nRetain data as long as the policy requires, then dispose of it.",
+              "description": "Keep data as long as compliance, regulatory and contractual requirements and the policy need, but no longer. Then dispose of it.\nYou do not have to worry about a data breach if you do not have the data.",
               "children": []
             }
           ]
@@ -191,23 +191,23 @@
         {
           "id": "defensible-destruction",
           "title": "Defensible Destruction",
-          "description": "Laws, regulations and contracts may require data to be defensibly destroyed: securely destroyed and made unrecoverable, in a way that stands up as reasonable and consistent. You can prove the data cannot be recovered.\nSome ways to destroy data are much better than others.\nThree categories, from best to worst: destruction, purging, clearing.\nTechniques, from best to worst: media destruction (incinerate), shred / disintegrate / drill, degauss, crypto shredding, overwrite / wipe / erasure, format.",
+          "description": "Laws, regulations and contracts may require data to be destroyed securely and made unrecoverable, in a way that stands up as reasonable and consistent. You can prove the data cannot be recovered.\nSome ways to destroy data are much better than others.\nThree categories, from best to worst: destruction, purging, clearing.\nTechniques, from best to worst: media destruction (incinerate), shred / disintegrate / drill, degauss, crypto shredding, overwrite / wipe / erasure, format.",
           "children": [
             {
               "id": "destruction",
               "title": "Destruction",
-              "description": "The best category: physically destroy the media the data is stored on.",
+              "description": "The best category: physically ruin the media the data is stored on.",
               "children": [
                 {
                   "id": "media-destruction",
                   "title": "Media Destruction",
-                  "description": "The best technique: physically destroy the media. Ideally melt it or burn it (incinerate) until only smoke and maybe a puddle of metal are left. There is no way to get that data back.",
+                  "description": "The best technique: ideally melt or burn (incinerate) the media until only smoke and maybe a puddle of metal are left. There is no way to get that data back.",
                   "children": []
                 },
                 {
                   "id": "shred-disintegrate-drill",
                   "title": "Shred / Disintegrate / Drill",
-                  "description": "The next best technique: shred or disintegrate the media, or drill a hole in it.\nNot nearly as good as media destruction: with the right tools, data can still be read from small shredded pieces of a hard drive or tape.",
+                  "description": "The next best technique: shred or disintegrate the media, or drill a hole in it.\nNot nearly as good as incineration: with the right tools, data can still be read from small pieces of a hard drive or tape.",
                   "children": []
                 }
               ]
@@ -245,7 +245,7 @@
                 {
                   "id": "format",
                   "title": "Format",
-                  "description": "The worst method. By default, formatting leaves most if not all of the data on the disk, so it can easily be recovered with the right tool.",
+                  "description": "The worst method: prepare the disk with a fresh, empty file system. By default, this leaves most if not all of the data on the disk, so it can easily be recovered with the right tool.",
                   "children": []
                 }
               ]
@@ -255,13 +255,13 @@
         {
           "id": "drm",
           "title": "DRM",
-          "description": "Digital Rights Management: technology that protects the rights of copyright holders of digital media.\nIt encrypts media such as videos, music and eBooks, and controls who can do what with them: how many times a movie can be played, which device can play music, whether an eBook can be printed. Copyright holders can set and enforce rules on how their content is used.\nDigital watermarks are related: they mark copyright ownership on digital media, visibly or invisibly, and can trace unauthorized copies back to the source.\nWatermarks cannot prevent unauthorized copying, so DRM and watermarks are often used together: DRM to encrypt and control access, watermarks for traceability.",
+          "description": "Technology that protects the rights of copyright holders of digital media.\nIt encrypts media such as videos, music and eBooks, and controls who can do what with them: how many times a movie can be played, which device can play music, whether an eBook can be printed. Copyright holders can set and enforce rules on how their content is used.\nDigital watermarks are related: they mark copyright ownership on digital media, visibly or invisibly, and can trace unauthorized copies back to the source.\nWatermarks cannot prevent unauthorized copying, so DRM and watermarks are often used together: DRM to encrypt and control access, watermarks for traceability.\nFull name: Digital Rights Management.",
           "children": []
         },
         {
           "id": "dlp",
           "title": "DLP",
-          "description": "Data Loss Prevention: tools and processes that make sure sensitive or critical information is not lost, misused or accessed by unauthorized people.\nDLP can identify, monitor and protect data in use, in motion and at rest.\nData classification is a critical requirement for DLP. DLP cannot stop every bit of data from leaking or being misused, so you must know which data is sensitive.",
+          "description": "Tools and processes that make sure sensitive or critical information is not lost, misused or accessed by unauthorized people.\nDLP can identify, monitor and protect data in use, in motion and at rest.\nData classification is a critical requirement for DLP. DLP cannot stop every bit of data from leaking or being misused, so you must know which data is sensitive.\nFull name: Data Loss Prevention.",
           "children": []
         }
       ]
@@ -269,7 +269,7 @@
     {
       "id": "assess-review",
       "title": "Assess & Review",
-      "description": "Periodically review and assess the classes, and the classifications assets have received.\nLaws, regulations and business requirements change over time, which may require changing the classes and the classification of assets.",
+      "description": "Periodically re-examine the classes, and the classifications assets have received.\nLaws, regulations and business requirements change over time, which may require changing the classes and the classification of assets.",
       "children": []
     }
   ]

@@ -9,13 +9,13 @@
     {
       "id": "secure-the-scene",
       "title": "Secure the Scene",
-      "description": "An investigation can start when, for example, a breach is detected, a whistleblower reports something, or VISA calls to ask why your systems are leaking millions of customer credit card numbers.\nSecuring the scene is one of the most important first steps. Set up a perimeter so unauthorized people cannot enter the scene and lose or contaminate evidence.\nOnce evidence is contaminated, it cannot be decontaminated.\nA digital crime scene is especially hard to secure: you want to keep as much evidence as possible, but you also need to stop an ongoing breach.\nShould a system be unplugged from the network, or even shut down? Too quickly can compromise the investigation. Too slowly can let more data leak.",
+      "description": "An investigation can start when, for example, a breach is detected, a whistleblower reports something, or VISA calls to ask why your systems are leaking millions of customer credit card numbers.\nOne of the most important first steps: set up a perimeter so unauthorized people cannot enter the scene and lose or contaminate evidence.\nOnce evidence is contaminated, it cannot be decontaminated.\nA digital crime scene is especially hard to lock down: you want to keep as much evidence as possible, but you also need to stop an ongoing breach.\nShould a system be unplugged from the network, or even shut down? Too quickly can compromise the investigation. Too slowly can let more data leak.",
       "children": []
     },
     {
       "id": "collect-and-control-evidence",
       "title": "Collect & Control Evidence",
-      "description": "Once evidence collection begins, know these principles, techniques and sources.",
+      "description": "Gathering evidence and keeping it in your custody once the scene is protected.\nKey ideas: Locard's principle on where evidence can be found, MOM to assess suspects, the sources of evidence, and the chain of custody.",
       "children": [
         {
           "id": "locards-principle",
@@ -26,13 +26,13 @@
         {
           "id": "mom",
           "title": "MOM",
-          "description": "Motive, Opportunity and Means: an investigative technique to decide whether a suspect had:\n- Motive: for example, financial gain\n- Opportunity: were they at the crime scene?\n- Means: the tools and technical expertise needed",
+          "description": "An investigative technique to decide whether a suspect had all three of:\n- a reason to commit the crime, for example financial gain\n- the chance to commit it: were they at the crime scene?\n- the tools and technical expertise needed\nFull name: Motive, Opportunity and Means.",
           "children": []
         },
         {
           "id": "sources",
           "title": "Sources",
-          "description": "Where an investigator can get evidence.",
+          "description": "Where an investigator gets evidence: what witnesses say or write, documents, digital forensics and e-discovery.",
           "children": [
             {
               "id": "oral-written-statements",
@@ -74,7 +74,7 @@
             {
               "id": "e-discovery",
               "title": "E Discovery",
-              "description": "Electronic discovery: the process of identifying, collecting and producing electronically stored information for legal proceedings.",
+              "description": "The process of identifying, collecting and producing electronically stored information (ESI) for legal proceedings.",
               "children": []
             }
           ]
@@ -90,7 +90,7 @@
     {
       "id": "types-of-evidence",
       "title": "Types of Evidence",
-      "description": "Ways to categorize the evidence an investigator collects.\nThe page's summary table also lists three types that are not on the map:\n- Circumstantial Evidence: suggests a fact by implication or inference. Can prove an intermediate fact.\n- Corroborative Evidence: supports facts or elements of the case. Not a fact on its own, but supports other facts. The video and table say \"Collaborative\"; the page corrects it to \"Corroborative\".\n- Hearsay Evidence: statements made by witnesses who were not present. No firsthand proof of accuracy or reliability.",
+      "description": "Ways to categorize the evidence an investigator collects, such as real, direct and secondary evidence.\nOther types to know:\n- Circumstantial Evidence: suggests a fact by implication or inference. Can prove an intermediate fact.\n- Corroborative Evidence: supports facts or elements of the case. Not a fact on its own, but supports other facts.\n- Hearsay Evidence: statements made by witnesses who were not present. No firsthand proof of accuracy or reliability.",
       "children": [
         {
           "id": "real-evidence",
@@ -113,7 +113,7 @@
         {
           "id": "best-evidence-rule",
           "title": "Best Evidence Rule",
-          "description": "A legal principle that applies to all of these types of evidence.\nCourts view original, unaltered evidence as superior, the best evidence, rather than a copy or duplicate.",
+          "description": "A legal principle that applies to all types of evidence.\nCourts view original, unaltered evidence as superior to a copy or duplicate.",
           "children": []
         }
       ]
@@ -121,7 +121,7 @@
     {
       "id": "rules-of-evidence",
       "title": "Rules of Evidence",
-      "description": "Five rules that evidence must meet to be useful in an investigation.",
+      "description": "Five criteria evidence must meet to be useful in an investigation or in court: authentic, accurate, complete, convincing and admissible.",
       "children": [
         {
           "id": "authentic",
@@ -150,7 +150,7 @@
         {
           "id": "admissible",
           "title": "Admissible",
-          "description": "The transcript calls this rule Admissible / Believable.\nThe most basic rule: the evidence must be able to be used in a court of law or elsewhere.",
+          "description": "Also listed as Admissible / Believable.\nThe most basic rule: the evidence must be able to be used in a court of law or elsewhere.",
           "children": []
         }
       ]
@@ -158,7 +158,7 @@
     {
       "id": "investigative-techniques",
       "title": "Investigative Techniques",
-      "description": "Techniques to analyze the evidence that has been collected.",
+      "description": "Ways to analyze the evidence that has been collected: media, software and network analysis.",
       "children": [
         {
           "id": "media-analysis",
@@ -183,7 +183,7 @@
     {
       "id": "types-of-investigations",
       "title": "Types of Investigations",
-      "description": "The types of investigation you need to know.",
+      "description": "Categories of inquiry, based on who drives them and what is at stake: criminal, civil, regulatory and administrative.",
       "children": [
         {
           "id": "criminal",
@@ -214,7 +214,7 @@
     {
       "id": "document-and-report",
       "title": "Document & Report",
-      "description": "The final part of any investigation: extremely thorough documentation of the evidence collected, and preparation to present it to the relevant stakeholders.\nStakeholders include a judge and jury, the opposition, regulators and investors.",
+      "description": "The final part of any investigation: extremely thorough records of the evidence collected, and preparation to present it to the relevant stakeholders.\nStakeholders include a judge and jury, the opposition, regulators and investors.",
       "children": []
     }
   ]

@@ -20,13 +20,13 @@
         {
           "id": "fail-secure",
           "title": "Fail-Secure",
-          "description": "The inverse of fail-soft: the system fails to a more secure state. Also called fail-closed.\nExample: a firewall that blocks all traffic when it fails.",
+          "description": "The opposite of fail-open: the system fails to a more restrictive state. Also called fail-closed.\nExample: a firewall that blocks all traffic when it fails.",
           "children": []
         },
         {
           "id": "fail-safe",
           "title": "Fail-Safe",
-          "description": "Completely different from the other two.\nPhysical security mechanisms designed to put the safety of people above everything else when there is a failure.\nExample: doors in a building unlock when the fire alarm goes off.",
+          "description": "Unlike the other failure modes, it is about physical security mechanisms designed to protect human life above everything else when there is a failure.\nExample: doors in a building unlock when the fire alarm goes off.",
           "children": []
         }
       ]
@@ -45,7 +45,7 @@
         {
           "id": "types-of-backups",
           "title": "Types of Backups",
-          "description": "Different backup strategies. They trade off backup time, restore time and storage space.",
+          "description": "Different backup strategies: mirror, full, incremental and differential. They trade off backup time, restore time and storage space.",
           "children": [
             {
               "id": "mirror",
@@ -81,7 +81,7 @@
             {
               "id": "checksums-crc",
               "title": "Checksums / CRC",
-              "description": "Ways to validate backups:\n- CRC (Cyclical Redundancy Check)\n- checksums\n- bit-for-bit comparison of the backup with the original data\n- spot checks of selected files\nChecks can run while the backup is being made, and periodically on stored tapes.",
+              "description": "Ways to validate backups:\n- Checksums and CRC values: compute a short value from the backed-up data and compare it with the value for the original\n- bit-for-bit comparison of the backup with the original data\n- spot checks of selected files\nChecks can run while the backup is being made, and periodically on stored tapes.\nFull name: Cyclic Redundancy Check.",
               "children": []
             }
           ]
@@ -89,7 +89,7 @@
         {
           "id": "data-storage",
           "title": "Data Storage",
-          "description": "Think about where backup data is stored, how long it is kept, and how to make the backup process more efficient.",
+          "description": "Think about where backups are kept, how long they are retained, and how to make the backup process more efficient.",
           "children": [
             {
               "id": "offsite",
@@ -100,7 +100,7 @@
             {
               "id": "tape-rotation",
               "title": "Tape Rotation",
-              "description": "Schemes for keeping backup tapes for a period of time and then reusing them, overwriting the old data with new data.\nThe scheme should follow the retention policy. The retention policy is driven by regulatory and contractual requirements, restoration needs and costs.",
+              "description": "Schemes for keeping backup media for a period of time and then reusing them, overwriting the old data with new data.\nThe scheme should follow the retention policy. The retention policy is driven by regulatory and contractual requirements, restoration needs and costs.",
               "children": []
             }
           ]
@@ -108,7 +108,7 @@
         {
           "id": "rpo",
           "title": "RPO",
-          "description": "Recovery Point Objective: the maximum data loss the organization can tolerate, measured as time. Examples: 5 seconds, 5 minutes, 5 hours or 5 days worth of data.\nA major driver of the cost of a backup solution. The shorter the RPO (the less data the organization will accept losing), the more expensive the backup solution.\nAn owner who wants to cut backup costs may need to relax the RPO requirement.",
+          "description": "The maximum data loss the organization can tolerate, measured as time. Examples: 5 seconds, 5 minutes, 5 hours or 5 days worth of data.\nA major driver of the cost of a backup solution. The shorter the RPO (the less data the organization will accept losing), the more expensive the backup solution.\nAn owner who wants to cut backup costs may need to relax the RPO requirement.\nFull name: Recovery Point Objective.",
           "children": []
         }
       ]
@@ -116,7 +116,7 @@
     {
       "id": "spare-parts",
       "title": "Spare Parts",
-      "description": "Spare power supplies, RAM, hard drives and so on: any part you might put in a system.",
+      "description": "Extra power supplies, RAM, hard drives and so on: any component you might put in a system, kept ready to replace one that fails.",
       "children": [
         {
           "id": "spare-parts-cold",
@@ -141,7 +141,7 @@
     {
       "id": "raid",
       "title": "RAID (Redundant Array of Independent Disks)",
-      "description": "Using several hard drives at the same time for more speed, more redundancy, or both.\nRemember the minimum number of drives for each RAID level.\nRAID 10 (RAID 1+0) is not on the map: RAID 1 and RAID 0 together. A file is mirrored and then striped into four pieces, written to four drives. Minimum 4 drives. Redundancy: yes. Read/write performance: highest.",
+      "description": "Using several hard drives at the same time for more speed, more redundancy, or both.\nKnow the minimum number of drives for each RAID level.\nRAID 10 (RAID 1+0) combines RAID 1 and RAID 0: data is striped across mirrored pairs of drives. Minimum 4 drives. Redundancy: yes. Read/write performance: highest.",
       "children": [
         {
           "id": "raid-0",
@@ -177,7 +177,7 @@
         {
           "id": "clustering",
           "title": "Clustering",
-          "description": "Several systems work together at the same time to support a workload.\nExample: a cluster of web servers behind a load balancer.\nIf one member of the cluster fails, the cluster keeps running at reduced capacity.",
+          "description": "Several systems work together at the same time to support a workload.\nExample: a pool of web servers behind a load balancer.\nIf one member fails, the rest keep running at reduced capacity.",
           "children": []
         },
         {
@@ -213,7 +213,7 @@
             {
               "id": "types-of-sites-hot",
               "title": "Hot",
-              "description": "The building, the cheap equipment and the expensive equipment, all set up and ready to go: a fully equipped data center.\nOnly the data and the people to run it are missing.\nMuch more expensive. Recovery takes hours, maybe even seconds.\nMobile and mirror sites are two subtypes of hot site.",
+              "description": "The building, the cheap equipment and the expensive equipment, all set up and ready to go: a fully equipped data center.\nOnly the data and the people to run it are missing.\nMuch more expensive. Recovery takes hours, maybe even seconds.\nIt has two subtypes: one on wheels, and one fully staffed and running in parallel with the primary site.",
               "children": []
             },
             {

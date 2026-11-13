@@ -20,7 +20,7 @@
             {
               "id": "standards-procedures-baselines-guidelines",
               "title": "Standards / Procedures / Baselines / Guidelines",
-              "description": "Standards, procedures, baselines and guidelines should be well defined and based on the privacy policy.",
+              "description": "The documents below the privacy policy. They should be well defined and based on it:\n- mandatory hardware or software mechanisms\n- mandatory step-by-step instructions\n- minimum security levels and mandatory configurations\n- recommendations that are not mandatory",
               "children": []
             }
           ]
@@ -33,7 +33,7 @@
             {
               "id": "pii-spi-phi-pi",
               "title": "PII / SPI / PHI / PI",
-              "description": "Different laws use different names for personal data:\n- PII: Personally Identifiable Information\n- SPI: Sensitive Personal Information\n- PHI: Personal Health Information\n- PI: Personal Information",
+              "description": "Abbreviations that different laws use for personal data:\n- information that can identify a person\n- sensitive information about a person\n- information about a person's health\n- information about a person, in general\nFull names: Personally Identifiable Information; Sensitive Personal Information; Personal Health Information.",
               "children": []
             },
             {
@@ -51,7 +51,7 @@
             {
               "id": "online-identifiers",
               "title": "Online Identifiers",
-              "description": "Identifiers used online.\nExamples: email address, IP address and cookies.",
+              "description": "Identify a person through the accounts, devices and browsers they use on the internet.\nExamples: email address, IP address and cookies.",
               "children": []
             }
           ]
@@ -64,19 +64,19 @@
             {
               "id": "creation-update",
               "title": "Creation / Update",
-              "description": "New data is created, or existing data is changed.",
+              "description": "New data is generated, or existing data is changed.",
               "children": []
             },
             {
               "id": "store",
               "title": "Store",
-              "description": "Data is saved to a storage location, such as memory or a hard drive, as soon as it is created or updated.",
+              "description": "Data is written to a location, such as memory or a hard drive, as soon as it is generated or changed.",
               "children": []
             },
             {
               "id": "use",
               "title": "Use",
-              "description": "People or processes view or process the data without changing it. Changing data belongs to Creation / Update.",
+              "description": "People or processes view or process the data, without changing it.",
               "children": []
             },
             {
@@ -102,12 +102,12 @@
         {
           "id": "oecd-guidelines",
           "title": "OECD Guidelines",
-          "description": "Privacy guidelines from the OECD (Organisation for Economic Co-operation and Development).\nThey are guidelines, not mandatory rules: best practice.\nThe most internationally recognized privacy framework, and the basis for leading privacy programs. They help an organization decide what its privacy program should cover.\nThey define eight principles.",
+          "description": "Privacy guidelines from an intergovernmental organization of mostly developed economies.\nThey are guidelines, not mandatory rules: best practice.\nThe most internationally recognized privacy framework, and the basis for leading privacy programs. They help an organization decide what its privacy program should cover.\nThey define eight principles.",
           "children": [
             {
               "id": "collection-limitation",
               "title": "Collection Limitation",
-              "description": "Limit the collection of PII. Collect it lawfully and, where appropriate, with the knowledge or consent of the data subject (the person the data is about).",
+              "description": "Gather only the PII that is needed. Obtain it lawfully and, where appropriate, with the knowledge or consent of the data subject (the person the data is about).",
               "children": []
             },
             {
@@ -125,31 +125,31 @@
             {
               "id": "use-limitation",
               "title": "Use Limitation",
-              "description": "Use or disclose PII only for the purposes it was collected for, unless the data subject consents or the law allows it.",
+              "description": "Do not disclose or process PII for purposes other than those stated when it was collected, unless the data subject consents or the law allows it.",
               "children": []
             },
             {
               "id": "security-safeguards",
               "title": "Security Safeguards",
-              "description": "Protect PII with reasonable security controls against loss, unauthorized access, destruction, use, modification and similar risks.",
+              "description": "Protect PII with reasonable controls against loss, unauthorized access, destruction, use, modification and similar risks.",
               "children": []
             },
             {
               "id": "openness",
               "title": "Openness",
-              "description": "About the organization's culture: be open about developments, practices and policies on PII.\nDo not hide or be vague about what PII is collected and how it is used.",
+              "description": "About the organization's culture: be transparent about developments, practices and policies on PII.\nDo not hide or be vague about what PII is collected and how it is used.",
               "children": []
             },
             {
               "id": "individual-participation",
               "title": "Individual Participation",
-              "description": "A data subject should be able to get their data from the controller and have it removed.\nGDPR often calls this the right to be forgotten.",
+              "description": "A data subject should be able to find out what data the controller holds about them, get a copy of it, and challenge it: have it corrected, completed or erased.\nGDPR's right to erasure is often called the right to be forgotten.",
               "children": []
             },
             {
               "id": "accountability",
               "title": "Accountability",
-              "description": "The data controller is accountable for complying with the other principles.\nThere must be a named owner with clear accountability for protecting PII.",
+              "description": "The data controller must answer for complying with the other principles.\nThere must be a named owner with clear accountability for protecting PII.",
               "children": []
             }
           ]
@@ -157,18 +157,18 @@
         {
           "id": "gdpr",
           "title": "GDPR",
-          "description": "The General Data Protection Regulation: the core of EU digital privacy law, and one of the strictest privacy laws in the world.\nMany countries model their privacy laws on it.\nYou do not need to be an expert on every privacy law for the exam.",
+          "description": "The EU regulation at the core of EU digital privacy law, and one of the strictest privacy laws in the world.\nMany countries model their privacy laws on it.\nYou do not need to be an expert on every privacy law for the exam.\nFull name: General Data Protection Regulation.",
           "children": [
             {
               "id": "supervisory-authority",
               "title": "Supervisory Authority (SA)",
-              "description": "GDPR requires an independent public authority in each EU member state.\nIt monitors and enforces compliance, helps organizations become compliant, and runs investigations.\nData subjects can file complaints with it.",
+              "description": "GDPR requires an independent public body in each EU member state.\nIt monitors and enforces compliance, helps organizations become compliant, and runs investigations.\nData subjects can file complaints with it.",
               "children": []
             },
             {
               "id": "breaches-72-hours",
               "title": "Breaches reported within 72 hours",
-              "description": "Privacy breaches must be reported within 72 hours.",
+              "description": "The GDPR deadline for notifying the regulator of a personal data breach, counted from when the organization becomes aware of it.",
               "children": []
             }
           ]
@@ -201,7 +201,7 @@
         {
           "id": "copyright",
           "title": "Copyright",
-          "description": "Protects the expression of an idea, not the idea itself, once it is fixed in a medium such as a book, movie or song, for a set period.\nIt stops others from making and selling exact copies.\nRemember: copyright protects expression.",
+          "description": "Protects the expression of an idea, not the idea itself, once it is fixed in a medium such as a book, movie or song, for a set period.\nIt stops others from reproducing and selling the work.\nRemember: copyright protects expression.",
           "children": []
         },
         {

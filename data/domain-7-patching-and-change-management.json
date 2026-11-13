@@ -10,29 +10,29 @@
     {
       "id": "patching",
       "title": "Patching",
-      "description": "Patch management is a proactive process to create a consistently configured environment that is secure against known vulnerabilities.\nEvery system that needs a patch should be patched in a timely manner.\nImportant limitation: you can only patch known vulnerabilities. You cannot patch for zero days.\nThe patch management cycle:\n1. Monitor for new vulnerabilities and patch releases.\n2. Acquire (or create) and evaluate patches.\n3. Prioritize and schedule the installation.\n4. Test and certify.\n5. Deploy.\n6. Verify.\n7. Document.\n8. Update baselines.",
+      "description": "Patching is a proactive process to create a consistently configured environment that is secure against known vulnerabilities.\nEvery system that needs a vendor fix should get it in a timely manner.\nImportant limitation: this only works for known vulnerabilities. There is nothing to apply for zero days.\nThe cycle:\n1. Monitor for new vulnerabilities and vendor fixes.\n2. Acquire (or create) and evaluate the fixes.\n3. Prioritize and schedule the installation.\n4. Test and certify.\n5. Deploy.\n6. Verify.\n7. Document.\n8. Update baselines.",
       "children": [
         {
           "id": "determine-if-patch-is-available",
           "title": "Determine if Patch is available",
-          "description": "The first step: proactively find out whether a patch is available.\nMost software and systems do not update automatically or announce new patches, so the organization needs its own processes to find them.\nWays to find a need to patch: threat intelligence, vendor notifications and different types of scanning.",
+          "description": "The first step: proactively find out whether a vendor has released a fix your systems need.\nMost software and systems do not update automatically or announce new fixes, so the organization needs its own processes to find them.\nWays to find a need to patch: threat intelligence, vendor notifications and different types of scanning.",
           "children": [
             {
               "id": "threat-intelligence",
               "title": "Threat Intelligence",
-              "description": "Gathering information about new threats and threat actors that could harm the environment.\nIt shows when a patch is needed by identifying vulnerabilities that newly identified threats could exploit.",
+              "description": "Gathering information about new attack methods, and the actors behind them, that could harm the environment.\nIt shows when a patch is needed by identifying vulnerabilities that newly identified attacks could exploit.",
               "children": []
             },
             {
               "id": "vendor-notification",
               "title": "Vendor Notification",
-              "description": "The vendor tells you a patch is available.\nEasy for systems with built-in notifications, such as Windows and iOS devices.\nMany software products and systems have no built-in notifications. The organization must subscribe to the vendor's mailing list, RSS feed or Twitter account and monitor it for relevant new patches.",
+              "description": "The software maker tells you a patch is available.\nEasy for systems with built-in alerts, such as Windows and iOS devices.\nMany software products and systems have no built-in alerts. The organization must subscribe to the maker's mailing list, RSS feed or Twitter account and monitor it for relevant new patches.",
               "children": []
             },
             {
               "id": "pro-actively-checking",
               "title": "Pro-actively checking",
-              "description": "Scan systems to check that they comply with baselines: that every required patch was installed in a timely manner.\nPart of keeping a consistently configured environment.\nThere are three ways to check: agent, agentless and passive.",
+              "description": "Scan systems to verify that they comply with baselines: that every required patch was installed in a timely manner.\nPart of keeping a consistently configured environment.\nThere are three ways to do it: agent, agentless and passive.",
               "children": [
                 {
                   "id": "agent",
@@ -49,7 +49,7 @@
                 {
                   "id": "passive",
                   "title": "Passive",
-                  "description": "No agent and no querying: carefully inspect the network packets the system sends.\nThis is fingerprinting (see the Domain 6 vulnerability assessment mind map). Different versions of a system build packets in slightly different ways, so the packets reveal the exact version and patch level.\nUsed when the systems are not directly in your control, for example systems a vendor manages for you, to verify that the vendor patches them in a timely manner.",
+                  "description": "No agent and no querying: carefully inspect the network packets the system sends.\nThis is fingerprinting. Different versions of a system build packets in slightly different ways, so the packets reveal the exact version and patch level.\nUsed when the systems are not directly in your control, for example systems a vendor manages for you, to verify that the vendor patches them in a timely manner.",
                   "children": []
                 }
               ]
@@ -59,7 +59,7 @@
         {
           "id": "implement-through-change-management",
           "title": "Implement through Change Management",
-          "description": "Once a need to patch is identified, the patch is prioritized, scheduled, deployed, verified and documented through the change management process.\nChange management is covered in the second part of this mind map.",
+          "description": "Once a need to patch is identified, the patch is prioritized, scheduled, deployed, verified and documented through the organization's formal process for controlling every change, from request to baseline update.",
           "highlight": "exam-key",
           "children": [
             {
@@ -99,18 +99,18 @@
         {
           "id": "change-request",
           "title": "Change Request",
-          "description": "The change management process starts with a change request.\nRequests can come from almost anywhere. Examples: a system owner who wants new functionality, a customer who finds a bug, the root cause analysis of an incident, or threat intelligence showing that a system needs a patch.",
+          "description": "The change management process starts with a change request.\nThese can come from almost anywhere. Examples: a system owner who wants new functionality, a customer who finds a bug, the root cause analysis of an incident, or threat intelligence showing that a system needs a patch.",
           "children": []
         },
         {
           "id": "assess-impact",
           "title": "Assess Impact",
-          "description": "Every change request needs an impact assessment: how big a deal is the change? What will it cost, how much effort will it take, and how bad would it be for the organization if it goes wrong?\nThe impact assessment drives the rest of the process: what approvals are needed, how much testing and validation, and who must be notified.\nExample: a major change that costs millions probably needs approval from many senior stakeholders. A very minor change may only need auto-approval.",
+          "description": "Every request needs an evaluation: how big a deal is the change? What will it cost, how much effort will it take, and how bad would it be for the organization if it goes wrong?\nThis evaluation drives the rest of the process: what approvals are needed, how much testing and validation, and who must be notified.\nExample: a major change that costs millions probably needs approval from many senior stakeholders. A very minor change may only need auto-approval.",
           "children": [
             {
               "id": "emergency-change-vs-standard-process",
               "title": "Emergency Change vs. Standard process",
-              "description": "Changes differ a lot:\n- A minor change: little effort and zero impact on customers.\n- A massive change: hundreds of hours of development, millions of dollars, and significant impact on many stakeholders across the organization and on customers.\n- A high-priority patch: treated as an emergency change and deployed as fast as possible.\nThe change management process must be flexible enough to handle all of these.",
+              "description": "Changes differ a lot:\n- A minor change: little effort and zero impact on customers.\n- A massive change: hundreds of hours of development, millions of dollars, and significant impact on many stakeholders across the organization and on customers.\n- A high-priority patch: fast-tracked and deployed as fast as possible.\nThe process must be flexible enough to handle all of these: a normal path for most changes, and a fast-track path for urgent ones.",
               "children": []
             }
           ]
@@ -118,18 +118,18 @@
         {
           "id": "approval",
           "title": "Approval",
-          "description": "The approval process should also be flexible.\nMinor changes may be auto-approved. At the other end, some changes need several levels of approval from stakeholders across the organization, with everything signed in triplicate.\nApprovals are not only needed just before the change is made. They may be needed at several steps of the process.",
+          "description": "The sign-off process should also be flexible.\nMinor changes may be signed off automatically. At the other end, some changes need several levels of approval from stakeholders across the organization, with everything signed in triplicate.\nApprovals are not only needed just before the change is made. They may be needed at several steps of the process.",
           "children": [
             {
               "id": "based-on-impact-severity",
               "title": "Based on impact, severity, etc.",
-              "description": "What decides the approval requirements:\n- the impact of the change on the different stakeholders\n- the effort needed to implement the change\n- whether it is an emergency change",
+              "description": "What decides the approval requirements:\n- the impact of the change on the different stakeholders\n- the effort needed to implement the change\n- how urgent it is, for example whether it is an emergency change",
               "children": []
             },
             {
               "id": "ccb-cab-ecab",
               "title": "CCB, CAB, ECAB",
-              "description": "Groups of subject matter experts from across the organization who approve changes.\n- CCB (Change Control Board): approves changes within specific projects.\n- CAB (Change Advisory Board): approves changes related to the entire service lifecycle.\n- ECAB (Emergency Change Advisory Board): approves emergency changes.",
+              "description": "Boards of subject matter experts from across the organization who approve changes:\n- a control board that approves changes within specific projects\n- an advisory board that approves changes related to the entire service lifecycle\n- an advisory board convened for emergency changes\nFull names: Change Control Board; Emergency Change Advisory Board.",
               "children": []
             }
           ]
@@ -137,7 +137,7 @@
         {
           "id": "build-and-test",
           "title": "Build & Test",
-          "description": "Changes must be built and tested before they are deployed into production.\nExamples of changes: new software, patches, a new camera system, a new front gate.",
+          "description": "Changes must be developed and tried out before they are deployed into production.\nExamples of changes: new software, patches, a new camera system, a new front gate.",
           "children": []
         },
         {
@@ -155,12 +155,12 @@
         {
           "id": "validation",
           "title": "Validation",
-          "description": "After the change is implemented, validate it with testing.",
+          "description": "After the change is made, confirm with testing that it works as intended: the new functionality works, and nothing existing is broken.",
           "children": [
             {
               "id": "test-new-functionality",
               "title": "Test New Functionality",
-              "description": "Check that the new functionality the change was meant to provide works correctly.",
+              "description": "Check that the capability the change was meant to add works correctly.",
               "children": []
             },
             {
@@ -174,7 +174,7 @@
         {
           "id": "version-and-baseline",
           "title": "Version & Baseline",
-          "description": "After the change is made, check what needs to be updated.\nExamples: master images, configuration baselines, disaster recovery plans.",
+          "description": "The final step: after the change is made, check which records must be updated to reflect the new approved state.\nExamples: master images, configuration standards, disaster recovery plans.",
           "children": []
         }
       ]

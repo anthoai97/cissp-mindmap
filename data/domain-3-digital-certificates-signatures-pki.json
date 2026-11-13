@@ -53,7 +53,7 @@
         {
           "id": "verify-owner-of-public-key",
           "title": "Verify the owner of a Public Key",
-          "description": "Digital certificates solve the problem above: they let you verify who a public key belongs to.\nTwo important pieces of information in a certificate are the name of the owner of the public key and a copy of their public key.",
+          "description": "The core job of a digital certificate: bind a public key to a named identity, so you can trust whose key you have before you use it.\nTwo important pieces of information in a certificate are the name of the owner of the public key and a copy of their public key.",
           "children": [
             {
               "id": "x-509",
@@ -64,7 +64,7 @@
             {
               "id": "replacement",
               "title": "Replacement",
-              "description": "CAs typically issue a certificate valid for one to two years. The expiry date is written in the certificate itself.\nWhen the expiry date is reached, or just before, a new certificate must be created. Replacement is this regular replacement of expired certificates, and the expiry date shows when it is due.",
+              "description": "CAs issue each certificate for a limited period, often one year or less for public web certificates. The expiry date is written in the certificate itself.\nWhen the expiry date is reached, or just before, a new certificate must be created. Replacement is this regular replacement of expired certificates, and the expiry date shows when it is due.",
               "children": []
             },
             {
@@ -75,13 +75,13 @@
                 {
                   "id": "crl",
                   "title": "CRL",
-                  "description": "Certificate Revocation List: the older, less efficient way to check.\nThe client asks the CA whether a certificate is revoked. The CA sends a large file listing every certificate it has ever revoked, and the client searches the whole list for the certificate. Lots of overhead.",
+                  "description": "The older, less efficient way to check whether a certificate is revoked.\nThe client asks the CA whether a certificate is revoked. The CA sends a large file listing every certificate it has ever revoked, and the client searches the whole list for the certificate. Lots of overhead.\nFull name: Certificate Revocation List.",
                   "children": []
                 },
                 {
                   "id": "ocsp",
                   "title": "OCSP",
-                  "description": "Online Certificate Status Protocol: much newer and more efficient.\nThe client asks the CA for the revocation status of one specific certificate, and the CA replies with that status: revoked, or good.",
+                  "description": "The much newer and more efficient way to check whether a certificate is revoked.\nThe client asks the CA for the revocation status of one specific certificate, and the CA replies with that status: revoked, or good.\nFull name: Online Certificate Status Protocol.",
                   "children": []
                 }
               ]
@@ -99,24 +99,24 @@
     {
       "id": "pki",
       "title": "PKI",
-      "description": "Public Key Infrastructure: the broad set of roles, policies, procedures, hardware and software used to create, distribute, use, store, replace and revoke digital certificates.\nIts purpose is to bind a public key to its owner, so you can trust users and systems you communicate with across an untrustworthy environment such as the internet.",
+      "description": "The broad set of roles, policies, procedures, hardware and software used to create, distribute, use, store, replace and revoke digital certificates.\nIts purpose is to bind a public key to its owner, so you can trust users and systems you communicate with across an untrustworthy environment such as the internet.\nFull name: Public Key Infrastructure.",
       "children": [
         {
           "id": "certificate-authority",
           "title": "Certificate Authority (Root of Trust)",
-          "description": "All trust in a PKI is ultimately rooted in the Certificate Authority (CA), which is why it is called the root of trust.\nThe CA uses its private key to sign (encrypt) data that includes the owner's name and public key, creating a digital certificate. Only the CA has its private key, so no one can modify its certificates or create spoofed ones that look as if they came from it.\nAnyone can verify (decrypt) a certificate from a big public CA, because everyone has the CA's public key: it comes pre-installed in browsers such as Firefox, Chrome and Safari.",
+          "description": "All trust in a PKI is ultimately rooted in the Certificate Authority, which is why it is called the root of trust.\nThe CA uses its private key to sign (encrypt) data that includes the owner's name and public key, creating a digital certificate. Only the CA has its private key, so no one can modify its certificates or create spoofed ones that look as if they came from it.\nAnyone can verify (decrypt) a certificate from a big public CA, because everyone has the CA's public key: it comes pre-installed in browsers such as Firefox, Chrome and Safari.",
           "children": []
         },
         {
           "id": "registration-authority",
           "title": "Registration Authority",
-          "description": "Before a CA creates a certificate for you, it must proof your identity: confirm you are who you say you are.\nThe role within the CA that does this identity proofing is the Registration Authority (RA).",
+          "description": "Before a CA creates a certificate for you, it must proof your identity: confirm you are who you say you are.\nThe role within the CA that does this identity proofing is the Registration Authority.",
           "children": []
         },
         {
           "id": "intermediate-issuing-ca",
           "title": "Intermediate / Issuing CA",
-          "description": "If the CA signed new certificates directly with its root private key, that key would have to sit on a system connected to the internet. If the root private key is ever compromised, no certificate the CA has ever issued can be trusted.\nSo the root private key is kept offline and air-gapped, in a highly secure location.\nThe root key signs intermediate certificates, intermediate certificates sign issuing certificates, and issuing certificates sign entity certificates: the ones customers pay a CA for. This is the chain of trust. You can follow it back up to verify that the CA's private key signed the first certificate in the chain.\nExam tip: the role in the CA that issues certificates is the Issuing CA.",
+          "description": "If the CA signed new certificates directly with its root private key, that key would have to sit on a system connected to the internet. If the root private key is ever compromised, no certificate the CA has ever issued can be trusted.\nSo the root private key is kept offline and air-gapped, in a highly secure location.\nThe root key signs only the certificates of the CAs one level below it. Those CAs sign the next level down, and the lowest level signs the entity certificates customers pay a CA for. This is the chain of trust. You can follow it back up to verify that the CA's private key signed the first certificate in the chain.\nExam tip: the role in the CA that actually hands out certificates to customers is this one, not the root.",
           "children": []
         },
         {
@@ -141,7 +141,7 @@
         {
           "id": "kerckhoffs-principle",
           "title": "Kerckhoffs's Principle",
-          "description": "Stated by Kerckhoffs in 1883: a cryptosystem should be secure even if everything about the system, except the key, is public knowledge.\nAn attacker can know the algorithm and the initialization vector and have the ciphertext, and the data stays secure as long as the key is kept secret.\nThis is why keys must be generated, distributed, stored, rotated, disposed of and recovered very securely.",
+          "description": "Stated in 1883: a cryptosystem should be secure even if everything about the system, except the key, is public knowledge.\nAn attacker can know the algorithm and the initialization vector and have the ciphertext, and the data stays secure as long as the key is kept secret.\nThis is why keys must be generated, distributed, stored, rotated, disposed of and recovered very securely.",
           "children": []
         },
         {
@@ -158,7 +158,7 @@
             {
               "id": "key-distribution-methods",
               "title": "Diffie-Hellman, Out-of-band, Hybrid",
-              "description": "Options for key distribution:\n- Diffie-Hellman: a key exchange protocol that uses asymmetric techniques to generate the same key for two people without sending the key itself.\n- Out-of-band: send the key through a different communication channel, such as a letter, a carrier pigeon, or a phone call where you read out 256 ones and zeros.\n- Hybrid: more realistic and much more common. Encrypt the symmetric key with the recipient's public key (for example, Alice's) and send it. Only Alice can decrypt it, with her private key. Then switch to symmetric cryptography to encrypt and decrypt lots of data quickly and efficiently. It is called hybrid because asymmetric cryptography is used to send a symmetric key. This is exactly how TLS works.",
+              "description": "Options for key distribution:\n- Diffie-Hellman: a key exchange protocol that uses asymmetric techniques to generate the same key for two people without sending the key itself.\n- Out-of-band: send the key through a different communication channel, such as a letter, a carrier pigeon, or a phone call where you read out 256 ones and zeros.\n- Hybrid: more realistic and much more common. Encrypt the symmetric key with the recipient's public key (for example, Alice's) and send it. Only Alice can decrypt it, with her private key. Then switch to symmetric cryptography to encrypt and decrypt lots of data quickly and efficiently. It is called hybrid because asymmetric cryptography is used to send a symmetric key. TLS works this way: asymmetric cryptography sets up a symmetric session key.",
               "children": []
             }
           ]
@@ -171,7 +171,7 @@
             {
               "id": "tpm-hsm",
               "title": "TPM, HSM",
-              "description": "- TPM (Trusted Platform Module): a tiny chip built into end-point devices such as desktops, laptops and mobile phones, designed to store encryption keys very securely. A TPM is required for whole drive encryption.\n- HSM (Hardware Security Module): typically an external, standalone device. It stores encryption keys securely and acts as a cryptographic accelerator, for example to encrypt, decrypt and verify digital signatures quickly and efficiently.",
+              "description": "- TPM: a tiny chip built into end-point devices such as desktops, laptops and mobile phones, designed to store encryption keys very securely. Whole drive encryption typically relies on a TPM to protect its key.\n- HSM: typically an external, standalone device. It stores encryption keys securely and acts as a cryptographic accelerator, for example to encrypt, decrypt and verify digital signatures quickly and efficiently.\nFull names: Trusted Platform Module; Hardware Security Module.",
               "children": []
             }
           ]
@@ -190,7 +190,7 @@
             {
               "id": "crypto-shredding-key-destruction",
               "title": "Crypto-shredding, Key Destruction",
-              "description": "One reason to destroy every copy of a key is crypto-shredding: destroy data by destroying the keys used to encrypt it.\nIf the data was encrypted with an excellent algorithm such as AES and every copy of the key is destroyed, the data is unrecoverable, and so effectively destroyed.",
+              "description": "Destroy encrypted data by destroying every copy of the keys used to encrypt it. Both names describe the same technique, and it is one reason to destroy every copy of a key.\nIf the data was encrypted with an excellent algorithm such as AES and every copy of the key is destroyed, the data is unrecoverable, and so effectively destroyed.",
               "children": []
             }
           ]
@@ -203,7 +203,7 @@
             {
               "id": "key-recovery-methods",
               "title": "Split Knowledge, Dual Control, Key Escrow",
-              "description": "- Split Knowledge: knowledge of the key is split among two or more people. To recover the key, they must combine their pieces of knowledge.\n- Dual Control: two or more people must perform an action together to recover the key. Think of launching a nuclear missile, where two people turn their keys at the same time.\n- Key Escrow: a copy of the key is stored (kept in escrow) with a trusted third party. To recover the key, ask the third party for its copy.",
+              "description": "- Split Knowledge: no single person knows the whole key. Each of two or more people holds only a part, and to recover the key they must combine their parts.\n- Dual Control: two or more people must perform an action together to recover the key. Think of launching a nuclear missile, where two people turn their keys at the same time.\n- Key Escrow: a copy of the key is deposited with a trusted third party. To recover the key, ask the third party for its copy.",
               "children": []
             }
           ]

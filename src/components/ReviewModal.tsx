@@ -181,10 +181,10 @@ export default function ReviewModal({ filter, run, byKey, hues, onFilter, onClos
                             >
                               <span className="review-dot" aria-hidden="true" />
                               <span className="review-row-text">
-                                <strong>{card.node.title}</strong>
+                                <strong>{card.label}</strong>
                                 {!right && chosen && (
                                   <span className="review-chosen" title="Your answer">
-                                    ✗ {chosen.node.title}
+                                    ✗ {chosen.label}
                                   </span>
                                 )}
                               </span>
