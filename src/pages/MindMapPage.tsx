@@ -2,17 +2,12 @@ import { useEffect, useMemo } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import FitToWidth from '../components/FitToWidth';
 import Icon from '../components/Icon';
-import MapGrid, { gridMinWidth, nodeHues } from '../components/MapGrid';
+import MapGrid, { gridMinWidth, mapHues } from '../components/MapGrid';
 import NodeModal from '../components/NodeModal';
 import Page from '../components/Page';
-import { findPath, getMindMap, mindmaps, type MindMap } from '../data';
+import { findPath, getMindMap, gridsOf, mindmaps } from '../data';
 import { rememberMap } from '../lastMap';
 import NotFound from './NotFound';
-
-/** Each grid a map renders: one per top-level node when stacked, otherwise one for the whole map. */
-function gridsOf(map: MindMap) {
-  return map.layout === 'stacked' ? map.nodes.map((node) => [node]) : [map.nodes];
-}
 
 export default function MindMapPage() {
   const { mapId = '', nodeId } = useParams();
@@ -21,7 +16,7 @@ export default function MindMapPage() {
   const path = map && nodeId ? findPath(map.nodes, nodeId) : undefined;
   const selected = path?.at(-1);
   const minWidth = useMemo(() => (map ? Math.max(...gridsOf(map).map(gridMinWidth)) : 0), [map]);
-  const hues = useMemo(() => new Map(map ? gridsOf(map).flatMap((nodes) => [...nodeHues(nodes)]) : []), [map]);
+  const hues = useMemo(() => (map ? mapHues(map) : new Map<string, string>()), [map]);
 
   const open = (id: string) => navigate(`/map/${mapId}/${id}`);
   const close = () => navigate(`/map/${mapId}`);
@@ -64,7 +59,10 @@ export default function MindMapPage() {
             <span className="legend-mark exam">★</span> Exam key
           </li>
           <li>
-            <span className="legend-mark">↗</span> Own mind map
+            <span className="legend-mark">
+              <Icon name="external" size={13} />
+            </span>{' '}
+            Own mind map
           </li>
         </ul>
         <nav className="map-pager" aria-label="Other mind maps">

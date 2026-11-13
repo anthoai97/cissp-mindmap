@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useLayoutEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { AUTHOR } from '../author';
 import Page from '../components/Page';
 import { countNodes, DOMAIN_NAMES, mindmaps, type MindMap } from '../data';
 import { lastMap } from '../lastMap';
@@ -56,9 +57,22 @@ export default function Home() {
             </ul>
           </section>
         ))}
-        <p className="source-note">
-          Updated {updated} · Source: Destination Certification CISSP MindMap videos.
-        </p>
+        <footer className="home-footer">
+          <nav className="author" aria-label="Author">
+            <a href={AUTHOR.website} target="_blank" rel="noopener">
+              by <strong>{AUTHOR.name}</strong>
+            </a>
+            <a className="pill" href={AUTHOR.github} target="_blank" rel="noopener">
+              GitHub
+            </a>
+            <a className="pill" href={AUTHOR.linkedin} target="_blank" rel="noopener">
+              LinkedIn
+            </a>
+          </nav>
+          <p className="source-note">
+            Updated {updated} · Source: Destination Certification CISSP MindMap videos.
+          </p>
+        </footer>
       </div>
     </Page>
   );

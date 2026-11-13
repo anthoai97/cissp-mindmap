@@ -3,15 +3,16 @@ import { useEffect } from 'react';
 import { Link, Route, Routes, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
 import MindMapPage from './pages/MindMapPage';
+import PracticeButton from './components/PracticeButton';
 import NotFound from './pages/NotFound';
-import { AUTHOR } from './author';
+import QuizPage from './pages/QuizPage';
 
 export default function App() {
   const location = useLocation();
   // Opening a node only changes the last URL segment; keep the page mounted for that.
   const pageKey = location.pathname.split('/').slice(0, 3).join('/');
-  // Map pages have their own toolbar so the map gets the whole screen.
-  const showNav = !location.pathname.startsWith('/map/');
+  // Map and quiz pages have their own toolbar so the content gets the whole screen.
+  const showNav = !/^\/(map|quiz)(\/|$)/.test(location.pathname);
 
   useEffect(() => {
     window.scrollTo({ top: 0 });
@@ -33,17 +34,7 @@ export default function App() {
               </span>
               CISSP Mind Maps
             </Link>
-            <nav className="author" aria-label="Author">
-              <a href={AUTHOR.website} target="_blank" rel="noopener">
-                by <strong>{AUTHOR.name}</strong>
-              </a>
-              <a className="pill" href={AUTHOR.github} target="_blank" rel="noopener">
-                GitHub
-              </a>
-              <a className="pill" href={AUTHOR.linkedin} target="_blank" rel="noopener">
-                LinkedIn
-              </a>
-            </nav>
+            <PracticeButton />
           </div>
         </header>
       )}
@@ -52,6 +43,7 @@ export default function App() {
         <Routes location={location} key={pageKey}>
           <Route path="/" element={<Home />} />
           <Route path="/map/:mapId/:nodeId?" element={<MindMapPage />} />
+          <Route path="/quiz" element={<QuizPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </AnimatePresence>

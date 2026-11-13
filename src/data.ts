@@ -39,6 +39,11 @@ export const DOMAIN_NAMES: Record<number, string> = {
   8: 'Software Development Security',
 };
 
+/** Each grid a map renders: one per top-level node when stacked, otherwise one for the whole map. */
+export function gridsOf(map: MindMap): MindNode[][] {
+  return map.layout === 'stacked' ? map.nodes.map((node) => [node]) : [map.nodes];
+}
+
 export function getMindMap(id: string): MindMap | undefined {
   return mindmaps.find((m) => m.id === id);
 }

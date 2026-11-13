@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useMemo, useState, type CSSProperties } from 'react';
-import { layoutTree, type Cell, type Layout, type MindNode } from '../data';
+import { gridsOf, layoutTree, type Cell, type Layout, type MindMap, type MindNode } from '../data';
 
 /** Soft hues for dark backgrounds; each branch of the map gets one, cycling if needed. */
 const BRANCH_HUES = [
@@ -100,6 +100,11 @@ export function nodeHues(nodes: MindNode[]): Map<string, string> {
     if (hue) hues.set(cell.node.id, hue);
   }
   return hues;
+}
+
+/** Branch hue of every coloured node in a map, across all its grids. */
+export function mapHues(map: MindMap): Map<string, string> {
+  return new Map(gridsOf(map).flatMap((nodes) => [...nodeHues(nodes)]));
 }
 
 /** Narrowest width at which every column of a grid stays readable. */
