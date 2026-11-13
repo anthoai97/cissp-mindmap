@@ -5,6 +5,7 @@ import Description from '../components/Description';
 import Icon from '../components/Icon';
 import { mapHues } from '../components/MapGrid';
 import Page from '../components/Page';
+import ReviewModal, { type ReviewFilter } from '../components/ReviewModal';
 import { mindmaps } from '../data';
 import {
   cardsOf,
@@ -43,6 +44,8 @@ export default function QuizPage() {
   );
   const [run, setRun] = useState<Run>(() => loadRun(cards) ?? newRun(cards));
   const [stats, setStats] = useState<Stats | undefined>(() => loadStats());
+  const [review, setReview] = useState<ReviewFilter>();
+  const closeReview = useCallback(() => setReview(undefined), []);
 
   useEffect(() => saveRun(run), [run]);
 
@@ -72,7 +75,8 @@ export default function QuizPage() {
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      // The review pop-up handles its own keys; do not answer behind it.
+      if (review || e.metaKey || e.ctrlKey || e.altKey) return;
       if (finished) {
         if (e.key === 'Enter') restart();
         return;
@@ -87,7 +91,7 @@ export default function QuizPage() {
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [finished, question, answer, next, restart]);
+  }, [review, finished, question, answer, next, restart]);
 
   const card = question && byKey.get(question.id);
 
@@ -103,8 +107,24 @@ export default function QuizPage() {
           <h1>All domains</h1>
         </div>
         <div className="quiz-tally" aria-label="Score">
-          <span className="tally-right">✓ {correct}</span>
-          <span className="tally-wrong">✗ {run.answers.length - correct}</span>
+          <button
+            type="button"
+            className="tally-btn tally-right"
+            disabled={correct === 0}
+            onClick={() => setReview('right')}
+            title="Review correct answers"
+          >
+            ✓ {correct}
+          </button>
+          <button
+            type="button"
+            className="tally-btn tally-wrong"
+            disabled={run.answers.length - correct === 0}
+            onClick={() => setReview('wrong')}
+            title="Review wrong answers"
+          >
+            ✗ {run.answers.length - correct}
+          </button>
           <span className="tally-count">
             {Math.min(run.position + 1, run.deck.length)} / {run.deck.length}
           </span>
@@ -140,6 +160,15 @@ export default function QuizPage() {
           )}
         </AnimatePresence>
       </div>
+
+      <ReviewModal
+        filter={review}
+        run={run}
+        byKey={byKey}
+        hues={hues}
+        onFilter={setReview}
+        onClose={closeReview}
+      />
     </Page>
   );
 }

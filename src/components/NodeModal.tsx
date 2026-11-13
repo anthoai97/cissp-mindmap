@@ -3,32 +3,10 @@ import { useEffect, useRef, type CSSProperties } from 'react';
 import { Link } from 'react-router-dom';
 import { getMindMap, type MindNode } from '../data';
 import Description from './Description';
+import { closeTween, keepFadeInFramer, openSpring, originOf } from './modalMotion';
 
-const openSpring = { type: 'spring', stiffness: 380, damping: 32 } as const;
-
-/** Closing mirrors opening: the pop-up shrinks back into its card, fading out near the end. */
-const closeTween = {
-  duration: 0.32,
-  ease: [0.4, 0, 1, 1],
-  opacity: { duration: 0.2, ease: 'easeIn', delay: 0.12 },
-} as const;
-
-/**
- * Passing onUpdate keeps Framer Motion from handing the fade to the browser's animation
- * engine, which drops the final opacity for one frame and flashes the pop-up at the end of
- * closing. Framer then animates every frame itself and holds the value until removal.
- */
-const keepFadeInFramer = () => {};
-
-/** Offset from the viewport centre to the clicked box, so the pop-up grows out of it. */
-function originOf(id: string): { x: number; y: number } {
-  const box = document.querySelector(`[data-id="${CSS.escape(id)}"]`)?.getBoundingClientRect();
-  if (!box) return { x: 0, y: 0 };
-  return {
-    x: box.left + box.width / 2 - window.innerWidth / 2,
-    y: box.top + box.height / 2 - window.innerHeight / 2,
-  };
-}
+/** The clicked map box, so the pop-up grows out of it. */
+const boxOf = (id: string) => document.querySelector(`[data-id="${CSS.escape(id)}"]`);
 
 interface Props {
   node?: MindNode;
@@ -72,9 +50,9 @@ export default function NodeModal({ node, hue, onClose }: Props) {
             role="dialog"
             aria-modal="true"
             aria-label={node.title}
-            initial={{ opacity: 0, scale: 0.35, ...originOf(node.id) }}
+            initial={{ opacity: 0, scale: 0.35, ...originOf(boxOf(node.id)) }}
             animate={{ opacity: 1, scale: 1, x: 0, y: 0, transition: openSpring }}
-            exit={{ opacity: 0, scale: 0.35, ...originOf(node.id), transition: closeTween }}
+            exit={{ opacity: 0, scale: 0.35, ...originOf(boxOf(node.id)), transition: closeTween }}
             onUpdate={keepFadeInFramer}
             onClick={(e) => e.stopPropagation()}
           >
