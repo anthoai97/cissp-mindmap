@@ -15,7 +15,17 @@ npm run dev
 npm run build
 ```
 
-The site is written to `dist/`. It uses relative paths and hash URLs (`#/map/...`), so you can host `dist/` from any static host, including GitHub Pages.
+The site is written to `.cloudflare/output/v0/workers/default/assets/`. It uses relative paths and hash URLs (`#/map/...`), so that folder works on any static host.
+
+## Deploy
+
+The site runs on Cloudflare Workers as a static-assets Worker at https://cissp.andyq.dev. The settings are in `cloudflare.config.ts`.
+
+```sh
+npm run deploy
+```
+
+This type-checks, builds with Vite and deploys with the `cf` CLI. Sign in once with `npx cf auth login`. The home page shows the build date, so you can confirm which version is live.
 
 ## Add a mind map
 
