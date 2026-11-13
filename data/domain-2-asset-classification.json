@@ -31,7 +31,7 @@
             {
               "id": "standards-procedures-baselines-guidelines",
               "title": "Standards / Procedures / Baselines / Guidelines",
-              "description": "Created from the data classification policy.\n- Procedures: step-by-step instructions for classifying data into the classes the policy defines.\n- Baselines: the minimum security requirements for each class. Remember this point.",
+              "description": "Created from the data classification policy.\n- Standards: mandatory rules for each class, such as which tools or mechanisms must protect it.\n- Procedures: step-by-step instructions for classifying data into the classes the policy defines.\n- Baselines: the minimum security requirements for each class.\n- Guidelines: recommendations, not mandatory.",
               "children": []
             }
           ]
