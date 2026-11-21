@@ -11,6 +11,7 @@ It is free, has no sign-up, and works on desktop, tablet, and phone.
 ## What you can do on the site
 
 - **Explore 30 mind maps.** The maps cover all eight domains, with 1,078 topics in total. Each branch has its own colour. Select a topic to read what it means. Hover over a sideways label and the card turns upright so you can read it.
+- **Search every topic.** Type in the search box on the home page to find topics by name or by a word in their description, such as `stride` or `firewall`. Select a result to open it on its map, and press Enter to open the top result.
 - **Practise every topic.** Select **Practice** on the home page. Each question shows a topic's description with the answer blanked out, and you pick the topic from four options. The wrong options come from the same map, so you choose between topics that are easy to confuse. A run covers all 1,069 questions in a new order each time.
 - **Review your answers.** During a run, select the ✓ or ✗ count to list your correct or wrong answers so far. They are grouped by map, with the map that has the most answers at the top.
 - **Pick up where you left off.** Your progress and best score stay in your browser on that device, so **Practice** changes to **Resume** when you come back.

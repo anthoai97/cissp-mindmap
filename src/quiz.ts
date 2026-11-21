@@ -66,6 +66,13 @@ export function shuffle<T>(items: readonly T[]): T[] {
   return out;
 }
 
+/**
+ * Where a card sits: its map, then the topics above it.
+ * A map whose top section has the map's own name would repeat it, so repeats are dropped.
+ */
+export const contextOf = (card: Card) =>
+  [card.map.title, ...card.parents.map((p) => p.title)].filter((title, i, all) => title !== all[i - 1]).join(' › ');
+
 const titleKey = (card: Card) => card.node.title.trim().toLowerCase();
 const topBranch = (card: Card) => (card.parents[0] ?? card.node).id;
 
@@ -123,7 +130,7 @@ export function newRun(cards: Card[]): Run {
 
 export const score = (run: Run) => run.answers.filter((answer, i) => answer === run.deck[i]?.id).length;
 
-const escapeRegExp = (text: string) => text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+export const escapeRegExp = (text: string) => text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
 /** Word endings that would still give the answer away: "shared", "encryption", "worms". */
 const ENDINGS = '(?:s|es|d|ed|ing|ion|ions|er|ers|rs|ly)?';

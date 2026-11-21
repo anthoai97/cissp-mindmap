@@ -4,6 +4,7 @@ const PATHS = {
   next: 'M9 6l6 6-6 6',
   external: 'M7 17L17 7M9 7h8v8',
   cards: 'M8 3h11a2 2 0 0 1 2 2v11M5 7h11a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2z',
+  search: 'M11 18a7 7 0 1 0 0-14 7 7 0 0 0 0 14zM20 20l-4-4',
 };
 
 export default function Icon({ name, size = 18 }: { name: keyof typeof PATHS; size?: number }) {

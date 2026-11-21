@@ -9,6 +9,7 @@ import ReviewModal, { type ReviewFilter } from '../components/ReviewModal';
 import { mindmaps } from '../data';
 import {
   cardsOf,
+  contextOf,
   loadRun,
   loadStats,
   maskedDescription,
@@ -23,13 +24,6 @@ import {
 
 const ease = [0.25, 0.46, 0.45, 0.94] as const;
 const KEYS = ['1', '2', '3', '4'];
-
-/**
- * Where a missed card sits, shown in the end-of-run list: its map, then the topics above it.
- * A map whose top section has the map's own name would repeat it, so repeats are dropped.
- */
-const contextOf = (card: Card) =>
-  [card.map.title, ...card.parents.map((p) => p.title)].filter((title, i, all) => title !== all[i - 1]).join(' › ');
 
 /** Practice every card from every map, one shuffled run at a time. */
 export default function QuizPage() {
